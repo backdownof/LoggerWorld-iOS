@@ -7,5 +7,8 @@ target 'LoggerWorld' do
 
   # Pods for LoggerWorld
   pod 'Starscream'
+  pod 'R.swift'
+  pod 'ObjectMapper'
+  pod 'SDWebImage'  
 
 end

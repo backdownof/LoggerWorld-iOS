@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		200A6658254E1A3E00B74B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A6657254E1A3E00B74B48 /* AppDelegate.swift */; };
 		200A665A254E1A3E00B74B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A6659254E1A3E00B74B48 /* SceneDelegate.swift */; };
-		200A665C254E1A3E00B74B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A665B254E1A3E00B74B48 /* ViewController.swift */; };
 		200A665F254E1A3E00B74B48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200A665D254E1A3E00B74B48 /* Main.storyboard */; };
 		200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 200A6660254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld */; };
 		200A6664254E1A4000B74B48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200A6663254E1A4000B74B48 /* Assets.xcassets */; };
@@ -19,6 +18,16 @@
 		203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045EC2550AA9A00F9CA88 /* SocketManager.swift */; };
 		203045F12550AD9800F9CA88 /* PlayerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045F02550AD9800F9CA88 /* PlayerLogin.swift */; };
 		203045F42550ADDE00F9CA88 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045F32550ADDE00F9CA88 /* Credentials.swift */; };
+		20CD1DD6255FE52F009F991D /* AlegreyaSC-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DCC255FE52F009F991D /* AlegreyaSC-Black.ttf */; };
+		20CD1DD9255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DCF255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf */; };
+		20CD1DDA255FE52F009F991D /* AlegreyaSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DD0255FE52F009F991D /* AlegreyaSC-Bold.ttf */; };
+		20CD1DDC255FE52F009F991D /* AlegreyaSC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DD2255FE52F009F991D /* AlegreyaSC-Medium.ttf */; };
+		20CD1DDD255FE52F009F991D /* AlegreyaSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DD3255FE52F009F991D /* AlegreyaSC-Regular.ttf */; };
+		20CD1DEA255FEAA8009F991D /* ButtonWOImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DE9255FEAA8009F991D /* ButtonWOImage.xib */; };
+		20CD1DED255FEB15009F991D /* ButtonWOImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DEC255FEB15009F991D /* ButtonWOImage.swift */; };
+		20CD1DF0255FF2AB009F991D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DEF255FF2AB009F991D /* ViewController.swift */; };
+		20CD1DF4255FF45F009F991D /* LoginControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DF3255FF45F009F991D /* LoginControllerViewController.swift */; };
+		20CD1DF7255FF670009F991D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DF6255FF670009F991D /* NibLoadable.swift */; };
 		20EA049F254F115800AB85D1 /* ConstantsBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */; };
 		20F5775D2552CEC5003ED757 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5775C2552CEC5003ED757 /* SecondViewController.swift */; };
 		20F577602552D43F003ED757 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5775F2552D43F003ED757 /* LoginSuccess.swift */; };
@@ -34,7 +43,6 @@
 		200A6654254E1A3E00B74B48 /* LoggerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoggerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		200A6657254E1A3E00B74B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		200A6659254E1A3E00B74B48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		200A665B254E1A3E00B74B48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		200A665E254E1A3E00B74B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		200A6661254E1A3E00B74B48 /* LoggerWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoggerWorld.xcdatamodel; sourceTree = "<group>"; };
 		200A6663254E1A4000B74B48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +53,16 @@
 		203045EC2550AA9A00F9CA88 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		203045F02550AD9800F9CA88 /* PlayerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLogin.swift; sourceTree = "<group>"; };
 		203045F32550ADDE00F9CA88 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		20CD1DCC255FE52F009F991D /* AlegreyaSC-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-Black.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-Black.ttf"; sourceTree = "<group>"; };
+		20CD1DCF255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-ExtraBold.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-ExtraBold.ttf"; sourceTree = "<group>"; };
+		20CD1DD0255FE52F009F991D /* AlegreyaSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-Bold.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-Bold.ttf"; sourceTree = "<group>"; };
+		20CD1DD2255FE52F009F991D /* AlegreyaSC-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-Medium.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-Medium.ttf"; sourceTree = "<group>"; };
+		20CD1DD3255FE52F009F991D /* AlegreyaSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-Regular.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-Regular.ttf"; sourceTree = "<group>"; };
+		20CD1DE9255FEAA8009F991D /* ButtonWOImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonWOImage.xib; sourceTree = "<group>"; };
+		20CD1DEC255FEB15009F991D /* ButtonWOImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWOImage.swift; sourceTree = "<group>"; };
+		20CD1DEF255FF2AB009F991D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20CD1DF3255FF45F009F991D /* LoginControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerViewController.swift; sourceTree = "<group>"; };
+		20CD1DF6255FF670009F991D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsBroadcast.swift; sourceTree = "<group>"; };
 		20F5775C2552CEC5003ED757 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		20F5775F2552D43F003ED757 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
@@ -99,17 +117,20 @@
 		200A6656254E1A3E00B74B48 /* LoggerWorld */ = {
 			isa = PBXGroup;
 			children = (
+				20CD1DE2255FE942009F991D /* UI */,
+				20CD1DE1255FE914009F991D /* Login */,
 				203045E8254F66F700F9CA88 /* Model */,
 				203045EF2550AD1F00F9CA88 /* Controller */,
+				20CD1DDF255FE551009F991D /* Websockets */,
+				20CD1DC8255FE50A009F991D /* Resources */,
 				200A6657254E1A3E00B74B48 /* AppDelegate.swift */,
 				200A6659254E1A3E00B74B48 /* SceneDelegate.swift */,
-				200A665D254E1A3E00B74B48 /* Main.storyboard */,
 				200A6663254E1A4000B74B48 /* Assets.xcassets */,
 				200A6665254E1A4000B74B48 /* LaunchScreen.storyboard */,
 				200A6668254E1A4000B74B48 /* Info.plist */,
 				200A6660254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld */,
 				20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */,
-				203045EC2550AA9A00F9CA88 /* SocketManager.swift */,
+				20CD1DF6255FF670009F991D /* NibLoadable.swift */,
 			);
 			path = LoggerWorld;
 			sourceTree = "<group>";
@@ -131,13 +152,67 @@
 		203045EF2550AD1F00F9CA88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				200A665B254E1A3E00B74B48 /* ViewController.swift */,
 				203045E4254F617B00F9CA88 /* RegistrationViewController.swift */,
 				20F5775C2552CEC5003ED757 /* SecondViewController.swift */,
 				20F577622552D74D003ED757 /* CharacterCreationViewController.swift */,
 				20F577692552F839003ED757 /* MainLogViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		20CD1DC8255FE50A009F991D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20CD1DC9255FE511009F991D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		20CD1DC9255FE511009F991D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20CD1DCC255FE52F009F991D /* AlegreyaSC-Black.ttf */,
+				20CD1DD0255FE52F009F991D /* AlegreyaSC-Bold.ttf */,
+				20CD1DCF255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf */,
+				20CD1DD2255FE52F009F991D /* AlegreyaSC-Medium.ttf */,
+				20CD1DD3255FE52F009F991D /* AlegreyaSC-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		20CD1DDF255FE551009F991D /* Websockets */ = {
+			isa = PBXGroup;
+			children = (
+				203045EC2550AA9A00F9CA88 /* SocketManager.swift */,
+			);
+			path = Websockets;
+			sourceTree = "<group>";
+		};
+		20CD1DE1255FE914009F991D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				200A665D254E1A3E00B74B48 /* Main.storyboard */,
+				20CD1DF3255FF45F009F991D /* LoginControllerViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		20CD1DE2255FE942009F991D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				20CD1DE3255FE94D009F991D /* Buttons */,
+				20CD1DEF255FF2AB009F991D /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		20CD1DE3255FE94D009F991D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				20CD1DE9255FEAA8009F991D /* ButtonWOImage.xib */,
+				20CD1DEC255FEB15009F991D /* ButtonWOImage.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		432AD9DBCA1E3920E9BA19C1 /* Pods */ = {
@@ -209,8 +284,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				200A6667254E1A4000B74B48 /* LaunchScreen.storyboard in Resources */,
+				20CD1DDD255FE52F009F991D /* AlegreyaSC-Regular.ttf in Resources */,
+				20CD1DD6255FE52F009F991D /* AlegreyaSC-Black.ttf in Resources */,
 				200A6664254E1A4000B74B48 /* Assets.xcassets in Resources */,
 				200A665F254E1A3E00B74B48 /* Main.storyboard in Resources */,
+				20CD1DD9255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf in Resources */,
+				20CD1DDA255FE52F009F991D /* AlegreyaSC-Bold.ttf in Resources */,
+				20CD1DEA255FEAA8009F991D /* ButtonWOImage.xib in Resources */,
+				20CD1DDC255FE52F009F991D /* AlegreyaSC-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,18 +345,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F5776D2552F8E8003ED757 /* CharIsCreated.swift in Sources */,
+				20CD1DF0255FF2AB009F991D /* ViewController.swift in Sources */,
 				20F577702553565B003ED757 /* SelectChar.swift in Sources */,
 				20F5775D2552CEC5003ED757 /* SecondViewController.swift in Sources */,
 				203045E5254F617B00F9CA88 /* RegistrationViewController.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
+				20CD1DF4255FF45F009F991D /* LoginControllerViewController.swift in Sources */,
 				20F577602552D43F003ED757 /* LoginSuccess.swift in Sources */,
 				203045F42550ADDE00F9CA88 /* Credentials.swift in Sources */,
+				20CD1DF7255FF670009F991D /* NibLoadable.swift in Sources */,
 				203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */,
 				203045F12550AD9800F9CA88 /* PlayerLogin.swift in Sources */,
 				203045EA254F671400F9CA88 /* PlayerRegistration.swift in Sources */,
-				200A665C254E1A3E00B74B48 /* ViewController.swift in Sources */,
 				20EA049F254F115800AB85D1 /* ConstantsBroadcast.swift in Sources */,
 				200A6658254E1A3E00B74B48 /* AppDelegate.swift in Sources */,
+				20CD1DED255FEB15009F991D /* ButtonWOImage.swift in Sources */,
 				20F577662552DAD9003ED757 /* CreateChar.swift in Sources */,
 				20F577632552D74D003ED757 /* CharacterCreationViewController.swift in Sources */,
 				20F5776A2552F839003ED757 /* MainLogViewController.swift in Sources */,
