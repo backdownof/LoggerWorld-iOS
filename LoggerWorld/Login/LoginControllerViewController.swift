@@ -60,6 +60,7 @@ class LoginControllerViewController: ViewController, SocketManagerDelegate {
     }
     
     private func setupView() {
+        self.navigationController?.isNavigationBarHidden = true
         loginButton.label = "Вход"
     }
     

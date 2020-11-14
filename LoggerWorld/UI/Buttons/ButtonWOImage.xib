@@ -28,8 +28,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="298" height="83"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLu-C5-nef">
-                    <rect key="frame" x="149" y="30.5" width="0.0" height="22"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLu-C5-nef">
+                    <rect key="frame" x="122.5" y="30.5" width="53" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="Av2-27-ztd"/>
                     </constraints>
@@ -60,7 +60,7 @@
     <resources>
         <image name="Button" width="298" height="83"/>
         <namedColor name="Brown">
-            <color red="0.38039215686274508" green="0.31372549019607843" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.37999999523162842" green="0.31400001049041748" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
