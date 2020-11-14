@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterCreationViewController: UIViewController, SocketManagerDelegate{
+class CreateCharController: UIViewController, SocketManagerDelegate{
     
     @IBOutlet weak var createdCharactersTableView: UITableView!
     
@@ -64,7 +64,7 @@ class CharacterCreationViewController: UIViewController, SocketManagerDelegate{
     
 }
 
-extension CharacterCreationViewController: UITableViewDataSource, UITableViewDelegate {
+extension CreateCharController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let nicknames = createdCharacters else { return 0 }
         return nicknames.count
