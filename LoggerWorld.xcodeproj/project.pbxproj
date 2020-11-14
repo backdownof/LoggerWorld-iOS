@@ -21,6 +21,8 @@
 		2045961A25601E16004793C5 /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961925601E16004793C5 /* CreateChar.storyboard */; };
 		2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */; };
 		2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045962225601FCA004793C5 /* SelectCharToPlayController.swift */; };
+		20598630256090C40028ACD3 /* AddCharCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059862E256090C40028ACD3 /* AddCharCell.swift */; };
+		20598631256090C40028ACD3 /* AddCharCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2059862F256090C40028ACD3 /* AddCharCell.xib */; };
 		20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EE6256055F300AEDE8D /* CharacterPickCell.swift */; };
 		20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20766EE7256055F300AEDE8D /* CharacterPickCell.xib */; };
 		20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EEB2560734400AEDE8D /* CharInfo.swift */; };
@@ -64,6 +66,8 @@
 		2045961925601E16004793C5 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
 		2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCharToPlay.storyboard; sourceTree = "<group>"; };
 		2045962225601FCA004793C5 /* SelectCharToPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharToPlayController.swift; sourceTree = "<group>"; };
+		2059862E256090C40028ACD3 /* AddCharCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharCell.swift; sourceTree = "<group>"; };
+		2059862F256090C40028ACD3 /* AddCharCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCharCell.xib; sourceTree = "<group>"; };
 		20766EE6256055F300AEDE8D /* CharacterPickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickCell.swift; sourceTree = "<group>"; };
 		20766EE7256055F300AEDE8D /* CharacterPickCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPickCell.xib; sourceTree = "<group>"; };
 		20766EEB2560734400AEDE8D /* CharInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharInfo.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			children = (
 				20766EE6256055F300AEDE8D /* CharacterPickCell.swift */,
 				20766EE7256055F300AEDE8D /* CharacterPickCell.xib */,
+				2059862E256090C40028ACD3 /* AddCharCell.swift */,
+				2059862F256090C40028ACD3 /* AddCharCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				20CD1DD6255FE52F009F991D /* AlegreyaSC-Black.ttf in Resources */,
 				200A6664254E1A4000B74B48 /* Assets.xcassets in Resources */,
 				20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */,
+				20598631256090C40028ACD3 /* AddCharCell.xib in Resources */,
 				200A665F254E1A3E00B74B48 /* Login.storyboard in Resources */,
 				20CD1DD9255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf in Resources */,
 				20CD1DDA255FE52F009F991D /* AlegreyaSC-Bold.ttf in Resources */,
@@ -440,6 +447,7 @@
 				20F5776A2552F839003ED757 /* MainLogViewController.swift in Sources */,
 				20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */,
 				200A665A254E1A3E00B74B48 /* SceneDelegate.swift in Sources */,
+				20598630256090C40028ACD3 /* AddCharCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

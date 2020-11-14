@@ -66,7 +66,7 @@ class LoginController: ViewController, SocketManagerDelegate {
 extension LoginController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         let storyBoard: UIStoryboard = UIStoryboard(name: R.storyboard.selectCharToPlay.name, bundle: nil)
-        let selectCharVC = storyBoard.instantiateViewController(withIdentifier: "SelectCharToPlay") as! SelectCharToPlayController
+        let selectCharVC = storyBoard.instantiateViewController(withIdentifier: "SelectCharToPlayNav") as! UINavigationController
         selectCharVC.modalPresentationStyle = .fullScreen
         self.present(selectCharVC, animated: true, completion: nil)
         

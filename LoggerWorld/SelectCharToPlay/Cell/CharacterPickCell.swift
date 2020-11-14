@@ -39,8 +39,10 @@ class CharacterPickCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         imageBackgroundView.layer.borderWidth = 1
+        imageBackgroundView.layer.cornerRadius = 5
         guard let color = R.color.brown() else { return }
         imageBackgroundView.layer.borderColor = color.cgColor
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

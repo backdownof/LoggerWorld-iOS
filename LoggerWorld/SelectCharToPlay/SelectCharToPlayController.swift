@@ -12,7 +12,7 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
         print("enter")
     }
     
-
+    
     @IBOutlet weak var charactersTableView: UITableView!
     @IBOutlet weak var underView: UIView!
     @IBOutlet weak var enterButton: ButtonWOImage!
@@ -21,8 +21,9 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
         charactersTableView.dataSource = self
         charactersTableView.delegate = self
         enterButton.delegate = self
@@ -33,12 +34,13 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
         chars.append(char)
         chars.append(char)
         chars.append(char)
-        chars.append(char)
         
         charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
+//        charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
     }
     
     private func setupView() {
+        self.navigationController?.isNavigationBarHidden = false
         enterButton.label = "Играть"
         charactersTableView.separatorColor = R.color.brown()
         
@@ -47,18 +49,18 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
         charactersTableView.backgroundColor = .clear
-//        let imageView = UIImageView(image: R.image.backgroundFrame())
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.clipsToBounds = true
+        //        let imageView = UIImageView(image: R.image.backgroundFrame())
+        //        imageView.contentMode = .scaleAspectFit
+        //        imageView.clipsToBounds = true
         charactersTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
         charactersTableView.backgroundView?.contentMode = .scaleToFill
         charactersTableView.backgroundView?.clipsToBounds = true
         
-//        let imageView = UIImageView(image: R.image.backgroundFrame())
-//        imageView.contentMode = .scaleAspectFit
-//        underView.addSubview(imageView)
-//        underView.contentMode = .scaleToFill
-//        underView.clipsToBounds = true
+        //        let imageView = UIImageView(image: R.image.backgroundFrame())
+        //        imageView.contentMode = .scaleAspectFit
+        //        underView.addSubview(imageView)
+        //        underView.contentMode = .scaleToFill
+        //        underView.clipsToBounds = true
         
         
         charactersTableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -67,19 +69,19 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
         print(underView.frame.size.height)
         print(charactersTableView.frame.size)
         print(charactersTableView.contentSize.height)
-//            CGRect(x: charactersTableView.frame.origin.x, y: charactersTableView.frame.origin.y, width: charactersTableView.frame.size.width, height: )
-//        charactersTableView.setNeedsDisplay()
+        //            CGRect(x: charactersTableView.frame.origin.x, y: charactersTableView.frame.origin.y, width: charactersTableView.frame.size.width, height: )
+        //        charactersTableView.setNeedsDisplay()
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
@@ -90,18 +92,35 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
 
 extension SelectCharToPlayController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chars.count
+        return chars.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = charactersTableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cellCharacterPick, for: indexPath) as! CharacterPickCell
-        cell.charInfo = chars[indexPath.row]
-        
-        return cell
+        if indexPath.row < chars.count {
+            let cell = charactersTableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cellCharacterPick, for: indexPath) as! CharacterPickCell
+            cell.charInfo = chars[indexPath.row]
+            
+            return cell
+        } else {
+            charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
+            let cell = charactersTableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cellCharacterPick, for: indexPath) as! AddCharCell
+            
+            
+            return cell
+        }
     }
+//    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        if indexPath.row == chars.count + 1 {
+//            print(1)
+//            return 100 //Size you want to increase to
+//        }
+//        print(2)
+//        return 60.5 // Default Size
+//    }
 }
 
 extension SelectCharToPlayController: UITableViewDelegate {
-
+    
 }
 

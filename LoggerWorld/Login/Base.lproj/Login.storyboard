@@ -175,6 +175,10 @@
                                     <action selector="registerPressed:" destination="Zxo-MF-vW8" eventType="touchUpInside" id="vwn-qA-hjl"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4jT-Jw-sOC">
+                                <rect key="frame" x="77" y="180" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="drw-Kd-mrB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
