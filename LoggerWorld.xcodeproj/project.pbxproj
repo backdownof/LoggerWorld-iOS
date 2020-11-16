@@ -26,6 +26,12 @@
 		20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EE6256055F300AEDE8D /* CharacterPickCell.swift */; };
 		20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20766EE7256055F300AEDE8D /* CharacterPickCell.xib */; };
 		20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EEB2560734400AEDE8D /* CharInfo.swift */; };
+		20AD37E5256281F800F9C1B5 /* CATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37E4256281F800F9C1B5 /* CATransition.swift */; };
+		20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37E8256292DA00F9C1B5 /* UI.swift */; };
+		20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37EB2562931D00F9C1B5 /* UIViewController.swift */; };
+		20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37EE2562934A00F9C1B5 /* UIWindow.swift */; };
+		20AD37F52562957B00F9C1B5 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37F32562957B00F9C1B5 /* RegisterController.swift */; };
+		20AD37FA25629E0E00F9C1B5 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AD37F925629E0E00F9C1B5 /* Register.storyboard */; };
 		20CD1DD6255FE52F009F991D /* AlegreyaSC-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DCC255FE52F009F991D /* AlegreyaSC-Black.ttf */; };
 		20CD1DD9255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DCF255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf */; };
 		20CD1DDA255FE52F009F991D /* AlegreyaSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CD1DD0255FE52F009F991D /* AlegreyaSC-Bold.ttf */; };
@@ -71,6 +77,12 @@
 		20766EE6256055F300AEDE8D /* CharacterPickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickCell.swift; sourceTree = "<group>"; };
 		20766EE7256055F300AEDE8D /* CharacterPickCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPickCell.xib; sourceTree = "<group>"; };
 		20766EEB2560734400AEDE8D /* CharInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharInfo.swift; sourceTree = "<group>"; };
+		20AD37E4256281F800F9C1B5 /* CATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransition.swift; sourceTree = "<group>"; };
+		20AD37E8256292DA00F9C1B5 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		20AD37EB2562931D00F9C1B5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		20AD37EE2562934A00F9C1B5 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		20AD37F32562957B00F9C1B5 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		20AD37F925629E0E00F9C1B5 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		20CD1DCC255FE52F009F991D /* AlegreyaSC-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-Black.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-Black.ttf"; sourceTree = "<group>"; };
 		20CD1DCF255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-ExtraBold.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-ExtraBold.ttf"; sourceTree = "<group>"; };
 		20CD1DD0255FE52F009F991D /* AlegreyaSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlegreyaSC-Bold.ttf"; path = "../../../../../../Downloads/Alegreya_SC/AlegreyaSC-Bold.ttf"; sourceTree = "<group>"; };
@@ -81,7 +93,7 @@
 		20CD1DEF255FF2AB009F991D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		20CD1DF3255FF45F009F991D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		20CD1DF6255FF670009F991D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		20D388D82560261000F18A07 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		20D388D82560261000F18A07 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = LoggerWorld/Resources/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		20D388DC25602D4B00F18A07 /* ContentSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
 		20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsBroadcast.swift; sourceTree = "<group>"; };
 		20F5775C2552CEC5003ED757 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -137,14 +149,15 @@
 		200A6656254E1A3E00B74B48 /* LoggerWorld */ = {
 			isa = PBXGroup;
 			children = (
-				2045961E25601F89004793C5 /* SelectCharToPlay */,
+				20AD37F22562955D00F9C1B5 /* Register */,
 				20CD1DE2255FE942009F991D /* UI */,
+				2045961E25601F89004793C5 /* SelectCharToPlay */,
 				20CD1DE1255FE914009F991D /* Login */,
 				2045961825601DF9004793C5 /* CreateChar */,
 				203045E8254F66F700F9CA88 /* Model */,
 				203045EF2550AD1F00F9CA88 /* Controller */,
-				20CD1DDF255FE551009F991D /* Websockets */,
 				20CD1DC8255FE50A009F991D /* Resources */,
+				20AD37E3256281E400F9C1B5 /* Extensions */,
 				200A6657254E1A3E00B74B48 /* AppDelegate.swift */,
 				200A6659254E1A3E00B74B48 /* SceneDelegate.swift */,
 				200A6663254E1A4000B74B48 /* Assets.xcassets */,
@@ -153,7 +166,6 @@
 				200A6660254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld */,
 				20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */,
 				20CD1DF6255FF670009F991D /* NibLoadable.swift */,
-				20D388D82560261000F18A07 /* R.generated.swift */,
 				20D388DC25602D4B00F18A07 /* ContentSizedTableView.swift */,
 			);
 			path = LoggerWorld;
@@ -214,10 +226,32 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		20AD37E3256281E400F9C1B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20AD37E4256281F800F9C1B5 /* CATransition.swift */,
+				20AD37EB2562931D00F9C1B5 /* UIViewController.swift */,
+				20AD37EE2562934A00F9C1B5 /* UIWindow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20AD37F22562955D00F9C1B5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				20AD37F32562957B00F9C1B5 /* RegisterController.swift */,
+				20AD37F925629E0E00F9C1B5 /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		20CD1DC8255FE50A009F991D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				20CD1DDF255FE551009F991D /* Websockets */,
 				20CD1DC9255FE511009F991D /* Fonts */,
+				20AD37E8256292DA00F9C1B5 /* UI.swift */,
+				20D388D82560261000F18A07 /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,6 +381,7 @@
 				20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */,
 				20598631256090C40028ACD3 /* AddCharCell.xib in Resources */,
 				200A665F254E1A3E00B74B48 /* Login.storyboard in Resources */,
+				20AD37FA25629E0E00F9C1B5 /* Register.storyboard in Resources */,
 				20CD1DD9255FE52F009F991D /* AlegreyaSC-ExtraBold.ttf in Resources */,
 				20CD1DDA255FE52F009F991D /* AlegreyaSC-Bold.ttf in Resources */,
 				20CD1DEA255FEAA8009F991D /* ButtonWOImage.xib in Resources */,
@@ -422,7 +457,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */,
+				20AD37F52562957B00F9C1B5 /* RegisterController.swift in Sources */,
 				20F5776D2552F8E8003ED757 /* CharIsCreated.swift in Sources */,
+				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
 				20CD1DF0255FF2AB009F991D /* ViewController.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
 				20F577702553565B003ED757 /* SelectChar.swift in Sources */,
@@ -438,6 +476,7 @@
 				203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */,
 				203045F12550AD9800F9CA88 /* PlayerLogin.swift in Sources */,
 				203045EA254F671400F9CA88 /* PlayerRegistration.swift in Sources */,
+				20AD37E5256281F800F9C1B5 /* CATransition.swift in Sources */,
 				2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */,
 				20EA049F254F115800AB85D1 /* ConstantsBroadcast.swift in Sources */,
 				200A6658254E1A3E00B74B48 /* AppDelegate.swift in Sources */,
@@ -446,6 +485,7 @@
 				20F577632552D74D003ED757 /* CreateCharController.swift in Sources */,
 				20F5776A2552F839003ED757 /* MainLogViewController.swift in Sources */,
 				20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */,
+				20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */,
 				200A665A254E1A3E00B74B48 /* SceneDelegate.swift in Sources */,
 				20598630256090C40028ACD3 /* AddCharCell.swift in Sources */,
 			);

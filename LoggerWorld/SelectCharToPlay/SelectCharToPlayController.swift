@@ -86,6 +86,9 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
         cell.backgroundColor = UIColor.clear
     }
     
+    @IBAction func backNavButtonPressed(_ sender: Any) {
+        UI.setRootController(R.storyboard.login.instantiateInitialViewController())
+    }
     
 }
 

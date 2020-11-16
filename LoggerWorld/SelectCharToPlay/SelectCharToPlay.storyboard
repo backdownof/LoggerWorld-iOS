@@ -63,7 +63,13 @@
                             <constraint firstItem="DEo-Za-FFC" firstAttribute="leading" secondItem="024-ga-9Yn" secondAttribute="leading" constant="20" id="vYX-Pm-JTi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Создание персонажа" id="24L-vw-FTL"/>
+                    <navigationItem key="navigationItem" title="Создание персонажа" id="24L-vw-FTL">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="hFH-pB-SNa">
+                            <connections>
+                                <action selector="backNavButtonPressed:" destination="aTV-5r-DfC" id="Ml2-YC-gmm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="charactersTableView" destination="SU5-Jm-wBV" id="0Rw-ud-5m6"/>
                         <outlet property="enterButton" destination="pNN-ic-9TL" id="kjX-GY-cYl"/>
@@ -82,6 +88,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="chevron.backward" catalog="system" id="7aT-Nf-gs1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Creame"/>
                         <color key="barTintColor" name="Brown"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="Creame"/>

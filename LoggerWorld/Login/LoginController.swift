@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginController: ViewController, SocketManagerDelegate {
-
+    
     @IBOutlet weak var loginButton: ButtonWOImage!
     
     var chars: [String] = []
@@ -23,7 +23,7 @@ class LoginController: ViewController, SocketManagerDelegate {
                 if let playerCharacters = login.chars {
                     chars = playerCharacters
                 }
-//                performSegue(withIdentifier: R.segue.createCharController.loggedInWithChar.identifier, sender: nil)
+                //                performSegue(withIdentifier: R.segue.createCharController.loggedInWithChar.identifier, sender: nil)
             } else if login.login == "fail" {
                 // TODO: обработать ошибку логина
             }
@@ -47,13 +47,13 @@ class LoginController: ViewController, SocketManagerDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == R.segue.loginController.segueSelectCharToPlay.identifier {
-//            let navc = segue.destination as! UINavigationController
-//            let vc = navc.topViewController as! SelectCharToPlayController
-//                segue.destination
-//            destinationVC.createdCharacters = chars
-    
-//        }
+        //        if segue.identifier == R.segue.loginController.segueSelectCharToPlay.identifier {
+        //            let navc = segue.destination as! UINavigationController
+        //            let vc = navc.topViewController as! SelectCharToPlayController
+        //                segue.destination
+        //            destinationVC.createdCharacters = chars
+        
+        //        }
     }
     
     private func setupView() {
@@ -65,22 +65,39 @@ class LoginController: ViewController, SocketManagerDelegate {
 
 extension LoginController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: R.storyboard.selectCharToPlay.name, bundle: nil)
-        let selectCharVC = storyBoard.instantiateViewController(withIdentifier: "SelectCharToPlayNav") as! UINavigationController
-        selectCharVC.modalPresentationStyle = .fullScreen
-        self.present(selectCharVC, animated: true, completion: nil)
+                
+        UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+//        let storyboard = UIStoryboard(name: R.storyboard.selectCharToPlay.name, bundle: nil)
+//        let loginVCtrl = storyboard.instantiateViewController(withIdentifier: "SelectCharToPlay")
+//        present(loginVCtrl, animated: true)
+        
+        
+//        let storyBoard: UIStoryboard = UIStoryboard(name: R.storyboard.selectCharToPlay.name, bundle: nil)
+//        let selectCharVC = storyBoard.instantiateViewController(withIdentifier: "SelectCharToPlayNav") as! UINavigationController
+//        selectCharVC.modalPresentationStyle = .fullScreen
+//        self.present(selectCharVC, animated: true, completion: nil)
+        
+        
+        //        let nav = self.navigationController
+        //        nav?.view.window!.layer.add(CATransition().segueFromLeft(), forKey: kCATransition)
+//        nav?.pushViewController(selectCharVC, animated: false)
+//        self.navigationController?.pushViewController(selectCharVC, animated: true)
+
+        
+        
+        
         
         
         
         print("ButtonPressed")
-//        print(R.segue.loginController.segueSelectCharToPlay.identifier)
-//        let selectCharVC = SelectCharToPlayController()
-//        selectCharVC.modalPresentationStyle = .fullScreen
+        //        print(R.segue.loginController.segueSelectCharToPlay.identifier)
+        //        let selectCharVC = SelectCharToPlayController()
+        //        selectCharVC.modalPresentationStyle = .fullScreen
         
         
         
         
-//        performSegue(withIdentifier: R.segue.loginController.segueSelectCharToPlay.identifier, sender: nil)
+        //        performSegue(withIdentifier: R.segue.loginController.segueSelectCharToPlay.identifier, sender: nil)
         
         //        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         //        if emailTextField.text != "" &&
@@ -103,6 +120,6 @@ extension LoginController: ButtonWOImageDelegate {
         //            print("error: некорректный email или password")
         //        }
     }
-
-
+    
+    
 }
