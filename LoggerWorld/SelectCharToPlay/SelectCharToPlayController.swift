@@ -43,7 +43,6 @@ class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
         self.navigationController?.isNavigationBarHidden = false
         enterButton.label = "Играть"
         charactersTableView.separatorColor = R.color.brown()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,4 +1,5 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.6)
   - ObjectMapper (4.2.0)
   - R.swift (5.3.0):
     - R.swift.Library (~> 5.3.0)
@@ -9,6 +10,7 @@ PODS:
   - Starscream (4.0.4)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - ObjectMapper
   - R.swift
   - SDWebImage
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManagerSwift
     - ObjectMapper
     - R.swift
     - R.swift.Library
@@ -23,12 +26,13 @@ SPEC REPOS:
     - Starscream
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 97e6e40097a9db0fe9171a64ec904742cba12029
+PODFILE CHECKSUM: 934a9e60c0990d87ec1bc9e4a57c6c0312b8e05d
 
 COCOAPODS: 1.10.0

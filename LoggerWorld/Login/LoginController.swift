@@ -45,6 +45,11 @@ class LoginController: ViewController, SocketManagerDelegate {
         SocketManager.shared.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        if segue.identifier == R.segue.loginController.segueSelectCharToPlay.identifier {

@@ -10,5 +10,6 @@ target 'LoggerWorld' do
   pod 'R.swift'
   pod 'ObjectMapper'
   pod 'SDWebImage'  
+  pod 'IQKeyboardManagerSwift'
 
 end
