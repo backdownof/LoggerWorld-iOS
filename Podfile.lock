@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.0)
   - IQKeyboardManagerSwift (6.5.6)
   - ObjectMapper (4.2.0)
   - R.swift (5.3.0):
@@ -10,6 +11,7 @@ PODS:
   - Starscream (4.0.4)
 
 DEPENDENCIES:
+  - Alamofire
   - IQKeyboardManagerSwift
   - ObjectMapper
   - R.swift
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - IQKeyboardManagerSwift
     - ObjectMapper
     - R.swift
@@ -26,6 +29,7 @@ SPEC REPOS:
     - Starscream
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
@@ -33,6 +37,6 @@ SPEC CHECKSUMS:
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 934a9e60c0990d87ec1bc9e4a57c6c0312b8e05d
+PODFILE CHECKSUM: ddd6baf6dc296fa17c9e0b28a92fab62e704d791
 
 COCOAPODS: 1.10.0

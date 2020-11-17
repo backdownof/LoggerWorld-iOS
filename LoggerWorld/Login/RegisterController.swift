@@ -16,14 +16,29 @@ class RegisterController: ViewController {
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBOutlet weak var registerButton: ButtonWOImage!
     
+    private lazy var alertView: AlertView = {
+        let alerView: AlertView = AlertView.loadFromNib()
+        alerView.delegate = self
+        return alerView
+    }()
+    
+    let visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let view = UIVisualEffectView(effect: blurEffect)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.hideKeyboardWhenTappedAround()
         registerButton.delegate = self
+        alertView.delegate = self
         // Do any additional setup after loading the view.
         setupView()
+        
+        
     }
     
     // MARK: - Private function
@@ -35,6 +50,8 @@ class RegisterController: ViewController {
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
         repeatPasswordTextField.attributedPlaceholder = NSAttributedString(string: repeatPasswordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
+        
+        setupVisualEffectView()
     }
     
 
@@ -52,6 +69,46 @@ class RegisterController: ViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func showAlertPressed(_ sender: Any) {
+        setAlert()
+        animateAlertIn()
+    }
+    
+    func animateAlertIn() {
+        alertView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        alertView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.visualEffectView.alpha = 1
+            self.alertView.alpha = 1
+            self.alertView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateAlertOut() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.visualEffectView.alpha = 0
+            self.alertView.alpha = 0
+            self.alertView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        }) { (_) in
+            self.alertView.removeFromSuperview()
+        }
+    }
+    
+    func setAlert() {
+        view.addSubview(alertView)
+        alertView.center = view.center
+        alertView.set(title: "Ошибка регистрации. Попробуйте позже", buttonTitle: "ОК")
+    }
+    
+    func setupVisualEffectView() {
+        view.addSubview(visualEffectView)
+        visualEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        visualEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.alpha = 0
+    }
 }
 
 extension RegisterController: ButtonWOImageDelegate {
@@ -73,4 +130,10 @@ extension RegisterController: ButtonWOImageDelegate {
     }
     
     
+}
+
+extension RegisterController: AlertDelegate {
+    func okButtonTyped() {
+        animateAlertOut()
+    }
 }

@@ -11,5 +11,6 @@ target 'LoggerWorld' do
   pod 'ObjectMapper'
   pod 'SDWebImage'  
   pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire'
 
 end

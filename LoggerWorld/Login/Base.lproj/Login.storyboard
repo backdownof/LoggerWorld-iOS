@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyY-hk-qTz">
-                                <rect key="frame" x="165.5" y="810" width="83" height="32"/>
+                                <rect key="frame" x="165" y="813" width="84" height="29"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                 <state key="normal" title="Регистрация">
                                     <color key="titleColor" name="Creame"/>
@@ -32,16 +32,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jMY-lX-rvG">
-                                <rect key="frame" x="60" y="439.5" width="294" height="71"/>
+                                <rect key="frame" x="60" y="443.5" width="294" height="63.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@2.com" placeholder="Email" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n2Z-Sn-E0z">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="22.5"/>
                                         <color key="textColor" name="Creame"/>
                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rhw-Ul-L0d">
-                                        <rect key="frame" x="0.0" y="46" width="294" height="25"/>
+                                        <rect key="frame" x="0.0" y="42.5" width="294" height="21"/>
                                         <color key="textColor" name="Creame"/>
                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -66,7 +66,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-Bx-XVJ" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
-                                <rect key="frame" x="132.5" y="550.5" width="149" height="41.5"/>
+                                <rect key="frame" x="132.5" y="547" width="149" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="E4y-CM-FmW"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="Ly3-Fz-NhQ"/>
@@ -77,7 +77,7 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KyZ-A4-uiX">
-                                <rect key="frame" x="117" y="632" width="180" height="49.5"/>
+                                <rect key="frame" x="117" y="628.5" width="180" height="49.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8i-dT-T2k">
                                         <rect key="frame" x="0.0" y="0.0" width="53.5" height="49.5"/>
@@ -147,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbL-3L-axR" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
-                                <rect key="frame" x="132.5" y="610" width="149" height="41.5"/>
+                                <rect key="frame" x="132.5" y="599.5" width="149" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="BYa-M2-8qe"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="HQV-6x-ddZ"/>
@@ -158,19 +158,19 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mN1-fS-F5h">
-                                <rect key="frame" x="60" y="380.5" width="294" height="189.5"/>
+                                <rect key="frame" x="60" y="390.5" width="294" height="169"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3vk-Ho-Jef">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ваш Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-Sk-UA8">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-fH-Kig">
-                                                <rect key="frame" x="0.0" y="24.5" width="294" height="26"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="294" height="22.5"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -178,16 +178,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Aay-8Y-ctY">
-                                        <rect key="frame" x="0.0" y="70.5" width="294" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="64" width="294" height="42.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите пароль:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryy-Dp-vbY">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-lR-uJk">
-                                                <rect key="frame" x="0.0" y="24.5" width="294" height="25"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="294" height="21"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -195,16 +195,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RyJ-Tg-IlU">
-                                        <rect key="frame" x="0.0" y="140" width="294" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="126.5" width="294" height="42.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторите пароль:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfa-nW-Rjf">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JUp-ld-eaK">
-                                                <rect key="frame" x="0.0" y="24.5" width="294" height="25"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="294" height="21"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -213,14 +213,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSU-f6-fUb">
+                                <rect key="frame" x="184" y="671" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showAlertPressed:" destination="Zxo-MF-vW8" eventType="touchUpInside" id="hYj-vT-8Oi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="drw-Kd-mrB"/>
                         <color key="backgroundColor" name="Brown"/>
                         <constraints>
                             <constraint firstItem="EbL-3L-axR" firstAttribute="centerX" secondItem="drw-Kd-mrB" secondAttribute="centerX" id="DjA-AP-Emq"/>
+                            <constraint firstItem="rSU-f6-fUb" firstAttribute="centerX" secondItem="drw-Kd-mrB" secondAttribute="centerX" id="F8n-Qa-Shj"/>
                             <constraint firstItem="drw-Kd-mrB" firstAttribute="trailing" secondItem="mN1-fS-F5h" secondAttribute="trailing" constant="60" id="Fpf-vN-sT9"/>
                             <constraint firstItem="EbL-3L-axR" firstAttribute="top" secondItem="mN1-fS-F5h" secondAttribute="bottom" constant="40" id="HNG-ko-TMD"/>
                             <constraint firstItem="mN1-fS-F5h" firstAttribute="leading" secondItem="drw-Kd-mrB" secondAttribute="leading" constant="60" id="SHt-o8-LVe"/>
+                            <constraint firstItem="rSU-f6-fUb" firstAttribute="top" secondItem="EbL-3L-axR" secondAttribute="bottom" constant="30" id="aRW-2q-Qqf"/>
                             <constraint firstItem="EbL-3L-axR" firstAttribute="width" secondItem="EbL-3L-axR" secondAttribute="height" multiplier="298:83" id="kVz-nr-cOD"/>
                             <constraint firstItem="mN1-fS-F5h" firstAttribute="centerY" secondItem="drw-Kd-mrB" secondAttribute="centerY" id="vZG-qT-Bh7"/>
                         </constraints>
