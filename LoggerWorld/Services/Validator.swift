@@ -21,4 +21,10 @@ struct Validator {
         let passwordPred = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
         return passwordPred.evaluate(with: password)
     }
+    
+    static func nicknameIsValid(for nickname: String) -> Bool {
+        let regex = "^[0-9a-zA-Z\\_]{5,18}$"
+        let pred = NSPredicate(format:"SELF MATCHES %@", regex)
+        return pred.evaluate(with: nickname)
+    }
 }

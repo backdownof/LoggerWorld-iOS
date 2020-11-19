@@ -70,8 +70,21 @@ class LoginController: ViewController, SocketManagerDelegate {
 
 extension LoginController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
-                
-        UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+        if let userName = emailTextField.text, let password = passwordTextField.text {
+            UserSettings.clear()
+            
+            Network.requestLogin(userName: userName,
+                                 password: password,
+                                 completion: {
+                                    print(User.token)
+                                    UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+                                 },
+                                 failure: {
+                                    print("errorOccured try again")
+                                 })
+            
+        }
+        
 //        let storyboard = UIStoryboard(name: R.storyboard.selectCharToPlay.name, bundle: nil)
 //        let loginVCtrl = storyboard.instantiateViewController(withIdentifier: "SelectCharToPlay")
 //        present(loginVCtrl, animated: true)

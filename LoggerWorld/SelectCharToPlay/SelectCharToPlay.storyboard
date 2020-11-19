@@ -74,11 +74,22 @@
                         <outlet property="charactersTableView" destination="SU5-Jm-wBV" id="0Rw-ud-5m6"/>
                         <outlet property="enterButton" destination="pNN-ic-9TL" id="kjX-GY-cYl"/>
                         <outlet property="underView" destination="DEo-Za-FFC" id="KCL-GS-rwu"/>
+                        <segue destination="Kyc-QY-xGB" kind="showDetail" id="B4G-ny-oh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wkc-Tz-ek7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="135.9375"/>
+        </scene>
+        <!--LoggerTabBar-->
+        <scene sceneID="6nQ-hn-CyV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoggerTabBar" id="Kyc-QY-xGB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="M2k-i1-btQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3V-lA-7Db" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BWz-is-1qf">

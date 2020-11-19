@@ -52,21 +52,21 @@ extension User {
      
      - returns: созданный `DataOperation`
      */
-    @discardableResult
-    static func login(phone: String,
-                      token: String,
-                      completion: Constant.Block.completion?,
-                      failure: Constant.Block.error?) -> DataOperation? {
-        
-        return API.Auth.login(phone: phone,
-                              token: token,
-                              success: { (json) in
-                                User.saveToken(json: json,
-                                               completion: completion,
-                                               failure: failure)
-                              },
-                              failure: failure)
-    }
+//    @discardableResult
+//    static func login(phone: String,
+//                      token: String,
+//                      completion: Constant.Block.completion?,
+//                      failure: Constant.Block.error?) -> DataOperation? {
+//
+//        return API.Auth.login(phone: phone,
+//                              token: token,
+//                              success: { (json) in
+//                                User.saveToken(json: json,
+//                                               completion: completion,
+//                                               failure: failure)
+//                              },
+//                              failure: failure)
+//    }
     
     /**
      Выход из аккаунта пользователя.
@@ -82,16 +82,17 @@ extension User {
     
     // MARK: - Private methods
     
-    private static func saveToken(json: Any?,
-                                  completion: Constant.Block.completion?,
-                                  failure: Constant.Block.error?) {
-        if let token = (json as? [String: Any])?["token"] as? String {
-            User.token = token
-            completion?()
-        } else {
-            failure?(ErrorHandler("Ошибка при получении токена"))
-        }
-    }
+//    private static func saveToken(json: Any?,
+//                                  completion: Constant.Block.completion?,
+//                                  failure: Constant.Block.error?) {
+//        if let token = (json as? [String: Any])?["token"] as? String {
+//            User.token = token
+//            completion?()
+//        } else {
+////            failure?(ErrorHandler("Ошибка при получении токена"))
+//            print("Ошибка при получении токена")
+//        }
+//    }
 }
 
 extension User {

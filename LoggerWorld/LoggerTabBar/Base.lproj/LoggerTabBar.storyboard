@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="neH-dg-HSL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainLogger-->
+        <scene sceneID="zm3-Vg-qdC">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MainLoggerVC" storyboardName="MainLogger" id="fDs-tv-1MG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cvt-DL-KQc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h88-eO-SCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="-30"/>
+        </scene>
+        <!--Assistive-->
+        <scene sceneID="KZR-Bo-vfl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Assistive" id="lYc-rd-3kF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dEY-mj-pxb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ql9-aP-hN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="244"/>
+        </scene>
+        <!--Logger Tab Bar Controller-->
+        <scene sceneID="hHl-0t-elQ">
+            <objects>
+                <tabBarController storyboardIdentifier="LoggerTabBar" id="neH-dg-HSL" customClass="LoggerTabBarController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="backgroundFrame" id="NlG-Yu-HzP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fDs-tv-1MG" kind="relationship" relationship="viewControllers" id="M1D-RO-iPR"/>
+                        <segue destination="lYc-rd-3kF" kind="relationship" relationship="viewControllers" id="zkN-qw-7XL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofQ-NR-MjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="115"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundFrame" width="346" height="590"/>
+    </resources>
+</document>

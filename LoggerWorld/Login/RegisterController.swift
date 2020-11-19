@@ -15,6 +15,7 @@ class RegisterController: ViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBOutlet weak var registerButton: ButtonWOImage!
+    @IBOutlet weak var nicknameTextField: UITextField!
     
     private lazy var alertView: AlertView = {
         let alerView: AlertView = AlertView.loadFromNib()
@@ -50,6 +51,7 @@ class RegisterController: ViewController {
         emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
         repeatPasswordTextField.attributedPlaceholder = NSAttributedString(string: repeatPasswordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
+        nicknameTextField.attributedPlaceholder = NSAttributedString(string: nicknameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
         
         setupVisualEffectView()
     }
@@ -113,9 +115,22 @@ class RegisterController: ViewController {
 
 extension RegisterController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        if Validator.validEmail(for: email) && Validator.passwordIsStrong(for: password) && passwordTextField.text == repeatPasswordTextField.text {
+        guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nicknameTextField.text else { return }
+        if Validator.validEmail(for: email) && Validator.passwordIsStrong(for: password) && passwordTextField.text == repeatPasswordTextField.text && Validator.nicknameIsValid(for: nickname) {
+            
             print("Registered successfuly")
+            Network.requestRegister(userName: nickname,
+                                    password: password,
+                                    email: email,
+                                    completion: {
+                                        print("Registered successfuly")
+                                    },
+                                    failure: {
+                                        print("Registration error")
+                                    })
+            
+            
+            
 //            let credentials = Credentials(email: email, password: password)
 //            let playerCredetials = PlayerRegistration(registration: credentials)
 //

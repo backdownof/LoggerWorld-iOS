@@ -7,10 +7,8 @@
 
 import UIKit
 
-class SelectCharToPlayController: ViewController, ButtonWOImageDelegate {
-    func buttonTapped(_ button: ButtonWOImage) {
-        print("enter")
-    }
+class SelectCharToPlayController: ViewController {
+    
     
     
     @IBOutlet weak var charactersTableView: UITableView!
@@ -124,5 +122,13 @@ extension SelectCharToPlayController: UITableViewDataSource {
 
 extension SelectCharToPlayController: UITableViewDelegate {
     
+}
+
+extension SelectCharToPlayController: ButtonWOImageDelegate {
+    func buttonTapped(_ button: ButtonWOImage) {
+        print("enter")
+        UI.setRootController(R.storyboard.loggerTabBar.instantiateInitialViewController())
+    
+    }
 }
 
