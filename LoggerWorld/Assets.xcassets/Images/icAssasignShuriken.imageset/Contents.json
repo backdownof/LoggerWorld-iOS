@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mage.png",
+      "filename" : "icAssasignShuriken@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icAssasignShuriken@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icAssasignShuriken@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

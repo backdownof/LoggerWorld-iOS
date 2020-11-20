@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AlegreyaSC-Regular.ttf">
+            <string>AlegreyaSC-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Создание персонажа-->
+        <scene sceneID="dpF-h4-UnY">
+            <objects>
+                <viewController id="gAE-0v-zyc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2HA-nT-VdL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-dY-Tca">
+                                <rect key="frame" x="15" y="162" width="290" height="220"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="z9b-Ny-fRK">
+                                        <rect key="frame" x="12.5" y="5" width="265" height="105"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vop-Bp-TZH">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Воин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5R-R6-6a3">
+                                                        <rect key="frame" x="10.5" y="57" width="34.5" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                        <color key="textColor" name="Creame"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWarSword" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-ut-eDu">
+                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warriorImage" translatesAutoresizingMaskIntoConstraints="NO" id="25O-HD-H7N">
+                                                        <rect key="frame" x="5.5" y="11" width="44" height="44"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="25O-HD-H7N" firstAttribute="top" secondItem="vop-Bp-TZH" secondAttribute="top" constant="11" id="JFo-dj-A7a"/>
+                                                    <constraint firstItem="25O-HD-H7N" firstAttribute="centerX" secondItem="vop-Bp-TZH" secondAttribute="centerX" id="K8D-gT-mfi"/>
+                                                    <constraint firstItem="G5R-R6-6a3" firstAttribute="top" secondItem="25O-HD-H7N" secondAttribute="bottom" constant="2" id="LzY-Wc-ur4"/>
+                                                    <constraint firstItem="4xm-ut-eDu" firstAttribute="centerX" secondItem="vop-Bp-TZH" secondAttribute="centerX" id="Oap-Du-7Uc"/>
+                                                    <constraint firstItem="4xm-ut-eDu" firstAttribute="top" secondItem="G5R-R6-6a3" secondAttribute="bottom" constant="4" id="RmN-Qf-gYL"/>
+                                                    <constraint firstAttribute="height" constant="105" id="X82-q3-VXc"/>
+                                                    <constraint firstAttribute="width" constant="55" id="cne-3D-1UX"/>
+                                                    <constraint firstItem="G5R-R6-6a3" firstAttribute="centerX" secondItem="vop-Bp-TZH" secondAttribute="centerX" id="nts-ub-vYY"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7p-39-kc3">
+                                                <rect key="frame" x="70" y="0.0" width="55" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучник" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-kr-Rji">
+                                                        <rect key="frame" x="3" y="57" width="49" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                        <color key="textColor" name="Creame"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icArcherBow" translatesAutoresizingMaskIntoConstraints="NO" id="5Vi-x7-Gew">
+                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="archerImage" translatesAutoresizingMaskIntoConstraints="NO" id="iV2-Fy-AlB">
+                                                        <rect key="frame" x="5.5" y="11" width="44" height="44"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="iV2-Fy-AlB" firstAttribute="top" secondItem="I7p-39-kc3" secondAttribute="top" constant="11" id="Dwj-y7-vf8"/>
+                                                    <constraint firstAttribute="height" constant="105" id="Mu4-VO-ptB"/>
+                                                    <constraint firstAttribute="width" constant="55" id="UGQ-DQ-tko"/>
+                                                    <constraint firstItem="5Vi-x7-Gew" firstAttribute="top" secondItem="gtw-kr-Rji" secondAttribute="bottom" constant="4" id="awm-pv-y72"/>
+                                                    <constraint firstItem="gtw-kr-Rji" firstAttribute="centerX" secondItem="I7p-39-kc3" secondAttribute="centerX" id="bEG-CZ-gb9"/>
+                                                    <constraint firstItem="5Vi-x7-Gew" firstAttribute="centerX" secondItem="I7p-39-kc3" secondAttribute="centerX" id="bho-vh-8C0"/>
+                                                    <constraint firstItem="iV2-Fy-AlB" firstAttribute="centerX" secondItem="I7p-39-kc3" secondAttribute="centerX" id="fqd-H4-qfx"/>
+                                                    <constraint firstItem="gtw-kr-Rji" firstAttribute="top" secondItem="iV2-Fy-AlB" secondAttribute="bottom" constant="2" id="k1Y-6H-C0m"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wD6-Uv-PDG">
+                                                <rect key="frame" x="140" y="0.0" width="55" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маг" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLx-6Y-CLr">
+                                                        <rect key="frame" x="15" y="57" width="25.5" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                        <color key="textColor" name="Creame"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMageStuff" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-hB-kNs">
+                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mageImage" translatesAutoresizingMaskIntoConstraints="NO" id="Js1-Pd-hgr">
+                                                        <rect key="frame" x="5.5" y="11" width="44" height="44"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="105" id="Fgu-Eu-FaJ"/>
+                                                    <constraint firstItem="WLx-6Y-CLr" firstAttribute="centerX" secondItem="wD6-Uv-PDG" secondAttribute="centerX" id="P9Y-a1-bGS"/>
+                                                    <constraint firstItem="WLx-6Y-CLr" firstAttribute="top" secondItem="Js1-Pd-hgr" secondAttribute="bottom" constant="2" id="ThN-YV-Jln"/>
+                                                    <constraint firstItem="2OD-hB-kNs" firstAttribute="top" secondItem="WLx-6Y-CLr" secondAttribute="bottom" constant="4" id="WxV-Qp-9aT"/>
+                                                    <constraint firstItem="2OD-hB-kNs" firstAttribute="centerX" secondItem="wD6-Uv-PDG" secondAttribute="centerX" id="bJr-ao-Tpl"/>
+                                                    <constraint firstItem="Js1-Pd-hgr" firstAttribute="centerX" secondItem="wD6-Uv-PDG" secondAttribute="centerX" id="ocS-Co-CP4"/>
+                                                    <constraint firstItem="Js1-Pd-hgr" firstAttribute="top" secondItem="wD6-Uv-PDG" secondAttribute="top" constant="11" id="sBC-rh-f08"/>
+                                                    <constraint firstAttribute="width" constant="55" id="seR-BH-ot4"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-kk-TCg">
+                                                <rect key="frame" x="210" y="0.0" width="55" height="105"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Убийца" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fn-dD-YRj">
+                                                        <rect key="frame" x="3" y="57" width="49" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                        <color key="textColor" name="Creame"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAssasignShuriken" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-O0-j2k">
+                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="assassinImage" translatesAutoresizingMaskIntoConstraints="NO" id="Qow-XT-CMz">
+                                                        <rect key="frame" x="5.5" y="11" width="44" height="44"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="6Fn-dD-YRj" firstAttribute="top" secondItem="Qow-XT-CMz" secondAttribute="bottom" constant="2" id="CGu-J6-rHu"/>
+                                                    <constraint firstAttribute="width" constant="55" id="Chs-ut-yMM"/>
+                                                    <constraint firstItem="Qow-XT-CMz" firstAttribute="centerX" secondItem="MOR-kk-TCg" secondAttribute="centerX" id="OK3-9v-1h7"/>
+                                                    <constraint firstItem="8mQ-O0-j2k" firstAttribute="centerX" secondItem="MOR-kk-TCg" secondAttribute="centerX" id="R3l-zm-JdD"/>
+                                                    <constraint firstItem="6Fn-dD-YRj" firstAttribute="centerX" secondItem="MOR-kk-TCg" secondAttribute="centerX" id="kpP-7j-oqv"/>
+                                                    <constraint firstItem="8mQ-O0-j2k" firstAttribute="top" secondItem="6Fn-dD-YRj" secondAttribute="bottom" constant="4" id="pj7-ky-vMv"/>
+                                                    <constraint firstAttribute="height" constant="105" id="q0Y-Ix-LvZ"/>
+                                                    <constraint firstItem="Qow-XT-CMz" firstAttribute="top" secondItem="MOR-kk-TCg" secondAttribute="top" constant="11" id="zFS-uU-Vvx"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gtw-kr-Rji" firstAttribute="centerX" secondItem="FAA-dY-Tca" secondAttribute="centerX" constant="-35" id="0lx-x4-QPn"/>
+                                    <constraint firstAttribute="height" constant="220" id="2hW-wM-8st"/>
+                                    <constraint firstItem="z9b-Ny-fRK" firstAttribute="top" secondItem="FAA-dY-Tca" secondAttribute="top" constant="5" id="5pL-we-pHL"/>
+                                    <constraint firstItem="gtw-kr-Rji" firstAttribute="top" secondItem="iV2-Fy-AlB" secondAttribute="bottom" constant="2" id="8FS-sp-5CF"/>
+                                    <constraint firstItem="5Vi-x7-Gew" firstAttribute="top" secondItem="gtw-kr-Rji" secondAttribute="bottom" constant="4" id="Et0-WE-f7W"/>
+                                    <constraint firstItem="z9b-Ny-fRK" firstAttribute="centerX" secondItem="FAA-dY-Tca" secondAttribute="centerX" id="mpo-Kh-ryJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Храбрые воины стараются принимать удары врагов на себя. Имеют много здоровья и быстро его восстанавливают " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-7X-Hvr">
+                                <rect key="frame" x="10" y="297" width="300" height="20"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                <color key="textColor" name="Creame"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KBK-mw-mf6"/>
+                        <color key="backgroundColor" name="Brown"/>
+                        <constraints>
+                            <constraint firstItem="FAA-dY-Tca" firstAttribute="top" secondItem="KBK-mw-mf6" secondAttribute="top" constant="118" id="FuX-lK-elS"/>
+                            <constraint firstItem="FAA-dY-Tca" firstAttribute="centerX" secondItem="KBK-mw-mf6" secondAttribute="centerX" id="Ld8-Cn-NI3"/>
+                            <constraint firstAttribute="trailing" secondItem="aCI-7X-Hvr" secondAttribute="trailing" constant="10" id="T7z-u4-Nn9"/>
+                            <constraint firstItem="FAA-dY-Tca" firstAttribute="leading" secondItem="KBK-mw-mf6" secondAttribute="leading" constant="15" id="g4a-zq-3m1"/>
+                            <constraint firstItem="aCI-7X-Hvr" firstAttribute="leading" secondItem="KBK-mw-mf6" secondAttribute="leading" constant="10" id="rkV-nz-muq"/>
+                            <constraint firstItem="KBK-mw-mf6" firstAttribute="trailing" secondItem="FAA-dY-Tca" secondAttribute="trailing" constant="15" id="zJr-HO-q6x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Создание персонажа" id="TWr-RE-FfQ">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="RUt-tw-kAG"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SkX-wS-OcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.75" y="108.80281690140845"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ygy-rP-N6d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hdj-iB-00a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lYn-NC-fvg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Creame"/>
+                        <color key="barTintColor" name="Brown"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="Creame"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gAE-0v-zyc" kind="relationship" relationship="rootViewController" id="Fv0-D6-3BN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAh-CZ-dKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291.304347826087" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="archerImage" width="44" height="44"/>
+        <image name="assassinImage" width="44" height="44"/>
+        <image name="icArcherBow" width="16" height="16"/>
+        <image name="icAssasignShuriken" width="16" height="16"/>
+        <image name="icMageStuff" width="16" height="16"/>
+        <image name="icWarSword" width="16" height="16"/>
+        <image name="mageImage" width="44" height="44"/>
+        <image name="warriorImage" width="44" height="44"/>
+        <namedColor name="Brown">
+            <color red="0.37999999523162842" green="0.31400001049041748" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Creame">
+            <color red="0.94499999284744263" green="0.82700002193450928" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

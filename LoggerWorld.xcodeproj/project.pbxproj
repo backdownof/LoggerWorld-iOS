@@ -36,6 +36,8 @@
 		204F9D172568193B00AB51B6 /* CharStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D162568193B00AB51B6 /* CharStatusBar.swift */; };
 		204F9D1A2568195400AB51B6 /* CharStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204F9D192568195400AB51B6 /* CharStatusBar.xib */; };
 		204F9D212568216600AB51B6 /* ButtonWImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206577B42568030900E57E82 /* ButtonWImage.xib */; };
+		204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204F9D2325682A2300AB51B6 /* CreateChar.storyboard */; };
+		204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D2625682A3400AB51B6 /* CreateCharController.swift */; };
 		20598630256090C40028ACD3 /* AddCharCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059862E256090C40028ACD3 /* AddCharCell.swift */; };
 		20598631256090C40028ACD3 /* AddCharCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2059862F256090C40028ACD3 /* AddCharCell.xib */; };
 		206577A025670FC500E57E82 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065779F25670FC500E57E82 /* R.generated.swift */; };
@@ -114,6 +116,8 @@
 		2045962225601FCA004793C5 /* SelectCharToPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharToPlayController.swift; sourceTree = "<group>"; };
 		204F9D162568193B00AB51B6 /* CharStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStatusBar.swift; sourceTree = "<group>"; };
 		204F9D192568195400AB51B6 /* CharStatusBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharStatusBar.xib; sourceTree = "<group>"; };
+		204F9D2325682A2300AB51B6 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
+		204F9D2625682A3400AB51B6 /* CreateCharController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharController.swift; sourceTree = "<group>"; };
 		2059862E256090C40028ACD3 /* AddCharCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharCell.swift; sourceTree = "<group>"; };
 		2059862F256090C40028ACD3 /* AddCharCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCharCell.xib; sourceTree = "<group>"; };
 		2065779F25670FC500E57E82 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -340,6 +344,8 @@
 				20766EE5256055C900AEDE8D /* Cell */,
 				2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */,
 				2045962225601FCA004793C5 /* SelectCharToPlayController.swift */,
+				204F9D2325682A2300AB51B6 /* CreateChar.storyboard */,
+				204F9D2625682A3400AB51B6 /* CreateCharController.swift */,
 			);
 			path = SelectCharToPlay;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				20CB85DE2566A65F00237DAF /* MainLogger.storyboard in Resources */,
 				204F9D1A2568195400AB51B6 /* CharStatusBar.xib in Resources */,
 				20CD1DD6255FE52F009F991D /* AlegreyaSC-Black.ttf in Resources */,
+				204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */,
 				200A6664254E1A4000B74B48 /* Assets.xcassets in Resources */,
 				20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */,
 				2039559A25645C13004D84C2 /* AlertView.xib in Resources */,
@@ -695,6 +702,7 @@
 				2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */,
 				20EA049F254F115800AB85D1 /* ConstantsBroadcast.swift in Sources */,
 				200A6658254E1A3E00B74B48 /* AppDelegate.swift in Sources */,
+				204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */,
 				206577A025670FC500E57E82 /* R.generated.swift in Sources */,
 				2006D737256476E500259338 /* String.swift in Sources */,
 				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
