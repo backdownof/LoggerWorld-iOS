@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AlegreyaSC-Regular.ttf">
+            <string>AlegreyaSC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharStatusBar" customModule="LoggerWorld" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="kdn-z9-m8K"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="186" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 lvl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGE-oO-o69">
+                    <rect key="frame" x="6.5" y="0.0" width="33" height="19.5"/>
+                    <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                    <color key="textColor" name="Creame"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2e-vC-SB3">
+                    <rect key="frame" x="47" y="1.5" width="34.5" height="16.5"/>
+                    <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                    <color key="textColor" name="Creame"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-xH-W5b">
+                    <rect key="frame" x="9" y="19.5" width="28" height="28"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-xb-hjG">
+                            <rect key="frame" x="3" y="3" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="k7P-jp-Cuw"/>
+                                <constraint firstAttribute="height" constant="22" id="osB-tM-BeF"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" name="charBG"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="TT7-Yp-b8h"/>
+                        <constraint firstItem="A7s-xb-hjG" firstAttribute="centerY" secondItem="p7l-xH-W5b" secondAttribute="centerY" id="Zq9-dZ-rK3"/>
+                        <constraint firstItem="A7s-xb-hjG" firstAttribute="centerX" secondItem="p7l-xH-W5b" secondAttribute="centerX" id="aBT-e8-BFK"/>
+                        <constraint firstAttribute="width" constant="28" id="wNn-17-Eoa"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="whF-ex-glB">
+                    <rect key="frame" x="47" y="20.5" width="98" height="26.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barHP" translatesAutoresizingMaskIntoConstraints="NO" id="Cyg-WK-iRY">
+                            <rect key="frame" x="0.0" y="0.0" width="98" height="11.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="98.150000000000006" id="ul3-ad-TXA"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barMP" translatesAutoresizingMaskIntoConstraints="NO" id="1Wb-ko-fvi">
+                            <rect key="frame" x="0.0" y="14.5" width="98" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="98.150000000000006" id="gAK-sg-Ab7"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-4" translatesAutoresizingMaskIntoConstraints="NO" id="X4b-1n-rA3">
+                    <rect key="frame" x="150" y="19" width="35.5" height="29"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pON-q2-Ksv">
+                            <rect key="frame" x="0.0" y="0.0" width="35.5" height="16.5"/>
+                            <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                            <color key="textColor" name="Creame"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-wk-1Hj">
+                            <rect key="frame" x="0.0" y="12.5" width="35.5" height="16.5"/>
+                            <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                            <color key="textColor" name="Creame"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="p7l-xH-W5b" firstAttribute="top" secondItem="QGE-oO-o69" secondAttribute="bottom" id="2UJ-bv-0HD"/>
+                <constraint firstItem="whF-ex-glB" firstAttribute="leading" secondItem="p7l-xH-W5b" secondAttribute="trailing" constant="10" id="9o3-Ui-7kj"/>
+                <constraint firstItem="N2e-vC-SB3" firstAttribute="leading" secondItem="p7l-xH-W5b" secondAttribute="trailing" constant="10" id="K5N-Df-YUS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p7l-xH-W5b" secondAttribute="bottom" constant="3.5" id="Lit-qF-Agb"/>
+                <constraint firstItem="whF-ex-glB" firstAttribute="centerY" secondItem="p7l-xH-W5b" secondAttribute="centerY" id="OoN-2X-3TH"/>
+                <constraint firstItem="X4b-1n-rA3" firstAttribute="leading" secondItem="whF-ex-glB" secondAttribute="trailing" constant="5" id="ZNd-5b-fcX"/>
+                <constraint firstItem="X4b-1n-rA3" firstAttribute="centerY" secondItem="whF-ex-glB" secondAttribute="centerY" id="bN3-aR-M6j"/>
+                <constraint firstItem="p7l-xH-W5b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="bfU-VK-UAf"/>
+                <constraint firstItem="QGE-oO-o69" firstAttribute="centerX" secondItem="p7l-xH-W5b" secondAttribute="centerX" id="hcm-Qf-8Nx"/>
+                <constraint firstItem="QGE-oO-o69" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oZG-It-F0W"/>
+                <constraint firstItem="N2e-vC-SB3" firstAttribute="centerY" secondItem="QGE-oO-o69" secondAttribute="centerY" id="sxd-zk-pF9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="X4b-1n-rA3" secondAttribute="trailing" constant="0.5" id="tqf-A3-nIO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-191.30434782608697" y="-272.87946428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="barHP" width="98.5" height="11.5"/>
+        <image name="barMP" width="98.5" height="12"/>
+        <namedColor name="Creame">
+            <color red="0.94499999284744263" green="0.82700002193450928" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="charBG">
+            <color red="0.51399999856948853" green="0.58799999952316284" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

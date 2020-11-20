@@ -72,16 +72,17 @@ extension LoginController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         if let userName = emailTextField.text, let password = passwordTextField.text {
             UserSettings.clear()
+            UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
             
-            Network.requestLogin(userName: userName,
-                                 password: password,
-                                 completion: {
-                                    print(User.token)
-                                    UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
-                                 },
-                                 failure: {
-                                    print("errorOccured try again")
-                                 })
+//            Network.requestLogin(userName: userName,
+//                                 password: password,
+//                                 completion: {
+//                                    print(User.token)
+//                                    UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+//                                 },
+//                                 failure: {
+//                                    print("errorOccured try again")
+//                                 })
             
         }
         

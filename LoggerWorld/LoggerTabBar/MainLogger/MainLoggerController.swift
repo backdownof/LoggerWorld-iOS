@@ -9,32 +9,84 @@ import UIKit
 
 class MainLoggerController: UIViewController {
 
-    @IBOutlet weak var charView: CharacterHealthView!
+    @IBOutlet weak var charStatusBar: CharStatusBar!
+    @IBOutlet weak var leftButton: ButtonWImage!
+    @IBOutlet weak var middleButton: ButtonWImage!
+    @IBOutlet weak var rightButton: ButtonWImage!
+    @IBOutlet weak var logsTableView: UITableView!
+    @IBOutlet weak var playersNearTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let bundle = Bundle(for: charView.self)
-//        let view = UINib(nibName: "CharacterHealthView", bundle: bundle).instantiate(withOwner: self) as! CharacterHealthView
+        
+        logsTableView.delegate = self
+        logsTableView.dataSource = self
+        
+        playersNearTableView.delegate = self
+        playersNearTableView.dataSource = self
+        
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        logsTableView.backgroundColor = .clear
+        logsTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
+        logsTableView.backgroundView?.contentMode = .scaleToFill
+        logsTableView.backgroundView?.clipsToBounds = true
+        
+        playersNearTableView.backgroundColor = .clear
+//        playersNearTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
+        playersNearTableView.backgroundView?.contentMode = .scaleToFill
+        playersNearTableView.backgroundView?.clipsToBounds = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setupView() {
+        logsTableView.separatorColor = R.color.brown()
+        logsTableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        playersNearTableView.separatorInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
-    */
+}
 
+extension MainLoggerController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
+    }
+}
+
+extension MainLoggerController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == logsTableView {
+            return 10
+        }
+        if tableView == playersNearTableView {
+            return 20
+        }
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == logsTableView {
+            let cell = UITableViewCell()
+            return cell
+        }
+        if tableView == playersNearTableView {
+            let cell = UITableViewCell()
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
 }
