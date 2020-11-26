@@ -9,8 +9,9 @@ target 'LoggerWorld' do
   pod 'Starscream'
   pod 'R.swift'
   pod 'ObjectMapper'
-  pod 'SDWebImage'  
+  # pod 'SDWebImage'  
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
+  pod 'StompClientLib' 
 
 end

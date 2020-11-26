@@ -5,18 +5,18 @@ PODS:
   - R.swift (5.3.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
+  - SocketRocket (0.5.1)
   - Starscream (4.0.4)
+  - StompClientLib (1.4.0):
+    - SocketRocket
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - ObjectMapper
   - R.swift
-  - SDWebImage
   - Starscream
+  - StompClientLib
 
 SPEC REPOS:
   trunk:
@@ -25,8 +25,9 @@ SPEC REPOS:
     - ObjectMapper
     - R.swift
     - R.swift.Library
-    - SDWebImage
+    - SocketRocket
     - Starscream
+    - StompClientLib
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
@@ -34,9 +35,10 @@ SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  StompClientLib: bb96ebd29d4b9766fff97a4cbe2f515a7242c17a
 
-PODFILE CHECKSUM: ddd6baf6dc296fa17c9e0b28a92fab62e704d791
+PODFILE CHECKSUM: fe001c8a26d8f73ad02b15d669ca57fb7cfbc357
 
 COCOAPODS: 1.10.0

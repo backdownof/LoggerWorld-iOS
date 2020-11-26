@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать персонажа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-1V-Tc6">
-                            <rect key="frame" x="70" y="20.5" width="151" height="19"/>
+                            <rect key="frame" x="70" y="19" width="143" height="22"/>
                             <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="16"/>
                             <color key="textColor" name="Brown"/>
                             <nil key="highlightedColor"/>
@@ -51,12 +51,11 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="aCj-Vt-POZ" firstAttribute="top" secondItem="Ty8-H3-k01" secondAttribute="top" constant="10" id="3m1-s3-hSP"/>
                         <constraint firstItem="Zta-1V-Tc6" firstAttribute="centerY" secondItem="Ty8-H3-k01" secondAttribute="centerY" id="7b0-8V-t6d"/>
                         <constraint firstItem="Zta-1V-Tc6" firstAttribute="leading" secondItem="aCj-Vt-POZ" secondAttribute="trailing" constant="15" id="B52-HT-Sic"/>
+                        <constraint firstItem="aCj-Vt-POZ" firstAttribute="top" secondItem="Ty8-H3-k01" secondAttribute="top" constant="10" id="Rpo-1G-GZP"/>
                         <constraint firstItem="aCj-Vt-POZ" firstAttribute="leading" secondItem="Ty8-H3-k01" secondAttribute="leading" constant="15" id="V9M-fq-AGd"/>
-                        <constraint firstAttribute="bottom" secondItem="aCj-Vt-POZ" secondAttribute="bottom" constant="10" id="alQ-Iw-rQy"/>
-                        <constraint firstAttribute="height" constant="60" id="pfH-qS-AE7"/>
+                        <constraint firstAttribute="bottom" secondItem="aCj-Vt-POZ" secondAttribute="bottom" constant="10" id="kXE-J6-j9a"/>
                     </constraints>
                 </view>
             </subviews>
@@ -69,7 +68,7 @@
                 <constraint firstItem="jyZ-xe-UBl" firstAttribute="trailing" secondItem="Ty8-H3-k01" secondAttribute="trailing" id="ZNS-OY-ElR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="42.028985507246382" y="-131.91964285714286"/>
+            <point key="canvasLocation" x="42.028985507246382" y="-132.58928571428572"/>
         </view>
     </objects>
     <resources>

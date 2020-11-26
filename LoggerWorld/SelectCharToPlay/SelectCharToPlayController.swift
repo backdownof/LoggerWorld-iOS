@@ -6,35 +6,35 @@
 //
 
 import UIKit
+import StompClientLib
 
 class SelectCharToPlayController: ViewController {
-    
-    
     
     @IBOutlet weak var charactersTableView: UITableView!
     @IBOutlet weak var underView: UIView!
     @IBOutlet weak var enterButton: ButtonWOImage!
     
-    var chars: [CharInfo] = []
+    var charsListData: [CharListToLogin] = [] {
+        didSet {
+            charactersTableView.reloadData()
+        }
+    }
+    
+    var socketManager = SocketManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
         charactersTableView.dataSource = self
         charactersTableView.delegate = self
         enterButton.delegate = self
+        socketManager.delegate = self
+        
         setupView()
+        loadPlayerChars()
         
-        let char = CharInfo(classType: "mage", charName: "Василиск3", charLocation: "Какая-то деревня", charLvl: 5)
-        chars.append(char)
-        chars.append(char)
-        chars.append(char)
-        chars.append(char)
-        
-        charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
-//        charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
+        charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: "charCell")
+        charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: "addCell")
     }
     
     private func setupView() {
@@ -43,42 +43,25 @@ class SelectCharToPlayController: ViewController {
         charactersTableView.separatorColor = R.color.brown()
     }
     
+    private func loadPlayerChars() {
+        let seconds = 0.3
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            self.socketManager.loadPlayerChars()
+        }
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         
         charactersTableView.backgroundColor = .clear
-        //        let imageView = UIImageView(image: R.image.backgroundFrame())
-        //        imageView.contentMode = .scaleAspectFit
-        //        imageView.clipsToBounds = true
         charactersTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
         charactersTableView.backgroundView?.contentMode = .scaleToFill
         charactersTableView.backgroundView?.clipsToBounds = true
         
-        //        let imageView = UIImageView(image: R.image.backgroundFrame())
-        //        imageView.contentMode = .scaleAspectFit
-        //        underView.addSubview(imageView)
-        //        underView.contentMode = .scaleToFill
-        //        underView.clipsToBounds = true
-        
-        
         charactersTableView.tableFooterView = UIView(frame: CGRect.zero)
-        print(underView.frame.size.height)
-        underView.frame.size.height = charactersTableView.contentSize.height
-        print(underView.frame.size.height)
-        print(charactersTableView.frame.size)
-        print(charactersTableView.contentSize.height)
-        //            CGRect(x: charactersTableView.frame.origin.x, y: charactersTableView.frame.origin.y, width: charactersTableView.frame.size.width, height: )
-        //        charactersTableView.setNeedsDisplay()
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
@@ -92,43 +75,48 @@ class SelectCharToPlayController: ViewController {
 
 extension SelectCharToPlayController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chars.count + 1
+        return charsListData.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < chars.count {
-            let cell = charactersTableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cellCharacterPick, for: indexPath) as! CharacterPickCell
-            cell.charInfo = chars[indexPath.row]
+        
+        if indexPath.row < charsListData.count {
+            let cell = charactersTableView.dequeueReusableCell(withIdentifier: "charCell", for: indexPath) as! CharacterPickCell
+            cell.charInfo = charsListData[indexPath.row]
             
             return cell
         } else {
-            charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
-            let cell = charactersTableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.cellCharacterPick, for: indexPath) as! AddCharCell
-            
+//            charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
+            let cell = charactersTableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath) as! AddCharCell
             
             return cell
         }
     }
-//    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        if indexPath.row == chars.count + 1 {
-//            print(1)
-//            return 100 //Size you want to increase to
-//        }
-//        print(2)
-//        return 60.5 // Default Size
-//    }
 }
 
 extension SelectCharToPlayController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == charsListData.count {
+            UI.setRootController(R.storyboard.createChar.instantiateInitialViewController())
+        }
+    }
 }
 
 extension SelectCharToPlayController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         print("enter")
+        
+//        socketManager.createCharacter()
         UI.setRootController(R.storyboard.loggerTabBar.instantiateInitialViewController())
     
+    }
+}
+
+extension SelectCharToPlayController: SocketManagerDelegate {
+    func connected() { }
+    
+    func listOfCharactersToSelect(chars: [CharListToLogin]) {
+        charsListData = chars
     }
 }
 

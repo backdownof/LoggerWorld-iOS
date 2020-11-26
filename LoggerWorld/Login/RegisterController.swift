@@ -116,7 +116,12 @@ class RegisterController: ViewController {
 extension RegisterController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nicknameTextField.text else { return }
-        if Validator.validEmail(for: email) && Validator.passwordIsStrong(for: password) && passwordTextField.text == repeatPasswordTextField.text && Validator.nicknameIsValid(for: nickname) {
+        print(email)
+        print(nickname)
+        print(Validator.validEmail(for: email))
+        print(passwordTextField.text == repeatPasswordTextField.text)
+        print(Validator.nicknameIsValid(for: nickname))
+        if Validator.validEmail(for: email) &&/* Validator.passwordIsStrong(for: password) &&*/ passwordTextField.text == repeatPasswordTextField.text && Validator.nicknameIsValid(for: nickname) {
             
             print("Registered successfuly")
             Network.requestRegister(userName: nickname,

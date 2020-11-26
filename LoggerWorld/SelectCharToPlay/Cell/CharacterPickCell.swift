@@ -15,23 +15,25 @@ class CharacterPickCell: UITableViewCell {
     @IBOutlet weak var charLocationLabel: UILabel!
     @IBOutlet weak var charLvlLabel: UILabel!
     
-    var charInfo: CharInfo? {
+    var charInfo: CharListToLogin? {
         didSet {
-            if let classImage = charInfo?.classImage {
-                charImageView.image = classImage
+            if let classId = charInfo?.classId {
+                switch classId {
+                case 1: charImageView.image = R.image.warriorImage()
+                case 2: charImageView.image = R.image.archerImage()
+                case 3: charImageView.image = R.image.mageImage()
+                default: charImageView.image = R.image.assassinImage()
+                }
             }
-            if let color = charInfo?.classColor {
-                imageBackgroundView.backgroundColor = color
-            }
-            if let nickname = charInfo?.charName {
+            if let nickname = charInfo?.name {
                 charNicknameLabel.text = nickname
             }
-            if let location = charInfo?.charLocation {
-                charLocationLabel.text = location
+            if let location = charInfo?.locationId {
+                charLocationLabel.text = String(location)
             }
-            if let lvl = charInfo?.charLvl {
-                charLvlLabel.text = "\(lvl) лвл"
-            }
+//            if let lvl = charInfo?.charLvl {
+                charLvlLabel.text = "0 лвл"
+//            }
         }
     }
     
@@ -42,7 +44,7 @@ class CharacterPickCell: UITableViewCell {
         imageBackgroundView.layer.cornerRadius = 5
         guard let color = R.color.brown() else { return }
         imageBackgroundView.layer.borderColor = color.cgColor
-        
+        imageBackgroundView.backgroundColor = R.color.charBG()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

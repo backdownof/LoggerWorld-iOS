@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hdj-iB-00a">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -16,7 +16,7 @@
         <!--Создание персонажа-->
         <scene sceneID="dpF-h4-UnY">
             <objects>
-                <viewController id="gAE-0v-zyc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateChar" id="gAE-0v-zyc" customClass="CreateCharController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2HA-nT-VdL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,19 +31,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Воин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5R-R6-6a3">
-                                                        <rect key="frame" x="10.5" y="57" width="34.5" height="19.5"/>
+                                                        <rect key="frame" x="11" y="57" width="33.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                         <color key="textColor" name="Creame"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWarSword" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-ut-eDu">
-                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                        <rect key="frame" x="19.5" y="77.5" width="16" height="16"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warriorImage" translatesAutoresizingMaskIntoConstraints="NO" id="25O-HD-H7N">
                                                         <rect key="frame" x="5.5" y="11" width="44" height="44"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="WARRIOR"/>
                                                 <constraints>
                                                     <constraint firstItem="25O-HD-H7N" firstAttribute="top" secondItem="vop-Bp-TZH" secondAttribute="top" constant="11" id="JFo-dj-A7a"/>
                                                     <constraint firstItem="25O-HD-H7N" firstAttribute="centerX" secondItem="vop-Bp-TZH" secondAttribute="centerX" id="K8D-gT-mfi"/>
@@ -59,19 +60,20 @@
                                                 <rect key="frame" x="70" y="0.0" width="55" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучник" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-kr-Rji">
-                                                        <rect key="frame" x="3" y="57" width="49" height="19.5"/>
+                                                        <rect key="frame" x="4" y="57" width="47.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                         <color key="textColor" name="Creame"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icArcherBow" translatesAutoresizingMaskIntoConstraints="NO" id="5Vi-x7-Gew">
-                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                        <rect key="frame" x="19.5" y="77.5" width="16" height="16"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="archerImage" translatesAutoresizingMaskIntoConstraints="NO" id="iV2-Fy-AlB">
                                                         <rect key="frame" x="5.5" y="11" width="44" height="44"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="ARCHER"/>
                                                 <constraints>
                                                     <constraint firstItem="iV2-Fy-AlB" firstAttribute="top" secondItem="I7p-39-kc3" secondAttribute="top" constant="11" id="Dwj-y7-vf8"/>
                                                     <constraint firstAttribute="height" constant="105" id="Mu4-VO-ptB"/>
@@ -87,19 +89,20 @@
                                                 <rect key="frame" x="140" y="0.0" width="55" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маг" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLx-6Y-CLr">
-                                                        <rect key="frame" x="15" y="57" width="25.5" height="19.5"/>
+                                                        <rect key="frame" x="14.5" y="57" width="26" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                         <color key="textColor" name="Creame"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMageStuff" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-hB-kNs">
-                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                        <rect key="frame" x="19.5" y="77.5" width="16" height="16"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mageImage" translatesAutoresizingMaskIntoConstraints="NO" id="Js1-Pd-hgr">
                                                         <rect key="frame" x="5.5" y="11" width="44" height="44"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="WIZARD"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="105" id="Fgu-Eu-FaJ"/>
                                                     <constraint firstItem="WLx-6Y-CLr" firstAttribute="centerX" secondItem="wD6-Uv-PDG" secondAttribute="centerX" id="P9Y-a1-bGS"/>
@@ -115,19 +118,20 @@
                                                 <rect key="frame" x="210" y="0.0" width="55" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Убийца" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fn-dD-YRj">
-                                                        <rect key="frame" x="3" y="57" width="49" height="19.5"/>
+                                                        <rect key="frame" x="3.5" y="57" width="48" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                                         <color key="textColor" name="Creame"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAssasignShuriken" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-O0-j2k">
-                                                        <rect key="frame" x="19.5" y="80.5" width="16" height="16"/>
+                                                        <rect key="frame" x="19.5" y="77.5" width="16" height="16"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="assassinImage" translatesAutoresizingMaskIntoConstraints="NO" id="Qow-XT-CMz">
                                                         <rect key="frame" x="5.5" y="11" width="44" height="44"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="ASSASSIN"/>
                                                 <constraints>
                                                     <constraint firstItem="6Fn-dD-YRj" firstAttribute="top" secondItem="Qow-XT-CMz" secondAttribute="bottom" constant="2" id="CGu-J6-rHu"/>
                                                     <constraint firstAttribute="width" constant="55" id="Chs-ut-yMM"/>
@@ -141,6 +145,12 @@
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Храбрые воины стараются принимать удары врагов на себя. Имеют много здоровья и быстро его восстанавливают." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-7X-Hvr">
+                                        <rect key="frame" x="20" y="125" width="250" height="80"/>
+                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                        <color key="textColor" name="Creame"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -149,12 +159,29 @@
                                     <constraint firstItem="z9b-Ny-fRK" firstAttribute="top" secondItem="FAA-dY-Tca" secondAttribute="top" constant="5" id="5pL-we-pHL"/>
                                     <constraint firstItem="gtw-kr-Rji" firstAttribute="top" secondItem="iV2-Fy-AlB" secondAttribute="bottom" constant="2" id="8FS-sp-5CF"/>
                                     <constraint firstItem="5Vi-x7-Gew" firstAttribute="top" secondItem="gtw-kr-Rji" secondAttribute="bottom" constant="4" id="Et0-WE-f7W"/>
+                                    <constraint firstItem="aCI-7X-Hvr" firstAttribute="leading" secondItem="FAA-dY-Tca" secondAttribute="leading" constant="20" id="kRc-da-sGq"/>
                                     <constraint firstItem="z9b-Ny-fRK" firstAttribute="centerX" secondItem="FAA-dY-Tca" secondAttribute="centerX" id="mpo-Kh-ryJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="aCI-7X-Hvr" secondAttribute="bottom" constant="15" id="wW6-od-Wdi"/>
+                                    <constraint firstItem="aCI-7X-Hvr" firstAttribute="top" secondItem="z9b-Ny-fRK" secondAttribute="bottom" constant="15" id="wt2-jW-881"/>
+                                    <constraint firstAttribute="trailing" secondItem="aCI-7X-Hvr" secondAttribute="trailing" constant="20" id="x46-fL-Oph"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Храбрые воины стараются принимать удары врагов на себя. Имеют много здоровья и быстро его восстанавливают " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-7X-Hvr">
-                                <rect key="frame" x="10" y="297" width="300" height="20"/>
-                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Desaring" placeholder="You character nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilP-ZA-13W">
+                                <rect key="frame" x="20" y="392" width="280" height="21.5"/>
+                                <color key="textColor" name="Creame"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9t-52-0MK" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
+                                <rect key="frame" x="85.5" y="433.5" width="149" height="41.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="546-8T-vEr"/>
+                                    <constraint firstAttribute="width" secondItem="k9t-52-0MK" secondAttribute="height" multiplier="298:83" id="yOc-SN-ILf"/>
+                                </constraints>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите класс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-S1-qLe">
+                                <rect key="frame" x="95" y="127" width="130" height="20"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="17"/>
                                 <color key="textColor" name="Creame"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -162,17 +189,35 @@
                         <viewLayoutGuide key="safeArea" id="KBK-mw-mf6"/>
                         <color key="backgroundColor" name="Brown"/>
                         <constraints>
+                            <constraint firstItem="k9t-52-0MK" firstAttribute="centerX" secondItem="KBK-mw-mf6" secondAttribute="centerX" id="BfS-tc-k9k"/>
                             <constraint firstItem="FAA-dY-Tca" firstAttribute="top" secondItem="KBK-mw-mf6" secondAttribute="top" constant="118" id="FuX-lK-elS"/>
                             <constraint firstItem="FAA-dY-Tca" firstAttribute="centerX" secondItem="KBK-mw-mf6" secondAttribute="centerX" id="Ld8-Cn-NI3"/>
-                            <constraint firstAttribute="trailing" secondItem="aCI-7X-Hvr" secondAttribute="trailing" constant="10" id="T7z-u4-Nn9"/>
+                            <constraint firstItem="BdF-S1-qLe" firstAttribute="centerX" secondItem="KBK-mw-mf6" secondAttribute="centerX" id="Xmu-Wm-Srk"/>
+                            <constraint firstItem="ilP-ZA-13W" firstAttribute="top" secondItem="FAA-dY-Tca" secondAttribute="bottom" constant="10" id="d7o-VM-A7R"/>
                             <constraint firstItem="FAA-dY-Tca" firstAttribute="leading" secondItem="KBK-mw-mf6" secondAttribute="leading" constant="15" id="g4a-zq-3m1"/>
-                            <constraint firstItem="aCI-7X-Hvr" firstAttribute="leading" secondItem="KBK-mw-mf6" secondAttribute="leading" constant="10" id="rkV-nz-muq"/>
+                            <constraint firstItem="k9t-52-0MK" firstAttribute="top" secondItem="ilP-ZA-13W" secondAttribute="bottom" constant="20" id="gDh-ZY-wEb"/>
+                            <constraint firstItem="FAA-dY-Tca" firstAttribute="top" secondItem="BdF-S1-qLe" secondAttribute="bottom" constant="15" id="ghL-bk-Ius"/>
+                            <constraint firstItem="ilP-ZA-13W" firstAttribute="leading" secondItem="KBK-mw-mf6" secondAttribute="leading" constant="20" id="r7o-Jr-6pc"/>
+                            <constraint firstItem="KBK-mw-mf6" firstAttribute="trailing" secondItem="ilP-ZA-13W" secondAttribute="trailing" constant="20" id="t4e-gg-gaH"/>
                             <constraint firstItem="KBK-mw-mf6" firstAttribute="trailing" secondItem="FAA-dY-Tca" secondAttribute="trailing" constant="15" id="zJr-HO-q6x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Создание персонажа" id="TWr-RE-FfQ">
-                        <barButtonItem key="leftBarButtonItem" title="Назад" id="RUt-tw-kAG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="RUt-tw-kAG">
+                            <connections>
+                                <action selector="backNavButtonPressed:" destination="gAE-0v-zyc" id="PUB-Xb-3vP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="classDescriptionLabel" destination="aCI-7X-Hvr" id="ueK-yY-A2j"/>
+                        <outlet property="createButton" destination="k9t-52-0MK" id="gNa-92-iaP"/>
+                        <outlet property="nicknameTextField" destination="ilP-ZA-13W" id="61S-GT-E6n"/>
+                        <outletCollection property="classView" destination="vop-Bp-TZH" collectionClass="NSMutableArray" id="ety-De-L4l"/>
+                        <outletCollection property="classView" destination="I7p-39-kc3" collectionClass="NSMutableArray" id="77A-hB-39I"/>
+                        <outletCollection property="classView" destination="wD6-Uv-PDG" collectionClass="NSMutableArray" id="Y8P-oA-nLc"/>
+                        <outletCollection property="classView" destination="MOR-kk-TCg" collectionClass="NSMutableArray" id="Vqw-cu-yOP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkX-wS-OcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +226,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ygy-rP-N6d">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hdj-iB-00a" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CreateCharNav" automaticallyAdjustsScrollViewInsets="NO" id="Hdj-iB-00a" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lYn-NC-fvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -202,6 +247,11 @@
             <point key="canvasLocation" x="-291.304347826087" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="k9t-52-0MK">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="archerImage" width="44" height="44"/>
         <image name="assassinImage" width="44" height="44"/>

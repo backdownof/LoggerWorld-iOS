@@ -11,7 +11,7 @@ class CharInfo {
     var classType: String?{
         didSet {
             if classType == "mage" {
-                classImage = R.image.mage()
+                classImage = R.image.mageImage()
                 classColor = R.color.green()
             }
             

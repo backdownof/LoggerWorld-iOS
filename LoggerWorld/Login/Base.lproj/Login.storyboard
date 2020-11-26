@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="pwd123" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rhw-Ul-L0d">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pwd123" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rhw-Ul-L0d">
                                         <rect key="frame" x="0.0" y="42.5" width="294" height="21"/>
                                         <color key="textColor" name="Creame"/>
                                         <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
@@ -169,7 +169,7 @@
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-fH-Kig">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testUser1" placeholder="Nickname" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-fH-Kig">
                                                 <rect key="frame" x="0.0" y="21.5" width="294" height="22.5"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
@@ -186,7 +186,7 @@
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-cd-mTv">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testUser1@mail.ru" placeholder="Email" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-cd-mTv">
                                                 <rect key="frame" x="0.0" y="21.5" width="294" height="22.5"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
@@ -203,7 +203,7 @@
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-lR-uJk">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pwd123" placeholder="New Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-lR-uJk">
                                                 <rect key="frame" x="0.0" y="21.5" width="294" height="21"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
@@ -220,7 +220,7 @@
                                                 <color key="textColor" name="Creame"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JUp-ld-eaK">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pwd123" placeholder="Repeat Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JUp-ld-eaK">
                                                 <rect key="frame" x="0.0" y="21.5" width="294" height="21"/>
                                                 <color key="textColor" name="Creame"/>
                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="18"/>
@@ -230,23 +230,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSU-f6-fUb">
-                                <rect key="frame" x="184" y="703" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="showAlertPressed:" destination="Zxo-MF-vW8" eventType="touchUpInside" id="hYj-vT-8Oi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="drw-Kd-mrB"/>
                         <color key="backgroundColor" name="Brown"/>
                         <constraints>
                             <constraint firstItem="EbL-3L-axR" firstAttribute="centerX" secondItem="drw-Kd-mrB" secondAttribute="centerX" id="DjA-AP-Emq"/>
-                            <constraint firstItem="rSU-f6-fUb" firstAttribute="centerX" secondItem="drw-Kd-mrB" secondAttribute="centerX" id="F8n-Qa-Shj"/>
                             <constraint firstItem="drw-Kd-mrB" firstAttribute="trailing" secondItem="mN1-fS-F5h" secondAttribute="trailing" constant="60" id="Fpf-vN-sT9"/>
                             <constraint firstItem="EbL-3L-axR" firstAttribute="top" secondItem="mN1-fS-F5h" secondAttribute="bottom" constant="40" id="HNG-ko-TMD"/>
                             <constraint firstItem="mN1-fS-F5h" firstAttribute="leading" secondItem="drw-Kd-mrB" secondAttribute="leading" constant="60" id="SHt-o8-LVe"/>
-                            <constraint firstItem="rSU-f6-fUb" firstAttribute="top" secondItem="EbL-3L-axR" secondAttribute="bottom" constant="30" id="aRW-2q-Qqf"/>
                             <constraint firstItem="EbL-3L-axR" firstAttribute="width" secondItem="EbL-3L-axR" secondAttribute="height" multiplier="298:83" id="kVz-nr-cOD"/>
                             <constraint firstItem="mN1-fS-F5h" firstAttribute="centerY" secondItem="drw-Kd-mrB" secondAttribute="centerY" id="vZG-qT-Bh7"/>
                         </constraints>
@@ -260,8 +251,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emailTextField" destination="e4i-fH-Kig" id="NVY-8N-2lh"/>
-                        <outlet property="nicknameTextField" destination="UXn-cd-mTv" id="gZT-OG-1PC"/>
+                        <outlet property="emailTextField" destination="UXn-cd-mTv" id="7ct-CL-BYG"/>
+                        <outlet property="nicknameTextField" destination="e4i-fH-Kig" id="FTw-t7-sqL"/>
                         <outlet property="passwordTextField" destination="IYw-lR-uJk" id="xLg-1P-s7F"/>
                         <outlet property="registerButton" destination="EbL-3L-axR" id="7gs-0L-FsX"/>
                         <outlet property="repeatPasswordTextField" destination="JUp-ld-eaK" id="CT9-ZB-gPg"/>

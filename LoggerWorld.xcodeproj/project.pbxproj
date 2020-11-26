@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20014EB2256D79FA00E30E33 /* RegisterNewChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20014EB1256D79FA00E30E33 /* RegisterNewChar.swift */; };
+		20014EBA256DA26600E30E33 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20014EB9256DA26600E30E33 /* Players.swift */; };
 		2006D6EF256464B900259338 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D6EE256464B900259338 /* Nib.swift */; };
 		2006D6F3256469F800259338 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D6F2256469F800259338 /* UserSettings.swift */; };
 		2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D6F625646A3D00259338 /* UserSettings+Key.swift */; };
@@ -28,9 +30,9 @@
 		203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045EC2550AA9A00F9CA88 /* SocketManager.swift */; };
 		203045F12550AD9800F9CA88 /* PlayerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045F02550AD9800F9CA88 /* PlayerLogin.swift */; };
 		203045F42550ADDE00F9CA88 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045F32550ADDE00F9CA88 /* Credentials.swift */; };
+		2037F4B2256DAE2000F5F838 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037F4B1256DAE2000F5F838 /* Data.swift */; };
 		2039559A25645C13004D84C2 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2039559925645C13004D84C2 /* AlertView.xib */; };
 		203955A025645E0B004D84C2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039559F25645E0B004D84C2 /* AlertView.swift */; };
-		2045961A25601E16004793C5 /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961925601E16004793C5 /* CreateChar.storyboard */; };
 		2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */; };
 		2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045962225601FCA004793C5 /* SelectCharToPlayController.swift */; };
 		204F9D172568193B00AB51B6 /* CharStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D162568193B00AB51B6 /* CharStatusBar.swift */; };
@@ -75,17 +77,16 @@
 		20CD1DF7255FF670009F991D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DF6255FF670009F991D /* NibLoadable.swift */; };
 		20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D388DC25602D4B00F18A07 /* ContentSizedTableView.swift */; };
 		20EA049F254F115800AB85D1 /* ConstantsBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */; };
-		20F5775D2552CEC5003ED757 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5775C2552CEC5003ED757 /* SecondViewController.swift */; };
 		20F577602552D43F003ED757 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5775F2552D43F003ED757 /* LoginSuccess.swift */; };
-		20F577632552D74D003ED757 /* CreateCharController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F577622552D74D003ED757 /* CreateCharController.swift */; };
 		20F577662552DAD9003ED757 /* CreateChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F577652552DAD9003ED757 /* CreateChar.swift */; };
-		20F5776A2552F839003ED757 /* MainLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F577692552F839003ED757 /* MainLogViewController.swift */; };
 		20F5776D2552F8E8003ED757 /* CharIsCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5776C2552F8E8003ED757 /* CharIsCreated.swift */; };
 		20F577702553565B003ED757 /* SelectChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F5776F2553565B003ED757 /* SelectChar.swift */; };
 		D5CF21911C14376B450CF4E2 /* Pods_LoggerWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12AAA74F2C681B51A62DD0B /* Pods_LoggerWorld.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20014EB1256D79FA00E30E33 /* RegisterNewChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewChar.swift; sourceTree = "<group>"; };
+		20014EB9256DA26600E30E33 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		2006D6EE256464B900259338 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		2006D6F2256469F800259338 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2006D6F625646A3D00259338 /* UserSettings+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSettings+Key.swift"; sourceTree = "<group>"; };
@@ -109,9 +110,9 @@
 		203045EC2550AA9A00F9CA88 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		203045F02550AD9800F9CA88 /* PlayerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLogin.swift; sourceTree = "<group>"; };
 		203045F32550ADDE00F9CA88 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		2037F4B1256DAE2000F5F838 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2039559925645C13004D84C2 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		2039559F25645E0B004D84C2 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		2045961925601E16004793C5 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
 		2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCharToPlay.storyboard; sourceTree = "<group>"; };
 		2045962225601FCA004793C5 /* SelectCharToPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharToPlayController.swift; sourceTree = "<group>"; };
 		204F9D162568193B00AB51B6 /* CharStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStatusBar.swift; sourceTree = "<group>"; };
@@ -156,11 +157,8 @@
 		20CD1DF6255FF670009F991D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		20D388DC25602D4B00F18A07 /* ContentSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
 		20EA049E254F115800AB85D1 /* ConstantsBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsBroadcast.swift; sourceTree = "<group>"; };
-		20F5775C2552CEC5003ED757 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		20F5775F2552D43F003ED757 /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
-		20F577622552D74D003ED757 /* CreateCharController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharController.swift; sourceTree = "<group>"; };
 		20F577652552DAD9003ED757 /* CreateChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChar.swift; sourceTree = "<group>"; };
-		20F577692552F839003ED757 /* MainLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogViewController.swift; sourceTree = "<group>"; };
 		20F5776C2552F8E8003ED757 /* CharIsCreated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharIsCreated.swift; sourceTree = "<group>"; };
 		20F5776F2553565B003ED757 /* SelectChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChar.swift; sourceTree = "<group>"; };
 		73234B608739FB512201F178 /* Pods-LoggerWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoggerWorld.release.xcconfig"; path = "Target Support Files/Pods-LoggerWorld/Pods-LoggerWorld.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +184,22 @@
 				D12AAA74F2C681B51A62DD0B /* Pods_LoggerWorld.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20014EB0256D79DF00E30E33 /* RegisterNewChar */ = {
+			isa = PBXGroup;
+			children = (
+				20014EB1256D79FA00E30E33 /* RegisterNewChar.swift */,
+			);
+			path = RegisterNewChar;
+			sourceTree = "<group>";
+		};
+		20014EB5256D9FD200E30E33 /* CharListToLogin */ = {
+			isa = PBXGroup;
+			children = (
+				20014EB9256DA26600E30E33 /* Players.swift */,
+			);
+			path = CharListToLogin;
 			sourceTree = "<group>";
 		};
 		2006D6F1256469DB00259338 /* UserSettings */ = {
@@ -273,9 +287,7 @@
 				20CD1DE2255FE942009F991D /* UI */,
 				2045961E25601F89004793C5 /* SelectCharToPlay */,
 				20CD1DE1255FE914009F991D /* Login */,
-				2045961825601DF9004793C5 /* CreateChar */,
 				203045E8254F66F700F9CA88 /* Model */,
-				203045EF2550AD1F00F9CA88 /* Controller */,
 				20CD1DC8255FE50A009F991D /* Resources */,
 				20AD37E3256281E400F9C1B5 /* Extensions */,
 				2088CEBF25631C5700DC4D36 /* Services */,
@@ -298,6 +310,8 @@
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				20014EB5256D9FD200E30E33 /* CharListToLogin */,
+				20014EB0256D79DF00E30E33 /* RegisterNewChar */,
 				2006D7312564752600259338 /* User */,
 				203045E9254F671400F9CA88 /* PlayerRegistration.swift */,
 				203045F02550AD9800F9CA88 /* PlayerLogin.swift */,
@@ -311,15 +325,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		203045EF2550AD1F00F9CA88 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				20F5775C2552CEC5003ED757 /* SecondViewController.swift */,
-				20F577692552F839003ED757 /* MainLogViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		2039559C25645C19004D84C2 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,15 +332,6 @@
 				2039559F25645E0B004D84C2 /* AlertView.swift */,
 			);
 			path = Alert;
-			sourceTree = "<group>";
-		};
-		2045961825601DF9004793C5 /* CreateChar */ = {
-			isa = PBXGroup;
-			children = (
-				2045961925601E16004793C5 /* CreateChar.storyboard */,
-				20F577622552D74D003ED757 /* CreateCharController.swift */,
-			);
-			path = CreateChar;
 			sourceTree = "<group>";
 		};
 		2045961E25601F89004793C5 /* SelectCharToPlay */ = {
@@ -420,6 +416,7 @@
 				20AD37EB2562931D00F9C1B5 /* UIViewController.swift */,
 				20AD37EE2562934A00F9C1B5 /* UIWindow.swift */,
 				2006D736256476E500259338 /* String.swift */,
+				2037F4B1256DAE2000F5F838 /* Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -585,7 +582,6 @@
 				200A6667254E1A4000B74B48 /* LaunchScreen.storyboard in Resources */,
 				2006D723256472D100259338 /* InfoPlist.strings in Resources */,
 				20CD1DDD255FE52F009F991D /* AlegreyaSC-Regular.ttf in Resources */,
-				2045961A25601E16004793C5 /* CreateChar.storyboard in Resources */,
 				2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */,
 				20CB85DE2566A65F00237DAF /* MainLogger.storyboard in Resources */,
 				204F9D1A2568195400AB51B6 /* CharStatusBar.xib in Resources */,
@@ -686,10 +682,10 @@
 				2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
 				20F577702553565B003ED757 /* SelectChar.swift in Sources */,
-				20F5775D2552CEC5003ED757 /* SecondViewController.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
 				20F577602552D43F003ED757 /* LoginSuccess.swift in Sources */,
+				20014EBA256DA26600E30E33 /* Players.swift in Sources */,
 				20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */,
 				203045F42550ADDE00F9CA88 /* Credentials.swift in Sources */,
 				20CD1DF7255FF670009F991D /* NibLoadable.swift in Sources */,
@@ -708,8 +704,6 @@
 				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
 				20CD1DED255FEB15009F991D /* ButtonWOImage.swift in Sources */,
 				20F577662552DAD9003ED757 /* CreateChar.swift in Sources */,
-				20F577632552D74D003ED757 /* CreateCharController.swift in Sources */,
-				20F5776A2552F839003ED757 /* MainLogViewController.swift in Sources */,
 				20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */,
 				20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */,
 				2006D72F256473CF00259338 /* DataOperation.swift in Sources */,
@@ -720,7 +714,9 @@
 				20CB85E62566A74C00237DAF /* AssistiveController.swift in Sources */,
 				20AC57BD25651A0C00392C87 /* ErrorHandler+Mappable.swift in Sources */,
 				20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */,
+				20014EB2256D79FA00E30E33 /* RegisterNewChar.swift in Sources */,
 				20AC57B225650B6300392C87 /* Network.swift in Sources */,
+				2037F4B2256DAE2000F5F838 /* Data.swift in Sources */,
 				20598630256090C40028ACD3 /* AddCharCell.swift in Sources */,
 				2006D70725646D4A00259338 /* Constant.swift in Sources */,
 				2088CEC125631C6800DC4D36 /* Validator.swift in Sources */,

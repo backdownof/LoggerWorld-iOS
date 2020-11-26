@@ -72,11 +72,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="eYG-kV-dCa" firstAttribute="centerY" secondItem="qVY-vJ-nv0" secondAttribute="centerY" id="0gd-WK-v86"/>
+                        <constraint firstAttribute="bottom" secondItem="Nj2-JC-cdC" secondAttribute="bottom" priority="750" constant="10" id="7Np-SN-75J"/>
                         <constraint firstItem="Nj2-JC-cdC" firstAttribute="leading" secondItem="qVY-vJ-nv0" secondAttribute="leading" constant="15" id="Czd-xW-xcO"/>
-                        <constraint firstAttribute="bottom" secondItem="Nj2-JC-cdC" secondAttribute="bottom" constant="10" id="OO7-EU-fOB"/>
                         <constraint firstItem="eYG-kV-dCa" firstAttribute="leading" secondItem="Nj2-JC-cdC" secondAttribute="trailing" constant="10" id="QE3-LZ-28A"/>
-                        <constraint firstItem="Nj2-JC-cdC" firstAttribute="top" secondItem="qVY-vJ-nv0" secondAttribute="top" constant="10" id="Wt6-1B-a7d"/>
-                        <constraint firstItem="Nj2-JC-cdC" firstAttribute="centerY" secondItem="qVY-vJ-nv0" secondAttribute="centerY" id="WuI-nE-dbM"/>
+                        <constraint firstItem="Nj2-JC-cdC" firstAttribute="top" secondItem="qVY-vJ-nv0" secondAttribute="top" constant="10" id="U7L-lU-icY"/>
                         <constraint firstAttribute="trailing" secondItem="RYR-vx-tjG" secondAttribute="trailing" constant="15" id="gip-Uy-UsG"/>
                         <constraint firstItem="RYR-vx-tjG" firstAttribute="centerY" secondItem="qVY-vJ-nv0" secondAttribute="centerY" id="xW1-mc-26k"/>
                     </constraints>

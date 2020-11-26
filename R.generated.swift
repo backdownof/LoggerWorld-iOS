@@ -90,30 +90,6 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
-  struct segue {
-    /// This struct is generated for `CreateCharController`, and contains static references to 1 segues.
-    struct createCharController {
-      /// Segue identifier `loggedInWithChar`.
-      static let loggedInWithChar: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, CreateCharController, MainLogViewController> = Rswift.StoryboardSegueIdentifier(identifier: "loggedInWithChar")
-
-      #if os(iOS) || os(tvOS)
-      /// Optionally returns a typed version of segue `loggedInWithChar`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func loggedInWithChar(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, CreateCharController, MainLogViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.createCharController.loggedInWithChar, segue: segue)
-      }
-      #endif
-
-      fileprivate init() {}
-    }
-
-    fileprivate init() {}
-  }
-  #endif
-
-  #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Assistive`.
@@ -373,7 +349,25 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 10 images.
+  /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
+  struct id {
+    struct createChar {
+      /// Accessibility identifier `ARCHER`.
+      static let archeR: String = "ARCHER"
+      /// Accessibility identifier `ASSASSIN`.
+      static let assassiN: String = "ASSASSIN"
+      /// Accessibility identifier `WARRIOR`.
+      static let warrioR: String = "WARRIOR"
+      /// Accessibility identifier `WIZARD`.
+      static let wizarD: String = "WIZARD"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 17 images.
   struct image {
     /// Image `AppImage`.
     static let appImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "AppImage")
@@ -381,20 +375,34 @@ struct R: Rswift.Validatable {
     static let appName = Rswift.ImageResource(bundle: R.hostingBundle, name: "AppName")
     /// Image `Button`.
     static let button = Rswift.ImageResource(bundle: R.hostingBundle, name: "Button")
+    /// Image `archerImage`.
+    static let archerImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "archerImage")
+    /// Image `assassinImage`.
+    static let assassinImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "assassinImage")
     /// Image `backgroundFrame`.
     static let backgroundFrame = Rswift.ImageResource(bundle: R.hostingBundle, name: "backgroundFrame")
     /// Image `barHP`.
     static let barHP = Rswift.ImageResource(bundle: R.hostingBundle, name: "barHP")
     /// Image `barMP`.
     static let barMP = Rswift.ImageResource(bundle: R.hostingBundle, name: "barMP")
+    /// Image `icArcherBow`.
+    static let icArcherBow = Rswift.ImageResource(bundle: R.hostingBundle, name: "icArcherBow")
+    /// Image `icAssasignShuriken`.
+    static let icAssasignShuriken = Rswift.ImageResource(bundle: R.hostingBundle, name: "icAssasignShuriken")
     /// Image `icFacebook`.
     static let icFacebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "icFacebook")
     /// Image `icGoogle`.
     static let icGoogle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icGoogle")
+    /// Image `icMageStuff`.
+    static let icMageStuff = Rswift.ImageResource(bundle: R.hostingBundle, name: "icMageStuff")
     /// Image `icVK`.
     static let icVK = Rswift.ImageResource(bundle: R.hostingBundle, name: "icVK")
-    /// Image `mage`.
-    static let mage = Rswift.ImageResource(bundle: R.hostingBundle, name: "mage")
+    /// Image `icWarSword`.
+    static let icWarSword = Rswift.ImageResource(bundle: R.hostingBundle, name: "icWarSword")
+    /// Image `mageImage`.
+    static let mageImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "mageImage")
+    /// Image `warriorImage`.
+    static let warriorImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "warriorImage")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "AppImage", bundle: ..., traitCollection: ...)`
@@ -414,6 +422,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Button", bundle: ..., traitCollection: ...)`
     static func button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "archerImage", bundle: ..., traitCollection: ...)`
+    static func archerImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.archerImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "assassinImage", bundle: ..., traitCollection: ...)`
+    static func assassinImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.assassinImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -439,6 +461,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icArcherBow", bundle: ..., traitCollection: ...)`
+    static func icArcherBow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icArcherBow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icAssasignShuriken", bundle: ..., traitCollection: ...)`
+    static func icAssasignShuriken(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icAssasignShuriken, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "icFacebook", bundle: ..., traitCollection: ...)`
     static func icFacebook(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icFacebook, compatibleWith: traitCollection)
@@ -453,6 +489,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icMageStuff", bundle: ..., traitCollection: ...)`
+    static func icMageStuff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icMageStuff, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "icVK", bundle: ..., traitCollection: ...)`
     static func icVK(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icVK, compatibleWith: traitCollection)
@@ -460,9 +503,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "mage", bundle: ..., traitCollection: ...)`
-    static func mage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.mage, compatibleWith: traitCollection)
+    /// `UIImage(named: "icWarSword", bundle: ..., traitCollection: ...)`
+    static func icWarSword(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icWarSword, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mageImage", bundle: ..., traitCollection: ...)`
+    static func mageImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mageImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "warriorImage", bundle: ..., traitCollection: ...)`
+    static func warriorImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.warriorImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -586,16 +643,6 @@ struct R: Rswift.Validatable {
     static func characterPickCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CharacterPickCell? {
       return R.nib.characterPickCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CharacterPickCell
     }
-
-    fileprivate init() {}
-  }
-
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
-  struct reuseIdentifier {
-    /// Reuse identifier `cell.CharacterPick`.
-    static let cellCharacterPick: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "cell.CharacterPick")
-    /// Reuse identifier `createdCharacters`.
-    static let createdCharacters: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "createdCharacters")
 
     fileprivate init() {}
   }
@@ -807,11 +854,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "barMP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barMP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "barHP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barHP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "barMP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barMP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'CharStatusBar', but couldn't be loaded.") }
           if UIKit.UIColor(named: "charBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'charBG' is used in nib 'CharStatusBar', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         }
       }
 
@@ -829,8 +876,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "mage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mage' is used in nib 'CharacterPickCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in nib 'CharacterPickCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Green", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Green' is used in nib 'CharacterPickCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in nib 'CharacterPickCell', but couldn't be loaded.") }
         }
       }
 
@@ -894,11 +941,33 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let createChar = StoryboardViewControllerResource<CreateCharController>(identifier: "CreateChar")
+      let createCharNav = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "CreateCharNav")
       let name = "CreateChar"
 
+      func createChar(_: Void = ()) -> CreateCharController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createChar)
+      }
+
+      func createCharNav(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createCharNav)
+      }
+
       static func validate() throws {
+        if UIKit.UIImage(named: "icAssasignShuriken", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icAssasignShuriken' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icArcherBow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icArcherBow' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "warriorImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'warriorImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "archerImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'archerImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icMageStuff", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icMageStuff' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "assassinImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'assassinImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mageImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mageImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icWarSword", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icWarSword' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         }
+        if _R.storyboard.createChar().createChar() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createChar' could not be loaded from storyboard 'CreateChar' as 'CreateCharController'.") }
+        if _R.storyboard.createChar().createCharNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createCharNav' could not be loaded from storyboard 'CreateChar' as 'UIKit.UINavigationController'.") }
       }
 
       fileprivate init() {}
@@ -957,12 +1026,12 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "icFacebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icFacebook' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icVK", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icVK' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icGoogle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icGoogle' is used in storyboard 'Login', but couldn't be loaded.") }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.backward' is used in storyboard 'Login', but couldn't be loaded.") } }
         if UIKit.UIImage(named: "AppImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppImage' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AppName", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppName' is used in storyboard 'Login', but couldn't be loaded.") }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.backward' is used in storyboard 'Login', but couldn't be loaded.") } }
+        if UIKit.UIImage(named: "icVK", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icVK' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icFacebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icFacebook' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'Login', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'Login', but couldn't be loaded.") }
@@ -993,8 +1062,8 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'MainLogger', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         }
         if _R.storyboard.mainLogger().mainLoggerNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainLoggerNav' could not be loaded from storyboard 'MainLogger' as 'UIKit.UINavigationController'.") }
         if _R.storyboard.mainLogger().mainLoggerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainLoggerVC' could not be loaded from storyboard 'MainLogger' as 'MainLoggerController'.") }
@@ -1024,8 +1093,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.backward' is used in storyboard 'SelectCharToPlay', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'SelectCharToPlay', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'SelectCharToPlay', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'SelectCharToPlay', but couldn't be loaded.") }
         }
         if _R.storyboard.selectCharToPlay().selectCharToPlay() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectCharToPlay' could not be loaded from storyboard 'SelectCharToPlay' as 'SelectCharToPlayController'.") }
         if _R.storyboard.selectCharToPlay().selectCharToPlayNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectCharToPlayNav' could not be loaded from storyboard 'SelectCharToPlay' as 'UIKit.UINavigationController'.") }

@@ -8,6 +8,8 @@
 import Foundation
 
 struct Validator {
+    static let classNames = ["WARRIOR", "ARCHER", "ASSASIN", "WIZARD"]
+    
     static func validEmail(for email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
@@ -26,5 +28,9 @@ struct Validator {
         let regex = "^[0-9a-zA-Z\\_]{5,18}$"
         let pred = NSPredicate(format:"SELF MATCHES %@", regex)
         return pred.evaluate(with: nickname)
+    }
+    
+    static func classNameIsValid(for name: String) -> Bool {
+        return classNames.contains(name)
     }
 }

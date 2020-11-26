@@ -64,7 +64,7 @@ class Network: NSObject {
                                 email: String,
                                 completion: @escaping () -> Void,
                                 failure: @escaping() -> Void) {
-        AF.request((API.baseURL + "/api/user/sign-up").url as! URLConvertible,
+        AF.request((API.baseURL + "api/user/sign-up").url as! URLConvertible,
                    method: .post,
                    parameters: [
                     "userName": userName,
