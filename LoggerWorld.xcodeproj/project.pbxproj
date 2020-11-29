@@ -44,6 +44,7 @@
 		20598631256090C40028ACD3 /* AddCharCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2059862F256090C40028ACD3 /* AddCharCell.xib */; };
 		206577A025670FC500E57E82 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065779F25670FC500E57E82 /* R.generated.swift */; };
 		206577B2256802D300E57E82 /* ButtonWImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206577B1256802D300E57E82 /* ButtonWImage.swift */; };
+		2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2071A5D5257445CC009F5768 /* LocationInfo.swift */; };
 		20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EE6256055F300AEDE8D /* CharacterPickCell.swift */; };
 		20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20766EE7256055F300AEDE8D /* CharacterPickCell.xib */; };
 		20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EEB2560734400AEDE8D /* CharInfo.swift */; };
@@ -124,6 +125,7 @@
 		2065779F25670FC500E57E82 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		206577B1256802D300E57E82 /* ButtonWImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWImage.swift; sourceTree = "<group>"; };
 		206577B42568030900E57E82 /* ButtonWImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonWImage.xib; sourceTree = "<group>"; };
+		2071A5D5257445CC009F5768 /* LocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
 		20766EE6256055F300AEDE8D /* CharacterPickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickCell.swift; sourceTree = "<group>"; };
 		20766EE7256055F300AEDE8D /* CharacterPickCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPickCell.xib; sourceTree = "<group>"; };
 		20766EEB2560734400AEDE8D /* CharInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharInfo.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				20F5776C2552F8E8003ED757 /* CharIsCreated.swift */,
 				20F5776F2553565B003ED757 /* SelectChar.swift */,
 				20766EEB2560734400AEDE8D /* CharInfo.swift */,
+				2071A5D5257445CC009F5768 /* LocationInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
 				20F577702553565B003ED757 /* SelectChar.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
+				2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
 				20F577602552D43F003ED757 /* LoginSuccess.swift in Sources */,
 				20014EBA256DA26600E30E33 /* Players.swift in Sources */,

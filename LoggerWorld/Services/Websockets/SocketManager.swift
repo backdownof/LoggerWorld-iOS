@@ -12,12 +12,16 @@ protocol SocketManagerDelegate {
     func connected()
     func success()
     func listOfCharactersToSelect(chars: [CharListToLogin])
+    func charLoggedIn()
+    func updatedLocationInfo(for: LocationInfo)
 }
 
 extension SocketManagerDelegate {
     func connected() {}
     func success() {}
     func listOfCharactersToSelect(chars: [CharListToLogin]) {}
+    func charLoggedIn() {}
+    func updatedLocationInfo(for: LocationInfo) {}
 }
 
 class SocketManager: StompClientLibDelegate {
@@ -39,15 +43,19 @@ class SocketManager: StompClientLibDelegate {
         
         guard let stringData = stringBody else { print("fuck"); return }
         
-        
-        
         do {
-            let playersList = try JSONDecoder().decode(Players.self, from:Data(stringData.utf8))
-            if let listOfChars = playersList.players {
-                delegate?.listOfCharactersToSelect(chars: listOfChars)
+            if let data = try? JSONDecoder().decode(LocationInfo.self, from:Data(stringData.utf8)) {
+                delegate?.updatedLocationInfo(for: data)
+                print(data)
             } else {
-                delegate?.listOfCharactersToSelect(chars: [])
+                print("fucked parsing json")
             }
+//            let playersList = try JSONDecoder().decode(Players.self, from:Data(stringData.utf8))
+//            if let listOfChars = playersList.players {
+//                delegate?.listOfCharactersToSelect(chars: listOfChars)
+//            } else {
+//                delegate?.listOfCharactersToSelect(chars: [])
+//            }
         } catch {
             print("error casting")
         }
@@ -108,19 +116,15 @@ class SocketManager: StompClientLibDelegate {
     }
     
     func createCharacter(nickname: String, className: String) {
-        
-        let char = RegisterNewChar(name: nickname, playerClass: className)
         let dict = ["name": nickname, "playerClass": className] as NSDictionary
-        //        let encoder = JSONEncoder()
-        //        do {
-        //            let data = try encoder.encode(char)
-        //            let string = String(data: data, encoding: .utf8)!
         stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/add")
-        //        } catch {
-        //            print("error encoding data")
-        //        }
-        
         print("______________")
         print("sent players")
+    }
+    
+    func loginCharacter(playerId: Int) {
+        let dict = ["playerId": playerId] as NSDictionary
+        stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/start")
+        delegate?.charLoggedIn()
     }
 }

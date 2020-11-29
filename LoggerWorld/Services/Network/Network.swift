@@ -83,4 +83,55 @@ class Network: NSObject {
                     
                    })
     }
+    
+    static func requestCharacters(completion: @escaping ([CharListToLogin]) -> Void,
+                                  failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        
+        AF.request((API.baseURL + "api/players").url as! URLConvertible,
+                   method: .get,
+                   encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { response in
+                    if let data = response.data {
+                        do {
+                            let json = try JSONDecoder().decode(Players.self, from: data)
+                            print(json)
+                            if let players = json.players {
+                                completion(players)
+                            } else {
+                                let players: [CharListToLogin] = []
+                                completion(players)
+                            }
+                        } catch {
+                            print("Error")
+                        }
+                    }
+                   })
+    }
+    
+    static func createChar(nickname: String,
+                           playerClass: String,
+                           completion: @escaping() -> Void,
+                           failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        
+        AF.request((API.baseURL + "api/players").url as! URLConvertible,
+                   method: .post,
+                   parameters: [
+                    "name": nickname,
+                    "playerClass": playerClass
+                   ],
+                   encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { response in
+                    switch response.result {
+                    case .success:
+                        completion()
+                    case let .failure(error):
+                        failure()
+                    }
+                   })
+   }
 }
+

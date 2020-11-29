@@ -16,6 +16,12 @@ class MainLoggerController: UIViewController {
     @IBOutlet weak var logsTableView: UITableView!
     @IBOutlet weak var playersNearTableView: UITableView!
     
+//    var locationInfo: LocationInfo? {
+//        didSet {
+//            if let
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,6 +93,10 @@ extension MainLoggerController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    
-    
+}
+
+extension MainLoggerController: SocketManagerDelegate {
+    func updatedLocationInfo(for: LocationInfo) {
+        
+    }
 }

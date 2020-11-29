@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать персонажа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zta-1V-Tc6">
-                            <rect key="frame" x="70" y="19" width="143" height="22"/>
+                            <rect key="frame" x="70" y="20.5" width="151" height="19"/>
                             <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="16"/>
                             <color key="textColor" name="Brown"/>
                             <nil key="highlightedColor"/>

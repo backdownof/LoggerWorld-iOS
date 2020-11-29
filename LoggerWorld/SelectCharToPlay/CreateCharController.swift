@@ -67,10 +67,14 @@ class CreateCharController: UIViewController {
 extension CreateCharController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         if nicknameTextField.text != "" {
-            
-            SocketManager.shared.createCharacter(nickname: nicknameTextField.text!, className: selectedClass)
-            print("Create char \(selectedClass) with nickname \(nicknameTextField.text)")
-            SocketManager.shared.loadPlayerChars()
+            Network.createChar(nickname: nicknameTextField.text!, playerClass: selectedClass, completion: {
+                print("Create char \(self.selectedClass) with nickname \(self.nicknameTextField.text)")
+                UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+            }, failure: {
+                print("Error creating character")
+            })
+//            SocketManager.shared.createCharacter(nickname: nicknameTextField.text!, className: selectedClass)
+//            SocketManager.shared.loadPlayerChars()
         }
     }
 }
