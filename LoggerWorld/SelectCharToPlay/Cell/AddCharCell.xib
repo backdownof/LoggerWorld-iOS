@@ -45,7 +45,7 @@
                                 <constraint firstItem="sNc-FX-rDf" firstAttribute="centerY" secondItem="aCj-Vt-POZ" secondAttribute="centerY" id="8Mo-jl-K25"/>
                                 <constraint firstAttribute="width" constant="40" id="8kb-d2-zL6"/>
                                 <constraint firstItem="sNc-FX-rDf" firstAttribute="centerX" secondItem="aCj-Vt-POZ" secondAttribute="centerX" id="gNg-aW-S4M"/>
-                                <constraint firstAttribute="height" constant="40" id="hbO-v8-6V0"/>
+                                <constraint firstAttribute="height" priority="999" constant="40" id="hbO-v8-6V0"/>
                             </constraints>
                         </view>
                     </subviews>

@@ -33,6 +33,12 @@
 		2037F4B2256DAE2000F5F838 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037F4B1256DAE2000F5F838 /* Data.swift */; };
 		2039559A25645C13004D84C2 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2039559925645C13004D84C2 /* AlertView.xib */; };
 		203955A025645E0B004D84C2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039559F25645E0B004D84C2 /* AlertView.swift */; };
+		20407A8A2575492B007759B3 /* WorldMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407A892575492B007759B3 /* WorldMap.swift */; };
+		20407A8D25755090007759B3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407A8C25755090007759B3 /* LocationService.swift */; };
+		20407A952575599E007759B3 /* CharacterAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407A942575599E007759B3 /* CharacterAvatar.swift */; };
+		20407A9825755BA9007759B3 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407A9725755BA9007759B3 /* PlayerStatus.swift */; };
+		20407A9C257590B6007759B3 /* CharsInLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20407A9B257590B6007759B3 /* CharsInLocationCell.xib */; };
+		20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407AA225759152007759B3 /* CharsInLocationCell.swift */; };
 		2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */; };
 		2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045962225601FCA004793C5 /* SelectCharToPlayController.swift */; };
 		204F9D172568193B00AB51B6 /* CharStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D162568193B00AB51B6 /* CharStatusBar.swift */; };
@@ -114,6 +120,12 @@
 		2037F4B1256DAE2000F5F838 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2039559925645C13004D84C2 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		2039559F25645E0B004D84C2 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		20407A892575492B007759B3 /* WorldMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMap.swift; sourceTree = "<group>"; };
+		20407A8C25755090007759B3 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		20407A942575599E007759B3 /* CharacterAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAvatar.swift; sourceTree = "<group>"; };
+		20407A9725755BA9007759B3 /* PlayerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
+		20407A9B257590B6007759B3 /* CharsInLocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharsInLocationCell.xib; sourceTree = "<group>"; };
+		20407AA225759152007759B3 /* CharsInLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharsInLocationCell.swift; sourceTree = "<group>"; };
 		2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCharToPlay.storyboard; sourceTree = "<group>"; };
 		2045962225601FCA004793C5 /* SelectCharToPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharToPlayController.swift; sourceTree = "<group>"; };
 		204F9D162568193B00AB51B6 /* CharStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStatusBar.swift; sourceTree = "<group>"; };
@@ -312,6 +324,7 @@
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				20407AA525759868007759B3 /* LocationInfo */,
 				20014EB5256D9FD200E30E33 /* CharListToLogin */,
 				20014EB0256D79DF00E30E33 /* RegisterNewChar */,
 				2006D7312564752600259338 /* User */,
@@ -323,7 +336,7 @@
 				20F5776C2552F8E8003ED757 /* CharIsCreated.swift */,
 				20F5776F2553565B003ED757 /* SelectChar.swift */,
 				20766EEB2560734400AEDE8D /* CharInfo.swift */,
-				2071A5D5257445CC009F5768 /* LocationInfo.swift */,
+				20407A892575492B007759B3 /* WorldMap.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +348,32 @@
 				2039559F25645E0B004D84C2 /* AlertView.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		20407A8F257557F5007759B3 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				20407A942575599E007759B3 /* CharacterAvatar.swift */,
+				20407A9725755BA9007759B3 /* PlayerStatus.swift */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		20407A9A25759093007759B3 /* CharsInLocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				20407A9B257590B6007759B3 /* CharsInLocationCell.xib */,
+				20407AA225759152007759B3 /* CharsInLocationCell.swift */,
+			);
+			path = CharsInLocationCell;
+			sourceTree = "<group>";
+		};
+		20407AA525759868007759B3 /* LocationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2071A5D5257445CC009F5768 /* LocationInfo.swift */,
+			);
+			path = LocationInfo;
 			sourceTree = "<group>";
 		};
 		2045961E25601F89004793C5 /* SelectCharToPlay */ = {
@@ -397,6 +436,7 @@
 				2006D6F1256469DB00259338 /* UserSettings */,
 				2088CEC025631C6800DC4D36 /* Validator.swift */,
 				2006D6EE256464B900259338 /* Nib.swift */,
+				20407A8C25755090007759B3 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -439,6 +479,7 @@
 		20CB85D92566A62D00237DAF /* MainLogger */ = {
 			isa = PBXGroup;
 			children = (
+				20407A9A25759093007759B3 /* CharsInLocationCell */,
 				20CB85DD2566A65F00237DAF /* MainLogger.storyboard */,
 				20CB85DA2566A65200237DAF /* MainLoggerController.swift */,
 			);
@@ -498,6 +539,7 @@
 		20CD1DE2255FE942009F991D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				20407A8F257557F5007759B3 /* PlayerView */,
 				20CD1DE3255FE94D009F991D /* Buttons */,
 				20CD1DEF255FF2AB009F991D /* ViewController.swift */,
 			);
@@ -583,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200A6667254E1A4000B74B48 /* LaunchScreen.storyboard in Resources */,
+				20407A9C257590B6007759B3 /* CharsInLocationCell.xib in Resources */,
 				2006D723256472D100259338 /* InfoPlist.strings in Resources */,
 				20CD1DDD255FE52F009F991D /* AlegreyaSC-Regular.ttf in Resources */,
 				2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */,
@@ -679,8 +722,11 @@
 				2006D7332564753900259338 /* User.swift in Sources */,
 				2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */,
 				20F5776D2552F8E8003ED757 /* CharIsCreated.swift in Sources */,
+				20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */,
+				20407A952575599E007759B3 /* CharacterAvatar.swift in Sources */,
 				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
 				2006D6EF256464B900259338 /* Nib.swift in Sources */,
+				20407A9825755BA9007759B3 /* PlayerStatus.swift in Sources */,
 				20CD1DF0255FF2AB009F991D /* ViewController.swift in Sources */,
 				2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
@@ -716,6 +762,8 @@
 				203955A025645E0B004D84C2 /* AlertView.swift in Sources */,
 				20AC57B7256519DA00392C87 /* ErrorHandler.swift in Sources */,
 				20CB85E62566A74C00237DAF /* AssistiveController.swift in Sources */,
+				20407A8D25755090007759B3 /* LocationService.swift in Sources */,
+				20407A8A2575492B007759B3 /* WorldMap.swift in Sources */,
 				20AC57BD25651A0C00392C87 /* ErrorHandler+Mappable.swift in Sources */,
 				20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */,
 				20014EB2256D79FA00E30E33 /* RegisterNewChar.swift in Sources */,

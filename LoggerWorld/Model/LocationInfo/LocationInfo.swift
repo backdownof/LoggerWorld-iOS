@@ -9,8 +9,8 @@ import Foundation
 
 struct LocationInfo: Codable {
     var locationId: Int?
-    var mobsInLocation: [MobsInLocation]?
-    var playersInLocation: [PlayersInLocation]?
+    var mobs: [MobsInLocation]?
+    var players: [PlayersInLocation]?
 }
 
 struct MobsInLocation: Codable {

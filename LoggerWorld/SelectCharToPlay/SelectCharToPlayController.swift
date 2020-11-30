@@ -32,6 +32,7 @@ class SelectCharToPlayController: ViewController {
         
         setupView()
         loadPlayerChars()
+        loadMap()
         
         charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: "charCell")
         charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: "addCell")
@@ -78,6 +79,13 @@ class SelectCharToPlayController: ViewController {
         UI.setRootController(R.storyboard.login.instantiateInitialViewController())
     }
     
+    func loadMap() {
+        Network.getLocationDict(completion: { locations in
+            LocationService.shared.locations = locations
+        }, failure: {
+            print("Fucked up getting map")
+        })
+    }
 }
 
 
@@ -136,6 +144,10 @@ extension SelectCharToPlayController: SocketManagerDelegate {
     
     func charLoggedIn() {
         UI.setRootController(R.storyboard.loggerTabBar.instantiateInitialViewController())
+    }
+    
+    func updatedLocationInfo(info: LocationInfo) {
+        
     }
 }
 

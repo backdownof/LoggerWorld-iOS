@@ -92,7 +92,8 @@ class Network: NSObject {
         
         AF.request((API.baseURL + "api/players").url as! URLConvertible,
                    method: .get,
-                   encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { response in
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON(completionHandler: { response in
                     if let data = response.data {
                         do {
                             let json = try JSONDecoder().decode(Players.self, from: data)
@@ -124,7 +125,8 @@ class Network: NSObject {
                     "name": nickname,
                     "playerClass": playerClass
                    ],
-                   encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { response in
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON(completionHandler: { response in
                     switch response.result {
                     case .success:
                         completion()
@@ -133,5 +135,56 @@ class Network: NSObject {
                     }
                    })
    }
+    
+    static func getLocationDict(completion: @escaping([LocationNameAndCoords]) -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/locations").url as! URLConvertible,
+                   method: .get,
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON(completionHandler: { response in
+                    switch response.result {
+                    case .success:
+                        if let data = response.data {
+                            do {
+                                let json = try JSONDecoder().decode(WorldMap.self, from: data)
+//                                print(json)
+                                if let locations = json.locations {
+                                    completion(locations)
+                                } else {
+                                    let locations: [LocationNameAndCoords] = []
+                                    completion(locations)
+                                }
+                            } catch {
+                                print("Error")
+                            }
+                        }
+                    case let .failure(error):
+                        failure()
+                    }
+                   })
+    }
+    
+    static func getStatsDescription(completion: @escaping() -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/players/stats").url as! URLConvertible,
+                   method: .get,
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON(completionHandler: { response in
+                    switch response.result {
+                    case .success:
+                        if let data = response.data {
+//                            print(String(data: data, encoding: .utf8) ?? "")
+                        }
+                    case let .failure(error):
+                        failure()
+                    }
+                   })
+    }
 }
 

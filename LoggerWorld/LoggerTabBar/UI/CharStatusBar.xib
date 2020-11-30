@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharStatusBar" customModule="LoggerWorld" customModuleProvider="target">
             <connections>
+                <outlet property="charAvatar" destination="p7l-xH-W5b" id="Dee-K1-BQ6"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="kdn-z9-m8K"/>
             </connections>
         </placeholder>
@@ -35,22 +36,11 @@
                     <color key="textColor" name="Creame"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-xH-W5b">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-xH-W5b" customClass="CharacterAvatar" customModule="LoggerWorld" customModuleProvider="target">
                     <rect key="frame" x="9" y="19.5" width="28" height="28"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-xb-hjG">
-                            <rect key="frame" x="3" y="3" width="22" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="22" id="k7P-jp-Cuw"/>
-                                <constraint firstAttribute="height" constant="22" id="osB-tM-BeF"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" name="charBG"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="TT7-Yp-b8h"/>
-                        <constraint firstItem="A7s-xb-hjG" firstAttribute="centerY" secondItem="p7l-xH-W5b" secondAttribute="centerY" id="Zq9-dZ-rK3"/>
-                        <constraint firstItem="A7s-xb-hjG" firstAttribute="centerX" secondItem="p7l-xH-W5b" secondAttribute="centerX" id="aBT-e8-BFK"/>
                         <constraint firstAttribute="width" constant="28" id="wNn-17-Eoa"/>
                     </constraints>
                 </view>
@@ -114,9 +104,6 @@
         <image name="barMP" width="98.5" height="12"/>
         <namedColor name="Creame">
             <color red="0.94499999284744263" green="0.82700002193450928" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="charBG">
-            <color red="0.51399999856948853" green="0.58799999952316284" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -13,7 +13,7 @@ protocol SocketManagerDelegate {
     func success()
     func listOfCharactersToSelect(chars: [CharListToLogin])
     func charLoggedIn()
-    func updatedLocationInfo(for: LocationInfo)
+    func updatedLocationInfo(info: LocationInfo)
 }
 
 extension SocketManagerDelegate {
@@ -21,7 +21,7 @@ extension SocketManagerDelegate {
     func success() {}
     func listOfCharactersToSelect(chars: [CharListToLogin]) {}
     func charLoggedIn() {}
-    func updatedLocationInfo(for: LocationInfo) {}
+    func updatedLocationInfo(info: LocationInfo) {}
 }
 
 class SocketManager: StompClientLibDelegate {
@@ -35,7 +35,6 @@ class SocketManager: StompClientLibDelegate {
     var delegate: SocketManagerDelegate?
     
     func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-        print()
         print("SOME DATA???")
         print("DESTIONATION : \(destination)")
         print("JSON BODY : \(String(describing: jsonBody))")
@@ -44,9 +43,8 @@ class SocketManager: StompClientLibDelegate {
         guard let stringData = stringBody else { print("fuck"); return }
         
         do {
-            if let data = try? JSONDecoder().decode(LocationInfo.self, from:Data(stringData.utf8)) {
-                delegate?.updatedLocationInfo(for: data)
-                print(data)
+            if let data = try? JSONDecoder().decode(LocationInfo.self, from: Data(stringData.utf8)) {
+                delegate?.updatedLocationInfo(info: data)
             } else {
                 print("fucked parsing json")
             }
@@ -118,8 +116,6 @@ class SocketManager: StompClientLibDelegate {
     func createCharacter(nickname: String, className: String) {
         let dict = ["name": nickname, "playerClass": className] as NSDictionary
         stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/add")
-        print("______________")
-        print("sent players")
     }
     
     func loginCharacter(playerId: Int) {

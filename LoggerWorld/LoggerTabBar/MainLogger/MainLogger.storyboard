@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AlegreyaSC-Regular.ttf">
+            <string>AlegreyaSC-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Item-->
         <scene sceneID="9gd-lr-g1v">
@@ -26,24 +31,24 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ora-3m-ETZ">
-                                <rect key="frame" x="10" y="477.5" width="300" height="26.5"/>
+                                <rect key="frame" x="10" y="482" width="255" height="22"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRH-1p-voa" customClass="ButtonWImage" customModule="LoggerWorld" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nRH-1p-voa" secondAttribute="height" multiplier="298:83" id="Z27-f0-Fmq"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-S4-FV6" customClass="ButtonWImage" customModule="LoggerWorld" customModuleProvider="target">
-                                        <rect key="frame" x="102.5" y="0.0" width="95" height="26.5"/>
+                                        <rect key="frame" x="87.5" y="0.0" width="80" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gDP-S4-FV6" secondAttribute="height" multiplier="298:83" id="vS2-Uv-VaV"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prr-MB-AS5" customClass="ButtonWImage" customModule="LoggerWorld" customModuleProvider="target">
-                                        <rect key="frame" x="205.5" y="0.0" width="94.5" height="26.5"/>
+                                        <rect key="frame" x="175.5" y="0.0" width="79.5" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="prr-MB-AS5" secondAttribute="height" multiplier="298:83" id="Tzo-RE-qnr"/>
@@ -52,14 +57,14 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-Zg-kHu">
-                                <rect key="frame" x="10" y="124" width="300" height="343.5"/>
+                                <rect key="frame" x="10" y="124" width="300" height="348"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-py-PlY">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="343.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="348"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-cq-dcB">
-                                        <rect key="frame" x="265" y="0.0" width="35" height="343.5"/>
+                                        <rect key="frame" x="265" y="0.0" width="35" height="348"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="0Es-oO-f7Q"/>
@@ -82,7 +87,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-Rc-zq5">
                                         <rect key="frame" x="0.0" y="19.5" width="99" height="16.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
                                         <color key="textColor" name="Creame"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -94,22 +99,32 @@
                                     <constraint firstItem="HWb-Rc-zq5" firstAttribute="leading" secondItem="Ejy-Kn-ioL" secondAttribute="leading" id="ain-rd-UsW"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-yF-G5G">
+                                <rect key="frame" x="275" y="482" width="35" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dTR-yF-G5G" secondAttribute="height" multiplier="35:22" id="yHB-2q-BTn"/>
+                                </constraints>
+                                <state key="normal" title="A"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tKf-Zc-HxB"/>
                         <color key="backgroundColor" name="Brown"/>
                         <constraints>
+                            <constraint firstItem="dTR-yF-G5G" firstAttribute="centerY" secondItem="ora-3m-ETZ" secondAttribute="centerY" id="5rE-PV-XcV"/>
+                            <constraint firstItem="tKf-Zc-HxB" firstAttribute="trailing" secondItem="dTR-yF-G5G" secondAttribute="trailing" constant="10" id="Gaf-Bg-Wi9"/>
                             <constraint firstItem="ora-3m-ETZ" firstAttribute="top" secondItem="aoq-Zg-kHu" secondAttribute="bottom" constant="10" id="KBC-3q-aVc"/>
                             <constraint firstItem="aoq-Zg-kHu" firstAttribute="leading" secondItem="tKf-Zc-HxB" secondAttribute="leading" constant="10" id="N2R-9h-NGO"/>
                             <constraint firstItem="HaQ-qS-ZKF" firstAttribute="top" secondItem="tKf-Zc-HxB" secondAttribute="top" constant="15" id="OM9-9u-tWi"/>
                             <constraint firstItem="Ejy-Kn-ioL" firstAttribute="centerY" secondItem="HaQ-qS-ZKF" secondAttribute="centerY" id="P15-Q7-jgl"/>
                             <constraint firstItem="Ejy-Kn-ioL" firstAttribute="height" secondItem="HaQ-qS-ZKF" secondAttribute="height" id="Thl-Xm-OOZ"/>
-                            <constraint firstAttribute="trailing" secondItem="ora-3m-ETZ" secondAttribute="trailing" constant="10" id="YGH-HP-J6w"/>
+                            <constraint firstItem="dTR-yF-G5G" firstAttribute="leading" secondItem="ora-3m-ETZ" secondAttribute="trailing" constant="10" id="bhs-Xc-UbS"/>
                             <constraint firstItem="tKf-Zc-HxB" firstAttribute="trailing" secondItem="aoq-Zg-kHu" secondAttribute="trailing" constant="10" id="bsO-in-OY7"/>
                             <constraint firstItem="ora-3m-ETZ" firstAttribute="leading" secondItem="tKf-Zc-HxB" secondAttribute="leading" constant="10" id="fBX-gN-THl"/>
                             <constraint firstItem="HaQ-qS-ZKF" firstAttribute="leading" secondItem="tKf-Zc-HxB" secondAttribute="leading" constant="10" id="fHc-Xh-isY"/>
                             <constraint firstItem="Ejy-Kn-ioL" firstAttribute="leading" secondItem="HaQ-qS-ZKF" secondAttribute="trailing" constant="10" id="fNh-Wb-0Tn"/>
                             <constraint firstItem="tKf-Zc-HxB" firstAttribute="bottom" secondItem="ora-3m-ETZ" secondAttribute="bottom" constant="15" id="gkA-3y-JUA"/>
                             <constraint firstItem="tKf-Zc-HxB" firstAttribute="trailing" secondItem="Ejy-Kn-ioL" secondAttribute="trailing" constant="10" id="q9U-4s-Nfi"/>
+                            <constraint firstItem="dTR-yF-G5G" firstAttribute="width" secondItem="EAZ-cq-dcB" secondAttribute="width" id="rXo-Yk-1u2"/>
                             <constraint firstItem="aoq-Zg-kHu" firstAttribute="top" secondItem="HaQ-qS-ZKF" secondAttribute="bottom" constant="10" id="xVw-5y-KgO"/>
                         </constraints>
                     </view>
