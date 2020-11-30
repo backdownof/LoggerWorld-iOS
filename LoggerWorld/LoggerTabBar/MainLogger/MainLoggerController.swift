@@ -69,8 +69,8 @@ class MainLoggerController: UIViewController {
     }
     
     private func setupView() {
-        guard let mageImage = R.image.mageImage() else { return }
-        charStatusBar.charAvatar.avatarImage = mageImage
+        charStatusBar.charAvatar.classId = 1
+        charStatusBar.charAvatar.characterStatus = .defaultStatus
         
         logsTableView.separatorColor = R.color.brown()
         logsTableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -82,10 +82,6 @@ extension MainLoggerController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 30
-//    }
 }
 
 extension MainLoggerController: UITableViewDataSource {
@@ -107,16 +103,16 @@ extension MainLoggerController: UITableViewDataSource {
         }
         if tableView == playersNearTableView {
             let cell = playersNearTableView.dequeueReusableCell(withIdentifier: "charInLocation", for: indexPath) as! CharsInLocationCell
-            print(2222)
-            guard let someImage = R.image.warriorImage(), let playersInLoc = playersInLocation, let icon = R.image.icWarSword() else { return UITableViewCell() }
-            print(3333)
-            print(playersInLoc[0].name)
-            cell.charsAvatarImageView.avatarImage = someImage
-            let level = playersInLoc[indexPath.row].level!
-            let name = playersInLoc[indexPath.row].name!
+
+            guard let playersInLoc = playersInLocation else { return UITableViewCell() }
+            
+            let level = playersInLoc[indexPath.row].level ?? 0
+            let name = playersInLoc[indexPath.row].name ?? ""
+            let id = playersInLoc[indexPath.row].id ?? 1
+            
             cell.levelLabel.text = "\(level) лвл"
             cell.shordNicknameLabel.text = "\(name.prefix(3))"
-            cell.charClassIcon.image = icon
+            cell.classId = id
             cell.charsAvatarImageView.characterStatus = .defaultStatus
             return cell
         }

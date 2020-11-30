@@ -25,13 +25,28 @@ class CharacterAvatar: UIView {
                 backgroundColor = R.color.charPVPBG()
                 layer.borderColor = R.color.creame()?.cgColor
             default:
-                backgroundColor = R.color.green()
+                backgroundColor = R.color.charBG()
                 layer.borderColor = R.color.creame()?.cgColor
             }
         }
     }
     
     var avatarImage = UIImage()
+    
+    var classId: Int? {
+        didSet {
+            switch classId {
+            case 1:
+                avatarImage = R.image.warriorImage()!
+            case 2:
+                avatarImage = R.image.archerImage()!
+            case 3:
+                avatarImage = R.image.mageImage()!
+            default:
+                avatarImage = R.image.assassinImage()!
+            }
+        }
+    }
     
     override func draw(_ rect: CGRect) {
         setupView()
@@ -40,6 +55,7 @@ class CharacterAvatar: UIView {
     private func setupView() {
         layer.cornerRadius = 5
         layer.borderWidth = 1
+        clipsToBounds = true
         
         let imageView = UIImageView()
         self.addSubview(imageView)

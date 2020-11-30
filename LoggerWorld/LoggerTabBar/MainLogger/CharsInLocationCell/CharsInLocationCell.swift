@@ -13,4 +13,24 @@ class CharsInLocationCell: UITableViewCell {
     @IBOutlet weak var shordNicknameLabel: UILabel!
     @IBOutlet weak var charClassIcon: UIImageView!
     
+    var classId: Int? {
+        didSet {
+            switch classId {
+            case 1:
+                charClassIcon.image = R.image.icWarSword()!
+            case 2:
+                charClassIcon.image = R.image.icArcherBow()!
+            case 3:
+                charClassIcon.image = R.image.icMageStuff()!
+            default:
+                charClassIcon.image = R.image.icAssasignShuriken()!
+            }
+            charsAvatarImageView.classId = classId
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
 }
