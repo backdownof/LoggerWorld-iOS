@@ -42,21 +42,17 @@ class SocketManager: StompClientLibDelegate {
         
         guard let stringData = stringBody else { print("fuck"); return }
         
-        do {
-            if let data = try? JSONDecoder().decode(LocationInfo.self, from: Data(stringData.utf8)) {
-                delegate?.updatedLocationInfo(info: data)
-            } else {
-                print("fucked parsing json")
-            }
+        if let data = try? JSONDecoder().decode(LocationInfo.self, from: Data(stringData.utf8)) {
+            delegate?.updatedLocationInfo(info: data)
+        } else {
+            print("fucked parsing json")
+        }
 //            let playersList = try JSONDecoder().decode(Players.self, from:Data(stringData.utf8))
 //            if let listOfChars = playersList.players {
 //                delegate?.listOfCharactersToSelect(chars: listOfChars)
 //            } else {
 //                delegate?.listOfCharactersToSelect(chars: [])
 //            }
-        } catch {
-            print("error casting")
-        }
         
         delegate?.success()
     }

@@ -3,12 +3,12 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="9N8-mI-fX8">
             <objects>
                 <viewController id="iXg-Pn-uDE" sceneMemberID="viewController">
@@ -16,9 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="kKW-F7-AxK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Brown"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="34I-Vi-gs5"/>
+                    <tabBarItem key="tabBarItem" title="" image="icInventoryTabBarItem" selectedImage="icInventoryTabBarItem" id="34I-Vi-gs5"/>
                     <navigationItem key="navigationItem" id="vx4-Ps-71k"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -47,8 +47,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="icInventoryTabBarItem" width="30" height="30"/>
+        <namedColor name="Brown">
+            <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

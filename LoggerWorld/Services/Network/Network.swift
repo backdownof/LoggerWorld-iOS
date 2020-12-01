@@ -161,7 +161,7 @@ class Network: NSObject {
                                 print("Error")
                             }
                         }
-                    case let .failure(error):
+                    case .failure(_):
                         failure()
                     }
                    })
@@ -171,7 +171,7 @@ class Network: NSObject {
                                 failure: @escaping() -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
-        
+
         AF.request((API.baseURL + "api/players/stats").url as! URLConvertible,
                    method: .get,
                    encoding: JSONEncoding.default,
@@ -181,7 +181,7 @@ class Network: NSObject {
                         if let data = response.data {
 //                            print(String(data: data, encoding: .utf8) ?? "")
                         }
-                    case let .failure(error):
+                    case let .failure(_):
                         failure()
                     }
                    })

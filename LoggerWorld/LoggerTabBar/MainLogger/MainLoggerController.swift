@@ -16,11 +16,9 @@ class MainLoggerController: UIViewController {
     @IBOutlet weak var logsTableView: UITableView!
     @IBOutlet weak var playersNearTableView: UITableView!
     
-//    var locationInfo: LocationInfo? {
-//        didSet {
-//            if let
-//        }
-//    }
+    let currentLocationSubview = UIView()
+    let currentLocationTitle = UILabel()
+    
     var playersInLocation: [PlayersInLocation]? {
         didSet {
             print(1111)
@@ -43,9 +41,8 @@ class MainLoggerController: UIViewController {
         socketManager.delegate = self
         
         setupView()
+        
         playersNearTableView.register(UINib(nibName: R.nib.charsInLocationCell.name, bundle: nil), forCellReuseIdentifier: "charInLocation")
-//        charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: "addCell")
-        print(LocationService.shared.getCharsInLocation())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,9 +65,39 @@ class MainLoggerController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        view.bringSubviewToFront(currentLocationSubview)
+        currentLocationSubview.dropShadow(color: R.color.brown()!, offSet: CGSize(width: 0, height: 3))
+    }
+    
     private func setupView() {
+        view.addSubview(currentLocationSubview)
+        currentLocationSubview.translatesAutoresizingMaskIntoConstraints = false
+        currentLocationSubview.backgroundColor = R.color.creame()
+        NSLayoutConstraint.activate([
+            currentLocationSubview.widthAnchor.constraint(equalTo: logsTableView.widthAnchor, multiplier: 1),
+            currentLocationSubview.heightAnchor.constraint(equalToConstant: 25),
+            currentLocationSubview.topAnchor.constraint(equalTo: logsTableView.topAnchor),
+            currentLocationSubview.leadingAnchor.constraint(equalTo: logsTableView.leadingAnchor)
+        ])
+        
         charStatusBar.charAvatar.classId = 1
         charStatusBar.charAvatar.characterStatus = .defaultStatus
+        
+//        currentLocationSubview.dropShadow(color: UIColor.black, opacity: 1, offSet: CGSize(width: 0, height:-3), radius: 0, scale: false)
+        
+        currentLocationTitle.font = R.font.alegreyaSCBold(size: 16)
+        currentLocationTitle.textColor = R.color.brown()
+        
+        currentLocationSubview.addSubview(currentLocationTitle)
+        currentLocationSubview.bringSubviewToFront(currentLocationTitle)
+        
+        currentLocationTitle.translatesAutoresizingMaskIntoConstraints = false
+        currentLocationTitle.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        currentLocationTitle.centerXAnchor.constraint(equalTo: currentLocationSubview.centerXAnchor).isActive = true
+        currentLocationTitle.centerYAnchor.constraint(equalTo: currentLocationSubview.centerYAnchor).isActive = true
         
         logsTableView.separatorColor = R.color.brown()
         logsTableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -108,10 +135,11 @@ extension MainLoggerController: UITableViewDataSource {
             
             let level = playersInLoc[indexPath.row].level ?? 0
             let name = playersInLoc[indexPath.row].name ?? ""
-            let id = playersInLoc[indexPath.row].id ?? 1
+            let id = playersInLoc[indexPath.row].classId ?? 1
             
             cell.levelLabel.text = "\(level) лвл"
             cell.shordNicknameLabel.text = "\(name.prefix(3))"
+            print("____ \(playersInLoc[indexPath.row].id)")
             cell.classId = id
             cell.charsAvatarImageView.characterStatus = .defaultStatus
             return cell
@@ -123,5 +151,8 @@ extension MainLoggerController: UITableViewDataSource {
 extension MainLoggerController: SocketManagerDelegate {
     func updatedLocationInfo(info: LocationInfo) {
         playersInLocation = info.players
+        if let locID = info.locationId {
+            currentLocationTitle.text = LocationService.shared.getNameById(id: locID)
+        }
     }
 }

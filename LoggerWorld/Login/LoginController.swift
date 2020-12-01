@@ -61,7 +61,7 @@ extension LoginController: ButtonWOImageDelegate {
             Network.requestLogin(userName: userName,
                                  password: password,
                                  completion: {
-                                    print(User.token)
+                                    print(User.token!)
                                     self.connectToWs()
                                  },
                                  failure: {

@@ -298,16 +298,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 5 files.
+  /// This `R.file` struct is generated, and contains static references to 10 files.
   struct file {
     /// Resource file `AlegreyaSC-Black.ttf`.
     static let alegreyaSCBlackTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-Black", pathExtension: "ttf")
+    /// Resource file `AlegreyaSC-BlackItalic.ttf`.
+    static let alegreyaSCBlackItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-BlackItalic", pathExtension: "ttf")
     /// Resource file `AlegreyaSC-Bold.ttf`.
     static let alegreyaSCBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-Bold", pathExtension: "ttf")
+    /// Resource file `AlegreyaSC-BoldItalic.ttf`.
+    static let alegreyaSCBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-BoldItalic", pathExtension: "ttf")
     /// Resource file `AlegreyaSC-ExtraBold.ttf`.
     static let alegreyaSCExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-ExtraBold", pathExtension: "ttf")
+    /// Resource file `AlegreyaSC-ExtraBoldItalic.ttf`.
+    static let alegreyaSCExtraBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-ExtraBoldItalic", pathExtension: "ttf")
+    /// Resource file `AlegreyaSC-Italic.ttf`.
+    static let alegreyaSCItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-Italic", pathExtension: "ttf")
     /// Resource file `AlegreyaSC-Medium.ttf`.
     static let alegreyaSCMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-Medium", pathExtension: "ttf")
+    /// Resource file `AlegreyaSC-MediumItalic.ttf`.
+    static let alegreyaSCMediumItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-MediumItalic", pathExtension: "ttf")
     /// Resource file `AlegreyaSC-Regular.ttf`.
     static let alegreyaSCRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "AlegreyaSC-Regular", pathExtension: "ttf")
 
@@ -317,9 +327,21 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "AlegreyaSC-BlackItalic", withExtension: "ttf")`
+    static func alegreyaSCBlackItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.alegreyaSCBlackItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "AlegreyaSC-Bold", withExtension: "ttf")`
     static func alegreyaSCBoldTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.alegreyaSCBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AlegreyaSC-BoldItalic", withExtension: "ttf")`
+    static func alegreyaSCBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.alegreyaSCBoldItalicTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -329,9 +351,27 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "AlegreyaSC-ExtraBoldItalic", withExtension: "ttf")`
+    static func alegreyaSCExtraBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.alegreyaSCExtraBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AlegreyaSC-Italic", withExtension: "ttf")`
+    static func alegreyaSCItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.alegreyaSCItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "AlegreyaSC-Medium", withExtension: "ttf")`
     static func alegreyaSCMediumTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.alegreyaSCMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "AlegreyaSC-MediumItalic", withExtension: "ttf")`
+    static func alegreyaSCMediumItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.alegreyaSCMediumItalicTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -344,14 +384,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 5 fonts.
+  /// This `R.font` struct is generated, and contains static references to 10 fonts.
   struct font: Rswift.Validatable {
+    /// Font `AlegreyaSC-BlackItalic`.
+    static let alegreyaSCBlackItalic = Rswift.FontResource(fontName: "AlegreyaSC-BlackItalic")
     /// Font `AlegreyaSC-Black`.
     static let alegreyaSCBlack = Rswift.FontResource(fontName: "AlegreyaSC-Black")
+    /// Font `AlegreyaSC-BoldItalic`.
+    static let alegreyaSCBoldItalic = Rswift.FontResource(fontName: "AlegreyaSC-BoldItalic")
     /// Font `AlegreyaSC-Bold`.
     static let alegreyaSCBold = Rswift.FontResource(fontName: "AlegreyaSC-Bold")
+    /// Font `AlegreyaSC-ExtraBoldItalic`.
+    static let alegreyaSCExtraBoldItalic = Rswift.FontResource(fontName: "AlegreyaSC-ExtraBoldItalic")
     /// Font `AlegreyaSC-ExtraBold`.
     static let alegreyaSCExtraBold = Rswift.FontResource(fontName: "AlegreyaSC-ExtraBold")
+    /// Font `AlegreyaSC-Italic`.
+    static let alegreyaSCItalic = Rswift.FontResource(fontName: "AlegreyaSC-Italic")
+    /// Font `AlegreyaSC-MediumItalic`.
+    static let alegreyaSCMediumItalic = Rswift.FontResource(fontName: "AlegreyaSC-MediumItalic")
     /// Font `AlegreyaSC-Medium`.
     static let alegreyaSCMedium = Rswift.FontResource(fontName: "AlegreyaSC-Medium")
     /// Font `AlegreyaSC-Regular`.
@@ -362,9 +412,19 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: alegreyaSCBlack, size: size)
     }
 
+    /// `UIFont(name: "AlegreyaSC-BlackItalic", size: ...)`
+    static func alegreyaSCBlackItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: alegreyaSCBlackItalic, size: size)
+    }
+
     /// `UIFont(name: "AlegreyaSC-Bold", size: ...)`
     static func alegreyaSCBold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: alegreyaSCBold, size: size)
+    }
+
+    /// `UIFont(name: "AlegreyaSC-BoldItalic", size: ...)`
+    static func alegreyaSCBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: alegreyaSCBoldItalic, size: size)
     }
 
     /// `UIFont(name: "AlegreyaSC-ExtraBold", size: ...)`
@@ -372,9 +432,24 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: alegreyaSCExtraBold, size: size)
     }
 
+    /// `UIFont(name: "AlegreyaSC-ExtraBoldItalic", size: ...)`
+    static func alegreyaSCExtraBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: alegreyaSCExtraBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "AlegreyaSC-Italic", size: ...)`
+    static func alegreyaSCItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: alegreyaSCItalic, size: size)
+    }
+
     /// `UIFont(name: "AlegreyaSC-Medium", size: ...)`
     static func alegreyaSCMedium(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: alegreyaSCMedium, size: size)
+    }
+
+    /// `UIFont(name: "AlegreyaSC-MediumItalic", size: ...)`
+    static func alegreyaSCMediumItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: alegreyaSCMediumItalic, size: size)
     }
 
     /// `UIFont(name: "AlegreyaSC-Regular", size: ...)`
@@ -384,9 +459,14 @@ struct R: Rswift.Validatable {
 
     static func validate() throws {
       if R.font.alegreyaSCBlack(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-Black' could not be loaded, is 'AlegreyaSC-Black.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.alegreyaSCBlackItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-BlackItalic' could not be loaded, is 'AlegreyaSC-BlackItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.alegreyaSCBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-Bold' could not be loaded, is 'AlegreyaSC-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.alegreyaSCBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-BoldItalic' could not be loaded, is 'AlegreyaSC-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.alegreyaSCExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-ExtraBold' could not be loaded, is 'AlegreyaSC-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.alegreyaSCExtraBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-ExtraBoldItalic' could not be loaded, is 'AlegreyaSC-ExtraBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.alegreyaSCItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-Italic' could not be loaded, is 'AlegreyaSC-Italic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.alegreyaSCMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-Medium' could not be loaded, is 'AlegreyaSC-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.alegreyaSCMediumItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-MediumItalic' could not be loaded, is 'AlegreyaSC-MediumItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.alegreyaSCRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'AlegreyaSC-Regular' could not be loaded, is 'AlegreyaSC-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
@@ -411,7 +491,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 17 images.
+  /// This `R.image` struct is generated, and contains static references to 19 images.
   struct image {
     /// Image `AppImage`.
     static let appImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "AppImage")
@@ -437,6 +517,10 @@ struct R: Rswift.Validatable {
     static let icFacebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "icFacebook")
     /// Image `icGoogle`.
     static let icGoogle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icGoogle")
+    /// Image `icInventoryTabBarItem`.
+    static let icInventoryTabBarItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "icInventoryTabBarItem")
+    /// Image `icLogsTabBarItem`.
+    static let icLogsTabBarItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "icLogsTabBarItem")
     /// Image `icMageStuff`.
     static let icMageStuff = Rswift.ImageResource(bundle: R.hostingBundle, name: "icMageStuff")
     /// Image `icVK`.
@@ -529,6 +613,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icGoogle", bundle: ..., traitCollection: ...)`
     static func icGoogle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icGoogle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icInventoryTabBarItem", bundle: ..., traitCollection: ...)`
+    static func icInventoryTabBarItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icInventoryTabBarItem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icLogsTabBarItem", bundle: ..., traitCollection: ...)`
+    static func icLogsTabBarItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icLogsTabBarItem, compatibleWith: traitCollection)
     }
     #endif
 
@@ -913,8 +1011,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "barHP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barHP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "barMP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barMP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "barHP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barHP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         }
@@ -1003,6 +1101,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "icInventoryTabBarItem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icInventoryTabBarItem' is used in storyboard 'Assistive', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.assistive().assistiveNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'assistiveNav' could not be loaded from storyboard 'Assistive' as 'UIKit.UINavigationController'.") }
@@ -1030,14 +1129,14 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "warriorImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'warriorImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icArcherBow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icArcherBow' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icAssasignShuriken", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icAssasignShuriken' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icWarSword", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icWarSword' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "assassinImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'assassinImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "mageImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mageImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icMageStuff", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icMageStuff' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "assassinImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'assassinImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "warriorImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'warriorImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icAssasignShuriken", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icAssasignShuriken' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "archerImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'archerImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icWarSword", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icWarSword' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mageImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mageImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icArcherBow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icArcherBow' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'CreateChar', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'CreateChar', but couldn't be loaded.") }
@@ -1079,8 +1178,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in storyboard 'LoggerTabBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'LoggerTabBar', but couldn't be loaded.") }
         }
         if _R.storyboard.loggerTabBar().loggerTabBar() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loggerTabBar' could not be loaded from storyboard 'LoggerTabBar' as 'LoggerTabBarController'.") }
       }
@@ -1102,12 +1201,12 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "AppImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppImage' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icVK", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icVK' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icGoogle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icGoogle' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "AppName", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppName' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.backward' is used in storyboard 'Login', but couldn't be loaded.") } }
+        if UIKit.UIImage(named: "AppName", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppName' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icFacebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icFacebook' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "AppImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppImage' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'Login', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'Login', but couldn't be loaded.") }
@@ -1137,9 +1236,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "icLogsTabBarItem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icLogsTabBarItem' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'MainLogger', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         }
         if _R.storyboard.mainLogger().mainLoggerNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainLoggerNav' could not be loaded from storyboard 'MainLogger' as 'UIKit.UINavigationController'.") }
         if _R.storyboard.mainLogger().mainLoggerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainLoggerVC' could not be loaded from storyboard 'MainLogger' as 'MainLoggerController'.") }
