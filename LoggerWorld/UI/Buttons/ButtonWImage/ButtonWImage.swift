@@ -12,39 +12,40 @@ protocol ButtonWImageDelegate: class {
 }
 
 @IBDesignable
-class ButtonWImage: UIView {
+class ButtonWImage: UIView, NibLoadable {
     
-    @IBOutlet var contentView: UIControl!
-    @IBOutlet var image: UIImageView!
-    @IBOutlet var label: UILabel!
+    @IBOutlet weak var buttonBackgroundImageView: UIImageView!
+    @IBOutlet var contentView: UIButton!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var label: UILabel!
     
     weak var delegate: ButtonWImageDelegate?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
     var buttonLabel: String = "" {
         didSet {
             label.text = buttonLabel
         }
     }
     
-    @IBAction func buttonPressed(_ sender: Any) {
+    convenience init() {
+        self.init(frame: .zero)
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        loadFromNib(owner: self)
         
     }
     
-    private func commonInit() {
-        Bundle.main.loadNibNamed("ButtonWImage", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        translatesAutoresizingMaskIntoConstraints = false
+        loadFromNib(owner: self)
+        
     }
     
+    @IBAction func buttonPressed(_ sender: Any) {
+        delegate?.buttonTapped(self)
+    }    
 }

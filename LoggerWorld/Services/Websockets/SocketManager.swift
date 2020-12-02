@@ -106,7 +106,6 @@ class SocketManager: StompClientLibDelegate {
     
     func loadPlayerChars() {
         stomp.sendMessage(message: "", toDestination: "/app/players", withHeaders: ["Authorization": "Bearer \(String(describing: User.token!))"], withReceipt: nil)
-        print("sent players")
     }
     
     func createCharacter(nickname: String, className: String) {

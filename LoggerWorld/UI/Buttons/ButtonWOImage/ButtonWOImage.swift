@@ -12,19 +12,16 @@ protocol ButtonWOImageDelegate: class {
 }
 
 @IBDesignable
-class ButtonWOImage: UIButton, NibLoadable {
-    
-    @IBOutlet var button: UIButton!
-    
-    weak var delegate: ButtonWOImageDelegate?
+class ButtonWOImage: UIView, NibLoadable {
     
     // MARK: - IBOutlets
-    
+    @IBOutlet var button: UIButton!
     @IBOutlet weak var buttonImageView: UIImageView!
     @IBOutlet weak var buttonTitleLabel: UILabel!
     
     // MARK: - Public Properties
     
+    weak var delegate: ButtonWOImageDelegate?
     var label: String = "" {
         didSet {
             buttonTitleLabel.text = label
@@ -49,13 +46,5 @@ class ButtonWOImage: UIButton, NibLoadable {
     @IBAction func buttonTapped(_ sender: Any) {
         delegate?.buttonTapped(self)
     }
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
     
 }

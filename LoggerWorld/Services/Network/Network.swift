@@ -29,16 +29,13 @@ class Network: NSObject {
         AF.request((API.baseURL + "api/user/login").url as! URLConvertible,
                    method: .post, parameters: parameters,
                    encoding: JSONEncoding.default).responseJSON { response in
-                    print(response.response?.statusCode)
                     guard let status = response.response?.statusCode else { return }
                     if Array(200...201).contains(status)  {
                         
                         if let headers = response.response?.allHeaderFields as? [String: String] {
                             let header = headers["Authorization"]
                             guard let authHeader = header else { return }
-                            print(3)
                             if authHeader.contains("Bearer "){
-                                print(2)
                                 let regex = try! NSRegularExpression(pattern: #"^(.*?)\s*Bearer\s*(.*)$"#, options: .caseInsensitive)
                                 if let match = regex.firstMatch(in: authHeader, range: NSRange(authHeader.startIndex..., in: authHeader)) {
                                     let token = authHeader[Range(match.range(at: 2), in: authHeader)!]
@@ -62,8 +59,8 @@ class Network: NSObject {
                                 language: String? = "RU",
                                 displayName: String? = nil,
                                 email: String,
-                                completion: @escaping () -> Void,
-                                failure: @escaping() -> Void) {
+                                completion: @escaping (String) -> Void,
+                                failure: @escaping(String) -> Void) {
         AF.request((API.baseURL + "api/user/sign-up").url as! URLConvertible,
                    method: .post,
                    parameters: [
@@ -74,11 +71,16 @@ class Network: NSObject {
                     "email": email
                    ],
                    encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
-                    guard let status = response.response?.statusCode else { return }
+                    guard let status = response.response?.statusCode else { failure("Failed connect to the server"); return }
+                    guard let data = response.data else { failure("Failed to process data from server"); return }
                     if Array(200...201).contains(status)  {
-                        completion()
+                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
+                            completion(successStatus.message ?? "")
+                        }
                     } else {
-                        failure()
+                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
+                            failure(successStatus.message ?? "")
+                        }
                     }
                     
                    })
@@ -97,7 +99,6 @@ class Network: NSObject {
                     if let data = response.data {
                         do {
                             let json = try JSONDecoder().decode(Players.self, from: data)
-                            print(json)
                             if let players = json.players {
                                 completion(players)
                             } else {
@@ -150,7 +151,6 @@ class Network: NSObject {
                         if let data = response.data {
                             do {
                                 let json = try JSONDecoder().decode(WorldMap.self, from: data)
-//                                print(json)
                                 if let locations = json.locations {
                                     completion(locations)
                                 } else {

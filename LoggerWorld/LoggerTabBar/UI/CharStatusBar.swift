@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class CharStatusBar: UIView {
 
     @IBOutlet var contentView: UIView!

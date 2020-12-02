@@ -61,15 +61,13 @@ extension LoginController: ButtonWOImageDelegate {
             Network.requestLogin(userName: userName,
                                  password: password,
                                  completion: {
-                                    print(User.token!)
                                     self.connectToWs()
                                  },
                                  failure: {
-                                    print("errorOccured try again")
+                                    print("error Occured try again")
                                  })
             
         }
-        print("ButtonPressed")
     }
     
     func connectToWs() {

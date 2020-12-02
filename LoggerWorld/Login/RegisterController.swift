@@ -71,10 +71,9 @@ class RegisterController: ViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func showAlertPressed(_ sender: Any) {
-        setAlert()
-        animateAlertIn()
-    }
+//    @IBAction func showAlertPressed(_ sender: Any) {
+//
+//    }
     
     func animateAlertIn() {
         alertView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
@@ -97,10 +96,10 @@ class RegisterController: ViewController {
         }
     }
     
-    func setAlert() {
+    func setAlert(status: String, message: String) {
         view.addSubview(alertView)
         alertView.center = view.center
-        alertView.set(title: "Ошибка регистрации. Попробуйте позже", buttonTitle: "ОК")
+        alertView.set(status: status, title: message, buttonTitle: "ОК")
     }
     
     func setupVisualEffectView() {
@@ -115,45 +114,37 @@ class RegisterController: ViewController {
 
 extension RegisterController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
+        alertView.isUserInteractionEnabled = false
         guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nicknameTextField.text else { return }
-        print(email)
-        print(nickname)
-        print(Validator.validEmail(for: email))
-        print(passwordTextField.text == repeatPasswordTextField.text)
-        print(Validator.nicknameIsValid(for: nickname))
         if Validator.validEmail(for: email) &&/* Validator.passwordIsStrong(for: password) &&*/ passwordTextField.text == repeatPasswordTextField.text && Validator.nicknameIsValid(for: nickname) {
             
-            print("Registered successfuly")
             Network.requestRegister(userName: nickname,
                                     password: password,
                                     email: email,
-                                    completion: {
-                                        print("Registered successfuly")
+                                    completion: { message in
+                                        self.setAlert(status: "Успех", message: message)
+                                        self.animateAlertIn()
+                                        self.alertView.isUserInteractionEnabled = true
+                                        self.alertView.statusIsSuccess = true
                                     },
-                                    failure: {
-                                        print("Registration error")
+                                    failure: { message in
+                                        self.setAlert(status: "Ошибка", message: message)
+                                        self.animateAlertIn()
+                                        self.alertView.isUserInteractionEnabled = true
                                     })
-            
-            
-            
-//            let credentials = Credentials(email: email, password: password)
-//            let playerCredetials = PlayerRegistration(registration: credentials)
-//
-//            let encoder = JSONEncoder()
-//            let data = try! encoder.encode(playerCredetials)
-//
-//            SocketManager.shared.socket.write(data: data)
             dismiss(animated: true, completion: nil)
         } else {
             print("error: некорректный email или password")
         }
     }
-    
-    
 }
 
 extension RegisterController: AlertDelegate {
     func okButtonTyped() {
         animateAlertOut()
+        if alertView.statusIsSuccess == true {
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+        }
     }
 }

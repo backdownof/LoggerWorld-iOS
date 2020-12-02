@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="AlegreyaSC-Bold.ttf">
+            <string>AlegreyaSC-Bold</string>
+        </array>
         <array key="AlegreyaSC-Regular.ttf">
             <string>AlegreyaSC-Regular</string>
         </array>
@@ -28,30 +31,40 @@
                                 <constraint firstAttribute="height" constant="164" id="02b-Vz-ndF"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-Vv-rlt" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
-                            <rect key="frame" x="75" y="184" width="150" height="42"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="150" id="5dB-gX-Yh8"/>
-                                <constraint firstAttribute="width" secondItem="mkC-Vv-rlt" secondAttribute="height" multiplier="298:83" id="x5C-86-ZsW"/>
-                            </constraints>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgx-7n-vgd">
                             <rect key="frame" x="129" y="72" width="42" height="20"/>
                             <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="17"/>
                             <color key="textColor" name="Brown"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNC-xM-nQs">
+                            <rect key="frame" x="10" y="10" width="280" height="20"/>
+                            <fontDescription key="fontDescription" name="AlegreyaSC-Bold" family="Alegreya SC" pointSize="17"/>
+                            <color key="textColor" name="Brown"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zF-K0-0eu" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
+                            <rect key="frame" x="74.5" y="184" width="151" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="6zF-K0-0eu" secondAttribute="height" multiplier="298:83" id="VUp-64-zQE"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Hgx-7n-vgd" firstAttribute="width" relation="lessThanOrEqual" secondItem="IaP-sn-vTb" secondAttribute="width" id="C6b-27-98R"/>
-                        <constraint firstItem="mkC-Vv-rlt" firstAttribute="top" secondItem="IaP-sn-vTb" secondAttribute="bottom" constant="20" id="FNR-XO-gNj"/>
+                        <constraint firstItem="uNC-xM-nQs" firstAttribute="top" secondItem="8gP-iS-QEy" secondAttribute="top" constant="10" id="CMu-0u-mxV"/>
+                        <constraint firstItem="6zF-K0-0eu" firstAttribute="centerX" secondItem="8gP-iS-QEy" secondAttribute="centerX" id="Dg7-aT-e2c"/>
                         <constraint firstAttribute="width" constant="300" id="FmX-7S-jBj"/>
+                        <constraint firstItem="uNC-xM-nQs" firstAttribute="leading" secondItem="8gP-iS-QEy" secondAttribute="leading" constant="10" id="H4S-zR-Md4"/>
+                        <constraint firstAttribute="bottom" secondItem="6zF-K0-0eu" secondAttribute="bottom" id="IbW-jz-OCX"/>
                         <constraint firstItem="Hgx-7n-vgd" firstAttribute="centerX" secondItem="IaP-sn-vTb" secondAttribute="centerX" id="LKp-3j-efv"/>
                         <constraint firstItem="IaP-sn-vTb" firstAttribute="top" secondItem="8gP-iS-QEy" secondAttribute="top" id="Meb-LR-ymb"/>
+                        <constraint firstAttribute="trailing" secondItem="uNC-xM-nQs" secondAttribute="trailing" constant="10" id="SJ8-rJ-qSL"/>
+                        <constraint firstItem="6zF-K0-0eu" firstAttribute="top" secondItem="IaP-sn-vTb" secondAttribute="bottom" constant="20" id="UqT-Qq-ZQk"/>
                         <constraint firstItem="Hgx-7n-vgd" firstAttribute="centerY" secondItem="IaP-sn-vTb" secondAttribute="centerY" id="W7o-Pv-AGn"/>
                         <constraint firstAttribute="height" constant="226" id="XfE-v3-jk6"/>
-                        <constraint firstItem="mkC-Vv-rlt" firstAttribute="centerX" secondItem="8gP-iS-QEy" secondAttribute="centerX" id="dsZ-qp-0U4"/>
                         <constraint firstAttribute="trailing" secondItem="IaP-sn-vTb" secondAttribute="trailing" id="qwQ-kP-Vl6"/>
                         <constraint firstItem="Hgx-7n-vgd" firstAttribute="height" relation="lessThanOrEqual" secondItem="IaP-sn-vTb" secondAttribute="height" id="ve9-VC-2Bx"/>
                         <constraint firstItem="IaP-sn-vTb" firstAttribute="leading" secondItem="8gP-iS-QEy" secondAttribute="leading" id="wkh-2s-gYw"/>
@@ -68,21 +81,17 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="button" destination="mkC-Vv-rlt" id="Ydi-Im-TMx"/>
+                <outlet property="button" destination="6zF-K0-0eu" id="5DQ-lv-ZA6"/>
+                <outlet property="statusLabel" destination="uNC-xM-nQs" id="tKw-h0-LTn"/>
                 <outlet property="titleLabel" destination="Hgx-7n-vgd" id="k62-z1-zO4"/>
             </connections>
             <point key="canvasLocation" x="24.375" y="-167.95774647887325"/>
         </view>
     </objects>
-    <designables>
-        <designable name="mkC-Vv-rlt">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="backgroundFrame" width="346" height="590"/>
         <namedColor name="Brown">
-            <color red="0.37999999523162842" green="0.31400001049041748" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

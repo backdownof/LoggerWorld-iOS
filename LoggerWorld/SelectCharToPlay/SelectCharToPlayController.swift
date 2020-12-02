@@ -47,11 +47,8 @@ class SelectCharToPlayController: ViewController {
     private func loadPlayerChars() {
         let seconds = 0.3
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-//            self.socketManager.loadPlayerChars()
             Network.requestCharacters(completion: { chars in
                 self.charsListData = chars
-                print("xxxx")
-                print(self.charsListData)
             }, failure: {
                 print("fucked loading characters")
             })
@@ -115,7 +112,6 @@ extension SelectCharToPlayController: UITableViewDelegate {
         if indexPath.row == charsListData.count {
             UI.setRootController(R.storyboard.createChar.instantiateInitialViewController())
         } else {
-            print(indexPath.row - 1)
             if let id = charsListData[indexPath.row].id {
                 selectedCharId = id
             }
@@ -125,7 +121,6 @@ extension SelectCharToPlayController: UITableViewDelegate {
 
 extension SelectCharToPlayController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
-        print("enter")
         if let id = selectedCharId {
             socketManager.loginCharacter(playerId: id)
         }

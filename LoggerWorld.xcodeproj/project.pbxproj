@@ -51,6 +51,7 @@
 		20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407AA225759152007759B3 /* CharsInLocationCell.swift */; };
 		2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */; };
 		2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045962225601FCA004793C5 /* SelectCharToPlayController.swift */; };
+		204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C26212578025A00B2B0FF /* ResponseStatus.swift */; };
 		204F9D172568193B00AB51B6 /* CharStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D162568193B00AB51B6 /* CharStatusBar.swift */; };
 		204F9D1A2568195400AB51B6 /* CharStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204F9D192568195400AB51B6 /* CharStatusBar.xib */; };
 		204F9D212568216600AB51B6 /* ButtonWImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206577B42568030900E57E82 /* ButtonWImage.xib */; };
@@ -144,6 +145,7 @@
 		20407AA225759152007759B3 /* CharsInLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharsInLocationCell.swift; sourceTree = "<group>"; };
 		2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCharToPlay.storyboard; sourceTree = "<group>"; };
 		2045962225601FCA004793C5 /* SelectCharToPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharToPlayController.swift; sourceTree = "<group>"; };
+		204C26212578025A00B2B0FF /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 		204F9D162568193B00AB51B6 /* CharStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStatusBar.swift; sourceTree = "<group>"; };
 		204F9D192568195400AB51B6 /* CharStatusBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharStatusBar.xib; sourceTree = "<group>"; };
 		204F9D2325682A2300AB51B6 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				204C26202578023400B2B0FF /* ResponseStatus */,
 				20407AA525759868007759B3 /* LocationInfo */,
 				20014EB5256D9FD200E30E33 /* CharListToLogin */,
 				20014EB0256D79DF00E30E33 /* RegisterNewChar */,
@@ -398,6 +401,14 @@
 				204F9D2625682A3400AB51B6 /* CreateCharController.swift */,
 			);
 			path = SelectCharToPlay;
+			sourceTree = "<group>";
+		};
+		204C26202578023400B2B0FF /* ResponseStatus */ = {
+			isa = PBXGroup;
+			children = (
+				204C26212578025A00B2B0FF /* ResponseStatus.swift */,
+			);
+			path = ResponseStatus;
 			sourceTree = "<group>";
 		};
 		206577A2256713E500E57E82 /* UI */ = {
@@ -512,7 +523,6 @@
 			isa = PBXGroup;
 			children = (
 				2006D71E2564726900259338 /* Localization */,
-				2039559C25645C19004D84C2 /* Alert */,
 				20CD1DC9255FE511009F991D /* Fonts */,
 				20AD37E8256292DA00F9C1B5 /* UI.swift */,
 			);
@@ -557,6 +567,7 @@
 		20CD1DE2255FE942009F991D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2039559C25645C19004D84C2 /* Alert */,
 				20407A8F257557F5007759B3 /* PlayerView */,
 				20CD1DE3255FE94D009F991D /* Buttons */,
 				20CD1DEF255FF2AB009F991D /* ViewController.swift */,
@@ -773,6 +784,7 @@
 				200A6658254E1A3E00B74B48 /* AppDelegate.swift in Sources */,
 				204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */,
 				206577A025670FC500E57E82 /* R.generated.swift in Sources */,
+				204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */,
 				2006D737256476E500259338 /* String.swift in Sources */,
 				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
 				20CD1DED255FEB15009F991D /* ButtonWOImage.swift in Sources */,

@@ -21,8 +21,6 @@ class MainLoggerController: UIViewController {
     
     var playersInLocation: [PlayersInLocation]? {
         didSet {
-            print(1111)
-            print(playersInLocation)
             playersNearTableView.reloadData()
         }
     }
@@ -139,7 +137,6 @@ extension MainLoggerController: UITableViewDataSource {
             
             cell.levelLabel.text = "\(level) лвл"
             cell.shordNicknameLabel.text = "\(name.prefix(3))"
-            print("____ \(playersInLoc[indexPath.row].id)")
             cell.classId = id
             cell.charsAvatarImageView.characterStatus = .defaultStatus
             return cell

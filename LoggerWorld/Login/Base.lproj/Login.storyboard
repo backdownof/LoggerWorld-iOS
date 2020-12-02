@@ -52,30 +52,6 @@
                                     <constraint firstItem="n2Z-Sn-E0z" firstAttribute="leading" secondItem="jMY-lX-rvG" secondAttribute="leading" id="dnY-Ad-jv7"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-dt-cvf">
-                                <rect key="frame" x="20" y="108" width="374" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="iNg-oW-Cbs"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppImage" translatesAutoresizingMaskIntoConstraints="NO" id="VTs-aC-SkX">
-                                <rect key="frame" x="87" y="166" width="240" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5cG-sL-fZn"/>
-                                    <constraint firstAttribute="height" constant="120" id="bZa-nh-oyk"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ha-Bx-XVJ" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
-                                <rect key="frame" x="132.5" y="547" width="149" height="41.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="E4y-CM-FmW"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="Ly3-Fz-NhQ"/>
-                                    <constraint firstAttribute="width" secondItem="4ha-Bx-XVJ" secondAttribute="height" multiplier="298:83" id="yqr-C4-3Ke"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleColor" name="Creame"/>
-                                </state>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KyZ-A4-uiX">
                                 <rect key="frame" x="117" y="628.5" width="180" height="49.5"/>
                                 <subviews>
@@ -105,23 +81,44 @@
                                     <constraint firstAttribute="width" constant="180" id="5uu-UC-OXw"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeC-Xf-uGb" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
+                                <rect key="frame" x="132.5" y="547" width="149" height="41.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="5SE-dM-G8x"/>
+                                    <constraint firstAttribute="width" secondItem="DeC-Xf-uGb" secondAttribute="height" multiplier="298:83" id="vbY-j1-BrX"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppName" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-dt-cvf">
+                                <rect key="frame" x="20" y="108" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iNg-oW-Cbs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppImage" translatesAutoresizingMaskIntoConstraints="NO" id="VTs-aC-SkX">
+                                <rect key="frame" x="87" y="166" width="240" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5cG-sL-fZn"/>
+                                    <constraint firstAttribute="height" constant="120" id="bZa-nh-oyk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Brown"/>
                         <constraints>
                             <constraint firstItem="PyY-hk-qTz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="49S-YF-BbH"/>
-                            <constraint firstItem="4ha-Bx-XVJ" firstAttribute="top" secondItem="jMY-lX-rvG" secondAttribute="bottom" constant="40" id="6Tf-sw-TcS"/>
+                            <constraint firstItem="VG9-dt-cvf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9oq-6s-xsz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PyY-hk-qTz" secondAttribute="bottom" constant="20" id="AGm-tf-iGP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jMY-lX-rvG" secondAttribute="trailing" constant="60" id="ArR-rE-ddp"/>
                             <constraint firstItem="VG9-dt-cvf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BYZ-Xw-buU"/>
                             <constraint firstItem="jMY-lX-rvG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="DCX-4f-spq"/>
-                            <constraint firstItem="KyZ-A4-uiX" firstAttribute="top" secondItem="4ha-Bx-XVJ" secondAttribute="bottom" constant="40" id="DI0-X8-pCF"/>
                             <constraint firstItem="VTs-aC-SkX" firstAttribute="top" secondItem="VG9-dt-cvf" secondAttribute="bottom" constant="8" symbolic="YES" id="F8w-Sj-fue"/>
                             <constraint firstItem="VTs-aC-SkX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PpE-Vp-ig1"/>
+                            <constraint firstItem="KyZ-A4-uiX" firstAttribute="top" secondItem="DeC-Xf-uGb" secondAttribute="bottom" constant="40" id="QQS-ld-ues"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VG9-dt-cvf" secondAttribute="trailing" constant="20" id="Wur-cv-JMn"/>
-                            <constraint firstItem="4ha-Bx-XVJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gOX-cf-dIa"/>
+                            <constraint firstItem="DeC-Xf-uGb" firstAttribute="top" secondItem="jMY-lX-rvG" secondAttribute="bottom" constant="40" id="e7O-QB-2pm"/>
                             <constraint firstItem="jMY-lX-rvG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hh2-0W-pWJ"/>
-                            <constraint firstItem="VG9-dt-cvf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kT9-On-pWj"/>
+                            <constraint firstItem="DeC-Xf-uGb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tML-o6-bnf"/>
                             <constraint firstItem="VG9-dt-cvf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uIT-ef-44v"/>
                             <constraint firstItem="KyZ-A4-uiX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ypB-CD-9fY"/>
                         </constraints>
@@ -129,7 +126,7 @@
                     <navigationItem key="navigationItem" id="U6N-A4-bFP"/>
                     <connections>
                         <outlet property="emailTextField" destination="n2Z-Sn-E0z" id="eDy-wV-yBt"/>
-                        <outlet property="loginButton" destination="4ha-Bx-XVJ" id="9FT-6o-wut"/>
+                        <outlet property="loginButton" destination="DeC-Xf-uGb" id="bcn-do-nTl"/>
                         <outlet property="passwordTextField" destination="Rhw-Ul-L0d" id="46B-XW-w04"/>
                         <segue destination="RWu-pg-DYz" kind="showDetail" identifier="" id="aX7-df-6Cs"/>
                     </connections>
@@ -146,17 +143,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbL-3L-axR" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
-                                <rect key="frame" x="132.5" y="631.5" width="149" height="41.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="BYa-M2-8qe"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="HQV-6x-ddZ"/>
-                                    <constraint firstAttribute="width" secondItem="EbL-3L-axR" secondAttribute="height" multiplier="298:83" id="t4J-V2-jKL"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleColor" name="Creame"/>
-                                </state>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mN1-fS-F5h">
                                 <rect key="frame" x="60" y="358.5" width="294" height="233"/>
                                 <subviews>
@@ -230,16 +216,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmI-vW-xuh" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
+                                <rect key="frame" x="117" y="611.5" width="180" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="eh0-gC-LoS"/>
+                                    <constraint firstAttribute="width" secondItem="jmI-vW-xuh" secondAttribute="height" multiplier="298:83" id="fAO-QT-R58"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="drw-Kd-mrB"/>
                         <color key="backgroundColor" name="Brown"/>
                         <constraints>
-                            <constraint firstItem="EbL-3L-axR" firstAttribute="centerX" secondItem="drw-Kd-mrB" secondAttribute="centerX" id="DjA-AP-Emq"/>
+                            <constraint firstItem="jmI-vW-xuh" firstAttribute="centerX" secondItem="drw-Kd-mrB" secondAttribute="centerX" id="BBy-dt-IWy"/>
                             <constraint firstItem="drw-Kd-mrB" firstAttribute="trailing" secondItem="mN1-fS-F5h" secondAttribute="trailing" constant="60" id="Fpf-vN-sT9"/>
-                            <constraint firstItem="EbL-3L-axR" firstAttribute="top" secondItem="mN1-fS-F5h" secondAttribute="bottom" constant="40" id="HNG-ko-TMD"/>
                             <constraint firstItem="mN1-fS-F5h" firstAttribute="leading" secondItem="drw-Kd-mrB" secondAttribute="leading" constant="60" id="SHt-o8-LVe"/>
-                            <constraint firstItem="EbL-3L-axR" firstAttribute="width" secondItem="EbL-3L-axR" secondAttribute="height" multiplier="298:83" id="kVz-nr-cOD"/>
                             <constraint firstItem="mN1-fS-F5h" firstAttribute="centerY" secondItem="drw-Kd-mrB" secondAttribute="centerY" id="vZG-qT-Bh7"/>
+                            <constraint firstItem="jmI-vW-xuh" firstAttribute="top" secondItem="mN1-fS-F5h" secondAttribute="bottom" constant="20" id="zAF-SD-fyC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Регистрация" id="hwF-pg-isb">
@@ -254,7 +247,7 @@
                         <outlet property="emailTextField" destination="UXn-cd-mTv" id="7ct-CL-BYG"/>
                         <outlet property="nicknameTextField" destination="e4i-fH-Kig" id="FTw-t7-sqL"/>
                         <outlet property="passwordTextField" destination="IYw-lR-uJk" id="xLg-1P-s7F"/>
-                        <outlet property="registerButton" destination="EbL-3L-axR" id="7gs-0L-FsX"/>
+                        <outlet property="registerButton" destination="jmI-vW-xuh" id="pIY-t8-eoR"/>
                         <outlet property="repeatPasswordTextField" destination="JUp-ld-eaK" id="CT9-ZB-gPg"/>
                     </connections>
                 </viewController>
@@ -296,14 +289,6 @@
             <point key="canvasLocation" x="121.73913043478262" y="76.339285714285708"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="4ha-Bx-XVJ">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="EbL-3L-axR">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="AppImage" width="723" height="264"/>
         <image name="AppName" width="834" height="151"/>
@@ -312,7 +297,7 @@
         <image name="icGoogle" width="129" height="120"/>
         <image name="icVK" width="129" height="120"/>
         <namedColor name="Brown">
-            <color red="0.37999999523162842" green="0.31400001049041748" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Creame">
             <color red="0.94499999284744263" green="0.82700002193450928" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
