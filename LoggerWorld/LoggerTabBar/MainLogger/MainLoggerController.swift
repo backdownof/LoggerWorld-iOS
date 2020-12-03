@@ -16,6 +16,18 @@ class MainLoggerController: UIViewController {
     @IBOutlet weak var logsTableView: UITableView!
     @IBOutlet weak var playersNearTableView: UITableView!
     
+    private lazy var mapView: LocationsMap = {
+        let mapView: LocationsMap = LocationsMap.loadFromNib()
+        return mapView
+    }()
+    
+    let visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let view = UIVisualEffectView(effect: blurEffect)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let currentLocationSubview = UIView()
     let currentLocationTitle = UILabel()
     
@@ -37,6 +49,7 @@ class MainLoggerController: UIViewController {
         playersNearTableView.dataSource = self
         
         socketManager.delegate = self
+        rightButton.delegate = self
         
         setupView()
         
@@ -66,7 +79,7 @@ class MainLoggerController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        view.bringSubviewToFront(currentLocationSubview)
+//        view.bringSubviewToFront(currentLocationSubview)
         currentLocationSubview.dropShadow(color: R.color.brown()!, offSet: CGSize(width: 0, height: 3))
     }
     
@@ -100,6 +113,42 @@ class MainLoggerController: UIViewController {
         logsTableView.separatorColor = R.color.brown()
         logsTableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         playersNearTableView.separatorInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        
+        rightButton.buttonLabel = "Карта"
+        rightButton.iconImage = R.image.icMap()
+        
+        
+        setupVisualEffectView()
+    }
+    
+    func animateMapIn() {
+        mapView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        mapView.alpha = 0
+        view.bringSubviewToFront(mapView)
+        
+        UIView.animate(withDuration: 0.4) {
+            self.visualEffectView.alpha = 1
+            self.mapView.alpha = 1
+            self.mapView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func setupVisualEffectView() {
+        view.addSubview(visualEffectView)
+        visualEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        visualEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.alpha = 0
+    }
+    
+    func setMapView() {
+        view.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+//        alertView.set(status: status, title: message, buttonTitle: "ОК")
     }
 }
 
@@ -150,6 +199,15 @@ extension MainLoggerController: SocketManagerDelegate {
         playersInLocation = info.players
         if let locID = info.locationId {
             currentLocationTitle.text = LocationService.shared.getNameById(id: locID)
+        }
+    }
+}
+
+extension MainLoggerController: ButtonWImageDelegate {
+    func buttonTapped(_ button: ButtonWImage) {
+        if button == rightButton {
+            setMapView()
+            animateMapIn()
         }
     }
 }

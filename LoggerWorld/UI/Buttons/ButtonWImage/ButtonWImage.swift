@@ -26,6 +26,12 @@ class ButtonWImage: UIView, NibLoadable {
         }
     }
     
+    var iconImage: UIImage? {
+        didSet {
+            image.image = iconImage
+        }
+    }
+    
     convenience init() {
         self.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
