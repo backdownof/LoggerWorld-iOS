@@ -14,6 +14,7 @@ protocol SocketManagerDelegate {
     func listOfCharactersToSelect(chars: [CharListToLogin])
     func charLoggedIn()
     func updatedLocationInfo(info: LocationInfo)
+    func playerFinishedMovingToAnotherLocation()
 }
 
 extension SocketManagerDelegate {
@@ -22,6 +23,7 @@ extension SocketManagerDelegate {
     func listOfCharactersToSelect(chars: [CharListToLogin]) {}
     func charLoggedIn() {}
     func updatedLocationInfo(info: LocationInfo) {}
+    func playerFinishedMovingToAnotherLocation() {}
 }
 
 class SocketManager: StompClientLibDelegate {
@@ -35,14 +37,15 @@ class SocketManager: StompClientLibDelegate {
     var delegate: SocketManagerDelegate?
     
     func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-        print("SOME DATA???")
-        print("DESTIONATION : \(destination)")
-        print("JSON BODY : \(String(describing: jsonBody))")
-        print("STRING BODY : \(stringBody ?? "nil")")
+//        print("SOME DATA???")
+//        print("DESTIONATION : \(destination)")
+//        print("JSON BODY : \(String(describing: jsonBody))")
+//        print("STRING BODY : \(stringBody ?? "nil")")
         
         guard let stringData = stringBody else { print("fuck"); return }
         
         if let data = try? JSONDecoder().decode(LocationInfo.self, from: Data(stringData.utf8)) {
+            print("Got data")
             delegate?.updatedLocationInfo(info: data)
         } else {
             print("fucked parsing json")
@@ -117,5 +120,12 @@ class SocketManager: StompClientLibDelegate {
         let dict = ["playerId": playerId] as NSDictionary
         stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/start")
         delegate?.charLoggedIn()
+    }
+    
+    func playerMoveToAnotherLocation(locationId: Int) {
+        let dict = ["locationId": locationId] as NSDictionary
+        stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/move")
+        print("Send 'Move to location: \(locationId)")
+        delegate?.playerFinishedMovingToAnotherLocation()
     }
 }

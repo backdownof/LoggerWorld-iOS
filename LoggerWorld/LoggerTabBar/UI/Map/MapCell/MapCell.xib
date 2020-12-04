@@ -19,6 +19,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F5x-D2-DCr">
                             <rect key="frame" x="1" y="1" width="168" height="170"/>
+                            <color key="backgroundColor" name="Green"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" name="Brown"/>
@@ -58,6 +59,9 @@
     <resources>
         <namedColor name="Brown">
             <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Green">
+            <color red="0.56499999761581421" green="0.74500000476837158" blue="0.42699998617172241" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

@@ -49,8 +49,8 @@ class SelectCharToPlayController: ViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             Network.requestCharacters(completion: { chars in
                 self.charsListData = chars
-            }, failure: {
-                print("fucked loading characters")
+            }, failure: { message in
+                print(message)
             })
         }
         
@@ -92,7 +92,6 @@ extension SelectCharToPlayController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.row < charsListData.count {
             let cell = charactersTableView.dequeueReusableCell(withIdentifier: "charCell", for: indexPath) as! CharacterPickCell
             cell.charInfo = charsListData[indexPath.row]
@@ -125,8 +124,6 @@ extension SelectCharToPlayController: ButtonWOImageDelegate {
             socketManager.loginCharacter(playerId: id)
         }
 //        socketManager.createCharacter()
-        
-    
     }
 }
 

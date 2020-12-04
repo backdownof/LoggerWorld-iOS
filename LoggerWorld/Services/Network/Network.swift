@@ -74,11 +74,11 @@ class Network: NSObject {
                     guard let status = response.response?.statusCode else { failure("Failed connect to the server"); return }
                     guard let data = response.data else { failure("Failed to process data from server"); return }
                     if Array(200...201).contains(status)  {
-                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
+                        if let successStatus = try? JSONDecoder().decode(ResponseStatus<String>.self, from: data) {
                             completion(successStatus.message ?? "")
                         }
                     } else {
-                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
+                        if let successStatus = try? JSONDecoder().decode(ResponseStatus<String>.self, from: data) {
                             failure(successStatus.message ?? "")
                         }
                     }
@@ -87,7 +87,7 @@ class Network: NSObject {
     }
     
     static func requestCharacters(completion: @escaping ([CharListToLogin]) -> Void,
-                                  failure: @escaping() -> Void) {
+                                  failure: @escaping(String) -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
@@ -96,10 +96,23 @@ class Network: NSObject {
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
+//                    guard let status = response.response?.statusCode else { failure("Failed connect to the server"); return }
+//                    guard let data = response.data else { failure("Failed to process data from server"); return }
+//                    if Array(200...201).contains(status)  {
+//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
+//                            completion(successStatus.message ?? "")
+//                        }
+//                    } else {
+//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
+//                            failure(successStatus.message ?? "")
+//                        }
+//                    }
                     if let data = response.data {
                         do {
-                            let json = try JSONDecoder().decode(Players.self, from: data)
-                            if let players = json.players {
+//                            print(String(data: data, encoding: .utf8) ?? "")
+                            let json = try JSONDecoder().decode(ResponseStatus<Players>.self, from: data)
+                            
+                            if let players = json.data?.players {
                                 completion(players)
                             } else {
                                 let players: [CharListToLogin] = []
@@ -146,12 +159,24 @@ class Network: NSObject {
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
+//                    guard let status = response.response?.statusCode else { failure("Failed connect to the server"); return }
+//                    guard let data = response.data else { failure("Failed to process data from server"); return }
+//                    if Array(200...201).contains(status)  {
+//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data) {
+//                            completion(successStatus.message ?? "")
+//                        }
+//                    } else {
+//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data) {
+//                            failure(successStatus.message ?? "")
+//                        }
+//                    }
+                    
                     switch response.result {
                     case .success:
                         if let data = response.data {
                             do {
-                                let json = try JSONDecoder().decode(WorldMap.self, from: data)
-                                if let locations = json.locations {
+                                let json = try JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data)
+                                if let locations = json.data?.locations {
                                     completion(locations)
                                 } else {
                                     let locations: [LocationNameAndCoords] = []

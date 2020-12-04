@@ -26,6 +26,7 @@
 		200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 200A6660254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld */; };
 		200A6664254E1A4000B74B48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200A6663254E1A4000B74B48 /* Assets.xcassets */; };
 		200A6667254E1A4000B74B48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200A6665254E1A4000B74B48 /* LaunchScreen.storyboard */; };
+		200CAB8B257A982F00ECBFD5 /* PlayingCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CAB8A257A982F00ECBFD5 /* PlayingCharacter.swift */; };
 		203045EA254F671400F9CA88 /* PlayerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045E9254F671400F9CA88 /* PlayerRegistration.swift */; };
 		203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045EC2550AA9A00F9CA88 /* SocketManager.swift */; };
 		203045F12550AD9800F9CA88 /* PlayerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045F02550AD9800F9CA88 /* PlayerLogin.swift */; };
@@ -124,6 +125,7 @@
 		200A6663254E1A4000B74B48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		200A6666254E1A4000B74B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		200A6668254E1A4000B74B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		200CAB8A257A982F00ECBFD5 /* PlayingCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCharacter.swift; sourceTree = "<group>"; };
 		203045E9254F671400F9CA88 /* PlayerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRegistration.swift; sourceTree = "<group>"; };
 		203045EC2550AA9A00F9CA88 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		203045F02550AD9800F9CA88 /* PlayerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLogin.swift; sourceTree = "<group>"; };
@@ -343,9 +345,18 @@
 			path = LoggerWorld;
 			sourceTree = "<group>";
 		};
+		200CAB89257A981200ECBFD5 /* PlayingCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				200CAB8A257A982F00ECBFD5 /* PlayingCharacter.swift */,
+			);
+			path = PlayingCharacter;
+			sourceTree = "<group>";
+		};
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				200CAB89257A981200ECBFD5 /* PlayingCharacter */,
 				2096687A25793AA8004009F5 /* WorldMap */,
 				204C26202578023400B2B0FF /* ResponseStatus */,
 				20407AA525759868007759B3 /* LocationInfo */,
@@ -816,6 +827,7 @@
 				209668672578F633004009F5 /* ButtonWOImage.swift in Sources */,
 				2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
+				200CAB8B257A982F00ECBFD5 /* PlayingCharacter.swift in Sources */,
 				20F577602552D43F003ED757 /* LoginSuccess.swift in Sources */,
 				20014EBA256DA26600E30E33 /* Players.swift in Sources */,
 				20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */,

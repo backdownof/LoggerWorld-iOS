@@ -12,6 +12,7 @@ class LocationService {
     
     var locations: [LocationNameAndCoords]?
     var locationInfo: LocationInfo?
+    var currentLocationId: Int?
     
     func getNameById(id: Int) -> String {
         guard let locs = locations else { return "Default" }

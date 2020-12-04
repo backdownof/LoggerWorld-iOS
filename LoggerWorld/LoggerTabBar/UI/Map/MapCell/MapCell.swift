@@ -16,6 +16,8 @@ class MapCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         tintView.isHidden = true
+        layer.borderWidth = 1
+        layer.borderColor = R.color.brown()?.cgColor
     }
     
     override var isSelected: Bool{

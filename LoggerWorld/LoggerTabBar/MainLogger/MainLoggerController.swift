@@ -50,6 +50,7 @@ class MainLoggerController: UIViewController {
         
         socketManager.delegate = self
         rightButton.delegate = self
+        mapView.mapDelegate = self
         
         setupView()
         
@@ -122,6 +123,7 @@ class MainLoggerController: UIViewController {
     }
     
     func animateMapIn() {
+        mapView.mapCellsCollectionView.reloadData()
         mapView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         mapView.alpha = 0
         view.bringSubviewToFront(mapView)
@@ -130,6 +132,16 @@ class MainLoggerController: UIViewController {
             self.visualEffectView.alpha = 1
             self.mapView.alpha = 1
             self.mapView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateAlertOut() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.visualEffectView.alpha = 0
+            self.mapView.alpha = 0
+            self.mapView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        }) { (_) in
+            self.mapView.removeFromSuperview()
         }
     }
     
@@ -196,8 +208,11 @@ extension MainLoggerController: UITableViewDataSource {
 
 extension MainLoggerController: SocketManagerDelegate {
     func updatedLocationInfo(info: LocationInfo) {
+        mapView.goButton.isUserInteractionEnabled = true
         playersInLocation = info.players
+        print("You're at location: \(info.locationId!)")
         if let locID = info.locationId {
+            LocationService.shared.currentLocationId = locID
             currentLocationTitle.text = LocationService.shared.getNameById(id: locID)
         }
     }
@@ -209,5 +224,11 @@ extension MainLoggerController: ButtonWImageDelegate {
             setMapView()
             animateMapIn()
         }
+    }
+}
+
+extension MainLoggerController: MapDelegate {
+    func mapIsClosed() {
+        animateAlertOut()
     }
 }

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ResponseStatus: Codable {
+struct ResponseStatus<T: Codable>: Codable {
     var success: Bool?
     var message: String?
-    var data: String?
+    var data: T?
 }

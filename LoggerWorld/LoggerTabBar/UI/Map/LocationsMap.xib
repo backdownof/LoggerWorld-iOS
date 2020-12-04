@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -109,15 +108,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKp-EH-e1b">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lUJ-QW-py9">
-                                            <rect key="frame" x="0.0" y="180" width="120" height="120"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" priority="750" constant="120" id="4kE-cm-fM5"/>
-                                                <constraint firstAttribute="width" priority="750" constant="120" id="FDp-Be-lCM"/>
-                                            </constraints>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="e8u-1M-fn3">
                                                 <size key="itemSize" width="60" height="60"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -126,15 +121,20 @@
                                             </collectionViewFlowLayout>
                                         </collectionView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="300" id="5jw-PJ-Q1r"/>
+                                        <constraint firstAttribute="width" constant="180" id="5jw-PJ-Q1r"/>
                                         <constraint firstItem="lUJ-QW-py9" firstAttribute="leading" secondItem="MKp-EH-e1b" secondAttribute="leading" id="AKD-zp-aUi"/>
-                                        <constraint firstAttribute="height" constant="300" id="gJq-Oc-q74"/>
+                                        <constraint firstAttribute="trailing" secondItem="lUJ-QW-py9" secondAttribute="trailing" id="NYR-zT-LuP"/>
+                                        <constraint firstItem="lUJ-QW-py9" firstAttribute="top" secondItem="MKp-EH-e1b" secondAttribute="top" id="b8d-JG-ciN"/>
+                                        <constraint firstAttribute="bottom" secondItem="lUJ-QW-py9" secondAttribute="bottom" id="col-84-7W9"/>
+                                        <constraint firstAttribute="height" constant="180" id="gJq-Oc-q74"/>
+                                        <constraint firstItem="lUJ-QW-py9" firstAttribute="leading" secondItem="MKp-EH-e1b" secondAttribute="leading" id="hYX-GP-AEf"/>
                                         <constraint firstAttribute="bottom" secondItem="lUJ-QW-py9" secondAttribute="bottom" id="zdv-DA-KnB"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" name="Brown"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="MKp-EH-e1b" secondAttribute="bottom" id="8Ih-bn-JQf"/>
                                 <constraint firstItem="MKp-EH-e1b" firstAttribute="leading" secondItem="2qQ-tK-LuS" secondAttribute="leading" id="924-IE-2dh"/>
@@ -147,7 +147,7 @@
                             <viewLayoutGuide key="frameLayoutGuide" id="u15-zT-AMy"/>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="2qQ-tK-LuS" secondAttribute="trailing" id="4L5-m6-hJZ"/>
                         <constraint firstItem="2qQ-tK-LuS" firstAttribute="top" secondItem="4J9-KP-ZtV" secondAttribute="top" id="cbW-aI-dMK"/>
@@ -180,11 +180,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="currentLocationIcon" destination="h6E-Vv-Zfx" id="BGS-FE-uyX"/>
+                <outlet property="goButton" destination="VgM-HC-K3j" id="yhN-Cs-3TK"/>
                 <outlet property="mapCellsCollectionView" destination="lUJ-QW-py9" id="oPp-A7-vuR"/>
+                <outlet property="mapScrollView" destination="2qQ-tK-LuS" id="1NO-wF-gct"/>
                 <outlet property="mapView" destination="MKp-EH-e1b" id="fes-bd-EOo"/>
                 <outlet property="selectedLocationIcon" destination="E7q-Y9-JvS" id="7Yv-46-eHU"/>
                 <outlet property="selectedLocationLabel" destination="v94-c3-Cl8" id="oG1-Y7-aAJ"/>
                 <outlet property="selectedLocationPathLabel" destination="6UO-wD-VMP" id="SVJ-zH-Zvi"/>
+                <outlet property="topMapView" destination="4J9-KP-ZtV" id="eoa-Ms-iKz"/>
                 <outlet property="youAtLocationLabel" destination="a0C-Jk-k4v" id="yXQ-fR-B1x"/>
             </connections>
             <point key="canvasLocation" x="78.260869565217391" y="-68.303571428571431"/>
@@ -201,8 +204,5 @@
         <namedColor name="Creame">
             <color red="0.94499999284744263" green="0.82700002193450928" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

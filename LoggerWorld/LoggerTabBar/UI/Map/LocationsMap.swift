@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol MapDelegate {
+    func mapIsClosed()
+}
+
 class LocationsMap: UIView {
+    @IBOutlet weak var mapScrollView: UIScrollView!
+    @IBOutlet weak var topMapView: UIView!
     @IBOutlet weak var youAtLocationLabel: UILabel!
     @IBOutlet weak var currentLocationIcon: UIImageView!
     @IBOutlet weak var mapView: UIView!
@@ -15,16 +21,24 @@ class LocationsMap: UIView {
     @IBOutlet weak var selectedLocationIcon: UIImageView!
     @IBOutlet weak var selectedLocationPathLabel: UILabel!
     @IBOutlet weak var mapCellsCollectionView: UICollectionView!
+    @IBOutlet weak var goButton: UIButton!
     
-    var locsXcoord: [[LocationNameAndCoords]] = []
+//    var locsXcoord: [[LocationNameAndCoords]] = []
     var locsYcoord: [LocationNameAndCoords] = []
     var maxXcoord = 0
     var maxYcoord = 0
     let collectionReusableIdentifier = "mapCollection"
+    var currentLocationCell: MapCell?
+    var selectedLocationCellId: Int = 0
+    
+    var mapDelegate: MapDelegate?
     
     override func awakeFromNib() {
         setupMapView()
+        mapCellsCollectionView.delegate = self
+        mapCellsCollectionView.dataSource = self
         mapCellsCollectionView.register(UINib(nibName: R.nib.mapCell.name, bundle: nil), forCellWithReuseIdentifier: collectionReusableIdentifier)
+        selectedLocationLabel.text = "Выберите локацию"
     }
     
     func set(status: String, title: String, buttonTitle: String) {
@@ -32,12 +46,12 @@ class LocationsMap: UIView {
     
     func setupMapView() {
         guard let locations = LocationService.shared.locations else { return }
-        print(locations)
         for location in locations {
             maxXcoord = (location.xcoord! > maxXcoord) ? location.xcoord! : maxXcoord
             maxYcoord = (location.ycoord! > maxYcoord) ? location.ycoord! : maxYcoord
         }
-        print("maxXcoord: \(maxXcoord) maxYcoord: \(maxYcoord)")
+        maxYcoord += 1
+        maxXcoord += 1
         
         for x in 0...maxXcoord {
             for y in 0...maxYcoord {
@@ -47,24 +61,43 @@ class LocationsMap: UIView {
                     }
                 }
             }
-            locsXcoord.append(locsYcoord)
-            locsYcoord = []
         }
         
         
-        
-        dump(locsXcoord)
+        mapView.widthAnchor.constraint(equalToConstant: CGFloat(maxYcoord * 60)).isActive = true
+        mapView.heightAnchor.constraint(equalToConstant: CGFloat(maxYcoord * 60)).isActive = true
     }
 
     @IBAction func closeButtonTapped(_ sender: Any) {
+        mapDelegate?.mapIsClosed()
+        currentLocationCell!.mapCellImageView.image = nil
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {
+        if selectedLocationCellId != 0 {
+            goButton.isUserInteractionEnabled = false
+            print(1)
+            SocketManager.shared.playerMoveToAnotherLocation(locationId: selectedLocationCellId)
+            mapDelegate?.mapIsClosed()
+            currentLocationCell!.mapCellImageView.image = nil   
+        }
     }
 }
 
 extension LocationsMap: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = 60
+        let cellHeight = 60
+
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MapCell
+        guard let locId = cell.locInfo?.id else { return }
+        selectedLocationLabel.text = "\(LocationService.shared.getNameById(id: locId))"
+        selectedLocationCellId = (cell.locInfo?.id)!
+    }
 }
 
 extension LocationsMap: UICollectionViewDataSource {
@@ -74,8 +107,13 @@ extension LocationsMap: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mapCellsCollectionView.dequeueReusableCell(withReuseIdentifier: collectionReusableIdentifier, for: indexPath) as! MapCell
+        cell.locInfo = locsYcoord[indexPath.row]
         
+        if cell.locInfo?.id == LocationService.shared.currentLocationId {
+            currentLocationCell = cell
+            youAtLocationLabel.text = "Вы в \(LocationService.shared.getNameById(id: cell.locInfo!.id!))"
+            cell.mapCellImageView.image = R.image.warriorImage()
+        }
+        return cell
     }
-    
-    
 }
