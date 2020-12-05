@@ -29,12 +29,6 @@ class LoginController: ViewController, SocketManagerDelegate {
         
         loginButton.delegate = self
         socketManager.delegate = self
-        
-        Network.getStatsDescription(completion: {
-            
-        }, failure: {
-            
-        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -18,7 +18,7 @@ class LocationService {
         guard let locs = locations else { return "Default" }
         for loc in locs {
             if loc.id == id {
-                guard let locName = loc.name else { return "Location \(loc.id)" }
+                guard let locName = loc.name else { return "Location \(String(describing: loc.id))" }
                 return locName
             }
         }

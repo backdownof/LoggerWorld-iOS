@@ -45,15 +45,21 @@ class RegisterController: ViewController {
     // MARK: - Private function
     
     private func setupView() {
+        setupVisualEffectView()
+        
         self.navigationController?.isNavigationBarHidden = false
         registerButton.label = "Регистрация"
         
-        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
-        repeatPasswordTextField.attributedPlaceholder = NSAttributedString(string: repeatPasswordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
-        nicknameTextField.attributedPlaceholder = NSAttributedString(string: nicknameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: R.color.creame()?.withAlphaComponent(0.4)])
+        var colorCreame = UIColor.white
         
-        setupVisualEffectView()
+        if let creameColorSource = R.color.creame() {
+            colorCreame = creameColorSource
+        }
+        
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: colorCreame.withAlphaComponent(0.4)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: colorCreame.withAlphaComponent(0.4)])
+        repeatPasswordTextField.attributedPlaceholder = NSAttributedString(string: repeatPasswordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: colorCreame.withAlphaComponent(0.4)])
+        nicknameTextField.attributedPlaceholder = NSAttributedString(string: nicknameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: colorCreame.withAlphaComponent(0.4)])
     }
     
 

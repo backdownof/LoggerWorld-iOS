@@ -14,7 +14,7 @@ class UI {
     // MARK: - Public properties
     
     static var presentedController: UIViewController? {
-        let topController = UIApplication.shared.keyWindow?.rootViewController?.topController
+        let topController = UIApplication.shared.windows.first!.rootViewController?.topController
         guard let navigation = topController as? UINavigationController else {
             return topController
         }
@@ -25,7 +25,7 @@ class UI {
     
     static func setRootController(_ viewController: UIViewController?) {
         guard let viewController = viewController else { return }
-        UIApplication.shared.keyWindow?.setRootViewController(viewController)
+        UIApplication.shared.windows.first?.setRootViewController(viewController)
     }
     
 //    /**

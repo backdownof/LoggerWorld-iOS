@@ -37,10 +37,10 @@ class SocketManager: StompClientLibDelegate {
     var delegate: SocketManagerDelegate?
     
     func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-//        print("SOME DATA???")
-//        print("DESTIONATION : \(destination)")
-//        print("JSON BODY : \(String(describing: jsonBody))")
-//        print("STRING BODY : \(stringBody ?? "nil")")
+        print("SOME DATA???")
+        print("DESTIONATION : \(destination)")
+        print("JSON BODY : \(String(describing: jsonBody))")
+        print("STRING BODY : \(stringBody ?? "nil")")
         
         guard let stringData = stringBody else { print("fuck"); return }
         
@@ -50,7 +50,7 @@ class SocketManager: StompClientLibDelegate {
         } else {
             print("fucked parsing json")
         }
-//            let playersList = try JSONDecoder().decode(Players.self, from:Data(stringData.utf8))
+//            let playersList = try JSONDecoder().decode(CharactersMap.self, from:Data(stringData.utf8))
 //            if let listOfChars = playersList.players {
 //                delegate?.listOfCharactersToSelect(chars: listOfChars)
 //            } else {

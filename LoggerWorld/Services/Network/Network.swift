@@ -17,6 +17,12 @@ class Network: NSObject {
     private static let shared = Network()
     private let reachabilityManager = NetworkReachabilityManager()
     
+    
+    /**
+     Авторизация пользователя.
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
     static func requestLogin(userName: String,
                              password: String,
                              completion: @escaping () -> Void,
@@ -26,7 +32,7 @@ class Network: NSObject {
             "password": password
         ]
         
-        AF.request((API.baseURL + "api/user/login").url as! URLConvertible,
+        AF.request((API.baseURL + "api/user/login").url!,
                    method: .post, parameters: parameters,
                    encoding: JSONEncoding.default).responseJSON { response in
                     guard let status = response.response?.statusCode else { return }
@@ -53,15 +59,19 @@ class Network: NSObject {
                    }
     }
     
-    
+    /**
+     Регистрация пользователя.
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
     static func requestRegister(userName: String,
                                 password: String,
-                                language: String? = "RU",
+                                language: String = "RU",
                                 displayName: String? = nil,
                                 email: String,
                                 completion: @escaping (String) -> Void,
                                 failure: @escaping(String) -> Void) {
-        AF.request((API.baseURL + "api/user/sign-up").url as! URLConvertible,
+        AF.request((API.baseURL + "api/user/sign-up").url!,
                    method: .post,
                    parameters: [
                     "userName": userName,
@@ -86,32 +96,25 @@ class Network: NSObject {
                    })
     }
     
+    /**
+     Запрос списка персонажей
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
     static func requestCharacters(completion: @escaping ([CharListToLogin]) -> Void,
                                   failure: @escaping(String) -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         
-        AF.request((API.baseURL + "api/players").url as! URLConvertible,
+        AF.request((API.baseURL + "api/players").url!,
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
-//                    guard let status = response.response?.statusCode else { failure("Failed connect to the server"); return }
-//                    guard let data = response.data else { failure("Failed to process data from server"); return }
-//                    if Array(200...201).contains(status)  {
-//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
-//                            completion(successStatus.message ?? "")
-//                        }
-//                    } else {
-//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus.self, from: data) {
-//                            failure(successStatus.message ?? "")
-//                        }
-//                    }
                     if let data = response.data {
                         do {
-//                            print(String(data: data, encoding: .utf8) ?? "")
-                            let json = try JSONDecoder().decode(ResponseStatus<Players>.self, from: data)
-                            
+                            print(String(data: data, encoding: .utf8) ?? "")
+                            let json = try JSONDecoder().decode(ResponseStatus<CharactersMap>.self, from: data)
                             if let players = json.data?.players {
                                 completion(players)
                             } else {
@@ -125,6 +128,11 @@ class Network: NSObject {
                    })
     }
     
+    /**
+     Создание нового персонажа
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
     static func createChar(nickname: String,
                            playerClass: String,
                            completion: @escaping() -> Void,
@@ -133,7 +141,7 @@ class Network: NSObject {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         
-        AF.request((API.baseURL + "api/players").url as! URLConvertible,
+        AF.request((API.baseURL + "api/players").url!,
                    method: .post,
                    parameters: [
                     "name": nickname,
@@ -144,33 +152,27 @@ class Network: NSObject {
                     switch response.result {
                     case .success:
                         completion()
-                    case let .failure(error):
+                    case .failure(_):
                         failure()
                     }
                    })
    }
     
+    
+    /**
+     Получение карты мира
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
     static func getLocationDict(completion: @escaping([LocationNameAndCoords]) -> Void,
                                 failure: @escaping() -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
-        AF.request((API.baseURL + "api/locations").url as! URLConvertible,
+        AF.request((API.baseURL + "api/locations").url!,
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
-//                    guard let status = response.response?.statusCode else { failure("Failed connect to the server"); return }
-//                    guard let data = response.data else { failure("Failed to process data from server"); return }
-//                    if Array(200...201).contains(status)  {
-//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data) {
-//                            completion(successStatus.message ?? "")
-//                        }
-//                    } else {
-//                        if let successStatus = try? JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data) {
-//                            failure(successStatus.message ?? "")
-//                        }
-//                    }
-                    
                     switch response.result {
                     case .success:
                         if let data = response.data {
@@ -192,22 +194,47 @@ class Network: NSObject {
                    })
     }
     
-    static func getStatsDescription(completion: @escaping() -> Void,
-                                failure: @escaping() -> Void) {
+    /**
+     Получение статов возможных у персонажа
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
+    static func getStatsDescription(completion: @escaping([StatMap]) -> Void,
+                                failure: @escaping(String) -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
 
-        AF.request((API.baseURL + "api/players/stats").url as! URLConvertible,
+        AF.request((API.baseURL + "api/players/stats").url!,
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
+//                    switch response.result {
+//                    case .success:
+//                        if let data = response.data {
+////                            print(String(data: data, encoding: .utf8) ?? "")
+//                        }
+//                    case .failure(_):
+//                        failure()
+//                    }
+//                   })
+                    
                     switch response.result {
                     case .success:
                         if let data = response.data {
-//                            print(String(data: data, encoding: .utf8) ?? "")
+                            do {
+                                dump(String(data: data, encoding: .utf8)!)
+                                let json = try JSONDecoder().decode(ResponseStatus<CharStatsMap>.self, from: data)
+                                if let stats = json.data?.stats {
+                                    completion(stats)
+                                } else {
+                                    failure("Failed to map data for Available Stats")
+                                }
+                            } catch {
+                                print("Error")
+                            }
                         }
-                    case let .failure(_):
-                        failure()
+                    case .failure(_):
+                        failure("Wrong request to the server")
                     }
                    })
     }
