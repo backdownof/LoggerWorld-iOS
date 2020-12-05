@@ -11,7 +11,7 @@ import StompClientLib
 protocol SocketManagerDelegate {
     func connected()
     func success()
-    func listOfCharactersToSelect(chars: [CharListToLogin])
+    func listOfCharactersToSelect(chars: [CharacterInformation])
     func charLoggedIn()
     func updatedLocationInfo(info: LocationInfo)
     func playerFinishedMovingToAnotherLocation()
@@ -20,7 +20,7 @@ protocol SocketManagerDelegate {
 extension SocketManagerDelegate {
     func connected() {}
     func success() {}
-    func listOfCharactersToSelect(chars: [CharListToLogin]) {}
+    func listOfCharactersToSelect(chars: [CharacterInformation]) {}
     func charLoggedIn() {}
     func updatedLocationInfo(info: LocationInfo) {}
     func playerFinishedMovingToAnotherLocation() {}

@@ -1,5 +1,5 @@
 //
-//  CharInfo.swift
+//  CharListToLogin.swift
 //  LoggerWorld
 //
 //  Created by Anatolii Bogdanov on 14.11.2020.

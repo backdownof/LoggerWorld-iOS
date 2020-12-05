@@ -72,6 +72,7 @@
 		2096686E2578F63F004009F5 /* CharStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2096686C2578F63F004009F5 /* CharStatusBar.xib */; };
 		209668732578FBE5004009F5 /* LocationsMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209668722578FBE5004009F5 /* LocationsMap.xib */; };
 		209668762578FBF2004009F5 /* LocationsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209668752578FBF2004009F5 /* LocationsMap.swift */; };
+		20A3FE2A257BC6E70005921B /* ActiveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3FE29257BC6E70005921B /* ActiveCharacter.swift */; };
 		20AC57AC2565096300392C87 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57AB2565096300392C87 /* API.swift */; };
 		20AC57B225650B6300392C87 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57B125650B6300392C87 /* Network.swift */; };
 		20AC57B7256519DA00392C87 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57B6256519DA00392C87 /* ErrorHandler.swift */; };
@@ -166,6 +167,7 @@
 		2096686C2578F63F004009F5 /* CharStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CharStatusBar.xib; path = LoggerWorld/UI/CharStatusBar/CharStatusBar.xib; sourceTree = SOURCE_ROOT; };
 		209668722578FBE5004009F5 /* LocationsMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationsMap.xib; sourceTree = "<group>"; };
 		209668752578FBF2004009F5 /* LocationsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsMap.swift; sourceTree = "<group>"; };
+		20A3FE29257BC6E70005921B /* ActiveCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCharacter.swift; sourceTree = "<group>"; };
 		20AC57AB2565096300392C87 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		20AC57B125650B6300392C87 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		20AC57B6256519DA00392C87 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				200CAB8A257A982F00ECBFD5 /* Characters.swift */,
 				20014EB9256DA26600E30E33 /* CharactersMap.swift */,
+				20A3FE29257BC6E70005921B /* ActiveCharacter.swift */,
 			);
 			path = CharListToLogin;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
 				200CABAE257AF26800ECBFD5 /* CharStatsMap.swift in Sources */,
+				20A3FE2A257BC6E70005921B /* ActiveCharacter.swift in Sources */,
 				200CAB8B257A982F00ECBFD5 /* Characters.swift in Sources */,
 				20014EBA256DA26600E30E33 /* CharactersMap.swift in Sources */,
 				20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */,

@@ -15,7 +15,7 @@ class Characters {
     static let shared = Characters()
     var delegate: CharactersDelegate?
     
-    var characters: [CharListToLogin] = []
+    var characters: [CharacterInformation] = []
     
     private init() {
         getAvailableCharacters()

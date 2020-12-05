@@ -95,7 +95,6 @@ class MainLoggerController: UIViewController {
             currentLocationSubview.leadingAnchor.constraint(equalTo: logsTableView.leadingAnchor)
         ])
         
-        charStatusBar.charAvatar.classId = 1
         charStatusBar.charAvatar.characterStatus = .defaultStatus
         
 //        currentLocationSubview.dropShadow(color: UIColor.black, opacity: 1, offSet: CGSize(width: 0, height:-3), radius: 0, scale: false)
@@ -210,7 +209,6 @@ extension MainLoggerController: SocketManagerDelegate {
     func updatedLocationInfo(info: LocationInfo) {
         mapView.goButton.isUserInteractionEnabled = true
         playersInLocation = info.players
-        print("You're at location: \(info.locationId!)")
         if let locID = info.locationId {
             LocationService.shared.currentLocationId = locID
             currentLocationTitle.text = LocationService.shared.getNameById(id: locID)

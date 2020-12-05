@@ -24,11 +24,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaQ-qS-ZKF" customClass="CharStatusBar" customModule="LoggerWorld" customModuleProvider="target">
-                                <rect key="frame" x="10" y="59" width="191" height="55"/>
+                                <rect key="frame" x="10" y="59" width="210" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="8Is-Zh-XSh"/>
-                                    <constraint firstAttribute="width" constant="191" id="jqq-W2-uSx"/>
+                                    <constraint firstAttribute="width" constant="210" id="jqq-W2-uSx"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-Zg-kHu">
@@ -98,10 +98,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejy-Kn-ioL">
-                                <rect key="frame" x="211" y="59" width="99" height="55"/>
+                                <rect key="frame" x="230" y="59" width="80" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-Rc-zq5">
-                                        <rect key="frame" x="0.0" y="19.5" width="99" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="19.5" width="80" height="16.5"/>
                                         <fontDescription key="fontDescription" name="AlegreyaSC-Bold" family="Alegreya SC" pointSize="14"/>
                                         <color key="textColor" name="Creame"/>
                                         <nil key="highlightedColor"/>

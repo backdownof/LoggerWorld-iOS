@@ -14,7 +14,7 @@ class SelectCharToPlayController: ViewController {
     @IBOutlet weak var underView: UIView!
     @IBOutlet weak var enterButton: ButtonWOImage!
     
-    var characters: [CharListToLogin] = []
+    var characters: [CharacterInformation] = []
     
     var selectedCharId: Int?
     var socketManager = SocketManager.shared
@@ -22,8 +22,7 @@ class SelectCharToPlayController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadMap()
-        
+        LocationService.shared.delegate = self
         CharStats.shared.delegate = self
         Characters.shared.delegate = self
         charactersTableView.dataSource = self
@@ -73,14 +72,6 @@ class SelectCharToPlayController: ViewController {
     @IBAction func backNavButtonPressed(_ sender: Any) {
         UI.setRootController(R.storyboard.login.instantiateInitialViewController())
     }
-    
-    func loadMap() {
-        Network.getLocationDict(completion: { locations in
-            LocationService.shared.locations = locations
-        }, failure: {
-            print("Fucked up getting map")
-        })
-    }
 }
 
 
@@ -93,9 +84,6 @@ extension SelectCharToPlayController: UITableViewDataSource {
         if indexPath.row < characters.count {
             let cell = charactersTableView.dequeueReusableCell(withIdentifier: "charCell", for: indexPath) as! CharacterPickCell
             cell.charInfo = characters[indexPath.row]
-            print(characters[indexPath.row].stats.id12)
-            print(characters[indexPath.row].locationId)
-            print("Select id \(cell.charLocationLabel.text)")
             return cell
         } else {
 //            charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
@@ -120,6 +108,12 @@ extension SelectCharToPlayController: CharStatsDelegate {
     }
 }
 
+extension SelectCharToPlayController: WorldMapDelegate {
+    func mapLoaded() {
+        charactersTableView.reloadData()
+    }
+}
+
 extension SelectCharToPlayController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == characters.count {
@@ -133,6 +127,7 @@ extension SelectCharToPlayController: UITableViewDelegate {
 extension SelectCharToPlayController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         if let id = selectedCharId {
+            ActiveCharacter.setup(ActiveCharacter.Config(id: id))
             socketManager.loginCharacter(playerId: id)
         }
 //        socketManager.createCharacter()

@@ -38,10 +38,12 @@ class CharacterAvatar: UIView {
             switch classId {
             case 1:
                 avatarImage = R.image.warriorImage()!
+                print("classid war setup")
             case 2:
                 avatarImage = R.image.archerImage()!
             case 3:
                 avatarImage = R.image.mageImage()!
+                print("classid mage setup")
             default:
                 avatarImage = R.image.assassinImage()!
             }
@@ -66,5 +68,6 @@ class CharacterAvatar: UIView {
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.66).isActive = true
         imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.66).isActive = true
         imageView.image = avatarImage
+        
     }
 }

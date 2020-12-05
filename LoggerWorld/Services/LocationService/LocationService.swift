@@ -7,12 +7,21 @@
 
 import Foundation
 
+protocol WorldMapDelegate {
+    func mapLoaded()
+}
+
 class LocationService {
     static let shared = LocationService()
+    var delegate: WorldMapDelegate?
     
     var locations: [LocationNameAndCoords]?
     var locationInfo: LocationInfo?
     var currentLocationId: Int?
+    
+    private init() {
+        getWorldMap()
+    }
     
     func getNameById(id: Int) -> String {
         guard let locs = locations else { return "Default" }
@@ -28,5 +37,15 @@ class LocationService {
     func getCharsInLocation() -> [PlayersInLocation] {
         guard let players = locationInfo?.players else { return [PlayersInLocation()] }
         return players
+    }
+    
+    private func getWorldMap() {
+        Network.getLocationDict(completion: { locations in
+            LocationService.shared.locations = locations
+            self.delegate?.mapLoaded()
+        }, failure: {
+            print("Fucked up getting map")
+            self.delegate?.mapLoaded()
+        })
     }
 }

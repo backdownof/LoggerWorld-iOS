@@ -101,7 +101,7 @@ class Network: NSObject {
      - parameter completion: возвращает при успешном выполнении
      - parameter failure: возвращает сообщение об ошибке
      */
-    static func requestCharacters(completion: @escaping ([CharListToLogin]) -> Void,
+    static func requestCharacters(completion: @escaping ([CharacterInformation]) -> Void,
                                   failure: @escaping(String) -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -113,12 +113,12 @@ class Network: NSObject {
                    headers: headers).responseJSON(completionHandler: { response in
                     if let data = response.data {
                         do {
-                            print(String(data: data, encoding: .utf8) ?? "")
+//                            print(String(data: data, encoding: .utf8) ?? "")
                             let json = try JSONDecoder().decode(ResponseStatus<CharactersMap>.self, from: data)
                             if let players = json.data?.players {
                                 completion(players)
                             } else {
-                                let players: [CharListToLogin] = []
+                                let players: [CharacterInformation] = []
                                 completion(players)
                             }
                         } catch {

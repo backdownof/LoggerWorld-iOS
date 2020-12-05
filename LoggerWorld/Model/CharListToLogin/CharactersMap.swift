@@ -8,10 +8,10 @@
 import Foundation
 
 struct CharactersMap: Codable {
-    var players: [CharListToLogin]
+    var players: [CharacterInformation]
 }
 
-struct CharListToLogin: Codable {
+struct CharacterInformation: Codable {
     var id: Int
     var userId: Int
     var name: String

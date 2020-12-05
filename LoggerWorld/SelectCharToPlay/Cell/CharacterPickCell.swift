@@ -15,7 +15,7 @@ class CharacterPickCell: UITableViewCell {
     @IBOutlet weak var charLocationLabel: UILabel!
     @IBOutlet weak var charLvlLabel: UILabel!
     
-    var charInfo: CharListToLogin? {
+    var charInfo: CharacterInformation? {
         didSet {
             if let classId = charInfo?.classId {
                 switch classId {
