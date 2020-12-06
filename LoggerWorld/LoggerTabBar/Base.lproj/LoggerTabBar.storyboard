@@ -30,7 +30,7 @@
         <!--Logger Tab Bar Controller-->
         <scene sceneID="hHl-0t-elQ">
             <objects>
-                <tabBarController storyboardIdentifier="LoggerTabBar" id="neH-dg-HSL" customClass="LoggerTabBarController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="LoggerTabBarVC" id="neH-dg-HSL" customClass="LoggerTabBarController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NlG-Yu-HzP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

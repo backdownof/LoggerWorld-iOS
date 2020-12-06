@@ -31,7 +31,7 @@ class SelectCharToPlayController: ViewController {
         socketManager.delegate = self
         
         setupView()
-//        loadPlayerChars()
+        Characters.shared.reloadData()
         
         charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: "charCell")
         charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: "addCell")
@@ -64,13 +64,19 @@ class SelectCharToPlayController: ViewController {
         charactersTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
     
     @IBAction func backNavButtonPressed(_ sender: Any) {
-        UI.setRootController(R.storyboard.login.instantiateInitialViewController())
+//        UI.setRootController(R.storyboard.login.instantiateInitialViewController())
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -97,7 +103,6 @@ extension SelectCharToPlayController: UITableViewDataSource {
 extension SelectCharToPlayController: CharactersDelegate {
     func chardLoaded() {
         characters = Characters.shared.characters
-        print("aaaa \(characters[0].stats.id12)")
         charactersTableView.reloadData()
     }
 }
@@ -117,7 +122,8 @@ extension SelectCharToPlayController: WorldMapDelegate {
 extension SelectCharToPlayController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == characters.count {
-            UI.setRootController(R.storyboard.createChar.instantiateInitialViewController())
+//            UI.setRootController(R.storyboard.createChar.instantiateInitialViewController())
+//            performSegue(withIdentifier: "goToLoggerTB", sender: self)
         } else {
             selectedCharId = characters[indexPath.row].id
         }
@@ -142,7 +148,8 @@ extension SelectCharToPlayController: SocketManagerDelegate {
 //    }
     
     func charLoggedIn() {
-        UI.setRootController(R.storyboard.loggerTabBar.instantiateInitialViewController())
+//        UI.setRootController(R.storyboard.loggerTabBar.instantiateInitialViewController())
+        performSegue(withIdentifier: "goToLoggerTB", sender: self)
     }
 }
 

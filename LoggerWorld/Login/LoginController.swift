@@ -9,8 +9,15 @@ import UIKit
 
 class LoginController: ViewController, SocketManagerDelegate {
     func connected() {
-        UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+//        UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+//        performSegue(withIdentifier: R.segue.login .identifier, sender: self)
+        performSegue(withIdentifier: "segue.selectCharacterToPlay", sender: self)
     }
+    
+//    func didReceiveNewSession(_ session: QBRTCSession, userInfo: [String : String]? = nil) {
+//        print("Receive")
+//        self.performSegue(withIdentifier: "mySegue", sender: self)
+//    }
     
     @IBOutlet weak var loginButton: ButtonWOImage!
     

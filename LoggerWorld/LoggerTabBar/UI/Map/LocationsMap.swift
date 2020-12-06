@@ -76,7 +76,7 @@ class LocationsMap: UIView {
     @IBAction func goButtonPressed(_ sender: Any) {
         if selectedLocationCellId != 0 {
             goButton.isUserInteractionEnabled = false
-            print(1)
+            goButton.alpha = 0.3
             SocketManager.shared.playerMoveToAnotherLocation(locationId: selectedLocationCellId)
             mapDelegate?.mapIsClosed()
             currentLocationCell!.mapCellImageView.image = nil   
@@ -100,6 +100,9 @@ extension LocationsMap: UICollectionViewDelegate {
     }
 }
 
+
+// TODO: - Сделать персонажа полупрозрачным, когда в пути
+// TODO: - Запомнить выбранную локацию, и при развороте экрана снова выбрать
 extension LocationsMap: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return maxYcoord * maxXcoord
@@ -109,11 +112,21 @@ extension LocationsMap: UICollectionViewDataSource {
         let cell = mapCellsCollectionView.dequeueReusableCell(withReuseIdentifier: collectionReusableIdentifier, for: indexPath) as! MapCell
         cell.locInfo = locsYcoord[indexPath.row]
         
+        
         if cell.locInfo?.id == LocationService.shared.currentLocationId {
             currentLocationCell = cell
             youAtLocationLabel.text = "Вы в \(LocationService.shared.getNameById(id: cell.locInfo!.id!))"
-            cell.mapCellImageView.image = R.image.warriorImage()
+            
+            if LocationService.shared.characterInMove == false {
+                cell.mapCellImageView.image = UIImage.getCharImage(classId: ActiveCharacter.shared.info.classId)
+            }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { // Change `2.0` to the desired number of seconds.
+            collectionView.deselectItem(at: indexPath, animated: true)
+        }
     }
 }

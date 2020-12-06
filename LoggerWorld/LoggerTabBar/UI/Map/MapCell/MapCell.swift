@@ -31,4 +31,8 @@ class MapCell: UICollectionViewCell {
             }
         }
     }
+    
+    override func prepareForReuse() {
+        mapCellImageView.alpha = 1
+    }
 }

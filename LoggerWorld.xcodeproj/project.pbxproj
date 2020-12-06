@@ -47,11 +47,16 @@
 		20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20407AA225759152007759B3 /* CharsInLocationCell.swift */; };
 		2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */; };
 		2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045962225601FCA004793C5 /* SelectCharToPlayController.swift */; };
+		204852E5257C211D00760217 /* CharacterStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204852E4257C211D00760217 /* CharacterStatsController.swift */; };
+		204852ED257C26DC00760217 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204852EB257C26DC00760217 /* StatCell.swift */; };
+		204852EE257C26DC00760217 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204852EC257C26DC00760217 /* StatCell.xib */; };
 		204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C26212578025A00B2B0FF /* ResponseStatus.swift */; };
 		204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204F9D2325682A2300AB51B6 /* CreateChar.storyboard */; };
 		204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D2625682A3400AB51B6 /* CreateCharController.swift */; };
 		20598630256090C40028ACD3 /* AddCharCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059862E256090C40028ACD3 /* AddCharCell.swift */; };
 		20598631256090C40028ACD3 /* AddCharCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2059862F256090C40028ACD3 /* AddCharCell.xib */; };
+		20633AC4257D020E0081A2EB /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20633AC3257D020E0081A2EB /* Array.swift */; };
+		20633AD1257D338F0081A2EB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20633AD0257D338F0081A2EB /* Image.swift */; };
 		206577A025670FC500E57E82 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065779F25670FC500E57E82 /* R.generated.swift */; };
 		2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2071A5D5257445CC009F5768 /* LocationInfo.swift */; };
 		20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EE6256055F300AEDE8D /* CharacterPickCell.swift */; };
@@ -137,16 +142,21 @@
 		203A2CDE2576D20A003AFC95 /* AlegreyaSC-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlegreyaSC-BlackItalic.ttf"; sourceTree = "<group>"; };
 		203A2CDF2576D20A003AFC95 /* AlegreyaSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlegreyaSC-Bold.ttf"; sourceTree = "<group>"; };
 		20407A892575492B007759B3 /* WorldMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMap.swift; sourceTree = "<group>"; };
-		20407A8C25755090007759B3 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		20407A8C25755090007759B3 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = LoggerWorld/Model/LocationInfo/LocationService.swift; sourceTree = SOURCE_ROOT; };
 		20407A9B257590B6007759B3 /* CharsInLocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharsInLocationCell.xib; sourceTree = "<group>"; };
 		20407AA225759152007759B3 /* CharsInLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharsInLocationCell.swift; sourceTree = "<group>"; };
 		2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCharToPlay.storyboard; sourceTree = "<group>"; };
 		2045962225601FCA004793C5 /* SelectCharToPlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharToPlayController.swift; sourceTree = "<group>"; };
+		204852E4257C211D00760217 /* CharacterStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatsController.swift; sourceTree = "<group>"; };
+		204852EB257C26DC00760217 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatCell.swift; path = LoggerWorld/LoggerTabBar/MainLogger/StatCell/StatCell.swift; sourceTree = SOURCE_ROOT; };
+		204852EC257C26DC00760217 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StatCell.xib; path = LoggerWorld/LoggerTabBar/MainLogger/StatCell/StatCell.xib; sourceTree = SOURCE_ROOT; };
 		204C26212578025A00B2B0FF /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 		204F9D2325682A2300AB51B6 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
 		204F9D2625682A3400AB51B6 /* CreateCharController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharController.swift; sourceTree = "<group>"; };
 		2059862E256090C40028ACD3 /* AddCharCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharCell.swift; sourceTree = "<group>"; };
 		2059862F256090C40028ACD3 /* AddCharCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCharCell.xib; sourceTree = "<group>"; };
+		20633AC3257D020E0081A2EB /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		20633AD0257D338F0081A2EB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		2065779F25670FC500E57E82 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		2071A5D5257445CC009F5768 /* LocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
 		20766EE6256055F300AEDE8D /* CharacterPickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickCell.swift; sourceTree = "<group>"; };
@@ -403,6 +413,7 @@
 		20407AA525759868007759B3 /* LocationInfo */ = {
 			isa = PBXGroup;
 			children = (
+				20407A8C25755090007759B3 /* LocationService.swift */,
 				2071A5D5257445CC009F5768 /* LocationInfo.swift */,
 			);
 			path = LocationInfo;
@@ -418,6 +429,15 @@
 				204F9D2625682A3400AB51B6 /* CreateCharController.swift */,
 			);
 			path = SelectCharToPlay;
+			sourceTree = "<group>";
+		};
+		204852F0257C26F200760217 /* StatCell */ = {
+			isa = PBXGroup;
+			children = (
+				204852EB257C26DC00760217 /* StatCell.swift */,
+				204852EC257C26DC00760217 /* StatCell.xib */,
+			);
+			path = StatCell;
 			sourceTree = "<group>";
 		};
 		204C26202578023400B2B0FF /* ResponseStatus */ = {
@@ -517,7 +537,6 @@
 		2096687B25793AD7004009F5 /* LocationService */ = {
 			isa = PBXGroup;
 			children = (
-				20407A8C25755090007759B3 /* LocationService.swift */,
 			);
 			path = LocationService;
 			sourceTree = "<group>";
@@ -542,6 +561,8 @@
 				2006D736256476E500259338 /* String.swift */,
 				2037F4B1256DAE2000F5F838 /* Data.swift */,
 				20B862BD2576417C00517724 /* UIView.swift */,
+				20633AC3257D020E0081A2EB /* Array.swift */,
+				20633AD0257D338F0081A2EB /* Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -569,9 +590,11 @@
 		20CB85D92566A62D00237DAF /* MainLogger */ = {
 			isa = PBXGroup;
 			children = (
+				204852F0257C26F200760217 /* StatCell */,
 				20407A9A25759093007759B3 /* CharsInLocationCell */,
 				20CB85DD2566A65F00237DAF /* MainLogger.storyboard */,
 				20CB85DA2566A65200237DAF /* MainLoggerController.swift */,
+				204852E4257C211D00760217 /* CharacterStatsController.swift */,
 			);
 			path = MainLogger;
 			sourceTree = "<group>";
@@ -710,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200A6667254E1A4000B74B48 /* LaunchScreen.storyboard in Resources */,
+				204852EE257C26DC00760217 /* StatCell.xib in Resources */,
 				203A2CE12576D20A003AFC95 /* AlegreyaSC-Medium.ttf in Resources */,
 				203A2CE62576D20A003AFC95 /* AlegreyaSC-ExtraBoldItalic.ttf in Resources */,
 				20407A9C257590B6007759B3 /* CharsInLocationCell.xib in Resources */,
@@ -818,6 +842,8 @@
 				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
 				2006D6EF256464B900259338 /* Nib.swift in Sources */,
 				2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */,
+				20633AD1257D338F0081A2EB /* Image.swift in Sources */,
+				20633AC4257D020E0081A2EB /* Array.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
 				2096685C2578F616004009F5 /* PlayerStatus.swift in Sources */,
@@ -847,6 +873,7 @@
 				2006D737256476E500259338 /* String.swift in Sources */,
 				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
 				209668552578F608004009F5 /* AlertView.swift in Sources */,
+				204852E5257C211D00760217 /* CharacterStatsController.swift in Sources */,
 				20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */,
 				20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */,
 				209668512578F5F5004009F5 /* ViewController.swift in Sources */,
@@ -863,6 +890,7 @@
 				20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */,
 				20014EB2256D79FA00E30E33 /* RegisterNewChar.swift in Sources */,
 				20AC57B225650B6300392C87 /* Network.swift in Sources */,
+				204852ED257C26DC00760217 /* StatCell.swift in Sources */,
 				2037F4B2256DAE2000F5F838 /* Data.swift in Sources */,
 				20598630256090C40028ACD3 /* AddCharCell.swift in Sources */,
 				2006D70725646D4A00259338 /* Constant.swift in Sources */,

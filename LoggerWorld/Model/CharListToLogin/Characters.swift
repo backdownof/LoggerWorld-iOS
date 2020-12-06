@@ -30,4 +30,8 @@ class Characters {
             self.delegate?.chardLoaded()
         })
     }
+    
+    func reloadData() {
+        getAvailableCharacters()
+    }
 }

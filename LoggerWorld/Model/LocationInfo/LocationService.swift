@@ -18,6 +18,7 @@ class LocationService {
     var locations: [LocationNameAndCoords]?
     var locationInfo: LocationInfo?
     var currentLocationId: Int?
+    var characterInMove: Bool?
     
     private init() {
         getWorldMap()
@@ -35,8 +36,8 @@ class LocationService {
     }
     
     func getCharsInLocation() -> [PlayersInLocation] {
-        guard let players = locationInfo?.players else { return [PlayersInLocation()] }
-        return players
+//        guard let players =  else { return [PlayersInLocation()] }
+        return locationInfo!.players
     }
     
     private func getWorldMap() {

@@ -8,17 +8,18 @@
 import Foundation
 
 struct LocationInfo: Codable {
-    var locationId: Int?
-    var mobs: [MobsInLocation]?
-    var players: [PlayersInLocation]?
+    var locationId: Int
+    var mobs: [MobsInLocation]
+    var players: [PlayersInLocation]
 }
 
 struct MobsInLocation: Codable {
 }
 
 struct PlayersInLocation: Codable {
-    var classId: Int?
-    var id: Int?
-    var level: Int?
-    var name: String?
+    var classId: Int
+    var id: Int
+    var level: Int
+    var moveState: String
+    var name: String
 }

@@ -30,20 +30,18 @@ class CharacterAvatar: UIView {
             }
         }
     }
-    
-    var avatarImage = UIImage()
+    var imageView = UIImageView()
+    var avatarImage: UIImage?
     
     var classId: Int? {
         didSet {
             switch classId {
             case 1:
                 avatarImage = R.image.warriorImage()!
-                print("classid war setup")
             case 2:
                 avatarImage = R.image.archerImage()!
             case 3:
                 avatarImage = R.image.mageImage()!
-                print("classid mage setup")
             default:
                 avatarImage = R.image.assassinImage()!
             }
@@ -59,7 +57,6 @@ class CharacterAvatar: UIView {
         layer.borderWidth = 1
         clipsToBounds = true
         
-        let imageView = UIImageView()
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         

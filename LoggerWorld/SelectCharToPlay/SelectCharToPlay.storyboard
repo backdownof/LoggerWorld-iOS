@@ -11,7 +11,7 @@
         <!--Создание персонажа-->
         <scene sceneID="9YR-3p-zBN">
             <objects>
-                <viewController storyboardIdentifier="SelectCharToPlay" id="aTV-5r-DfC" customClass="SelectCharToPlayController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCharacterToPlayVC" id="aTV-5r-DfC" customClass="SelectCharToPlayController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L4n-52-x6O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,18 +53,12 @@
                             <constraint firstItem="DEo-Za-FFC" firstAttribute="leading" secondItem="024-ga-9Yn" secondAttribute="leading" constant="20" id="vYX-Pm-JTi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Создание персонажа" id="24L-vw-FTL">
-                        <barButtonItem key="leftBarButtonItem" title="Назад" id="hFH-pB-SNa">
-                            <connections>
-                                <action selector="backNavButtonPressed:" destination="aTV-5r-DfC" id="Ml2-YC-gmm"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Создание персонажа" id="24L-vw-FTL"/>
                     <connections>
                         <outlet property="charactersTableView" destination="SU5-Jm-wBV" id="0Rw-ud-5m6"/>
                         <outlet property="enterButton" destination="pNN-ic-9TL" id="kjX-GY-cYl"/>
                         <outlet property="underView" destination="DEo-Za-FFC" id="KCL-GS-rwu"/>
-                        <segue destination="Kyc-QY-xGB" kind="showDetail" id="B4G-ny-oh0"/>
+                        <segue destination="Kyc-QY-xGB" kind="show" identifier="goToLoggerTB" id="B4G-ny-oh0"/>
                         <segue destination="7RC-zw-zWI" kind="showDetail" id="A85-p6-CHg"/>
                     </connections>
                 </viewController>
@@ -72,15 +66,15 @@
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="135.9375"/>
         </scene>
-        <!--LoggerTabBar-->
+        <!--LoggerTabBarVC-->
         <scene sceneID="6nQ-hn-CyV">
             <objects>
-                <viewControllerPlaceholder storyboardName="LoggerTabBar" id="Kyc-QY-xGB" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="LoggerTabBar" referencedIdentifier="LoggerTabBarVC" id="Kyc-QY-xGB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="M2k-i1-btQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3V-lA-7Db" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="110"/>
+            <point key="canvasLocation" x="1913" y="110"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="E3i-B9-yzu">
@@ -120,7 +114,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.backward" catalog="system" width="32" height="32"/>
         <namedColor name="Brown">
             <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

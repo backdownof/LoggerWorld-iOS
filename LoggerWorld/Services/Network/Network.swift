@@ -113,7 +113,7 @@ class Network: NSObject {
                    headers: headers).responseJSON(completionHandler: { response in
                     if let data = response.data {
                         do {
-//                            print(String(data: data, encoding: .utf8) ?? "")
+                            print(String(data: data, encoding: .utf8) ?? "")
                             let json = try JSONDecoder().decode(ResponseStatus<CharactersMap>.self, from: data)
                             if let players = json.data?.players {
                                 completion(players)
@@ -222,7 +222,7 @@ class Network: NSObject {
                     case .success:
                         if let data = response.data {
                             do {
-                                dump(String(data: data, encoding: .utf8)!)
+//                                dump(String(data: data, encoding: .utf8)!)
                                 let json = try JSONDecoder().decode(ResponseStatus<CharStatsMap>.self, from: data)
                                 if let stats = json.data?.stats {
                                     completion(stats)

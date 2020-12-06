@@ -33,6 +33,8 @@ class SocketManager: StompClientLibDelegate {
     let topicMessages = "/topic/messages"
     let playerMessages = "/user/players/messages"
     let classesMessages = "/user/players/classes/messages"
+    let locationMessages = "/user/queue/location"
+    let wrongCommandMessages = "/user/queue/wrong-command"
     
     var delegate: SocketManagerDelegate?
     
@@ -98,6 +100,11 @@ class SocketManager: StompClientLibDelegate {
         print("Subscribed for :\(classesMessages)")
         stomp.subscribe(destination: "/user/queue")
         print("Subscribed for :/user/queue")
+        stomp.subscribe(destination: locationMessages)
+        print("Subscribed for :/user/queue/location")
+        stomp.subscribe(destination: wrongCommandMessages)
+        print("Subscribed for :/user/queue/wrong-command")
+        
     }
     
     func registerSocket() {

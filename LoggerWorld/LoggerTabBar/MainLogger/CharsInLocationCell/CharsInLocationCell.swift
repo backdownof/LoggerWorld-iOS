@@ -25,7 +25,9 @@ class CharsInLocationCell: UITableViewCell {
             default:
                 charClassIcon.image = R.image.icAssasignShuriken()!
             }
+            charsAvatarImageView.avatarImage = nil
             charsAvatarImageView.classId = classId
+            charsAvatarImageView.setNeedsDisplay()
         }
     }
     
@@ -33,4 +35,8 @@ class CharsInLocationCell: UITableViewCell {
         super.awakeFromNib()
         
     }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//    }
 }

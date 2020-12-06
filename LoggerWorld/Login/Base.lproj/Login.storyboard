@@ -128,7 +128,7 @@
                         <outlet property="emailTextField" destination="n2Z-Sn-E0z" id="eDy-wV-yBt"/>
                         <outlet property="loginButton" destination="DeC-Xf-uGb" id="bcn-do-nTl"/>
                         <outlet property="passwordTextField" destination="Rhw-Ul-L0d" id="46B-XW-w04"/>
-                        <segue destination="RWu-pg-DYz" kind="showDetail" identifier="" id="aX7-df-6Cs"/>
+                        <segue destination="RWu-pg-DYz" kind="show" identifier="segue.selectCharacterToPlay" id="aX7-df-6Cs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -255,10 +255,10 @@
             </objects>
             <point key="canvasLocation" x="1875" y="551"/>
         </scene>
-        <!--SelectCharToPlay-->
+        <!--SelectCharacterToPlayVC-->
         <scene sceneID="ll4-fY-Cyz">
             <objects>
-                <viewControllerPlaceholder storyboardName="SelectCharToPlay" id="RWu-pg-DYz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SelectCharToPlay" referencedIdentifier="SelectCharacterToPlayVC" id="RWu-pg-DYz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ngj-Co-EOO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hmd-JB-UGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -292,7 +292,7 @@
     <resources>
         <image name="AppImage" width="723" height="264"/>
         <image name="AppName" width="834" height="151"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.backward" catalog="system" width="32" height="32"/>
         <image name="icFacebook" width="129" height="120"/>
         <image name="icGoogle" width="129" height="120"/>
         <image name="icVK" width="129" height="120"/>

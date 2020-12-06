@@ -42,6 +42,7 @@ class MainLoggerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         logsTableView.delegate = self
         logsTableView.dataSource = self
         
@@ -50,16 +51,26 @@ class MainLoggerController: UIViewController {
         
         socketManager.delegate = self
         rightButton.delegate = self
+        middleButton.delegate = self
         mapView.mapDelegate = self
         
         setupView()
         
         playersNearTableView.register(UINib(nibName: R.nib.charsInLocationCell.name, bundle: nil), forCellReuseIdentifier: "charInLocation")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleStatusBarTap(sender:)))
+        charStatusBar.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleStatusBarTap(sender: UITapGestureRecognizer) {
+//        print(R.segue.mainLoggerController.segueStatusBarStats.identifier)
+        performSegue(withIdentifier: R.segue.mainLoggerController.segueStatusBarStats.identifier, sender: self)
+//        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         logsTableView.backgroundColor = .clear
         logsTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
@@ -175,7 +186,7 @@ extension MainLoggerController: UITableViewDataSource {
             return 10
         }
         if tableView == playersNearTableView {
-            guard let playersInLocationCount = playersInLocation?.count else { return 1 }
+            guard let playersInLocationCount = playersInLocation?.count else { return 0 }
             return playersInLocationCount
         }
         return 5
@@ -188,12 +199,12 @@ extension MainLoggerController: UITableViewDataSource {
         }
         if tableView == playersNearTableView {
             let cell = playersNearTableView.dequeueReusableCell(withIdentifier: "charInLocation", for: indexPath) as! CharsInLocationCell
-
-            guard let playersInLoc = playersInLocation else { return UITableViewCell() }
+            cell.charsAvatarImageView.avatarImage = nil
             
-            let level = playersInLoc[indexPath.row].level ?? 0
-            let name = playersInLoc[indexPath.row].name ?? ""
-            let id = playersInLoc[indexPath.row].classId ?? 1
+            guard let playersInLoc = playersInLocation else { return UITableViewCell() }
+            let level = playersInLoc[indexPath.row].level
+            let name = playersInLoc[indexPath.row].name
+            let id = playersInLoc[indexPath.row].classId
             
             cell.levelLabel.text = "\(level) лвл"
             cell.shordNicknameLabel.text = "\(name.prefix(3))"
@@ -206,13 +217,32 @@ extension MainLoggerController: UITableViewDataSource {
 }
 
 extension MainLoggerController: SocketManagerDelegate {
+    
     func updatedLocationInfo(info: LocationInfo) {
-        mapView.goButton.isUserInteractionEnabled = true
-        playersInLocation = info.players
-        if let locID = info.locationId {
-            LocationService.shared.currentLocationId = locID
-            currentLocationTitle.text = LocationService.shared.getNameById(id: locID)
+        let chars: [PlayersInLocation] = info.players
+        var charsToDisplay: [PlayersInLocation] = []
+        for char in chars {
+            if char.moveState == "DEPARTING" {
+                if char.id == ActiveCharacter.shared.info.id {
+                    charsToDisplay = [char]
+                    playersInLocation = charsToDisplay
+                    currentLocationTitle.text = "Вы в пути..."
+                    LocationService.shared.currentLocationId = info.locationId
+                    LocationService.shared.characterInMove = true
+                    return
+                } else {
+                    print("player with nickname \(char.name) moved out")
+                }
+            } else {
+                charsToDisplay.append(char)
+            }
         }
+        playersInLocation = charsToDisplay
+        LocationService.shared.currentLocationId = info.locationId
+        LocationService.shared.characterInMove = false
+        currentLocationTitle.text = LocationService.shared.getNameById(id: info.locationId)
+        mapView.goButton.isUserInteractionEnabled = true
+        mapView.goButton.alpha = 1
     }
 }
 
@@ -221,6 +251,10 @@ extension MainLoggerController: ButtonWImageDelegate {
         if button == rightButton {
             setMapView()
             animateMapIn()
+        }
+        
+        if button == middleButton {
+            
         }
     }
 }
