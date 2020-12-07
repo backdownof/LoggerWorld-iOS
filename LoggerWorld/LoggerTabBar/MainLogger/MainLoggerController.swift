@@ -37,11 +37,17 @@ class MainLoggerController: UIViewController {
         }
     }
     
+    var logMessages: [LogMessage]? {
+        didSet {
+            print(logMessages!)
+            logsTableView.reloadData()
+        }
+    }
+    
     var socketManager = SocketManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         logsTableView.delegate = self
         logsTableView.dataSource = self
@@ -54,9 +60,11 @@ class MainLoggerController: UIViewController {
         middleButton.delegate = self
         mapView.mapDelegate = self
         
+        loadCharacterLogs()
         setupView()
         
         playersNearTableView.register(UINib(nibName: R.nib.charsInLocationCell.name, bundle: nil), forCellReuseIdentifier: "charInLocation")
+        logsTableView.register(UINib(nibName: R.nib.logCell.name, bundle: nil), forCellReuseIdentifier: "logCell")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleStatusBarTap(sender:)))
         charStatusBar.addGestureRecognizer(tapGesture)
     }
@@ -76,6 +84,7 @@ class MainLoggerController: UIViewController {
         logsTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
         logsTableView.backgroundView?.contentMode = .scaleToFill
         logsTableView.backgroundView?.clipsToBounds = true
+        logsTableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         
         playersNearTableView.backgroundColor = .clear
 //        playersNearTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
@@ -93,6 +102,15 @@ class MainLoggerController: UIViewController {
 
 //        view.bringSubviewToFront(currentLocationSubview)
         currentLocationSubview.dropShadow(color: R.color.brown()!, offSet: CGSize(width: 0, height: 3))
+    }
+    
+    
+    private func loadCharacterLogs() {
+        Network.getUserLogs(completion: { entries in
+            self.logMessages = entries
+        }, failure: {
+            print("failed loading logs")
+        })
     }
     
     private func setupView() {
@@ -183,18 +201,22 @@ extension MainLoggerController: UITableViewDelegate {
 extension MainLoggerController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == logsTableView {
-            return 10
+            guard let logsCount = logMessages?.count else { return 0 }
+            return logsCount
         }
         if tableView == playersNearTableView {
             guard let playersInLocationCount = playersInLocation?.count else { return 0 }
             return playersInLocationCount
         }
-        return 5
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == logsTableView {
-            let cell = UITableViewCell()
+            let cell = logsTableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath) as! LogCell
+            guard let logs = logMessages else { return UITableViewCell() }
+            cell.message = logs[logs.count - 1 - indexPath.row]
+            cell.transform = CGAffineTransform(scaleX: 1, y: -1)
             return cell
         }
         if tableView == playersNearTableView {

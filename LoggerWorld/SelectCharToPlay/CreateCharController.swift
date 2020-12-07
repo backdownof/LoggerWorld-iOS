@@ -61,6 +61,8 @@ class CreateCharController: UIViewController {
     
     @IBAction func backNavButtonPressed(_ sender: Any) {
         UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+//        dismiss(animated: true, completion: nil)
+//        print("Back")
     }
 }
 
@@ -69,6 +71,7 @@ extension CreateCharController: ButtonWOImageDelegate {
         if nicknameTextField.text != "" {
             Network.createChar(nickname: nicknameTextField.text!, playerClass: selectedClass, completion: {
                 UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+//                self.dismiss(animated: true, completion: nil)
             }, failure: {
                 print("Error creating character")
             })

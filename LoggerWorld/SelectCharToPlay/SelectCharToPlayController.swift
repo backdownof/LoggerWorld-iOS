@@ -123,6 +123,7 @@ extension SelectCharToPlayController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == characters.count {
 //            UI.setRootController(R.storyboard.createChar.instantiateInitialViewController())
+            performSegue(withIdentifier: "createChar", sender: self)
 //            performSegue(withIdentifier: "goToLoggerTB", sender: self)
         } else {
             selectedCharId = characters[indexPath.row].id

@@ -104,7 +104,7 @@
                                 <rect key="frame" x="230" y="59" width="80" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-Rc-zq5">
-                                        <rect key="frame" x="0.0" y="18" width="80" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="19.5" width="80" height="16.5"/>
                                         <fontDescription key="fontDescription" name="AlegreyaSC-Bold" family="Alegreya SC" pointSize="14"/>
                                         <color key="textColor" name="Creame"/>
                                         <nil key="highlightedColor"/>
@@ -143,7 +143,7 @@
                         <outlet property="middleButton" destination="3r6-Dd-VtH" id="dLG-Nv-FfX"/>
                         <outlet property="playersNearTableView" destination="EAZ-cq-dcB" id="wzg-sN-nI0"/>
                         <outlet property="rightButton" destination="KXo-t0-9R5" id="Xf1-wr-h6q"/>
-                        <segue destination="VPG-cC-vfO" kind="show" identifier="segue.statusBarStats" id="4Ru-Xa-vG9"/>
+                        <segue destination="VPG-cC-vfO" kind="showDetail" identifier="segue.statusBarStats" id="4Ru-Xa-vG9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewh-Wm-WAH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,14 +155,14 @@
             <objects>
                 <viewController id="VPG-cC-vfO" customClass="CharacterStatsController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fJ0-fe-5at">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-1f-moW">
-                                <rect key="frame" x="5" y="54" width="310" height="425"/>
+                                <rect key="frame" x="5" y="10" width="310" height="498"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundFrame" translatesAutoresizingMaskIntoConstraints="NO" id="SGi-8f-K8j">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="425"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="498"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ude-KK-0b1">
                                         <rect key="frame" x="8" y="8" width="294" height="63"/>
@@ -176,19 +176,19 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WGM-G3-a1r">
-                                                <rect key="frame" x="68" y="9.5" width="216" height="47"/>
+                                                <rect key="frame" x="68" y="12.5" width="216" height="41"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cYY-n1-qSC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="216" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="216" height="19"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Василиск123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5d-oI-mGL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="99" height="19"/>
                                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="16"/>
                                                                 <color key="textColor" name="Brown"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Убийца" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9s-PL-aNF">
-                                                                <rect key="frame" x="160" y="0.0" width="56" height="22"/>
+                                                                <rect key="frame" x="161" y="0.0" width="55" height="19"/>
                                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="16"/>
                                                                 <color key="textColor" name="Brown"/>
                                                                 <nil key="highlightedColor"/>
@@ -196,16 +196,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N9y-zJ-jVg">
-                                                        <rect key="frame" x="0.0" y="25" width="216" height="22"/>
+                                                        <rect key="frame" x="0.0" y="22" width="216" height="19"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уровень:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qk-9G-cWn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="68" height="19"/>
                                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="16"/>
                                                                 <color key="textColor" name="Brown"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 лвл" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfy-CO-xkf">
-                                                                <rect key="frame" x="174" y="0.0" width="42" height="22"/>
+                                                                <rect key="frame" x="167" y="0.0" width="49" height="19"/>
                                                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="16"/>
                                                                 <color key="textColor" name="Brown"/>
                                                                 <nil key="highlightedColor"/>
@@ -225,9 +225,15 @@
                                             <constraint firstItem="WGM-G3-a1r" firstAttribute="centerY" secondItem="o5J-wx-aFk" secondAttribute="centerY" id="v3X-ih-VkY"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xok-JW-zQe">
-                                        <rect key="frame" x="8" y="79" width="294" height="338"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xok-JW-zQe">
+                                        <rect key="frame" x="8" y="79" width="294" height="411"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="Brown"/>
+                                        <color key="separatorColor" name="Brown"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                        <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -59,7 +59,7 @@
                         <outlet property="enterButton" destination="pNN-ic-9TL" id="kjX-GY-cYl"/>
                         <outlet property="underView" destination="DEo-Za-FFC" id="KCL-GS-rwu"/>
                         <segue destination="Kyc-QY-xGB" kind="show" identifier="goToLoggerTB" id="B4G-ny-oh0"/>
-                        <segue destination="7RC-zw-zWI" kind="showDetail" id="A85-p6-CHg"/>
+                        <segue destination="7RC-zw-zWI" kind="show" identifier="createChar" id="YD4-L3-hYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wkc-Tz-ek7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -76,10 +76,12 @@
             </objects>
             <point key="canvasLocation" x="1913" y="110"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--CreateCharVC-->
         <scene sceneID="E3i-B9-yzu">
             <objects>
-                <viewControllerPlaceholder id="7RC-zw-zWI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="CreateChar" referencedIdentifier="CreateCharVC" id="7RC-zw-zWI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bHZ-3F-m0v"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9P-RC-V2e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1891" y="215"/>
@@ -89,7 +91,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SelectCharToPlayNav" automaticallyAdjustsScrollViewInsets="NO" id="uSy-pu-qIr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="chevron.backward" catalog="system" id="7aT-Nf-gs1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" backIndicatorImage="chevron.backward" catalog="system" id="7aT-Nf-gs1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Creame"/>
@@ -114,7 +116,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="chevron.backward" catalog="system" width="32" height="32"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <namedColor name="Brown">
             <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

@@ -238,5 +238,41 @@ class Network: NSObject {
                     }
                    })
     }
+    
+    /**
+     Получение логов игрока
+     - parameter completion: возвращает при успешном выполнении
+     - parameter failure: возвращает сообщение об ошибке
+     */
+    static func getUserLogs(completion: @escaping([LogMessage]) -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/players/logs").url!,
+                   method: .get,
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON(completionHandler: { response in
+                    switch response.result {
+                    case .success:
+                        if let data = response.data {
+//                            print(String(data: data, encoding: .utf8))
+                            do {
+                                let json = try JSONDecoder().decode(ResponseStatus<Logs>.self, from: data)
+                                if let entries = json.data?.entries {
+                                    completion(entries)
+                                } else {
+                                    let entries: [LogMessage] = []
+                                    completion(entries)
+                                }
+                            } catch {
+                                print("Error")
+                            }
+                        }
+                    case .failure(_):
+                        failure()
+                    }
+                   })
+    }
 }
 

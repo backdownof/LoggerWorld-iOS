@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hdj-iB-00a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gAE-0v-zyc">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -13,16 +13,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Создание персонажа-->
+        <!--Create Char Controller-->
         <scene sceneID="dpF-h4-UnY">
             <objects>
-                <viewController storyboardIdentifier="CreateChar" id="gAE-0v-zyc" customClass="CreateCharController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateCharVC" id="gAE-0v-zyc" customClass="CreateCharController" customModule="LoggerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2HA-nT-VdL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-dY-Tca">
-                                <rect key="frame" x="15" y="162" width="290" height="220"/>
+                                <rect key="frame" x="15" y="118" width="290" height="220"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="z9b-Ny-fRK">
                                         <rect key="frame" x="12.5" y="5" width="265" height="105"/>
@@ -167,24 +167,35 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Desaring" placeholder="You character nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilP-ZA-13W">
-                                <rect key="frame" x="20" y="392" width="280" height="21.5"/>
+                                <rect key="frame" x="20" y="348" width="280" height="21.5"/>
                                 <color key="textColor" name="Creame"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9t-52-0MK" customClass="ButtonWOImage" customModule="LoggerWorld" customModuleProvider="target">
-                                <rect key="frame" x="85.5" y="433.5" width="149" height="41.5"/>
+                                <rect key="frame" x="85.5" y="389.5" width="149" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="546-8T-vEr"/>
                                     <constraint firstAttribute="width" secondItem="k9t-52-0MK" secondAttribute="height" multiplier="298:83" id="yOc-SN-ILf"/>
                                 </constraints>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите класс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-S1-qLe">
-                                <rect key="frame" x="95" y="127" width="130" height="20"/>
+                                <rect key="frame" x="95" y="83" width="130" height="20"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="17"/>
                                 <color key="textColor" name="Creame"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" backIndicatorImage="chevron.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Yp-4G-Yip">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" name="Brown"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="Creame"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="BLF-6N-Hqg"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KBK-mw-mf6"/>
                         <color key="backgroundColor" name="Brown"/>
@@ -202,13 +213,6 @@
                             <constraint firstItem="KBK-mw-mf6" firstAttribute="trailing" secondItem="FAA-dY-Tca" secondAttribute="trailing" constant="15" id="zJr-HO-q6x"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Создание персонажа" id="TWr-RE-FfQ">
-                        <barButtonItem key="leftBarButtonItem" title="Назад" id="RUt-tw-kAG">
-                            <connections>
-                                <action selector="backNavButtonPressed:" destination="gAE-0v-zyc" id="PUB-Xb-3vP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="classDescriptionLabel" destination="aCI-7X-Hvr" id="ueK-yY-A2j"/>
                         <outlet property="createButton" destination="k9t-52-0MK" id="gNa-92-iaP"/>
@@ -223,29 +227,6 @@
             </objects>
             <point key="canvasLocation" x="618.75" y="108.80281690140845"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ygy-rP-N6d">
-            <objects>
-                <navigationController storyboardIdentifier="CreateCharNav" automaticallyAdjustsScrollViewInsets="NO" id="Hdj-iB-00a" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lYn-NC-fvg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="Creame"/>
-                        <color key="barTintColor" name="Brown"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="Creame"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gAE-0v-zyc" kind="relationship" relationship="rootViewController" id="Fv0-D6-3BN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pAh-CZ-dKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-291.304347826087" y="109.82142857142857"/>
-        </scene>
     </scenes>
     <designables>
         <designable name="k9t-52-0MK">
@@ -255,6 +236,7 @@
     <resources>
         <image name="archerImage" width="44" height="44"/>
         <image name="assassinImage" width="44" height="44"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="icArcherBow" width="16" height="16"/>
         <image name="icAssasignShuriken" width="16" height="16"/>
         <image name="icMageStuff" width="16" height="16"/>

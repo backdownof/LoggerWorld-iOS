@@ -64,6 +64,9 @@
 		20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EEB2560734400AEDE8D /* CharInfo.swift */; };
 		2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEBB25631B7700DC4D36 /* RegisterController.swift */; };
 		2088CEC125631C6800DC4D36 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEC025631C6800DC4D36 /* Validator.swift */; };
+		209213D4257EC448003A4F05 /* LogsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D3257EC448003A4F05 /* LogsMap.swift */; };
+		209213DA257EC96F003A4F05 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D8257EC96F003A4F05 /* LogCell.swift */; };
+		209213DB257EC96F003A4F05 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209213D9257EC96F003A4F05 /* LogCell.xib */; };
 		209668512578F5F5004009F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209668502578F5F5004009F5 /* ViewController.swift */; };
 		209668552578F608004009F5 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209668532578F607004009F5 /* AlertView.swift */; };
 		209668562578F608004009F5 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209668542578F607004009F5 /* AlertView.xib */; };
@@ -164,6 +167,9 @@
 		20766EEB2560734400AEDE8D /* CharInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharInfo.swift; sourceTree = "<group>"; };
 		2088CEBB25631B7700DC4D36 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		2088CEC025631C6800DC4D36 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		209213D3257EC448003A4F05 /* LogsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsMap.swift; sourceTree = "<group>"; };
+		209213D8257EC96F003A4F05 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		209213D9257EC96F003A4F05 /* LogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
 		209668502578F5F5004009F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = LoggerWorld/UI/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		209668532578F607004009F5 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = LoggerWorld/UI/Alert/AlertView.swift; sourceTree = SOURCE_ROOT; };
 		209668542578F607004009F5 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlertView.xib; path = LoggerWorld/UI/Alert/AlertView.xib; sourceTree = SOURCE_ROOT; };
@@ -368,6 +374,7 @@
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				209213D2257EC438003A4F05 /* Logs */,
 				200CABA4257AEFB300ECBFD5 /* CharStats */,
 				200CAB89257A981200ECBFD5 /* PlayingCharacter */,
 				2096687A25793AA8004009F5 /* WorldMap */,
@@ -506,6 +513,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		209213D2257EC438003A4F05 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				209213D3257EC448003A4F05 /* LogsMap.swift */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
+		209213D7257EC953003A4F05 /* LogCell */ = {
+			isa = PBXGroup;
+			children = (
+				209213D8257EC96F003A4F05 /* LogCell.swift */,
+				209213D9257EC96F003A4F05 /* LogCell.xib */,
+			);
+			path = LogCell;
+			sourceTree = "<group>";
+		};
 		209668432578F292004009F5 /* CharStatusBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +614,7 @@
 		20CB85D92566A62D00237DAF /* MainLogger */ = {
 			isa = PBXGroup;
 			children = (
+				209213D7257EC953003A4F05 /* LogCell */,
 				204852F0257C26F200760217 /* StatCell */,
 				20407A9A25759093007759B3 /* CharsInLocationCell */,
 				20CB85DD2566A65F00237DAF /* MainLogger.storyboard */,
@@ -737,6 +762,7 @@
 				203A2CE12576D20A003AFC95 /* AlegreyaSC-Medium.ttf in Resources */,
 				203A2CE62576D20A003AFC95 /* AlegreyaSC-ExtraBoldItalic.ttf in Resources */,
 				20407A9C257590B6007759B3 /* CharsInLocationCell.xib in Resources */,
+				209213DB257EC96F003A4F05 /* LogCell.xib in Resources */,
 				2006D723256472D100259338 /* InfoPlist.strings in Resources */,
 				2045962025601FB6004793C5 /* SelectCharToPlay.storyboard in Resources */,
 				20CB85DE2566A65F00237DAF /* MainLogger.storyboard in Resources */,
@@ -851,6 +877,7 @@
 				209668672578F633004009F5 /* ButtonWOImage.swift in Sources */,
 				2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
+				209213D4257EC448003A4F05 /* LogsMap.swift in Sources */,
 				200CABAE257AF26800ECBFD5 /* CharStatsMap.swift in Sources */,
 				20A3FE2A257BC6E70005921B /* ActiveCharacter.swift in Sources */,
 				200CAB8B257A982F00ECBFD5 /* Characters.swift in Sources */,
@@ -888,6 +915,7 @@
 				20407A8A2575492B007759B3 /* WorldMap.swift in Sources */,
 				20AC57BD25651A0C00392C87 /* ErrorHandler+Mappable.swift in Sources */,
 				20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */,
+				209213DA257EC96F003A4F05 /* LogCell.swift in Sources */,
 				20014EB2256D79FA00E30E33 /* RegisterNewChar.swift in Sources */,
 				20AC57B225650B6300392C87 /* Network.swift in Sources */,
 				204852ED257C26DC00760217 /* StatCell.swift in Sources */,
