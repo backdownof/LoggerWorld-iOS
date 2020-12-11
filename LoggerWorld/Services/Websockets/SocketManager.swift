@@ -15,6 +15,7 @@ protocol SocketManagerDelegate {
     func charLoggedIn()
     func updatedLocationInfo(info: LocationInfo)
     func playerFinishedMovingToAnotherLocation()
+    func messageReceived(log: LogMessage)
 }
 
 extension SocketManagerDelegate {
@@ -24,6 +25,7 @@ extension SocketManagerDelegate {
     func charLoggedIn() {}
     func updatedLocationInfo(info: LocationInfo) {}
     func playerFinishedMovingToAnotherLocation() {}
+    func messageReceived(log: LogMessage) {}
 }
 
 class SocketManager: StompClientLibDelegate {
@@ -35,6 +37,7 @@ class SocketManager: StompClientLibDelegate {
     let classesMessages = "/user/players/classes/messages"
     let locationMessages = "/user/queue/location"
     let wrongCommandMessages = "/user/queue/wrong-command"
+    let logMessages = "/user/queue/log"
     
     var delegate: SocketManagerDelegate?
     
@@ -49,6 +52,9 @@ class SocketManager: StompClientLibDelegate {
         if let data = try? JSONDecoder().decode(LocationInfo.self, from: Data(stringData.utf8)) {
             print("Got data")
             delegate?.updatedLocationInfo(info: data)
+        } else if let data = try? JSONDecoder().decode(LogMessage.self, from: Data(stringData.utf8)) {
+            print(data)
+            delegate?.messageReceived(log: data)
         } else {
             print("fucked parsing json")
         }
@@ -104,6 +110,8 @@ class SocketManager: StompClientLibDelegate {
         print("Subscribed for :/user/queue/location")
         stomp.subscribe(destination: wrongCommandMessages)
         print("Subscribed for :/user/queue/wrong-command")
+        stomp.subscribe(destination: logMessages)
+        print("Subscribed for :/user/queue/log")
         
     }
     

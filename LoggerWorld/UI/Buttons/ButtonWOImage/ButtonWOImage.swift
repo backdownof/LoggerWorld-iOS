@@ -22,6 +22,7 @@ class ButtonWOImage: UIView, NibLoadable {
     // MARK: - Public Properties
     
     weak var delegate: ButtonWOImageDelegate?
+    
     var label: String = "" {
         didSet {
             buttonTitleLabel.text = label

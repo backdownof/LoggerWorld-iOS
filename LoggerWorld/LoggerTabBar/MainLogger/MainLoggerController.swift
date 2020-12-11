@@ -39,7 +39,6 @@ class MainLoggerController: UIViewController {
     
     var logMessages: [LogMessage]? {
         didSet {
-            print(logMessages!)
             logsTableView.reloadData()
         }
     }
@@ -216,6 +215,7 @@ extension MainLoggerController: UITableViewDataSource {
             let cell = logsTableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath) as! LogCell
             guard let logs = logMessages else { return UITableViewCell() }
             cell.message = logs[logs.count - 1 - indexPath.row]
+//            cell.message = logs[indexPath.row]
             cell.transform = CGAffineTransform(scaleX: 1, y: -1)
             return cell
         }
@@ -265,6 +265,10 @@ extension MainLoggerController: SocketManagerDelegate {
         currentLocationTitle.text = LocationService.shared.getNameById(id: info.locationId)
         mapView.goButton.isUserInteractionEnabled = true
         mapView.goButton.alpha = 1
+    }
+    
+    func messageReceived(log: LogMessage) {
+        logMessages?.append(log)
     }
 }
 

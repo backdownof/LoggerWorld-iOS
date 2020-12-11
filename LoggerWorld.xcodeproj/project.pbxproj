@@ -67,6 +67,12 @@
 		209213D4257EC448003A4F05 /* LogsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D3257EC448003A4F05 /* LogsMap.swift */; };
 		209213DA257EC96F003A4F05 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D8257EC96F003A4F05 /* LogCell.swift */; };
 		209213DB257EC96F003A4F05 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209213D9257EC96F003A4F05 /* LogCell.xib */; };
+		209213DE25811E16003A4F05 /* MessageMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213DD25811E15003A4F05 /* MessageMap.swift */; };
+		209213E725814308003A4F05 /* MobsInLocationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213E625814308003A4F05 /* MobsInLocationMapper.swift */; };
+		209213F225814735003A4F05 /* NestsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213F125814735003A4F05 /* NestsSelect.swift */; };
+		209213F62581473C003A4F05 /* NestsSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209213F52581473C003A4F05 /* NestsSelect.xib */; };
+		209213FE258172CE003A4F05 /* NestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213FC258172CE003A4F05 /* NestCell.swift */; };
+		209213FF258172CE003A4F05 /* NestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209213FD258172CE003A4F05 /* NestCell.xib */; };
 		209668512578F5F5004009F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209668502578F5F5004009F5 /* ViewController.swift */; };
 		209668552578F608004009F5 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209668532578F607004009F5 /* AlertView.swift */; };
 		209668562578F608004009F5 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209668542578F607004009F5 /* AlertView.xib */; };
@@ -170,6 +176,12 @@
 		209213D3257EC448003A4F05 /* LogsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsMap.swift; sourceTree = "<group>"; };
 		209213D8257EC96F003A4F05 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		209213D9257EC96F003A4F05 /* LogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
+		209213DD25811E15003A4F05 /* MessageMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageMap.swift; sourceTree = "<group>"; };
+		209213E625814308003A4F05 /* MobsInLocationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobsInLocationMapper.swift; sourceTree = "<group>"; };
+		209213F125814735003A4F05 /* NestsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestsSelect.swift; sourceTree = "<group>"; };
+		209213F52581473C003A4F05 /* NestsSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NestsSelect.xib; sourceTree = "<group>"; };
+		209213FC258172CE003A4F05 /* NestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestCell.swift; sourceTree = "<group>"; };
+		209213FD258172CE003A4F05 /* NestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NestCell.xib; sourceTree = "<group>"; };
 		209668502578F5F5004009F5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = LoggerWorld/UI/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		209668532578F607004009F5 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = LoggerWorld/UI/Alert/AlertView.swift; sourceTree = SOURCE_ROOT; };
 		209668542578F607004009F5 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlertView.xib; path = LoggerWorld/UI/Alert/AlertView.xib; sourceTree = SOURCE_ROOT; };
@@ -374,6 +386,7 @@
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				209213E1258142D3003A4F05 /* Mobs */,
 				209213D2257EC438003A4F05 /* Logs */,
 				200CABA4257AEFB300ECBFD5 /* CharStats */,
 				200CAB89257A981200ECBFD5 /* PlayingCharacter */,
@@ -458,6 +471,7 @@
 		206577A2256713E500E57E82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				209213E9258145A6003A4F05 /* MobNests */,
 				209668502578F5F5004009F5 /* ViewController.swift */,
 				209668712578FBD1004009F5 /* Map */,
 				2039559C25645C19004D84C2 /* Alert */,
@@ -517,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				209213D3257EC448003A4F05 /* LogsMap.swift */,
+				209213DD25811E15003A4F05 /* MessageMap.swift */,
 			);
 			path = Logs;
 			sourceTree = "<group>";
@@ -528,6 +543,33 @@
 				209213D9257EC96F003A4F05 /* LogCell.xib */,
 			);
 			path = LogCell;
+			sourceTree = "<group>";
+		};
+		209213E1258142D3003A4F05 /* Mobs */ = {
+			isa = PBXGroup;
+			children = (
+				209213E625814308003A4F05 /* MobsInLocationMapper.swift */,
+			);
+			path = Mobs;
+			sourceTree = "<group>";
+		};
+		209213E9258145A6003A4F05 /* MobNests */ = {
+			isa = PBXGroup;
+			children = (
+				209213F82581728E003A4F05 /* NestCell */,
+				209213F125814735003A4F05 /* NestsSelect.swift */,
+				209213F52581473C003A4F05 /* NestsSelect.xib */,
+			);
+			path = MobNests;
+			sourceTree = "<group>";
+		};
+		209213F82581728E003A4F05 /* NestCell */ = {
+			isa = PBXGroup;
+			children = (
+				209213FC258172CE003A4F05 /* NestCell.swift */,
+				209213FD258172CE003A4F05 /* NestCell.xib */,
+			);
+			path = NestCell;
 			sourceTree = "<group>";
 		};
 		209668432578F292004009F5 /* CharStatusBar */ = {
@@ -770,6 +812,7 @@
 				203A2CE52576D20A003AFC95 /* AlegreyaSC-BoldItalic.ttf in Resources */,
 				204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */,
 				20BAC14125798F8F00120F4F /* MapCell.xib in Resources */,
+				209213F62581473C003A4F05 /* NestsSelect.xib in Resources */,
 				203A2CE22576D20A003AFC95 /* AlegreyaSC-Regular.ttf in Resources */,
 				200A6664254E1A4000B74B48 /* Assets.xcassets in Resources */,
 				2096686E2578F63F004009F5 /* CharStatusBar.xib in Resources */,
@@ -787,6 +830,7 @@
 				203A2CE42576D20A003AFC95 /* AlegreyaSC-Black.ttf in Resources */,
 				203A2CE92576D20A003AFC95 /* AlegreyaSC-Bold.ttf in Resources */,
 				209668732578FBE5004009F5 /* LocationsMap.xib in Resources */,
+				209213FF258172CE003A4F05 /* NestCell.xib in Resources */,
 				209668682578F633004009F5 /* ButtonWOImage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,6 +910,7 @@
 				209668612578F623004009F5 /* ButtonWImage.swift in Sources */,
 				20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */,
 				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
+				209213F225814735003A4F05 /* NestsSelect.swift in Sources */,
 				2006D6EF256464B900259338 /* Nib.swift in Sources */,
 				2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */,
 				20633AD1257D338F0081A2EB /* Image.swift in Sources */,
@@ -893,9 +938,11 @@
 				20AD37E5256281F800F9C1B5 /* CATransition.swift in Sources */,
 				2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */,
 				20EA049F254F115800AB85D1 /* ConstantsBroadcast.swift in Sources */,
+				209213DE25811E16003A4F05 /* MessageMap.swift in Sources */,
 				200A6658254E1A3E00B74B48 /* AppDelegate.swift in Sources */,
 				204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */,
 				206577A025670FC500E57E82 /* R.generated.swift in Sources */,
+				209213FE258172CE003A4F05 /* NestCell.swift in Sources */,
 				204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */,
 				2006D737256476E500259338 /* String.swift in Sources */,
 				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
@@ -925,6 +972,7 @@
 				2088CEC125631C6800DC4D36 /* Validator.swift in Sources */,
 				2006D6F3256469F800259338 /* UserSettings.swift in Sources */,
 				2006D70A25646D9100259338 /* Constant+Block.swift in Sources */,
+				209213E725814308003A4F05 /* MobsInLocationMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

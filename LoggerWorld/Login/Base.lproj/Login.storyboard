@@ -292,7 +292,7 @@
     <resources>
         <image name="AppImage" width="723" height="264"/>
         <image name="AppName" width="834" height="151"/>
-        <image name="chevron.backward" catalog="system" width="32" height="32"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="icFacebook" width="129" height="120"/>
         <image name="icGoogle" width="129" height="120"/>
         <image name="icVK" width="129" height="120"/>

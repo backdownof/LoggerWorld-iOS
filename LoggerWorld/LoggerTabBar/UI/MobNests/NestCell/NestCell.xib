@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AlegreyaSC-Medium.ttf">
+            <string>AlegreyaSC-Medium</string>
+        </array>
+        <array key="AlegreyaSC-Regular.ttf">
+            <string>AlegreyaSC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="NestCell" customModule="LoggerWorld" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-4Y-N5A">
+                        <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notSelectableCellFrame" translatesAutoresizingMaskIntoConstraints="NO" id="CzZ-XF-xuU">
+                                <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yn5-9z-j8k">
+                                <rect key="frame" x="10" y="10" width="38" height="38"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="5cc-a0-DtZ"/>
+                                    <constraint firstAttribute="height" constant="38" id="BiY-3S-JLs"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25-40 hp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWe-M0-RUH">
+                                <rect key="frame" x="7" y="53" width="44" height="17"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Серая крыса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-1s-n3I">
+                                <rect key="frame" x="56" y="10" width="80" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Medium" family="Alegreya SC" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Уровень: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9Q-a8-1T6">
+                                <rect key="frame" x="56" y="31" width="56" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Уровень: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLq-aF-bgn">
+                                <rect key="frame" x="56" y="53" width="56" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CzZ-XF-xuU" firstAttribute="top" secondItem="J3Q-4Y-N5A" secondAttribute="top" id="3dx-lB-49z"/>
+                            <constraint firstAttribute="trailing" secondItem="CzZ-XF-xuU" secondAttribute="trailing" id="Dqd-em-k03"/>
+                            <constraint firstItem="Yn5-9z-j8k" firstAttribute="top" secondItem="J3Q-4Y-N5A" secondAttribute="top" constant="10" id="EUh-rd-Qn4"/>
+                            <constraint firstAttribute="bottom" secondItem="CzZ-XF-xuU" secondAttribute="bottom" id="Oh2-Hz-r3J"/>
+                            <constraint firstItem="fWe-M0-RUH" firstAttribute="centerX" secondItem="Yn5-9z-j8k" secondAttribute="centerX" id="Xlb-al-Q16"/>
+                            <constraint firstItem="CzZ-XF-xuU" firstAttribute="leading" secondItem="J3Q-4Y-N5A" secondAttribute="leading" id="esy-HX-tN9"/>
+                            <constraint firstItem="fWe-M0-RUH" firstAttribute="top" secondItem="Yn5-9z-j8k" secondAttribute="bottom" constant="5" id="jMJ-Ys-RC2"/>
+                            <constraint firstItem="Yn5-9z-j8k" firstAttribute="leading" secondItem="J3Q-4Y-N5A" secondAttribute="leading" constant="10" id="yOM-WD-EYQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="J3Q-4Y-N5A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JjI-fH-xUl"/>
+                    <constraint firstAttribute="bottom" secondItem="J3Q-4Y-N5A" secondAttribute="bottom" id="Vf2-w7-lNf"/>
+                    <constraint firstItem="J3Q-4Y-N5A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yge-Eq-asG"/>
+                    <constraint firstAttribute="trailing" secondItem="J3Q-4Y-N5A" secondAttribute="trailing" id="cbA-59-TI2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="160.1449275362319" y="105.80357142857143"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="notSelectableCellFrame" width="267" height="74"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
