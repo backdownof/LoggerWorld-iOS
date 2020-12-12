@@ -53,6 +53,7 @@
 		204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C26212578025A00B2B0FF /* ResponseStatus.swift */; };
 		204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204F9D2325682A2300AB51B6 /* CreateChar.storyboard */; };
 		204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D2625682A3400AB51B6 /* CreateCharController.swift */; };
+		205962282585701400E5D8D4 /* MobAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205962272585701400E5D8D4 /* MobAvatar.swift */; };
 		20598630256090C40028ACD3 /* AddCharCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059862E256090C40028ACD3 /* AddCharCell.swift */; };
 		20598631256090C40028ACD3 /* AddCharCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2059862F256090C40028ACD3 /* AddCharCell.xib */; };
 		20633AC4257D020E0081A2EB /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20633AC3257D020E0081A2EB /* Array.swift */; };
@@ -162,6 +163,7 @@
 		204C26212578025A00B2B0FF /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 		204F9D2325682A2300AB51B6 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
 		204F9D2625682A3400AB51B6 /* CreateCharController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharController.swift; sourceTree = "<group>"; };
+		205962272585701400E5D8D4 /* MobAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobAvatar.swift; sourceTree = "<group>"; };
 		2059862E256090C40028ACD3 /* AddCharCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharCell.swift; sourceTree = "<group>"; };
 		2059862F256090C40028ACD3 /* AddCharCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCharCell.xib; sourceTree = "<group>"; };
 		20633AC3257D020E0081A2EB /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -468,9 +470,18 @@
 			path = ResponseStatus;
 			sourceTree = "<group>";
 		};
+		205962262585700200E5D8D4 /* MobView */ = {
+			isa = PBXGroup;
+			children = (
+				205962272585701400E5D8D4 /* MobAvatar.swift */,
+			);
+			path = MobView;
+			sourceTree = "<group>";
+		};
 		206577A2256713E500E57E82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				205962262585700200E5D8D4 /* MobView */,
 				209213E9258145A6003A4F05 /* MobNests */,
 				209668502578F5F5004009F5 /* ViewController.swift */,
 				209668712578FBD1004009F5 /* Map */,
@@ -917,6 +928,7 @@
 				20633AC4257D020E0081A2EB /* Array.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
+				205962282585701400E5D8D4 /* MobAvatar.swift in Sources */,
 				2096685C2578F616004009F5 /* PlayerStatus.swift in Sources */,
 				2096685B2578F616004009F5 /* CharacterAvatar.swift in Sources */,
 				209668672578F633004009F5 /* ButtonWOImage.swift in Sources */,

@@ -21,6 +21,11 @@ class MainLoggerController: UIViewController {
         return mapView
     }()
     
+    private lazy var nestsView: NestsSelect = {
+        let nestsView: NestsSelect = NestsSelect.loadFromNib()
+        return nestsView
+    }()
+    
     let visualEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
         let view = UIVisualEffectView(effect: blurEffect)
@@ -162,6 +167,19 @@ class MainLoggerController: UIViewController {
         }
     }
     
+    func animateNestsIn() {
+//        nestsView.mapCellsCollectionView.reloadData()
+        nestsView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        nestsView.alpha = 0
+        view.bringSubviewToFront(nestsView)
+        
+        UIView.animate(withDuration: 0.4) {
+            self.visualEffectView.alpha = 1
+            self.nestsView.alpha = 1
+            self.nestsView.transform = CGAffineTransform.identity
+        }
+    }
+    
     func animateAlertOut() {
         UIView.animate(withDuration: 0.4, animations: {
             self.visualEffectView.alpha = 0
@@ -189,6 +207,16 @@ class MainLoggerController: UIViewController {
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
 //        alertView.set(status: status, title: message, buttonTitle: "ОК")
     }
+    
+    func setNestsView() {
+        view.addSubview(nestsView)
+        nestsView.translatesAutoresizingMaskIntoConstraints = false
+        nestsView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        nestsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        nestsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+//        alertView.set(status: status, title: message, buttonTitle: "ОК")
+    }
+    
 }
 
 extension MainLoggerController: UITableViewDelegate {
@@ -244,7 +272,7 @@ extension MainLoggerController: SocketManagerDelegate {
         let chars: [PlayersInLocation] = info.players
         var charsToDisplay: [PlayersInLocation] = []
         for char in chars {
-            if char.moveState == "DEPARTING" {
+            if char.state == "DEPARTING" {
                 if char.id == ActiveCharacter.shared.info.id {
                     charsToDisplay = [char]
                     playersInLocation = charsToDisplay
@@ -260,6 +288,7 @@ extension MainLoggerController: SocketManagerDelegate {
             }
         }
         playersInLocation = charsToDisplay
+        LocationService.shared.locationInfo = info
         LocationService.shared.currentLocationId = info.locationId
         LocationService.shared.characterInMove = false
         currentLocationTitle.text = LocationService.shared.getNameById(id: info.locationId)
@@ -279,8 +308,11 @@ extension MainLoggerController: ButtonWImageDelegate {
             animateMapIn()
         }
         
+        
         if button == middleButton {
-            
+            guard let nests = LocationService.shared.locationInfo?.mobNests else { return }
+            nestsView.mobsNests = nests
+            setNestsView()
         }
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 struct API {
-    static let baseURL = "http://localhost:8080/"
+    static let baseURL = "https://logger-world.herokuapp.com/"
 }

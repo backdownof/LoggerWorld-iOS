@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,84 +17,125 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="NestCell" customModule="LoggerWorld" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="113" id="KGk-i7-Jjw" customClass="NestCell" customModule="LoggerWorld" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="123"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="347" height="123"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3Q-4Y-N5A">
-                        <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+                        <rect key="frame" x="0.0" y="5" width="347" height="113"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notSelectableCellFrame" translatesAutoresizingMaskIntoConstraints="NO" id="CzZ-XF-xuU">
-                                <rect key="frame" x="0.0" y="0.0" width="347" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="299" height="113"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yn5-9z-j8k">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yn5-9z-j8k" customClass="MobAvatar" customModule="LoggerWorld" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="38" height="38"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="5cc-a0-DtZ"/>
                                     <constraint firstAttribute="height" constant="38" id="BiY-3S-JLs"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25-40 hp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWe-M0-RUH">
-                                <rect key="frame" x="7" y="53" width="44" height="17"/>
+                                <rect key="frame" x="7" y="48" width="44" height="17"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Серая крыса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-1s-n3I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Серая крыса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-1s-n3I">
                                 <rect key="frame" x="56" y="10" width="80" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Medium" family="Alegreya SC" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Уровень: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9Q-a8-1T6">
-                                <rect key="frame" x="56" y="31" width="56" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уровень: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9Q-a8-1T6">
+                                <rect key="frame" x="56" y="30" width="56" height="17"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Уровень: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLq-aF-bgn">
-                                <rect key="frame" x="56" y="53" width="56" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Урон: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLq-aF-bgn">
+                                <rect key="frame" x="56" y="47" width="38" height="17"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-Q3-rfi">
+                                <rect key="frame" x="299" y="32.5" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="gsd-ZR-X3y"/>
+                                    <constraint firstAttribute="height" constant="48" id="sVh-Rx-flY"/>
+                                </constraints>
+                                <state key="normal" image="checkboxOff"/>
+                                <connections>
+                                    <action selector="selectButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ikp-cs-DB5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шанс чемпиона: 0%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-U9-hyK">
+                                <rect key="frame" x="56" y="81" width="112" height="17"/>
+                                <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мобов в локации: 20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U83-Dy-us2">
+                                <rect key="frame" x="56" y="64" width="114" height="17"/>
                                 <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CzZ-XF-xuU" firstAttribute="top" secondItem="J3Q-4Y-N5A" secondAttribute="top" id="3dx-lB-49z"/>
-                            <constraint firstAttribute="trailing" secondItem="CzZ-XF-xuU" secondAttribute="trailing" id="Dqd-em-k03"/>
+                            <constraint firstItem="5ZV-1s-n3I" firstAttribute="leading" secondItem="Yn5-9z-j8k" secondAttribute="trailing" constant="8" symbolic="YES" id="A0K-uM-l2v"/>
+                            <constraint firstAttribute="trailing" secondItem="Cba-Q3-rfi" secondAttribute="trailing" id="A5L-6c-7Ai"/>
                             <constraint firstItem="Yn5-9z-j8k" firstAttribute="top" secondItem="J3Q-4Y-N5A" secondAttribute="top" constant="10" id="EUh-rd-Qn4"/>
+                            <constraint firstItem="5ZV-1s-n3I" firstAttribute="top" secondItem="Yn5-9z-j8k" secondAttribute="top" id="Iso-li-Agf"/>
+                            <constraint firstAttribute="bottom" secondItem="mS6-U9-hyK" secondAttribute="bottom" constant="15" id="Lcp-hL-zku"/>
+                            <constraint firstItem="iLq-aF-bgn" firstAttribute="leading" secondItem="u9Q-a8-1T6" secondAttribute="leading" id="OXZ-y7-qBt"/>
                             <constraint firstAttribute="bottom" secondItem="CzZ-XF-xuU" secondAttribute="bottom" id="Oh2-Hz-r3J"/>
                             <constraint firstItem="fWe-M0-RUH" firstAttribute="centerX" secondItem="Yn5-9z-j8k" secondAttribute="centerX" id="Xlb-al-Q16"/>
+                            <constraint firstItem="iLq-aF-bgn" firstAttribute="top" secondItem="u9Q-a8-1T6" secondAttribute="bottom" id="aEo-82-Fah"/>
+                            <constraint firstItem="mS6-U9-hyK" firstAttribute="top" secondItem="U83-Dy-us2" secondAttribute="bottom" id="bVV-yU-veI"/>
+                            <constraint firstItem="u9Q-a8-1T6" firstAttribute="leading" secondItem="5ZV-1s-n3I" secondAttribute="leading" id="czf-H1-9Ab"/>
                             <constraint firstItem="CzZ-XF-xuU" firstAttribute="leading" secondItem="J3Q-4Y-N5A" secondAttribute="leading" id="esy-HX-tN9"/>
-                            <constraint firstItem="fWe-M0-RUH" firstAttribute="top" secondItem="Yn5-9z-j8k" secondAttribute="bottom" constant="5" id="jMJ-Ys-RC2"/>
+                            <constraint firstItem="fWe-M0-RUH" firstAttribute="top" secondItem="Yn5-9z-j8k" secondAttribute="bottom" id="jMJ-Ys-RC2"/>
+                            <constraint firstItem="mS6-U9-hyK" firstAttribute="leading" secondItem="U83-Dy-us2" secondAttribute="leading" id="jgh-84-IYN"/>
+                            <constraint firstItem="U83-Dy-us2" firstAttribute="top" secondItem="iLq-aF-bgn" secondAttribute="bottom" id="jmA-LG-oY5"/>
+                            <constraint firstItem="u9Q-a8-1T6" firstAttribute="top" secondItem="5ZV-1s-n3I" secondAttribute="bottom" id="lkv-Hu-W3m"/>
+                            <constraint firstItem="Cba-Q3-rfi" firstAttribute="leading" secondItem="CzZ-XF-xuU" secondAttribute="trailing" id="lqP-ZO-0IR"/>
+                            <constraint firstItem="Cba-Q3-rfi" firstAttribute="centerY" secondItem="J3Q-4Y-N5A" secondAttribute="centerY" id="m5K-Tf-blI"/>
+                            <constraint firstItem="U83-Dy-us2" firstAttribute="leading" secondItem="iLq-aF-bgn" secondAttribute="leading" id="sZj-bk-yPT"/>
                             <constraint firstItem="Yn5-9z-j8k" firstAttribute="leading" secondItem="J3Q-4Y-N5A" secondAttribute="leading" constant="10" id="yOM-WD-EYQ"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="J3Q-4Y-N5A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JjI-fH-xUl"/>
-                    <constraint firstAttribute="bottom" secondItem="J3Q-4Y-N5A" secondAttribute="bottom" id="Vf2-w7-lNf"/>
-                    <constraint firstItem="J3Q-4Y-N5A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yge-Eq-asG"/>
+                    <constraint firstAttribute="bottom" secondItem="J3Q-4Y-N5A" secondAttribute="bottom" constant="5" id="Vf2-w7-lNf"/>
+                    <constraint firstItem="J3Q-4Y-N5A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Yge-Eq-asG"/>
                     <constraint firstAttribute="trailing" secondItem="J3Q-4Y-N5A" secondAttribute="trailing" id="cbA-59-TI2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="160.1449275362319" y="105.80357142857143"/>
+            <connections>
+                <outlet property="amountMobsInNest" destination="U83-Dy-us2" id="15f-wx-bC6"/>
+                <outlet property="avatarView" destination="Yn5-9z-j8k" id="Zfq-Rq-adW"/>
+                <outlet property="checmpionChance" destination="mS6-U9-hyK" id="JCK-lN-Y6d"/>
+                <outlet property="mobHealth" destination="fWe-M0-RUH" id="zDU-Rh-ArP"/>
+                <outlet property="nestAverageDamage" destination="iLq-aF-bgn" id="mcT-fe-QMF"/>
+                <outlet property="nestLevel" destination="u9Q-a8-1T6" id="SDI-Bv-j5u"/>
+                <outlet property="nestName" destination="5ZV-1s-n3I" id="4jN-at-2La"/>
+                <outlet property="selectedButton" destination="Cba-Q3-rfi" id="B9B-ot-9Ty"/>
+            </connections>
+            <point key="canvasLocation" x="160.1449275362319" y="113.50446428571428"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkboxOff" width="48" height="48"/>
         <image name="notSelectableCellFrame" width="267" height="74"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

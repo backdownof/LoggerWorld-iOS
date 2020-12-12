@@ -32,12 +32,24 @@ class Network: NSObject {
             "password": password
         ]
         
+        let headers: HTTPHeaders = [
+                                "Content-Type": "application/json",
+                                "Accept": "*/*",
+                                "Accept-Encoding": "gzip,deflate,br",
+                                "Connection": "keep-alive"
+                               ]
+        //                    "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBYWh6QnJ1dCIsImlhdCI6MTYwNzc4NTc3OCwiZXhwIjoxNjEwMzc3Nzc4fQ.hxU0Urm3mdn0e9p_qdY0cwtKf9UMNuwqD1A5Rz44DEkTTT3Bm9UUIrrPNCCDBC8tTEw4GxXrRPKhFKEdv82pxA",
+        //                    "Postman-Token": "<calculated when request is sent>",
+        print(1)
         AF.request((API.baseURL + "api/user/login").url!,
                    method: .post, parameters: parameters,
-                   encoding: JSONEncoding.default).responseJSON { response in
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON { response in
+                    print(2)
                     guard let status = response.response?.statusCode else { return }
+                    print(status)
                     if Array(200...201).contains(status)  {
-                        
+                        print(3)
                         if let headers = response.response?.allHeaderFields as? [String: String] {
                             let header = headers["Authorization"]
                             guard let authHeader = header else { return }

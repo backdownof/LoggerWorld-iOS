@@ -29,6 +29,6 @@ struct PlayersInLocation: Codable {
     var classId: Int
     var id: Int
     var level: Int
-    var moveState: String
+    var state: String
     var name: String
 }

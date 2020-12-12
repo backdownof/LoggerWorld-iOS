@@ -19,11 +19,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="rOy-Rd-Dfe" customClass="NestsSelect" customModule="LoggerWorld" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="330" height="462"/>
+            <rect key="frame" x="0.0" y="0.0" width="330" height="424"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundFrame" translatesAutoresizingMaskIntoConstraints="NO" id="imW-MD-nsu">
-                    <rect key="frame" x="0.0" y="0.0" width="330" height="462"/>
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="424"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-O4-YJR" userLabel="CurrentLockStackView">
@@ -43,12 +43,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRG-vj-w0P">
                     <rect key="frame" x="299" y="15" width="16" height="22"/>
                     <state key="normal" image="closeButtonRed"/>
-                    <connections>
-                        <action selector="closeButtonTapped:" destination="rOy-Rd-Dfe" eventType="touchUpInside" id="pxs-Re-Ckf"/>
-                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="O09-YN-PTI" userLabel="ToGoStackView">
-                    <rect key="frame" x="15" y="405" width="300" height="37"/>
+                    <rect key="frame" x="15" y="367" width="300" height="37"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuX-Qv-Sz1">
                             <rect key="frame" x="0.0" y="0.0" width="185" height="37"/>
@@ -67,9 +64,6 @@
                             <state key="normal" title="Идти" backgroundImage="buttonLightBrown">
                                 <color key="titleColor" name="Creame"/>
                             </state>
-                            <connections>
-                                <action selector="goButtonPressed:" destination="rOy-Rd-Dfe" eventType="touchUpInside" id="WZ7-Ok-xtp"/>
-                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -77,8 +71,11 @@
                     </constraints>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PND-qE-vCM">
-                    <rect key="frame" x="15" y="52" width="300" height="338"/>
+                    <rect key="frame" x="15" y="52" width="300" height="300"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="geU-ch-fKy"/>
+                    </constraints>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="v3q-cd-psW"/>
@@ -102,9 +99,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="goButton" destination="CeY-Ol-DhH" id="kPr-AR-xQe"/>
-                <outlet property="selectedLocationPathLabel" destination="FuX-Qv-Sz1" id="hy5-Bp-XRO"/>
-                <outlet property="youAtLocationLabel" destination="lAl-K0-oZh" id="w66-pS-tzI"/>
+                <outlet property="button" destination="CeY-Ol-DhH" id="klE-5i-WYV"/>
+                <outlet property="closeButton" destination="WRG-vj-w0P" id="8K9-M8-U9w"/>
+                <outlet property="tableView" destination="PND-qE-vCM" id="Vs6-iw-hj0"/>
             </connections>
             <point key="canvasLocation" x="78.260869565217391" y="-68.303571428571431"/>
         </view>

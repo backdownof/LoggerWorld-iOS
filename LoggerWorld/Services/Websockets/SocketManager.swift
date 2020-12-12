@@ -116,7 +116,7 @@ class SocketManager: StompClientLibDelegate {
     }
     
     func registerSocket() {
-        let completedWSURL = "ws://localhost:8080/ws"
+        let completedWSURL = "ws://logger-world.herokuapp.com/ws"
         
         let url = NSURL(string: completedWSURL)!
         stomp.openSocketWithURLRequest(request: NSURLRequest(url: url as URL), delegate: self as StompClientLibDelegate, connectionHeaders: ["Authorization": "Bearer \(String(describing: User.token!))"])
