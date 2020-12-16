@@ -10,6 +10,14 @@ import Foundation
 extension String {
     
     // MARK: - Public properties
+    func localized() -> String {
+        return NSLocalizedString(
+            self,
+            tableName: "Localizable",
+            bundle: .main,
+            value: self,
+            comment: self)
+    }
     
     var url: URL? {
         

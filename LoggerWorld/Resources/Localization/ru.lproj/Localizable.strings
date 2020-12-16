@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  LoggerWorld
+
+  Created by Anatolii Bogdanov on 17.11.2020.
+  
+*/
+
+"parserError" = "Cannot read data received from server.";
+"errorMessageDefault" = "Sorry, something went wrong. Try again later.";
+"errorMessageInternetConnection" = "No internet connection";
+"errorMessageNotAuthorized" = "Login required";

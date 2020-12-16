@@ -29,10 +29,10 @@ class LogCell: UITableViewCell {
 
                 var yourDate: Date? = dateFor.date(from: logTime)
                 var calendar = Calendar.current
-                var hours = calendar.component(.hour, from: yourDate!)
-                var minutes = calendar.component(.minute, from: yourDate!)
+//                var hours = calendar.component(.hour, from: yourDate!)
+//                var minutes = calendar.component(.minute, from: yourDate!)
                 
-                dateTimeLabel.text = "\(hours):\(minutes)"
+//                dateTimeLabel.text = "\(hours):\(minutes)"
             }
         }
     }

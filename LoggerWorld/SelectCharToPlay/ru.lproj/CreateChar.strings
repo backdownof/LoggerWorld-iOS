@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Убийца"; ObjectID = "6Fn-dD-YRj"; */
+"6Fn-dD-YRj.text" = "Убийца";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "BLF-6N-Hqg"; */
+"BLF-6N-Hqg.title" = "Title";
+
+/* Class = "UILabel"; text = "Выберите класс"; ObjectID = "BdF-S1-qLe"; */
+"BdF-S1-qLe.text" = "Выберите класс";
+
+/* Class = "UILabel"; text = "Воин"; ObjectID = "G5R-R6-6a3"; */
+"G5R-R6-6a3.text" = "Воин";
+
+/* Class = "UILabel"; text = "Маг"; ObjectID = "WLx-6Y-CLr"; */
+"WLx-6Y-CLr.text" = "Маг";
+
+/* Class = "UILabel"; text = "Храбрые воины стараются принимать удары врагов на себя. Имеют много здоровья и быстро его восстанавливают."; ObjectID = "aCI-7X-Hvr"; */
+"aCI-7X-Hvr.text" = "Храбрые воины стараются принимать удары врагов на себя. Имеют много здоровья и быстро его восстанавливают.";
+
+/* Class = "UILabel"; text = "Лучник"; ObjectID = "gtw-kr-Rji"; */
+"gtw-kr-Rji.text" = "Лучник";
+
+/* Class = "UITextField"; placeholder = "You character nickname"; ObjectID = "ilP-ZA-13W"; */
+"ilP-ZA-13W.placeholder" = "You character nickname";
+
+/* Class = "UITextField"; text = "Desaring"; ObjectID = "ilP-ZA-13W"; */
+"ilP-ZA-13W.text" = "Desaring";

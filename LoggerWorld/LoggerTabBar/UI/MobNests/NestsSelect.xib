@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,9 +10,6 @@
     <customFonts key="customFonts">
         <array key="AlegreyaSC-Bold.ttf">
             <string>AlegreyaSC-Bold</string>
-        </array>
-        <array key="AlegreyaSC-Regular.ttf">
-            <string>AlegreyaSC-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -43,27 +40,32 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRG-vj-w0P">
                     <rect key="frame" x="299" y="15" width="16" height="22"/>
                     <state key="normal" image="closeButtonRed"/>
+                    <connections>
+                        <action selector="closeButtonPressed:" destination="rOy-Rd-Dfe" eventType="touchUpInside" id="PqK-vh-oZM"/>
+                    </connections>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="O09-YN-PTI" userLabel="ToGoStackView">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="O09-YN-PTI" userLabel="ToGoStackView">
                     <rect key="frame" x="15" y="367" width="300" height="37"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuX-Qv-Sz1">
-                            <rect key="frame" x="0.0" y="0.0" width="185" height="37"/>
-                            <string key="text">Время в пути до
-??? - ?? мин ?? сек</string>
-                            <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="13"/>
-                            <color key="textColor" name="Brown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-Ol-DhH">
-                            <rect key="frame" x="200" y="0.0" width="100" height="37"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="L1r-m9-MGz"/>
-                            </constraints>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDJ-4o-qeQ">
+                            <rect key="frame" x="0.0" y="0.0" width="142.5" height="37"/>
                             <fontDescription key="fontDescription" name="AlegreyaSC-Bold" family="Alegreya SC" pointSize="14"/>
-                            <state key="normal" title="Идти" backgroundImage="buttonLightBrown">
+                            <state key="normal" title="Сражаться" backgroundImage="buttonLightBrown">
                                 <color key="titleColor" name="Creame"/>
                             </state>
+                            <connections>
+                                <action selector="atackBtnPressed:" destination="rOy-Rd-Dfe" eventType="touchUpInside" id="eHZ-KI-1dm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-Ol-DhH">
+                            <rect key="frame" x="157.5" y="0.0" width="142.5" height="37"/>
+                            <fontDescription key="fontDescription" name="AlegreyaSC-Bold" family="Alegreya SC" pointSize="14"/>
+                            <state key="normal" title="Остановить бой" backgroundImage="buttonLightBrown">
+                                <color key="titleColor" name="Creame"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelFightBtnPressed:" destination="rOy-Rd-Dfe" eventType="touchUpInside" id="BPI-Vp-nv8"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -88,10 +90,10 @@
                 <constraint firstItem="v3q-cd-psW" firstAttribute="trailing" secondItem="PND-qE-vCM" secondAttribute="trailing" constant="15" id="Hw6-8P-B6o"/>
                 <constraint firstItem="imW-MD-nsu" firstAttribute="leading" secondItem="v3q-cd-psW" secondAttribute="leading" id="Muj-eg-ir0"/>
                 <constraint firstItem="O09-YN-PTI" firstAttribute="top" secondItem="PND-qE-vCM" secondAttribute="bottom" constant="15" id="OSS-qQ-P1X"/>
-                <constraint firstItem="PND-qE-vCM" firstAttribute="top" secondItem="v3q-cd-psW" secondAttribute="top" constant="8" id="Phf-uz-Fts"/>
                 <constraint firstItem="2Tl-O4-YJR" firstAttribute="top" secondItem="rOy-Rd-Dfe" secondAttribute="top" constant="15" id="U2B-wf-hU0"/>
                 <constraint firstAttribute="bottom" secondItem="imW-MD-nsu" secondAttribute="bottom" id="VTq-b0-tQE"/>
                 <constraint firstItem="imW-MD-nsu" firstAttribute="top" secondItem="rOy-Rd-Dfe" secondAttribute="top" id="W0C-pU-VDo"/>
+                <constraint firstItem="PND-qE-vCM" firstAttribute="top" secondItem="2Tl-O4-YJR" secondAttribute="bottom" constant="17" id="eH2-u0-QN8"/>
                 <constraint firstItem="PND-qE-vCM" firstAttribute="leading" secondItem="v3q-cd-psW" secondAttribute="leading" constant="15" id="eRl-zt-IjO"/>
                 <constraint firstItem="2Tl-O4-YJR" firstAttribute="centerX" secondItem="v3q-cd-psW" secondAttribute="centerX" id="fu2-Fa-inM"/>
                 <constraint firstItem="O09-YN-PTI" firstAttribute="leading" secondItem="v3q-cd-psW" secondAttribute="leading" constant="15" id="ilP-N5-rke"/>
@@ -99,8 +101,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="button" destination="CeY-Ol-DhH" id="klE-5i-WYV"/>
-                <outlet property="closeButton" destination="WRG-vj-w0P" id="8K9-M8-U9w"/>
                 <outlet property="tableView" destination="PND-qE-vCM" id="Vs6-iw-hj0"/>
             </connections>
             <point key="canvasLocation" x="78.260869565217391" y="-68.303571428571431"/>

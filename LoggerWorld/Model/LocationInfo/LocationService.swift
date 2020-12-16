@@ -7,21 +7,30 @@
 
 import Foundation
 
-protocol WorldMapDelegate {
+protocol LocationServiceDelegate {
     func mapLoaded()
+    func locationHasChanged()
+}
+
+extension LocationServiceDelegate {
+    func mapLoaded() {}
+    func locationHasChanged() {}
 }
 
 class LocationService {
     static let shared = LocationService()
-    var delegate: WorldMapDelegate?
+    var delegate: LocationServiceDelegate?
     
     var locations: [LocationNameAndCoords]?
     var locationInfo: LocationInfo?
-    var currentLocationId: Int?
     var characterInMove: Bool?
+    var playersInLocation: [PlayersInLocation]?
+    var currentLocationName: String?
     
     private init() {
         getWorldMap()
+        print("Location Service init")
+        SocketManager.shared.locationDelegate = self
     }
     
     func getNameById(id: Int) -> String {
@@ -36,17 +45,48 @@ class LocationService {
     }
     
     func getCharsInLocation() -> [PlayersInLocation] {
-//        guard let players =  else { return [PlayersInLocation()] }
         return locationInfo!.players
     }
     
     private func getWorldMap() {
         Network.getLocationDict(completion: { locations in
+            print("Map is loaded and saved")
             LocationService.shared.locations = locations
             self.delegate?.mapLoaded()
         }, failure: {
             print("Fucked up getting map")
             self.delegate?.mapLoaded()
         })
+    }
+}
+
+extension LocationService: SocketManagerDelegate {
+    func updatedLocationInfo(info: LocationInfo) {
+        print("ff")
+        let chars: [PlayersInLocation] = info.players
+        var charsToDisplay: [PlayersInLocation] = []
+        for char in chars {
+            if char.state == "DEPARTING" {
+                if char.id == ActiveCharacter.shared.info.id {
+                    charsToDisplay = [char]
+                    LocationService.shared.playersInLocation = charsToDisplay
+                    LocationService.shared.currentLocationName = "Вы в пути..."
+                    delegate?.locationHasChanged()
+                    LocationService.shared.locationInfo = info
+                    LocationService.shared.characterInMove = true
+                    return
+                } else {
+                    print("player with nickname \(char.name) moved out")
+                }
+            } else {
+                charsToDisplay.append(char)
+            }
+        }
+        
+        playersInLocation = charsToDisplay
+        LocationService.shared.locationInfo = info
+        LocationService.shared.currentLocationName = LocationService.shared.getNameById(id: info.locationId)
+        LocationService.shared.characterInMove = false
+        delegate?.locationHasChanged()
     }
 }

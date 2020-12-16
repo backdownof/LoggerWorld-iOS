@@ -17,10 +17,11 @@ class SelectCharToPlayController: ViewController {
     var characters: [CharacterInformation] = []
     
     var selectedCharId: Int?
-    var socketManager = SocketManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ConnectionService.shared.socketConnect()
         
         LocationService.shared.delegate = self
         CharStats.shared.delegate = self
@@ -28,7 +29,7 @@ class SelectCharToPlayController: ViewController {
         charactersTableView.dataSource = self
         charactersTableView.delegate = self
         enterButton.delegate = self
-        socketManager.delegate = self
+        SocketManager.shared.loggingDelegate = self
         
         setupView()
         Characters.shared.reloadData()
@@ -113,7 +114,7 @@ extension SelectCharToPlayController: CharStatsDelegate {
     }
 }
 
-extension SelectCharToPlayController: WorldMapDelegate {
+extension SelectCharToPlayController: LocationServiceDelegate {
     func mapLoaded() {
         charactersTableView.reloadData()
     }
@@ -133,16 +134,22 @@ extension SelectCharToPlayController: UITableViewDelegate {
 
 extension SelectCharToPlayController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
-        if let id = selectedCharId {
-            ActiveCharacter.setup(ActiveCharacter.Config(id: id))
-            socketManager.loginCharacter(playerId: id)
+        if ConnectionService.shared.socketConnected {
+            print("if true")
+            if let id = selectedCharId{
+                ActiveCharacter.setup(ActiveCharacter.Config(id: id))
+                SocketManager.shared.loginCharacter(playerId: id)
+            }
         }
-//        socketManager.createCharacter()
+//        } else {
+//            print("if false")
+//            ConnectionService.shared.socketConnect()
+//        }
+//        SocketManager.shared.createCharacter()
     }
 }
 
 extension SelectCharToPlayController: SocketManagerDelegate {
-    func connected() { }
     
 //    func listOfCharactersToSelect(chars: [CharListToLogin]) {
 //        characters = chars

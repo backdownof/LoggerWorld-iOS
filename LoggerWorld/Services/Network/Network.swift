@@ -40,7 +40,6 @@ class Network: NSObject {
                                ]
         //                    "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBYWh6QnJ1dCIsImlhdCI6MTYwNzc4NTc3OCwiZXhwIjoxNjEwMzc3Nzc4fQ.hxU0Urm3mdn0e9p_qdY0cwtKf9UMNuwqD1A5Rz44DEkTTT3Bm9UUIrrPNCCDBC8tTEw4GxXrRPKhFKEdv82pxA",
         //                    "Postman-Token": "<calculated when request is sent>",
-        print(1)
         AF.request((API.baseURL + "api/user/login").url!,
                    method: .post, parameters: parameters,
                    encoding: JSONEncoding.default,
@@ -187,12 +186,16 @@ class Network: NSObject {
                    headers: headers).responseJSON(completionHandler: { response in
                     switch response.result {
                     case .success:
+                        print("World map data received")
                         if let data = response.data {
                             do {
                                 let json = try JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data)
+                                print("World map decoded")
                                 if let locations = json.data?.locations {
+                                    print("World map is full and ready to use")
                                     completion(locations)
                                 } else {
+                                    print("World map is empty and ready to use")
                                     let locations: [LocationNameAndCoords] = []
                                     completion(locations)
                                 }
@@ -262,29 +265,29 @@ class Network: NSObject {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         AF.request((API.baseURL + "api/players/logs").url!,
-                   method: .get,
-                   encoding: JSONEncoding.default,
-                   headers: headers).responseJSON(completionHandler: { response in
-                    switch response.result {
-                    case .success:
-                        if let data = response.data {
+               method: .get,
+               encoding: JSONEncoding.default,
+               headers: headers).responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success:
+                    if let data = response.data {
 //                            print(String(data: data, encoding: .utf8))
-                            do {
-                                let json = try JSONDecoder().decode(ResponseStatus<Logs>.self, from: data)
-                                if let entries = json.data?.entries {
-                                    completion(entries)
-                                } else {
-                                    let entries: [LogMessage] = []
-                                    completion(entries)
-                                }
-                            } catch {
-                                print("Error")
+                        do {
+                            let json = try JSONDecoder().decode(ResponseStatus<Logs>.self, from: data)
+                            if let entries = json.data?.entries {
+                                completion(entries)
+                            } else {
+                                let entries: [LogMessage] = []
+                                completion(entries)
                             }
+                        } catch {
+                            print("Error")
                         }
-                    case .failure(_):
-                        failure()
                     }
-                   })
+                case .failure(_):
+                    failure()
+                }
+               })
     }
 }
 

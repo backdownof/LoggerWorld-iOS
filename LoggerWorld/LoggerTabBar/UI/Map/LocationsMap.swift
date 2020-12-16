@@ -75,7 +75,6 @@ class LocationsMap: UIView {
     
     @IBAction func goButtonPressed(_ sender: Any) {
         if selectedLocationCellId != 0 {
-            goButton.isUserInteractionEnabled = false
             goButton.alpha = 0.3
             SocketManager.shared.playerMoveToAnotherLocation(locationId: selectedLocationCellId)
             mapDelegate?.mapIsClosed()
@@ -113,7 +112,7 @@ extension LocationsMap: UICollectionViewDataSource {
         cell.locInfo = locsYcoord[indexPath.row]
         
         
-        if cell.locInfo?.id == LocationService.shared.currentLocationId {
+        if cell.locInfo?.id == LocationService.shared.locationInfo?.locationId {
             currentLocationCell = cell
             youAtLocationLabel.text = "Вы в \(LocationService.shared.getNameById(id: cell.locInfo!.id!))"
             

@@ -50,8 +50,8 @@
 		204852E5257C211D00760217 /* CharacterStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204852E4257C211D00760217 /* CharacterStatsController.swift */; };
 		204852ED257C26DC00760217 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204852EB257C26DC00760217 /* StatCell.swift */; };
 		204852EE257C26DC00760217 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204852EC257C26DC00760217 /* StatCell.xib */; };
+		2049406125892C7A00244847 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049406025892C7A00244847 /* ConnectionService.swift */; };
 		204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C26212578025A00B2B0FF /* ResponseStatus.swift */; };
-		204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204F9D2325682A2300AB51B6 /* CreateChar.storyboard */; };
 		204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D2625682A3400AB51B6 /* CreateCharController.swift */; };
 		205962282585701400E5D8D4 /* MobAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205962272585701400E5D8D4 /* MobAvatar.swift */; };
 		20598630256090C40028ACD3 /* AddCharCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059862E256090C40028ACD3 /* AddCharCell.swift */; };
@@ -98,6 +98,8 @@
 		20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37E8256292DA00F9C1B5 /* UI.swift */; };
 		20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37EB2562931D00F9C1B5 /* UIViewController.swift */; };
 		20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37EE2562934A00F9C1B5 /* UIWindow.swift */; };
+		20B7C4F1258801A10013924E /* MainLoggerController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7C4F0258801A10013924E /* MainLoggerController+Map.swift */; };
+		20B7C50A258818FD0013924E /* CreateChar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B7C50C258818FD0013924E /* CreateChar.storyboard */; };
 		20B862BE2576417C00517724 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B862BD2576417C00517724 /* UIView.swift */; };
 		20BAC14125798F8F00120F4F /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BAC14025798F8E00120F4F /* MapCell.xib */; };
 		20BAC14425798FA700120F4F /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAC14325798FA700120F4F /* MapCell.swift */; };
@@ -160,8 +162,8 @@
 		204852E4257C211D00760217 /* CharacterStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatsController.swift; sourceTree = "<group>"; };
 		204852EB257C26DC00760217 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatCell.swift; path = LoggerWorld/LoggerTabBar/MainLogger/StatCell/StatCell.swift; sourceTree = SOURCE_ROOT; };
 		204852EC257C26DC00760217 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StatCell.xib; path = LoggerWorld/LoggerTabBar/MainLogger/StatCell/StatCell.xib; sourceTree = SOURCE_ROOT; };
+		2049406025892C7A00244847 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		204C26212578025A00B2B0FF /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
-		204F9D2325682A2300AB51B6 /* CreateChar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateChar.storyboard; sourceTree = "<group>"; };
 		204F9D2625682A3400AB51B6 /* CreateCharController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharController.swift; sourceTree = "<group>"; };
 		205962272585701400E5D8D4 /* MobAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobAvatar.swift; sourceTree = "<group>"; };
 		2059862E256090C40028ACD3 /* AddCharCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,16 @@
 		20AD37E8256292DA00F9C1B5 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		20AD37EB2562931D00F9C1B5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		20AD37EE2562934A00F9C1B5 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		20B7C4F0258801A10013924E /* MainLoggerController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainLoggerController+Map.swift"; sourceTree = "<group>"; };
+		20B7C4F3258815450013924E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LoggerTabBar.strings; sourceTree = "<group>"; };
+		20B7C4F4258815450013924E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
+		20B7C4F5258815450013924E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		20B7C4F6258815450013924E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		20B7C4F7258815450013924E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20B7C4FA258816E90013924E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
+		20B7C50B258818FD0013924E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateChar.storyboard; sourceTree = "<group>"; };
+		20B7C5112588192D0013924E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CreateChar.strings; sourceTree = "<group>"; };
+		20B7C5132588195C0013924E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CreateChar.strings; sourceTree = "<group>"; };
 		20B862BD2576417C00517724 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		20BAC14025798F8E00120F4F /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
 		20BAC14325798FA700120F4F /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
@@ -447,7 +459,7 @@
 				20766EE5256055C900AEDE8D /* Cell */,
 				2045961F25601FB6004793C5 /* SelectCharToPlay.storyboard */,
 				2045962225601FCA004793C5 /* SelectCharToPlayController.swift */,
-				204F9D2325682A2300AB51B6 /* CreateChar.storyboard */,
+				20B7C50C258818FD0013924E /* CreateChar.storyboard */,
 				204F9D2625682A3400AB51B6 /* CreateCharController.swift */,
 			);
 			path = SelectCharToPlay;
@@ -460,6 +472,14 @@
 				204852EC257C26DC00760217 /* StatCell.xib */,
 			);
 			path = StatCell;
+			sourceTree = "<group>";
+		};
+		2049405F25892C6500244847 /* ConnectionService */ = {
+			isa = PBXGroup;
+			children = (
+				2049406025892C7A00244847 /* ConnectionService.swift */,
+			);
+			path = ConnectionService;
 			sourceTree = "<group>";
 		};
 		204C26202578023400B2B0FF /* ResponseStatus */ = {
@@ -481,9 +501,9 @@
 		206577A2256713E500E57E82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				209668502578F5F5004009F5 /* ViewController.swift */,
 				205962262585700200E5D8D4 /* MobView */,
 				209213E9258145A6003A4F05 /* MobNests */,
-				209668502578F5F5004009F5 /* ViewController.swift */,
 				209668712578FBD1004009F5 /* Map */,
 				2039559C25645C19004D84C2 /* Alert */,
 				20407A8F257557F5007759B3 /* PlayerView */,
@@ -526,6 +546,7 @@
 		2088CEBF25631C5700DC4D36 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2049405F25892C6500244847 /* ConnectionService */,
 				2096687B25793AD7004009F5 /* LocationService */,
 				20AC57B5256519CE00392C87 /* ErrorHandler */,
 				20CD1DDF255FE551009F991D /* Websockets */,
@@ -673,6 +694,7 @@
 				20CB85DD2566A65F00237DAF /* MainLogger.storyboard */,
 				20CB85DA2566A65200237DAF /* MainLoggerController.swift */,
 				204852E4257C211D00760217 /* CharacterStatsController.swift */,
+				20B7C4F0258801A10013924E /* MainLoggerController+Map.swift */,
 			);
 			path = MainLogger;
 			sourceTree = "<group>";
@@ -794,6 +816,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 200A664B254E1A3E00B74B48;
 			productRefGroup = 200A6655254E1A3E00B74B48 /* Products */;
@@ -821,7 +844,6 @@
 				20CB85DE2566A65F00237DAF /* MainLogger.storyboard in Resources */,
 				203A2CE02576D20A003AFC95 /* AlegreyaSC-MediumItalic.ttf in Resources */,
 				203A2CE52576D20A003AFC95 /* AlegreyaSC-BoldItalic.ttf in Resources */,
-				204F9D2425682A2300AB51B6 /* CreateChar.storyboard in Resources */,
 				20BAC14125798F8F00120F4F /* MapCell.xib in Resources */,
 				209213F62581473C003A4F05 /* NestsSelect.xib in Resources */,
 				203A2CE22576D20A003AFC95 /* AlegreyaSC-Regular.ttf in Resources */,
@@ -835,6 +857,7 @@
 				203A2CE72576D20A003AFC95 /* AlegreyaSC-Italic.ttf in Resources */,
 				203A2CE82576D20A003AFC95 /* AlegreyaSC-BlackItalic.ttf in Resources */,
 				209668562578F608004009F5 /* AlertView.xib in Resources */,
+				20B7C50A258818FD0013924E /* CreateChar.storyboard in Resources */,
 				20CB85E32566A73000237DAF /* Assistive.storyboard in Resources */,
 				2006D719256470D800259338 /* Localizable.strings in Resources */,
 				209668622578F624004009F5 /* ButtonWImage.xib in Resources */,
@@ -922,6 +945,7 @@
 				20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */,
 				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
 				209213F225814735003A4F05 /* NestsSelect.swift in Sources */,
+				2049406125892C7A00244847 /* ConnectionService.swift in Sources */,
 				2006D6EF256464B900259338 /* Nib.swift in Sources */,
 				2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */,
 				20633AD1257D338F0081A2EB /* Image.swift in Sources */,
@@ -933,6 +957,7 @@
 				2096685B2578F616004009F5 /* CharacterAvatar.swift in Sources */,
 				209668672578F633004009F5 /* ButtonWOImage.swift in Sources */,
 				2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */,
+				20B7C4F1258801A10013924E /* MainLoggerController+Map.swift in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
 				209213D4257EC448003A4F05 /* LogsMap.swift in Sources */,
 				200CABAE257AF26800ECBFD5 /* CharStatsMap.swift in Sources */,
@@ -995,6 +1020,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2006D71A256470D800259338 /* en */,
+				20B7C4F6258815450013924E /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1003,6 +1029,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2006D724256472D100259338 /* en */,
+				20B7C4F7258815450013924E /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1011,6 +1038,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				200A665E254E1A3E00B74B48 /* Base */,
+				20B7C4F4258815450013924E /* ru */,
+				20B7C4FA258816E90013924E /* en */,
 			);
 			name = Login.storyboard;
 			sourceTree = "<group>";
@@ -1019,14 +1048,26 @@
 			isa = PBXVariantGroup;
 			children = (
 				200A6666254E1A4000B74B48 /* Base */,
+				20B7C4F5258815450013924E /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		20B7C50C258818FD0013924E /* CreateChar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B7C50B258818FD0013924E /* Base */,
+				20B7C5112588192D0013924E /* en */,
+				20B7C5132588195C0013924E /* ru */,
+			);
+			name = CreateChar.storyboard;
 			sourceTree = "<group>";
 		};
 		20CB85EB2566C7BA00237DAF /* LoggerTabBar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				20CB85EA2566C7BA00237DAF /* Base */,
+				20B7C4F3258815450013924E /* ru */,
 			);
 			name = LoggerTabBar.storyboard;
 			sourceTree = "<group>";
@@ -1038,6 +1079,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1099,6 +1141,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

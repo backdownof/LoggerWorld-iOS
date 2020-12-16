@@ -1,0 +1,60 @@
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "IYw-lR-uJk"; */
+"IYw-lR-uJk.placeholder" = "Новый пароль";
+
+/* Class = "UITextField"; text = "Pwd123"; ObjectID = "IYw-lR-uJk"; */
+"IYw-lR-uJk.text" = "Pwd123";
+
+/* Class = "UITextField"; placeholder = "Repeat Password"; ObjectID = "JUp-ld-eaK"; */
+"JUp-ld-eaK.placeholder" = "Повторите пароль";
+
+/* Class = "UITextField"; text = "Pwd123"; ObjectID = "JUp-ld-eaK"; */
+"JUp-ld-eaK.text" = "Pwd123";
+
+/* Class = "UILabel"; text = "Введите ваш Email:"; ObjectID = "JsM-np-wmG"; */
+"JsM-np-wmG.text" = "Введите ваш Email:";
+
+/* Class = "UIBarButtonItem"; title = "Назад"; ObjectID = "K7H-eR-wG5"; */
+"K7H-eR-wG5.title" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Регистрация"; ObjectID = "PyY-hk-qTz"; */
+"PyY-hk-qTz.normalTitle" = "Регистрация";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Rhw-Ul-L0d"; */
+"Rhw-Ul-L0d.placeholder" = "Пароль";
+
+/* Class = "UITextField"; text = "Pwd123"; ObjectID = "Rhw-Ul-L0d"; */
+"Rhw-Ul-L0d.text" = "Pwd123";
+
+/* Class = "UILabel"; text = "Введите пароль:"; ObjectID = "Ryy-Dp-vbY"; */
+"Ryy-Dp-vbY.text" = "Введите пароль:";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "UXn-cd-mTv"; */
+"UXn-cd-mTv.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "testUser1@mail.ru"; ObjectID = "UXn-cd-mTv"; */
+"UXn-cd-mTv.text" = "testUser1@mail.ru";
+
+/* Class = "UILabel"; text = "Введите имя пользователя:"; ObjectID = "Ue5-Sk-UA8"; */
+"Ue5-Sk-UA8.text" = "Введите имя пользователя:";
+
+/* Class = "UILabel"; text = "Повторите пароль:"; ObjectID = "Vfa-nW-Rjf"; */
+"Vfa-nW-Rjf.text" = "Повторите пароль:";
+
+/* Class = "UIBarButtonItem"; title = "Назад"; ObjectID = "dlr-q1-FyD"; */
+"dlr-q1-FyD.title" = "Назад";
+
+/* Class = "UITextField"; placeholder = "Nickname"; ObjectID = "e4i-fH-Kig"; */
+"e4i-fH-Kig.placeholder" = "Ваш игровой ник";
+
+/* Class = "UITextField"; text = "testUser1"; ObjectID = "e4i-fH-Kig"; */
+"e4i-fH-Kig.text" = "testUser1";
+
+/* Class = "UINavigationItem"; title = "Регистрация"; ObjectID = "hwF-pg-isb"; */
+"hwF-pg-isb.title" = "Регистрация";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "n2Z-Sn-E0z"; */
+"n2Z-Sn-E0z.placeholder" = "Email";
+
+/* Class = "UITextField"; text = "testUser1"; ObjectID = "n2Z-Sn-E0z"; */
+"n2Z-Sn-E0z.text" = "testUser1";

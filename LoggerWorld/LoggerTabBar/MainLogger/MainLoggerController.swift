@@ -36,7 +36,7 @@ class MainLoggerController: UIViewController {
     let currentLocationSubview = UIView()
     let currentLocationTitle = UILabel()
     
-    var playersInLocation: [PlayersInLocation]? {
+    var playersInLocation: [PlayersInLocation]? = LocationService.shared.locationInfo?.players {
         didSet {
             playersNearTableView.reloadData()
         }
@@ -48,8 +48,6 @@ class MainLoggerController: UIViewController {
         }
     }
     
-    var socketManager = SocketManager.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,10 +57,13 @@ class MainLoggerController: UIViewController {
         playersNearTableView.delegate = self
         playersNearTableView.dataSource = self
         
-        socketManager.delegate = self
+        LocationService.shared.delegate = self
         rightButton.delegate = self
         middleButton.delegate = self
+        
         mapView.mapDelegate = self
+        
+        nestsView.delegate = self
         
         loadCharacterLogs()
         setupView()
@@ -74,9 +75,7 @@ class MainLoggerController: UIViewController {
     }
     
     @objc func handleStatusBarTap(sender: UITapGestureRecognizer) {
-//        print(R.segue.mainLoggerController.segueStatusBarStats.identifier)
         performSegue(withIdentifier: R.segue.mainLoggerController.segueStatusBarStats.identifier, sender: self)
-//        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +90,6 @@ class MainLoggerController: UIViewController {
         logsTableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         
         playersNearTableView.backgroundColor = .clear
-//        playersNearTableView.backgroundView = UIImageView(image: R.image.backgroundFrame())
         playersNearTableView.backgroundView?.contentMode = .scaleToFill
         playersNearTableView.backgroundView?.clipsToBounds = true
     }
@@ -130,8 +128,6 @@ class MainLoggerController: UIViewController {
         
         charStatusBar.charAvatar.characterStatus = .defaultStatus
         
-//        currentLocationSubview.dropShadow(color: UIColor.black, opacity: 1, offSet: CGSize(width: 0, height:-3), radius: 0, scale: false)
-        
         currentLocationTitle.font = R.font.alegreyaSCBold(size: 16)
         currentLocationTitle.textColor = R.color.brown()
         
@@ -142,6 +138,7 @@ class MainLoggerController: UIViewController {
         currentLocationTitle.heightAnchor.constraint(equalToConstant: 25).isActive = true
         currentLocationTitle.centerXAnchor.constraint(equalTo: currentLocationSubview.centerXAnchor).isActive = true
         currentLocationTitle.centerYAnchor.constraint(equalTo: currentLocationSubview.centerYAnchor).isActive = true
+        currentLocationTitle.text = LocationService.shared.currentLocationName
         
         logsTableView.separatorColor = R.color.brown()
         logsTableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -168,7 +165,7 @@ class MainLoggerController: UIViewController {
     }
     
     func animateNestsIn() {
-//        nestsView.mapCellsCollectionView.reloadData()
+        nestsView.tableView.reloadData()
         nestsView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         nestsView.alpha = 0
         view.bringSubviewToFront(nestsView)
@@ -180,13 +177,23 @@ class MainLoggerController: UIViewController {
         }
     }
     
-    func animateAlertOut() {
+    func animateMapOut() {
         UIView.animate(withDuration: 0.4, animations: {
             self.visualEffectView.alpha = 0
             self.mapView.alpha = 0
             self.mapView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         }) { (_) in
             self.mapView.removeFromSuperview()
+        }
+    }
+    
+    func animateNestsOut() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.visualEffectView.alpha = 0
+            self.nestsView.alpha = 0
+            self.nestsView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        }) { (_) in
+            self.nestsView.removeFromSuperview()
         }
     }
     
@@ -205,7 +212,6 @@ class MainLoggerController: UIViewController {
         mapView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-//        alertView.set(status: status, title: message, buttonTitle: "ОК")
     }
     
     func setNestsView() {
@@ -214,7 +220,6 @@ class MainLoggerController: UIViewController {
         nestsView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         nestsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         nestsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-//        alertView.set(status: status, title: message, buttonTitle: "ОК")
     }
     
 }
@@ -243,10 +248,10 @@ extension MainLoggerController: UITableViewDataSource {
             let cell = logsTableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath) as! LogCell
             guard let logs = logMessages else { return UITableViewCell() }
             cell.message = logs[logs.count - 1 - indexPath.row]
-//            cell.message = logs[indexPath.row]
             cell.transform = CGAffineTransform(scaleX: 1, y: -1)
             return cell
         }
+        
         if tableView == playersNearTableView {
             let cell = playersNearTableView.dequeueReusableCell(withIdentifier: "charInLocation", for: indexPath) as! CharsInLocationCell
             cell.charsAvatarImageView.avatarImage = nil
@@ -266,35 +271,52 @@ extension MainLoggerController: UITableViewDataSource {
     }
 }
 
+extension MainLoggerController: LocationServiceDelegate {
+    func locationHasChanged() {
+        guard let charInMove = LocationService.shared.characterInMove else { return }
+        
+        if charInMove {
+            mapView.goButton.isUserInteractionEnabled = false
+//            mapView.goButton.alpha = 0.4
+        } else {
+            mapView.goButton.isUserInteractionEnabled = true
+//            mapView.goButton.alpha = 1
+        }
+        print("Current location title \(LocationService.shared.currentLocationName) received by MLC")
+        currentLocationTitle.text = LocationService.shared.currentLocationName
+        playersInLocation = LocationService.shared.playersInLocation
+    }
+}
+
 extension MainLoggerController: SocketManagerDelegate {
     
-    func updatedLocationInfo(info: LocationInfo) {
-        let chars: [PlayersInLocation] = info.players
-        var charsToDisplay: [PlayersInLocation] = []
-        for char in chars {
-            if char.state == "DEPARTING" {
-                if char.id == ActiveCharacter.shared.info.id {
-                    charsToDisplay = [char]
-                    playersInLocation = charsToDisplay
-                    currentLocationTitle.text = "Вы в пути..."
-                    LocationService.shared.currentLocationId = info.locationId
-                    LocationService.shared.characterInMove = true
-                    return
-                } else {
-                    print("player with nickname \(char.name) moved out")
-                }
-            } else {
-                charsToDisplay.append(char)
-            }
-        }
-        playersInLocation = charsToDisplay
-        LocationService.shared.locationInfo = info
-        LocationService.shared.currentLocationId = info.locationId
-        LocationService.shared.characterInMove = false
-        currentLocationTitle.text = LocationService.shared.getNameById(id: info.locationId)
-        mapView.goButton.isUserInteractionEnabled = true
-        mapView.goButton.alpha = 1
-    }
+//    func updatedLocationInfo(info: LocationInfo) {
+//        let chars: [PlayersInLocation] = info.players
+//        var charsToDisplay: [PlayersInLocation] = []
+//        for char in chars {
+//            if char.state == "DEPARTING" {
+//                if char.id == ActiveCharacter.shared.info.id {
+//                    charsToDisplay = [char]
+//                    playersInLocation = charsToDisplay
+//                    currentLocationTitle.text = "Вы в пути..."
+//                    LocationService.shared.locationInfo?.locationId = info.locationId
+//                    LocationService.shared.characterInMove = true
+//                    return
+//                } else {
+//                    print("player with nickname \(char.name) moved out")
+//                }
+//            } else {
+//                charsToDisplay.append(char)
+//            }
+//        }
+//        playersInLocation = charsToDisplay
+//        LocationService.shared.locationInfo = info
+//        LocationService.shared.locationInfo?.locationId = info.locationId
+//        LocationService.shared.characterInMove = false
+//        currentLocationTitle.text = LocationService.shared.getNameById(id: info.locationId)
+//        mapView.goButton.isUserInteractionEnabled = true
+//        mapView.goButton.alpha = 1
+//    }
     
     func messageReceived(log: LogMessage) {
         logMessages?.append(log)
@@ -308,17 +330,28 @@ extension MainLoggerController: ButtonWImageDelegate {
             animateMapIn()
         }
         
-        
         if button == middleButton {
             guard let nests = LocationService.shared.locationInfo?.mobNests else { return }
             nestsView.mobsNests = nests
             setNestsView()
+            animateNestsIn()
+        }
+        
+        if button == rightButton {
+            print(LocationService.shared.locationInfo?.locationId)
         }
     }
 }
 
 extension MainLoggerController: MapDelegate {
     func mapIsClosed() {
-        animateAlertOut()
+        animateMapOut()
+    }
+}
+
+extension MainLoggerController: NestsDelegate {
+    func nestsViewClosed() {
+        print("Nests should animate out")
+        animateNestsOut()
     }
 }

@@ -7,17 +7,13 @@
 
 import UIKit
 
-class LoginController: ViewController, SocketManagerDelegate {
+class LoginController: ViewController {
+    
     func connected() {
 //        UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
 //        performSegue(withIdentifier: R.segue.login .identifier, sender: self)
-        performSegue(withIdentifier: "segue.selectCharacterToPlay", sender: self)
+        
     }
-    
-//    func didReceiveNewSession(_ session: QBRTCSession, userInfo: [String : String]? = nil) {
-//        print("Receive")
-//        self.performSegue(withIdentifier: "mySegue", sender: self)
-//    }
     
     @IBOutlet weak var loginButton: ButtonWOImage!
     
@@ -27,15 +23,16 @@ class LoginController: ViewController, SocketManagerDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var socketManager = SocketManager.shared
+//    var socketManager = SocketManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         setupView()
         
         loginButton.delegate = self
-        socketManager.delegate = self
+//        socketManager.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +59,8 @@ extension LoginController: ButtonWOImageDelegate {
             Network.requestLogin(userName: userName,
                                  password: password,
                                  completion: {
-                                    self.connectToWs()
+//                                    self.connectToWs()
+                                    self.performSegue(withIdentifier: "segue.selectCharacterToPlay", sender: self)
                                  },
                                  failure: {
                                     print("error Occured try again")
@@ -71,9 +69,10 @@ extension LoginController: ButtonWOImageDelegate {
         }
     }
     
-    func connectToWs() {
-        SocketManager.shared.connectToWS()
-    }
+//    func connectToWs() {
+//        print(2)
+//        SocketManager.shared.connectToWS()
+//    }
     
     
 }

@@ -7,11 +7,14 @@
 
 import UIKit
 
+protocol NestsDelegate {
+    func nestsViewClosed()
+}
+
 class NestsSelect: UIView {
 
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var button: UIButton!
+    
     
     var tableViewReuseIdentifier = "tableViewCell"
     var mobsNests: [MobNests]! {
@@ -20,12 +23,25 @@ class NestsSelect: UIView {
         }
     }
     
+    var delegate: NestsDelegate?
+    
     override func awakeFromNib() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: R.nib.nestCell.name, bundle: nil), forCellReuseIdentifier: tableViewReuseIdentifier)
     }
 
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        print("Close nests pressed")
+        print("Nest delegate is \(delegate)")
+        delegate?.nestsViewClosed()
+    }
+    
+    @IBAction func cancelFightBtnPressed(_ sender: Any) {
+    }
+    
+    @IBAction func atackBtnPressed(_ sender: Any) {
+    }
 }
 
 extension NestsSelect: UITableViewDelegate {
