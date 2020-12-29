@@ -12,7 +12,7 @@ protocol NestsDelegate {
 }
 
 class NestsSelect: UIView {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -30,7 +30,7 @@ class NestsSelect: UIView {
         tableView.dataSource = self
         tableView.register(UINib(nibName: R.nib.nestCell.name, bundle: nil), forCellReuseIdentifier: tableViewReuseIdentifier)
     }
-
+    
     @IBAction func closeButtonPressed(_ sender: Any) {
         print("Close nests pressed")
         print("Nest delegate is \(delegate)")
@@ -38,9 +38,27 @@ class NestsSelect: UIView {
     }
     
     @IBAction func cancelFightBtnPressed(_ sender: Any) {
+        
     }
     
     @IBAction func atackBtnPressed(_ sender: Any) {
+        let cells = self.tableView.visibleCells as! Array<NestCell>
+        var selectedNestsIds: [Int] = []
+        
+        for cell in cells {
+            guard let selectedStateForNest = cell.selectedState else { return }
+            if selectedStateForNest {
+                guard let nestId = cell.nest?.id else { continue }
+                selectedNestsIds.append(nestId)
+            }
+        }
+        
+        guard selectedNestsIds.count != 0 else { return }
+        for id in selectedNestsIds {
+            print(id)
+            SocketManager.shared.kickNest(nestId: id)
+        }
+        delegate?.nestsViewClosed()
     }
 }
 

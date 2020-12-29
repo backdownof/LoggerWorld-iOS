@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSLog
 
 class MainLoggerController: UIViewController {
 
@@ -42,7 +43,7 @@ class MainLoggerController: UIViewController {
         }
     }
     
-    var logMessages: [LogMessage]? {
+    var logMessages: [LogMessage] = [] {
         didSet {
             logsTableView.reloadData()
         }
@@ -64,6 +65,7 @@ class MainLoggerController: UIViewController {
         mapView.mapDelegate = self
         
         nestsView.delegate = self
+        SocketManager.shared.messageDelegate = self
         
         loadCharacterLogs()
         setupView()
@@ -111,7 +113,7 @@ class MainLoggerController: UIViewController {
         Network.getUserLogs(completion: { entries in
             self.logMessages = entries
         }, failure: {
-            print("failed loading logs")
+            // TODO: deal the error getting logs
         })
     }
     
@@ -147,6 +149,8 @@ class MainLoggerController: UIViewController {
         rightButton.buttonLabel = "Карта"
         rightButton.iconImage = R.image.icMap()
         
+        middleButton.buttonLabel = "Мобы"
+        middleButton.iconImage = R.image.icAtack()
         
         setupVisualEffectView()
     }
@@ -233,8 +237,8 @@ extension MainLoggerController: UITableViewDelegate {
 extension MainLoggerController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == logsTableView {
-            guard let logsCount = logMessages?.count else { return 0 }
-            return logsCount
+//            guard let logsCount = logMessages.count else { return 0 }
+            return logMessages.count
         }
         if tableView == playersNearTableView {
             guard let playersInLocationCount = playersInLocation?.count else { return 0 }
@@ -246,8 +250,8 @@ extension MainLoggerController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == logsTableView {
             let cell = logsTableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath) as! LogCell
-            guard let logs = logMessages else { return UITableViewCell() }
-            cell.message = logs[logs.count - 1 - indexPath.row]
+//            guard let logs = logMessages else { return UITableViewCell() }
+            cell.message = logMessages[logMessages.count - 1 - indexPath.row]
             cell.transform = CGAffineTransform(scaleX: 1, y: -1)
             return cell
         }
@@ -282,14 +286,50 @@ extension MainLoggerController: LocationServiceDelegate {
             mapView.goButton.isUserInteractionEnabled = true
 //            mapView.goButton.alpha = 1
         }
-        print("Current location title \(LocationService.shared.currentLocationName) received by MLC")
         currentLocationTitle.text = LocationService.shared.currentLocationName
         playersInLocation = LocationService.shared.playersInLocation
     }
 }
+// TODO: FIX HERE
+extension MainLoggerController: LogsDelegate {
+    func messageReceived(log: LogMessage) {
+        logMessages.append(log)
+    }
+}
 
-extension MainLoggerController: SocketManagerDelegate {
-    
+extension MainLoggerController: ButtonWImageDelegate {
+    func buttonTapped(_ button: ButtonWImage) {
+        if button == rightButton {
+            setMapView()
+            animateMapIn()
+        }
+        
+        if button == middleButton {
+            guard let nests = LocationService.shared.locationInfo?.mobNests else { return }
+            nestsView.mobsNests = nests
+            setNestsView()
+            animateNestsIn()
+        }
+        
+        if button == leftButton {
+            print(LocationService.shared.locationInfo?.locationId)
+        }
+    }
+}
+
+extension MainLoggerController: MapDelegate {
+    func mapIsClosed() {
+        animateMapOut()
+    }
+}
+
+extension MainLoggerController: NestsDelegate {
+    func nestsViewClosed() {
+        print("Nests should animate out")
+        animateNestsOut()
+    }
+}
+
 //    func updatedLocationInfo(info: LocationInfo) {
 //        let chars: [PlayersInLocation] = info.players
 //        var charsToDisplay: [PlayersInLocation] = []
@@ -317,41 +357,3 @@ extension MainLoggerController: SocketManagerDelegate {
 //        mapView.goButton.isUserInteractionEnabled = true
 //        mapView.goButton.alpha = 1
 //    }
-    
-    func messageReceived(log: LogMessage) {
-        logMessages?.append(log)
-    }
-}
-
-extension MainLoggerController: ButtonWImageDelegate {
-    func buttonTapped(_ button: ButtonWImage) {
-        if button == rightButton {
-            setMapView()
-            animateMapIn()
-        }
-        
-        if button == middleButton {
-            guard let nests = LocationService.shared.locationInfo?.mobNests else { return }
-            nestsView.mobsNests = nests
-            setNestsView()
-            animateNestsIn()
-        }
-        
-        if button == rightButton {
-            print(LocationService.shared.locationInfo?.locationId)
-        }
-    }
-}
-
-extension MainLoggerController: MapDelegate {
-    func mapIsClosed() {
-        animateMapOut()
-    }
-}
-
-extension MainLoggerController: NestsDelegate {
-    func nestsViewClosed() {
-        print("Nests should animate out")
-        animateNestsOut()
-    }
-}

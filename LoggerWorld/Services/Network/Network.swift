@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import OSLog
 
 class Network: NSObject {
     
@@ -44,19 +45,18 @@ class Network: NSObject {
                    method: .post, parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON { response in
-                    print(2)
                     guard let status = response.response?.statusCode else { return }
-                    print(status)
                     if Array(200...201).contains(status)  {
-                        print(3)
                         if let headers = response.response?.allHeaderFields as? [String: String] {
                             let header = headers["Authorization"]
                             guard let authHeader = header else { return }
                             if authHeader.contains("Bearer "){
+                                Logger.apiRequest.info("Token received")
                                 let regex = try! NSRegularExpression(pattern: #"^(.*?)\s*Bearer\s*(.*)$"#, options: .caseInsensitive)
                                 if let match = regex.firstMatch(in: authHeader, range: NSRange(authHeader.startIndex..., in: authHeader)) {
                                     let token = authHeader[Range(match.range(at: 2), in: authHeader)!]
                                     User.token = String(token)
+                                    Logger.apiRequest.info("Token saved")
                                     completion()
                                 } else {
                                     failure()
@@ -66,6 +66,8 @@ class Network: NSObject {
                         } else {
                             failure()
                         }
+                    } else {
+                        Logger.apiRequest.error("Error in getting token")
                     }
                    }
     }
@@ -96,11 +98,13 @@ class Network: NSObject {
                     guard let data = response.data else { failure("Failed to process data from server"); return }
                     if Array(200...201).contains(status)  {
                         if let successStatus = try? JSONDecoder().decode(ResponseStatus<String>.self, from: data) {
+                            Logger.apiRequest.info("Successfully registered user")
                             completion(successStatus.message ?? "")
                         }
                     } else {
                         if let successStatus = try? JSONDecoder().decode(ResponseStatus<String>.self, from: data) {
                             failure(successStatus.message ?? "")
+                            Logger.apiRequest.error("Error registering user")
                         }
                     }
                     
@@ -124,16 +128,17 @@ class Network: NSObject {
                    headers: headers).responseJSON(completionHandler: { response in
                     if let data = response.data {
                         do {
-                            print(String(data: data, encoding: .utf8) ?? "")
                             let json = try JSONDecoder().decode(ResponseStatus<CharactersMap>.self, from: data)
+                            Logger.apiRequest.info("Requested player's characters are mapped correctly")
                             if let players = json.data?.players {
                                 completion(players)
                             } else {
                                 let players: [CharacterInformation] = []
+                                Logger.apiRequest.info("No characters are created yet")
                                 completion(players)
                             }
                         } catch {
-                            print("Error")
+                            Logger.apiRequest.error("Error mapping player's characters")
                         }
                     }
                    })
@@ -162,8 +167,10 @@ class Network: NSObject {
                    headers: headers).responseJSON(completionHandler: { response in
                     switch response.result {
                     case .success:
+                        Logger.apiRequest.info("New charater is created")
                         completion()
                     case .failure(_):
+                        Logger.apiRequest.error("Failed creating charater")
                         failure()
                     }
                    })
@@ -184,26 +191,26 @@ class Network: NSObject {
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
-                    switch response.result {
-                    case .success:
-                        print("World map data received")
+                    guard let status = response.response?.statusCode else { failure(); return }
+                    if Array(200...201).contains(status)  {
+                        Logger.apiRequest.info("World map data received")
                         if let data = response.data {
                             do {
                                 let json = try JSONDecoder().decode(ResponseStatus<WorldMap>.self, from: data)
-                                print("World map decoded")
+                                Logger.apiRequest.info("World map is mapped correctly")
                                 if let locations = json.data?.locations {
-                                    print("World map is full and ready to use")
                                     completion(locations)
                                 } else {
-                                    print("World map is empty and ready to use")
+                                    Logger.apiRequest.fault("World map is empty")
                                     let locations: [LocationNameAndCoords] = []
                                     completion(locations)
                                 }
                             } catch {
-                                print("Error")
+                                Logger.apiRequest.error("Not able mapping the world map")
                             }
                         }
-                    case .failure(_):
+                    } else {
+                        Logger.apiRequest.error("Error getting the world map")
                         failure()
                     }
                    })
@@ -214,7 +221,7 @@ class Network: NSObject {
      - parameter completion: возвращает при успешном выполнении
      - parameter failure: возвращает сообщение об ошибке
      */
-    static func getStatsDescription(completion: @escaping([StatMap]) -> Void,
+    static func getStatsMap(completion: @escaping([StatMap]) -> Void,
                                 failure: @escaping(String) -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -223,29 +230,19 @@ class Network: NSObject {
                    method: .get,
                    encoding: JSONEncoding.default,
                    headers: headers).responseJSON(completionHandler: { response in
-//                    switch response.result {
-//                    case .success:
-//                        if let data = response.data {
-////                            print(String(data: data, encoding: .utf8) ?? "")
-//                        }
-//                    case .failure(_):
-//                        failure()
-//                    }
-//                   })
-                    
                     switch response.result {
                     case .success:
                         if let data = response.data {
                             do {
-//                                dump(String(data: data, encoding: .utf8)!)
                                 let json = try JSONDecoder().decode(ResponseStatus<CharStatsMap>.self, from: data)
+                                Logger.apiRequest.info("Stats map is mapped correctly")
                                 if let stats = json.data?.stats {
                                     completion(stats)
                                 } else {
                                     failure("Failed to map data for Available Stats")
                                 }
                             } catch {
-                                print("Error")
+                                Logger.apiRequest.error("Error mapping stats map")
                             }
                         }
                     case .failure(_):
@@ -271,17 +268,146 @@ class Network: NSObject {
                 switch response.result {
                 case .success:
                     if let data = response.data {
-//                            print(String(data: data, encoding: .utf8))
                         do {
                             let json = try JSONDecoder().decode(ResponseStatus<Logs>.self, from: data)
                             if let entries = json.data?.entries {
+                                Logger.apiRequest.info("Logs are mapped correctly")
                                 completion(entries)
                             } else {
+                                Logger.apiRequest.info("Logs are empty")
                                 let entries: [LogMessage] = []
                                 completion(entries)
                             }
                         } catch {
-                            print("Error")
+                            Logger.apiRequest.error("Failed to map logs")
+                        }
+                    }
+                case .failure(_):
+                    failure()
+                }
+               })
+    }
+    
+    static func getItemCategoriesMap(completion: @escaping([ItemCategory]) -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/items/categories").url!,
+               method: .get,
+               encoding: JSONEncoding.default,
+               headers: headers).responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success:
+                    if let data = response.data {
+                        do {
+                            let json = try JSONDecoder().decode(ResponseStatus<ItemCategoriesMap>.self, from: data)
+                            if let itemCategories = json.data?.itemCategories {
+                                Logger.apiRequest.info("Succeed mapping Item categories")
+                                completion(itemCategories)
+                            } else {
+                                Logger.apiRequest.info("Item categories map is empty")
+                                let itemCategories: [ItemCategory] = []
+                                completion(itemCategories)
+                            }
+                        } catch {
+                            Logger.apiRequest.error("Failed to map Item categories")
+                        }
+                    }
+                case .failure(_):
+                    failure()
+                }
+               })
+    }
+    
+    static func getEquipmentSlotsMap(completion: @escaping([EquipmentSlot]) -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/items/equipment-slots").url!,
+               method: .get,
+               encoding: JSONEncoding.default,
+               headers: headers).responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success:
+                    if let data = response.data {
+                        do {
+                            let json = try JSONDecoder().decode(ResponseStatus<EquipmentSlotsMap>.self, from: data)
+                            if let equipmentSlots = json.data?.equipmentSlots {
+                                Logger.apiRequest.info("Succeed mapping Equipment slots map")
+                                completion(equipmentSlots)
+                            } else {
+                                Logger.apiRequest.info("Equipment slots map is empty")
+                                let equipmentSlots: [EquipmentSlot] = []
+                                completion(equipmentSlots)
+                            }
+                        } catch {
+                            Logger.apiRequest.error("Failed to map Equipment slots map")
+                        }
+                    }
+                case .failure(_):
+                    failure()
+                }
+               })
+    }
+    
+    static func getItemQualitiesMap(completion: @escaping([ItemQuality]) -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/items/equipment-slots").url!,
+               method: .get,
+               encoding: JSONEncoding.default,
+               headers: headers).responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success:
+                    if let data = response.data {
+                        do {
+                            let json = try JSONDecoder().decode(ResponseStatus<ItemQualitiesMap>.self, from: data)
+                            if let itemQualities = json.data?.itemQualities {
+                                Logger.apiRequest.info("Succeed mapping Item Qualities Map")
+                                completion(itemQualities)
+                            } else {
+                                Logger.apiRequest.info("Item Qualities Map is empty")
+                                let itemQualities: [ItemQuality] = []
+                                completion(itemQualities)
+                            }
+                        } catch {
+                            Logger.apiRequest.error("Failed to map Item Qualities Map")
+                        }
+                    }
+                case .failure(_):
+                    failure()
+                }
+               })
+    }
+    
+    static func getItemStatsMap(completion: @escaping([ItemStat]) -> Void,
+                                failure: @escaping() -> Void) {
+        guard let token = User.token else { return }
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        
+        AF.request((API.baseURL + "api/items/stats").url!,
+               method: .get,
+               encoding: JSONEncoding.default,
+               headers: headers).responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success:
+                    if let data = response.data {
+                        do {
+                            let json = try JSONDecoder().decode(ResponseStatus<ItemStatsMap>.self, from: data)
+                            if let itemStats = json.data?.itemStats {
+                                Logger.apiRequest.info("Succeed mapping Item Stats Map")
+                                completion(itemStats)
+                            } else {
+                                Logger.apiRequest.info("Item Stats Map is empty")
+                                let itemStats: [ItemStat] = []
+                                completion(itemStats)
+                            }
+                        } catch {
+                            Logger.apiRequest.error("Failed to map Item Stats Map")
                         }
                     }
                 case .failure(_):
@@ -290,4 +416,3 @@ class Network: NSObject {
                })
     }
 }
-

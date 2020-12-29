@@ -66,7 +66,7 @@ extension LocationService: SocketManagerDelegate {
         let chars: [PlayersInLocation] = info.players
         var charsToDisplay: [PlayersInLocation] = []
         for char in chars {
-            if char.state == "DEPARTING" {
+            if char.state == 2 {
                 if char.id == ActiveCharacter.shared.info.id {
                     charsToDisplay = [char]
                     LocationService.shared.playersInLocation = charsToDisplay

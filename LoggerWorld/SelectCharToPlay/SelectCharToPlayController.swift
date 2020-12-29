@@ -32,7 +32,31 @@ class SelectCharToPlayController: ViewController {
         SocketManager.shared.loggingDelegate = self
         
         setupView()
-        Characters.shared.reloadData()
+        Characters.shared.loadData()
+        
+        Network.getItemCategoriesMap(completion: { itemCategories in
+            
+        }, failure: {
+            
+        })
+        
+        Network.getEquipmentSlotsMap(completion: { response in
+            
+        }, failure: {
+            
+        })
+        
+        Network.getItemQualitiesMap(completion: { response in
+            
+        }, failure: {
+            
+        })
+        
+        Network.getItemStatsMap(completion: { response in
+            
+        }, failure: {
+            
+        })
         
         charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: "charCell")
         charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: "addCell")
@@ -135,7 +159,6 @@ extension SelectCharToPlayController: UITableViewDelegate {
 extension SelectCharToPlayController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         if ConnectionService.shared.socketConnected {
-            print("if true")
             if let id = selectedCharId{
                 ActiveCharacter.setup(ActiveCharacter.Config(id: id))
                 SocketManager.shared.loginCharacter(playerId: id)

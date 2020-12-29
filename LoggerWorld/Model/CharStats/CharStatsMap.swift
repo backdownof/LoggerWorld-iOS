@@ -13,7 +13,7 @@ struct CharStatsMap: Codable {
 
 struct StatMap: Codable {
     var id: Int
-    var code: Int
+    var code: String
     var name: String
     var description: String
 }

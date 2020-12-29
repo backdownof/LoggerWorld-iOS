@@ -39,9 +39,9 @@ class CharStatusBar: UIView {
     
     private func loadCharInfo() {
         nicknameLabel.text = ActiveCharacter.shared.info.name
-        lvlLabel.text = "\(Int(ActiveCharacter.shared.info.stats.id12)) lvl"
-        hpLabel.text = "0/\(Int(ActiveCharacter.shared.info.stats.id1)) hp"
-        mpLabel.text = "0/\(Int(ActiveCharacter.shared.info.stats.id2)) mp"
+        lvlLabel.text = "\(Int(ActiveCharacter.shared.info.baseStats.lvl)) lvl"
+        hpLabel.text = "0/\(Int(ActiveCharacter.shared.info.baseStats.hp)) hp"
+        mpLabel.text = "0/\(Int(ActiveCharacter.shared.info.baseStats.mp)) mp"
         charAvatar.classId = ActiveCharacter.shared.info.classId
     }
     

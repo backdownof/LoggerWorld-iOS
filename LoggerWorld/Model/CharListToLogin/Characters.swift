@@ -18,7 +18,7 @@ class Characters {
     var characters: [CharacterInformation] = []
     
     private init() {
-        getAvailableCharacters()
+        loadData()
     }
     
     private func getAvailableCharacters() {
@@ -31,7 +31,7 @@ class Characters {
         })
     }
     
-    func reloadData() {
+    func loadData() {
         getAvailableCharacters()
     }
 }

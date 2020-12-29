@@ -29,6 +29,8 @@
 		200CAB8B257A982F00ECBFD5 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CAB8A257A982F00ECBFD5 /* Characters.swift */; };
 		200CABA6257AEFCB00ECBFD5 /* CharStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CABA5257AEFCB00ECBFD5 /* CharStats.swift */; };
 		200CABAE257AF26800ECBFD5 /* CharStatsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CABAD257AF26800ECBFD5 /* CharStatsMap.swift */; };
+		201319252597F5B800ECE566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201319242597F5B800ECE566 /* Logger.swift */; };
+		201319282598B76900ECE566 /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201319272598B76900ECE566 /* LogsService.swift */; };
 		203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045EC2550AA9A00F9CA88 /* SocketManager.swift */; };
 		2037F4B2256DAE2000F5F838 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037F4B1256DAE2000F5F838 /* Data.swift */; };
 		203A2CE02576D20A003AFC95 /* AlegreyaSC-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 203A2CD62576D209003AFC95 /* AlegreyaSC-MediumItalic.ttf */; };
@@ -51,6 +53,17 @@
 		204852ED257C26DC00760217 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204852EB257C26DC00760217 /* StatCell.swift */; };
 		204852EE257C26DC00760217 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204852EC257C26DC00760217 /* StatCell.xib */; };
 		2049406125892C7A00244847 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049406025892C7A00244847 /* ConnectionService.swift */; };
+		2049B5A3259A09EC00979797 /* InventoryMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5A2259A09EC00979797 /* InventoryMap.swift */; };
+		2049B5A9259A1AA300979797 /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5A7259A1AA300979797 /* InventoryCell.swift */; };
+		2049B5AA259A1AA300979797 /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2049B5A8259A1AA300979797 /* InventoryCell.xib */; };
+		2049B5AE259A2E7000979797 /* ItemDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5AC259A2E6F00979797 /* ItemDetailController.swift */; };
+		2049B5AF259A2E7000979797 /* ItemDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2049B5AD259A2E7000979797 /* ItemDetailController.xib */; };
+		2049B5B6259A3C9400979797 /* EquipmentMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5B5259A3C9400979797 /* EquipmentMap.swift */; };
+		2049B5B9259A415E00979797 /* SlotMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5B8259A415E00979797 /* SlotMap.swift */; };
+		2049B5BE259B687C00979797 /* ItemCategoriesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5BD259B687C00979797 /* ItemCategoriesMap.swift */; };
+		2049B5C2259B6C8400979797 /* EquipmentSlotsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5C1259B6C8400979797 /* EquipmentSlotsMap.swift */; };
+		2049B5C5259B6F9900979797 /* ItemQualitiesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5C4259B6F9900979797 /* ItemQualitiesMap.swift */; };
+		2049B5C8259B714800979797 /* ItemStatsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5C7259B714800979797 /* ItemStatsMap.swift */; };
 		204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C26212578025A00B2B0FF /* ResponseStatus.swift */; };
 		204F9D2725682A3400AB51B6 /* CreateCharController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9D2625682A3400AB51B6 /* CreateCharController.swift */; };
 		205962282585701400E5D8D4 /* MobAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205962272585701400E5D8D4 /* MobAvatar.swift */; };
@@ -106,8 +119,8 @@
 		20CB85D72566A61600237DAF /* LoggerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB85D62566A61600237DAF /* LoggerTabBarController.swift */; };
 		20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB85DA2566A65200237DAF /* MainLoggerController.swift */; };
 		20CB85DE2566A65F00237DAF /* MainLogger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CB85DD2566A65F00237DAF /* MainLogger.storyboard */; };
-		20CB85E32566A73000237DAF /* Assistive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CB85E22566A73000237DAF /* Assistive.storyboard */; };
-		20CB85E62566A74C00237DAF /* AssistiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB85E52566A74C00237DAF /* AssistiveController.swift */; };
+		20CB85E32566A73000237DAF /* Inventory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CB85E22566A73000237DAF /* Inventory.storyboard */; };
+		20CB85E62566A74C00237DAF /* InventoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB85E52566A74C00237DAF /* InventoryController.swift */; };
 		20CB85E92566C7BA00237DAF /* LoggerTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CB85EB2566C7BA00237DAF /* LoggerTabBar.storyboard */; };
 		20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DF3255FF45F009F991D /* LoginController.swift */; };
 		20CD1DF7255FF670009F991D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD1DF6255FF670009F991D /* NibLoadable.swift */; };
@@ -141,6 +154,8 @@
 		200CAB8A257A982F00ECBFD5 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		200CABA5257AEFCB00ECBFD5 /* CharStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStats.swift; sourceTree = "<group>"; };
 		200CABAD257AF26800ECBFD5 /* CharStatsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStatsMap.swift; sourceTree = "<group>"; };
+		201319242597F5B800ECE566 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		201319272598B76900ECE566 /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
 		203045EC2550AA9A00F9CA88 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		2037F4B1256DAE2000F5F838 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		203A2CD62576D209003AFC95 /* AlegreyaSC-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlegreyaSC-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -163,6 +178,17 @@
 		204852EB257C26DC00760217 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatCell.swift; path = LoggerWorld/LoggerTabBar/MainLogger/StatCell/StatCell.swift; sourceTree = SOURCE_ROOT; };
 		204852EC257C26DC00760217 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StatCell.xib; path = LoggerWorld/LoggerTabBar/MainLogger/StatCell/StatCell.xib; sourceTree = SOURCE_ROOT; };
 		2049406025892C7A00244847 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
+		2049B5A2259A09EC00979797 /* InventoryMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryMap.swift; sourceTree = "<group>"; };
+		2049B5A7259A1AA300979797 /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
+		2049B5A8259A1AA300979797 /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
+		2049B5AC259A2E6F00979797 /* ItemDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailController.swift; sourceTree = "<group>"; };
+		2049B5AD259A2E7000979797 /* ItemDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailController.xib; sourceTree = "<group>"; };
+		2049B5B5259A3C9400979797 /* EquipmentMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMap.swift; sourceTree = "<group>"; };
+		2049B5B8259A415E00979797 /* SlotMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMap.swift; sourceTree = "<group>"; };
+		2049B5BD259B687C00979797 /* ItemCategoriesMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoriesMap.swift; sourceTree = "<group>"; };
+		2049B5C1259B6C8400979797 /* EquipmentSlotsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSlotsMap.swift; sourceTree = "<group>"; };
+		2049B5C4259B6F9900979797 /* ItemQualitiesMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemQualitiesMap.swift; sourceTree = "<group>"; };
+		2049B5C7259B714800979797 /* ItemStatsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStatsMap.swift; sourceTree = "<group>"; };
 		204C26212578025A00B2B0FF /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 		204F9D2625682A3400AB51B6 /* CreateCharController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCharController.swift; sourceTree = "<group>"; };
 		205962272585701400E5D8D4 /* MobAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobAvatar.swift; sourceTree = "<group>"; };
@@ -226,8 +252,8 @@
 		20CB85D62566A61600237DAF /* LoggerTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTabBarController.swift; sourceTree = "<group>"; };
 		20CB85DA2566A65200237DAF /* MainLoggerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoggerController.swift; sourceTree = "<group>"; };
 		20CB85DD2566A65F00237DAF /* MainLogger.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainLogger.storyboard; sourceTree = "<group>"; };
-		20CB85E22566A73000237DAF /* Assistive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Assistive.storyboard; sourceTree = "<group>"; };
-		20CB85E52566A74C00237DAF /* AssistiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistiveController.swift; sourceTree = "<group>"; };
+		20CB85E22566A73000237DAF /* Inventory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inventory.storyboard; sourceTree = "<group>"; };
+		20CB85E52566A74C00237DAF /* InventoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryController.swift; sourceTree = "<group>"; };
 		20CB85EA2566C7BA00237DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoggerTabBar.storyboard; sourceTree = "<group>"; };
 		20CD1DF3255FF45F009F991D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		20CD1DF6255FF670009F991D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -397,14 +423,23 @@
 			path = CharStats;
 			sourceTree = "<group>";
 		};
+		2013192A2598B77100ECE566 /* LogsService */ = {
+			isa = PBXGroup;
+			children = (
+				201319272598B76900ECE566 /* LogsService.swift */,
+			);
+			path = LogsService;
+			sourceTree = "<group>";
+		};
 		203045E8254F66F700F9CA88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2049B5A1259A09D500979797 /* Inventory */,
 				209213E1258142D3003A4F05 /* Mobs */,
 				209213D2257EC438003A4F05 /* Logs */,
 				200CABA4257AEFB300ECBFD5 /* CharStats */,
 				200CAB89257A981200ECBFD5 /* PlayingCharacter */,
-				2096687A25793AA8004009F5 /* WorldMap */,
+				2096687A25793AA8004009F5 /* MappingData */,
 				204C26202578023400B2B0FF /* ResponseStatus */,
 				20407AA525759868007759B3 /* LocationInfo */,
 				20014EB5256D9FD200E30E33 /* CharListToLogin */,
@@ -482,6 +517,34 @@
 			path = ConnectionService;
 			sourceTree = "<group>";
 		};
+		2049B5A1259A09D500979797 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				2049B5A2259A09EC00979797 /* InventoryMap.swift */,
+				2049B5B5259A3C9400979797 /* EquipmentMap.swift */,
+				2049B5B8259A415E00979797 /* SlotMap.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		2049B5A6259A1A5F00979797 /* InventoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				2049B5A7259A1AA300979797 /* InventoryCell.swift */,
+				2049B5A8259A1AA300979797 /* InventoryCell.xib */,
+			);
+			path = InventoryCell;
+			sourceTree = "<group>";
+		};
+		2049B5B2259A2E7C00979797 /* ItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2049B5AC259A2E6F00979797 /* ItemDetailController.swift */,
+				2049B5AD259A2E7000979797 /* ItemDetailController.xib */,
+			);
+			path = ItemDetail;
+			sourceTree = "<group>";
+		};
 		204C26202578023400B2B0FF /* ResponseStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +618,7 @@
 				2006D6F1256469DB00259338 /* UserSettings */,
 				2088CEC025631C6800DC4D36 /* Validator.swift */,
 				2006D6EE256464B900259338 /* Nib.swift */,
+				2013192A2598B77100ECE566 /* LogsService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -624,12 +688,16 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		2096687A25793AA8004009F5 /* WorldMap */ = {
+		2096687A25793AA8004009F5 /* MappingData */ = {
 			isa = PBXGroup;
 			children = (
 				20407A892575492B007759B3 /* WorldMap.swift */,
+				2049B5BD259B687C00979797 /* ItemCategoriesMap.swift */,
+				2049B5C1259B6C8400979797 /* EquipmentSlotsMap.swift */,
+				2049B5C4259B6F9900979797 /* ItemQualitiesMap.swift */,
+				2049B5C7259B714800979797 /* ItemStatsMap.swift */,
 			);
-			path = WorldMap;
+			path = MappingData;
 			sourceTree = "<group>";
 		};
 		2096687B25793AD7004009F5 /* LocationService */ = {
@@ -661,6 +729,7 @@
 				20B862BD2576417C00517724 /* UIView.swift */,
 				20633AC3257D020E0081A2EB /* Array.swift */,
 				20633AD0257D338F0081A2EB /* Image.swift */,
+				201319242597F5B800ECE566 /* Logger.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -702,8 +771,10 @@
 		20CB85E02566A67A00237DAF /* Assistive */ = {
 			isa = PBXGroup;
 			children = (
-				20CB85E22566A73000237DAF /* Assistive.storyboard */,
-				20CB85E52566A74C00237DAF /* AssistiveController.swift */,
+				2049B5B2259A2E7C00979797 /* ItemDetail */,
+				2049B5A6259A1A5F00979797 /* InventoryCell */,
+				20CB85E22566A73000237DAF /* Inventory.storyboard */,
+				20CB85E52566A74C00237DAF /* InventoryController.swift */,
 			);
 			path = Assistive;
 			sourceTree = "<group>";
@@ -835,6 +906,7 @@
 			files = (
 				200A6667254E1A4000B74B48 /* LaunchScreen.storyboard in Resources */,
 				204852EE257C26DC00760217 /* StatCell.xib in Resources */,
+				2049B5AF259A2E7000979797 /* ItemDetailController.xib in Resources */,
 				203A2CE12576D20A003AFC95 /* AlegreyaSC-Medium.ttf in Resources */,
 				203A2CE62576D20A003AFC95 /* AlegreyaSC-ExtraBoldItalic.ttf in Resources */,
 				20407A9C257590B6007759B3 /* CharsInLocationCell.xib in Resources */,
@@ -853,12 +925,13 @@
 				203A2CE32576D20A003AFC95 /* AlegreyaSC-ExtraBold.ttf in Resources */,
 				20598631256090C40028ACD3 /* AddCharCell.xib in Resources */,
 				200A665F254E1A3E00B74B48 /* Login.storyboard in Resources */,
+				2049B5AA259A1AA300979797 /* InventoryCell.xib in Resources */,
 				20CB85E92566C7BA00237DAF /* LoggerTabBar.storyboard in Resources */,
 				203A2CE72576D20A003AFC95 /* AlegreyaSC-Italic.ttf in Resources */,
 				203A2CE82576D20A003AFC95 /* AlegreyaSC-BlackItalic.ttf in Resources */,
 				209668562578F608004009F5 /* AlertView.xib in Resources */,
 				20B7C50A258818FD0013924E /* CreateChar.storyboard in Resources */,
-				20CB85E32566A73000237DAF /* Assistive.storyboard in Resources */,
+				20CB85E32566A73000237DAF /* Inventory.storyboard in Resources */,
 				2006D719256470D800259338 /* Localizable.strings in Resources */,
 				209668622578F624004009F5 /* ButtonWImage.xib in Resources */,
 				203A2CE42576D20A003AFC95 /* AlegreyaSC-Black.ttf in Resources */,
@@ -938,10 +1011,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */,
+				201319282598B76900ECE566 /* LogsService.swift in Sources */,
 				2006D71425646E8400259338 /* Constant+StatusCode.swift in Sources */,
 				2006D7332564753900259338 /* User.swift in Sources */,
 				2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */,
 				209668612578F623004009F5 /* ButtonWImage.swift in Sources */,
+				2049B5A9259A1AA300979797 /* InventoryCell.swift in Sources */,
 				20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */,
 				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
 				209213F225814735003A4F05 /* NestsSelect.swift in Sources */,
@@ -952,12 +1027,16 @@
 				20633AC4257D020E0081A2EB /* Array.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
+				2049B5C8259B714800979797 /* ItemStatsMap.swift in Sources */,
 				205962282585701400E5D8D4 /* MobAvatar.swift in Sources */,
 				2096685C2578F616004009F5 /* PlayerStatus.swift in Sources */,
+				2049B5B6259A3C9400979797 /* EquipmentMap.swift in Sources */,
 				2096685B2578F616004009F5 /* CharacterAvatar.swift in Sources */,
 				209668672578F633004009F5 /* ButtonWOImage.swift in Sources */,
 				2071A5D6257445CC009F5768 /* LocationInfo.swift in Sources */,
+				2049B5C2259B6C8400979797 /* EquipmentSlotsMap.swift in Sources */,
 				20B7C4F1258801A10013924E /* MainLoggerController+Map.swift in Sources */,
+				2049B5B9259A415E00979797 /* SlotMap.swift in Sources */,
 				20CD1DF4255FF45F009F991D /* LoginController.swift in Sources */,
 				209213D4257EC448003A4F05 /* LogsMap.swift in Sources */,
 				200CABAE257AF26800ECBFD5 /* CharStatsMap.swift in Sources */,
@@ -985,6 +1064,7 @@
 				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
 				209668552578F608004009F5 /* AlertView.swift in Sources */,
 				204852E5257C211D00760217 /* CharacterStatsController.swift in Sources */,
+				2049B5C5259B6F9900979797 /* ItemQualitiesMap.swift in Sources */,
 				20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */,
 				20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */,
 				209668512578F5F5004009F5 /* ViewController.swift in Sources */,
@@ -993,13 +1073,17 @@
 				20AC57AC2565096300392C87 /* API.swift in Sources */,
 				20BAC14425798FA700120F4F /* MapCell.swift in Sources */,
 				200A665A254E1A3E00B74B48 /* SceneDelegate.swift in Sources */,
+				2049B5A3259A09EC00979797 /* InventoryMap.swift in Sources */,
 				20AC57B7256519DA00392C87 /* ErrorHandler.swift in Sources */,
-				20CB85E62566A74C00237DAF /* AssistiveController.swift in Sources */,
+				20CB85E62566A74C00237DAF /* InventoryController.swift in Sources */,
 				20407A8D25755090007759B3 /* LocationService.swift in Sources */,
+				2049B5BE259B687C00979797 /* ItemCategoriesMap.swift in Sources */,
 				20407A8A2575492B007759B3 /* WorldMap.swift in Sources */,
+				2049B5AE259A2E7000979797 /* ItemDetailController.swift in Sources */,
 				20AC57BD25651A0C00392C87 /* ErrorHandler+Mappable.swift in Sources */,
 				20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */,
 				209213DA257EC96F003A4F05 /* LogCell.swift in Sources */,
+				201319252597F5B800ECE566 /* Logger.swift in Sources */,
 				20014EB2256D79FA00E30E33 /* RegisterNewChar.swift in Sources */,
 				20AC57B225650B6300392C87 /* Network.swift in Sources */,
 				204852ED257C26DC00760217 /* StatCell.swift in Sources */,

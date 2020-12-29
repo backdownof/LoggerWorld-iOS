@@ -7,27 +7,27 @@
 
 import Foundation
 
-class ConnectionService: SocketManagerDelegate {
+class ConnectionService: SocketManagerDelegate, SessionStartedDelegate {
     static let shared = ConnectionService()
     var socketConnected: Bool = false
     
     private init() {
         SocketManager.shared.connectionDelegate = self
+        SocketManager.shared.disconnectionDelegate = self
     }
     
     func socketConnect() {
-        print(1)
         SocketManager.shared.registerSocket()
     }
     
     func connected() {
         print("SelectChar socket is connected")
-        ConnectionService.shared.socketConnected = true
+        socketConnected = true
     }
     
     func disconnected() {
-        ConnectionService.shared.socketConnected = false
+        socketConnected = false
         User.token = nil
-        UI.setRootController(R.storyboard.selectCharToPlay.instantiateInitialViewController())
+        UI.setRootController(R.storyboard.login.instantiateInitialViewController())
     }
 }

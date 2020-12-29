@@ -58,11 +58,6 @@ class CharacterStatsController: ViewController {
         tableView.register(UINib(nibName: R.nib.statCell.name, bundle: nil), forCellReuseIdentifier: "statCell")
         
         tableView.separatorColor = R.color.brown()?.withAlphaComponent(0.1)
-        
-        print(stats.count)
-        print(stats[0].names?.count)
-        print(stats[0].names?[0])
-        print(stats[0].type)
     }
 
 }

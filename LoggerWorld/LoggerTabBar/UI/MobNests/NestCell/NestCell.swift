@@ -20,7 +20,6 @@ class NestCell: UITableViewCell {
     
     var selectedState: Bool? {
         didSet {
-            //            selectedButton.imageView?.image = selectedState! ? R.image.checkboxOff() : R.image.checkboxOn()
             if selectedState! {
                 selectedButton.setImage(R.image.checkboxOn(), for: .normal)
             } else {
@@ -32,7 +31,7 @@ class NestCell: UITableViewCell {
     var nest: MobNests? {
         didSet {
             if let name = nest?.mobClass {
-                nestName.text = name
+                nestName.text = "\(name)"
             }
             
             if let level = nest?.level {

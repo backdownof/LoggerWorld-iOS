@@ -28,7 +28,7 @@ class CharacterPickCell: UITableViewCell {
             if let nickname = charInfo?.name {
                 charNicknameLabel.text = nickname
             }
-            if let lvl = charInfo?.stats.id12 {
+            if let lvl = charInfo?.baseStats.lvl {
                 charLvlLabel.text = "\(Int(lvl)) лвл"
             }
             if let location = charInfo?.locationId {

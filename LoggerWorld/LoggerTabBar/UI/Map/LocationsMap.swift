@@ -70,12 +70,11 @@ class LocationsMap: UIView {
 
     @IBAction func closeButtonTapped(_ sender: Any) {
         mapDelegate?.mapIsClosed()
-        currentLocationCell!.mapCellImageView.image = nil
+        currentLocationCell?.mapCellImageView.image = nil
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {
         if selectedLocationCellId != 0 {
-            goButton.alpha = 0.3
             SocketManager.shared.playerMoveToAnotherLocation(locationId: selectedLocationCellId)
             mapDelegate?.mapIsClosed()
             currentLocationCell!.mapCellImageView.image = nil   

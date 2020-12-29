@@ -7,27 +7,40 @@
 
 import Foundation
 import StompClientLib
+import OSLog
 
 protocol SocketManagerDelegate {
-    func connected()
     func disconnected()
     func success()
     func listOfCharactersToSelect(chars: [CharacterInformation])
     func charLoggedIn()
     func updatedLocationInfo(info: LocationInfo)
     func playerMovedToAnotherLocation()
+}
+
+protocol InventoryDelegate {
+    func inventoryReceived(items: InventoryMap)
+}
+
+protocol SessionStartedDelegate {
+    func connected()
+}
+
+protocol LogsDelegate {
     func messageReceived(log: LogMessage)
 }
 
+protocol EquipmentDelegate {
+    func equipmentReceived(items: EquipmentMap)
+}
+
 extension SocketManagerDelegate {
-    func connected() {}
     func disconnected() {}
     func success() {}
     func listOfCharactersToSelect(chars: [CharacterInformation]) {}
     func charLoggedIn() {}
     func updatedLocationInfo(info: LocationInfo) {}
     func playerMovedToAnotherLocation() {}
-    func messageReceived(log: LogMessage) {}
 }
 
 class SocketManager: StompClientLibDelegate {
@@ -40,43 +53,50 @@ class SocketManager: StompClientLibDelegate {
     let locationMessages = "/user/queue/location"
     let wrongCommandMessages = "/user/queue/wrong-command"
     let logMessages = "/user/queue/log"
+    let inventoryChange = "/user/queue/inventory"
+    let equipmentChange = "/user/queue/equipment"
+    
     
 //    var delegate: SocketManagerDelegate?
     var locationDelegate: SocketManagerDelegate?
-    var messageDelegate: SocketManagerDelegate?
-    var connectionDelegate: SocketManagerDelegate?
+    var messageDelegate: LogsDelegate?
+    var connectionDelegate: SessionStartedDelegate?
+    var disconnectionDelegate: SocketManagerDelegate?
     var loggingDelegate: SocketManagerDelegate?
     var movedDelegate: SocketManagerDelegate?
+    var inventoryDelegate: InventoryDelegate?
+    var equipmentDelegate: EquipmentDelegate?
     
     func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-        print("SOME DATA???")
-        print("DESTIONATION : \(destination)")
-        print("JSON BODY : \(String(describing: jsonBody))")
-        print("STRING BODY : \(stringBody ?? "nil")")
+//        print("SOME DATA???")
+//        print("DESTIONATION : \(destination)")
+//        print("JSON BODY : \(String(describing: jsonBody))")
+//        print("STRING BODY : \(stringBody ?? "nil")")
         
         guard let stringData = stringBody else { print("fuck"); return }
         
         if let data = try? JSONDecoder().decode(LocationInfo.self, from: Data(stringData.utf8)) {
-            print("Got location info")
+            Logger.stompRecieved.info("Received location info: \(String(describing: data))")
             locationDelegate?.updatedLocationInfo(info: data)
         } else if let data = try? JSONDecoder().decode(LogMessage.self, from: Data(stringData.utf8)) {
-            print(data)
+            if data.logType == "LOGIN" {
+                loggingDelegate?.charLoggedIn()
+            }
+            Logger.stompRecieved.info("Received log message: \(String(describing: data))")
             messageDelegate?.messageReceived(log: data)
+        } else if let data = try? JSONDecoder().decode(InventoryMap.self, from: Data(stringData.utf8)) {
+            Logger.stompRecieved.info("Inventory recieved")
+            inventoryDelegate?.inventoryReceived(items: data)
+        } else if let data = try? JSONDecoder().decode(EquipmentMap.self, from: Data(stringData.utf8)) {
+            Logger.stompRecieved.info("Equipment recieved")
+            equipmentDelegate?.equipmentReceived(items: data)
         } else {
             print("fucked parsing json")
         }
-//            let playersList = try JSONDecoder().decode(CharactersMap.self, from:Data(stringData.utf8))
-//            if let listOfChars = playersList.players {
-//                delegate?.listOfCharactersToSelect(chars: listOfChars)
-//            } else {
-//                delegate?.listOfCharactersToSelect(chars: [])
-//            }
-        
-//        delegate?.success()
     }
     
     func stompClientDidDisconnect(client: StompClientLib!) {
-        connectionDelegate?.disconnected()
+        disconnectionDelegate?.disconnected()
     }
     
     func stompClientDidConnect(client: StompClientLib!) {
@@ -99,20 +119,23 @@ class SocketManager: StompClientLibDelegate {
     
     func subscribeForTopics() {
         stomp.subscribe(destination: topicMessages)
-        print("Subscribed for :\(topicMessages)")
+        Logger.stompSent.info("Subscribed for :\(self.topicMessages)")
         stomp.subscribe(destination: playerMessages)
-        print("Subscribed for :\(playerMessages)")
+        Logger.stompSent.info("Subscribed for :\(self.playerMessages)")
         stomp.subscribe(destination: classesMessages)
-        print("Subscribed for :\(classesMessages)")
+        Logger.stompSent.info("Subscribed for :\(self.classesMessages)")
         stomp.subscribe(destination: "/user/queue")
-        print("Subscribed for :/user/queue")
+        Logger.stompSent.info("Subscribed for :/user/queue")
         stomp.subscribe(destination: locationMessages)
-        print("Subscribed for :/user/queue/location")
+        Logger.stompSent.info("Subscribed for :/user/queue/location")
         stomp.subscribe(destination: wrongCommandMessages)
-        print("Subscribed for :/user/queue/wrong-command")
+        Logger.stompSent.info("Subscribed for :/user/queue/wrong-command")
         stomp.subscribe(destination: logMessages)
-        print("Subscribed for :/user/queue/log")
-        
+        Logger.stompSent.info("Subscribed for :/user/queue/log")
+        stomp.subscribe(destination: inventoryChange)
+        Logger.stompSent.info("Subscribed for :\(self.inventoryChange)")
+        stomp.subscribe(destination: equipmentChange)
+        Logger.stompSent.info("Subscribed for :\(self.equipmentChange)")
     }
     
     func registerSocket() {
@@ -120,7 +143,6 @@ class SocketManager: StompClientLibDelegate {
         
         let url = NSURL(string: completedWSURL)!
         guard let token = User.token else {
-            connectionDelegate?.disconnected()
             return
         }
         stomp.openSocketWithURLRequest(request: NSURLRequest(url: url as URL), delegate: self as StompClientLibDelegate, connectionHeaders: ["Authorization": "Bearer \(String(describing: token))"])
@@ -138,13 +160,36 @@ class SocketManager: StompClientLibDelegate {
     func loginCharacter(playerId: Int) {
         let dict = ["playerId": playerId] as NSDictionary
         stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/start")
-        loggingDelegate?.charLoggedIn()
     }
     
     func playerMoveToAnotherLocation(locationId: Int) {
         let dict = ["locationId": locationId] as NSDictionary
         stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/move")
-        print("Send 'Move to location: \(locationId)")
+        Logger.stompSent.info("Send Move to location: \(locationId)")
         movedDelegate?.playerMovedToAnotherLocation()
+    }
+    
+    func kickNest(nestId: Int) {
+        let dict = ["nestId": nestId] as NSDictionary
+        stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/kick-nest")
+        Logger.stompSent.info("Send nest with id: \(nestId) is kicked")
+    }
+    
+    func loadInventory() {
+        let dict = ["": nil] as NSDictionary
+        stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/request/inventory")
+        Logger.stompSent.info("Sent request to load inventory")
+    }
+    
+    func loadEquiped() {
+        let dict = ["": nil] as NSDictionary
+        stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/request/equipment")
+        Logger.stompSent.info("Sent request to load equiped")
+    }
+    
+    func equipItem(itemId: Int, slotId: Int) {
+        let dict = ["itemId": itemId, "slotType": slotId] as NSDictionary
+        stomp.sendJSONForDict(dict: dict, toDestination: "/app/players/equip-item")
+        Logger.stompSent.info("Sent request to equip item \(itemId) at slot \(slotId)")
     }
 }

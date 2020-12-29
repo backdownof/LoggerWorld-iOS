@@ -22,7 +22,7 @@ final class CharStats {
     }
     
     private func getAvailableStats() {
-        Network.getStatsDescription(completion: { stats in
+        Network.getStatsMap(completion: { stats in
             self.stats = stats
             self.delegate?.charStatsLoaded()
         }, failure: { error in
