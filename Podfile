@@ -8,10 +8,11 @@ target 'LoggerWorld' do
   # Pods for LoggerWorld
   pod 'Starscream'
   pod 'R.swift'
-  pod 'ObjectMapper'
+  # pod 'ObjectMapper'
   # pod 'SDWebImage'  
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'StompClientLib' 
+  # pod 'RealmSwift'
 
 end

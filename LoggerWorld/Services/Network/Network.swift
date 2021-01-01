@@ -84,6 +84,7 @@ class Network: NSObject {
                                 email: String,
                                 completion: @escaping (String) -> Void,
                                 failure: @escaping(String) -> Void) {
+        print(userName)
         AF.request((API.baseURL + "api/user/sign-up").url!,
                    method: .post,
                    parameters: [
@@ -288,7 +289,7 @@ class Network: NSObject {
                })
     }
     
-    static func getItemCategoriesMap(completion: @escaping([ItemCategory]) -> Void,
+    static func getItemCategoriesMap(completion: @escaping([ItemCategoryData]) -> Void,
                                 failure: @escaping() -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -301,13 +302,13 @@ class Network: NSObject {
                 case .success:
                     if let data = response.data {
                         do {
-                            let json = try JSONDecoder().decode(ResponseStatus<ItemCategoriesMap>.self, from: data)
+                            let json = try JSONDecoder().decode(ResponseStatus<ItemCategoriesData>.self, from: data)
                             if let itemCategories = json.data?.itemCategories {
                                 Logger.apiRequest.info("Succeed mapping Item categories")
                                 completion(itemCategories)
                             } else {
                                 Logger.apiRequest.info("Item categories map is empty")
-                                let itemCategories: [ItemCategory] = []
+                                let itemCategories: [ItemCategoryData] = []
                                 completion(itemCategories)
                             }
                         } catch {

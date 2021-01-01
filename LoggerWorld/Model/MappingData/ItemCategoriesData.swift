@@ -7,19 +7,31 @@
 
 import Foundation
 
-struct ItemCategoriesMap: Codable {
-    var itemCategories: [ItemCategory]
+struct ItemCategoriesData: Codable {
+    var itemCategories: [ItemCategoryData]
 }
 
-struct ItemCategory: Codable {
+struct ItemCategoryData: Codable {
     var id: Int
     var parentId: Int?
     var isItem: Bool
     var code: ItemCode.RawValue
     var name: String
-    var description: String
+    var descr: String
     var stats: [Int]
     var equipmentSlots: [Int]
+    
+    private enum CodingKeys: String, CodingKey {
+        case descr = "description",
+             id = "id",
+             parentId = "parentId",
+             isItem = "isItem",
+             code = "code",
+             name = "name",
+             stats = "stats",
+             equipmentSlots = "equipmentSlots"
+        
+    }
 }
 
 enum ItemCode: String {

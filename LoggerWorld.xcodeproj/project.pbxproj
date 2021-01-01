@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,6 @@
 		2006D6EF256464B900259338 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D6EE256464B900259338 /* Nib.swift */; };
 		2006D6F3256469F800259338 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D6F2256469F800259338 /* UserSettings.swift */; };
 		2006D6F725646A3D00259338 /* UserSettings+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D6F625646A3D00259338 /* UserSettings+Key.swift */; };
-		2006D70725646D4A00259338 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D70625646D4A00259338 /* Constant.swift */; };
-		2006D70A25646D9100259338 /* Constant+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D70925646D9100259338 /* Constant+Block.swift */; };
-		2006D71425646E8400259338 /* Constant+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D71325646E8400259338 /* Constant+StatusCode.swift */; };
 		2006D719256470D800259338 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2006D71B256470D800259338 /* Localizable.strings */; };
 		2006D723256472D100259338 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2006D725256472D100259338 /* InfoPlist.strings */; };
 		2006D72F256473CF00259338 /* DataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006D72E256473CF00259338 /* DataOperation.swift */; };
@@ -31,6 +28,7 @@
 		200CABAE257AF26800ECBFD5 /* CharStatsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CABAD257AF26800ECBFD5 /* CharStatsMap.swift */; };
 		201319252597F5B800ECE566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201319242597F5B800ECE566 /* Logger.swift */; };
 		201319282598B76900ECE566 /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201319272598B76900ECE566 /* LogsService.swift */; };
+		202B6A50259B7ACC002BE302 /* MapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202B6A4F259B7ACC002BE302 /* MapsService.swift */; };
 		203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203045EC2550AA9A00F9CA88 /* SocketManager.swift */; };
 		2037F4B2256DAE2000F5F838 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037F4B1256DAE2000F5F838 /* Data.swift */; };
 		203A2CE02576D20A003AFC95 /* AlegreyaSC-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 203A2CD62576D209003AFC95 /* AlegreyaSC-MediumItalic.ttf */; };
@@ -60,7 +58,7 @@
 		2049B5AF259A2E7000979797 /* ItemDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2049B5AD259A2E7000979797 /* ItemDetailController.xib */; };
 		2049B5B6259A3C9400979797 /* EquipmentMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5B5259A3C9400979797 /* EquipmentMap.swift */; };
 		2049B5B9259A415E00979797 /* SlotMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5B8259A415E00979797 /* SlotMap.swift */; };
-		2049B5BE259B687C00979797 /* ItemCategoriesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5BD259B687C00979797 /* ItemCategoriesMap.swift */; };
+		2049B5BE259B687C00979797 /* ItemCategoriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5BD259B687C00979797 /* ItemCategoriesData.swift */; };
 		2049B5C2259B6C8400979797 /* EquipmentSlotsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5C1259B6C8400979797 /* EquipmentSlotsMap.swift */; };
 		2049B5C5259B6F9900979797 /* ItemQualitiesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5C4259B6F9900979797 /* ItemQualitiesMap.swift */; };
 		2049B5C8259B714800979797 /* ItemStatsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2049B5C7259B714800979797 /* ItemStatsMap.swift */; };
@@ -76,6 +74,9 @@
 		20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EE6256055F300AEDE8D /* CharacterPickCell.swift */; };
 		20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20766EE7256055F300AEDE8D /* CharacterPickCell.xib */; };
 		20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20766EEB2560734400AEDE8D /* CharInfo.swift */; };
+		207CB180259DD82A00435821 /* ItemCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CB17F259DD82A00435821 /* ItemCategories.swift */; };
+		207CB1DC259F60F000435821 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 207CB1DB259F60F000435821 /* Realm */; };
+		207CB1DE259F60F000435821 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 207CB1DD259F60F000435821 /* RealmSwift */; };
 		2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEBB25631B7700DC4D36 /* RegisterController.swift */; };
 		2088CEC125631C6800DC4D36 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEC025631C6800DC4D36 /* Validator.swift */; };
 		209213D4257EC448003A4F05 /* LogsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D3257EC448003A4F05 /* LogsMap.swift */; };
@@ -103,10 +104,6 @@
 		20A3FE2A257BC6E70005921B /* ActiveCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3FE29257BC6E70005921B /* ActiveCharacter.swift */; };
 		20AC57AC2565096300392C87 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57AB2565096300392C87 /* API.swift */; };
 		20AC57B225650B6300392C87 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57B125650B6300392C87 /* Network.swift */; };
-		20AC57B7256519DA00392C87 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57B6256519DA00392C87 /* ErrorHandler.swift */; };
-		20AC57BA256519FB00392C87 /* ErrorHandler+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57B9256519FB00392C87 /* ErrorHandler+Key.swift */; };
-		20AC57BD25651A0C00392C87 /* ErrorHandler+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57BC25651A0C00392C87 /* ErrorHandler+Mappable.swift */; };
-		20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC57BF25651A1E00392C87 /* ErrorHandler+Message.swift */; };
 		20AD37E5256281F800F9C1B5 /* CATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37E4256281F800F9C1B5 /* CATransition.swift */; };
 		20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37E8256292DA00F9C1B5 /* UI.swift */; };
 		20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD37EB2562931D00F9C1B5 /* UIViewController.swift */; };
@@ -135,9 +132,6 @@
 		2006D6EE256464B900259338 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		2006D6F2256469F800259338 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		2006D6F625646A3D00259338 /* UserSettings+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSettings+Key.swift"; sourceTree = "<group>"; };
-		2006D70625646D4A00259338 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		2006D70925646D9100259338 /* Constant+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+Block.swift"; sourceTree = "<group>"; };
-		2006D71325646E8400259338 /* Constant+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+StatusCode.swift"; sourceTree = "<group>"; };
 		2006D71A256470D800259338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2006D724256472D100259338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2006D72E256473CF00259338 /* DataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOperation.swift; sourceTree = "<group>"; };
@@ -156,6 +150,7 @@
 		200CABAD257AF26800ECBFD5 /* CharStatsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharStatsMap.swift; sourceTree = "<group>"; };
 		201319242597F5B800ECE566 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		201319272598B76900ECE566 /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
+		202B6A4F259B7ACC002BE302 /* MapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsService.swift; sourceTree = "<group>"; };
 		203045EC2550AA9A00F9CA88 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		2037F4B1256DAE2000F5F838 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		203A2CD62576D209003AFC95 /* AlegreyaSC-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlegreyaSC-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -185,7 +180,7 @@
 		2049B5AD259A2E7000979797 /* ItemDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailController.xib; sourceTree = "<group>"; };
 		2049B5B5259A3C9400979797 /* EquipmentMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentMap.swift; sourceTree = "<group>"; };
 		2049B5B8259A415E00979797 /* SlotMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMap.swift; sourceTree = "<group>"; };
-		2049B5BD259B687C00979797 /* ItemCategoriesMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoriesMap.swift; sourceTree = "<group>"; };
+		2049B5BD259B687C00979797 /* ItemCategoriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoriesData.swift; sourceTree = "<group>"; };
 		2049B5C1259B6C8400979797 /* EquipmentSlotsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSlotsMap.swift; sourceTree = "<group>"; };
 		2049B5C4259B6F9900979797 /* ItemQualitiesMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemQualitiesMap.swift; sourceTree = "<group>"; };
 		2049B5C7259B714800979797 /* ItemStatsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStatsMap.swift; sourceTree = "<group>"; };
@@ -201,6 +196,7 @@
 		20766EE6256055F300AEDE8D /* CharacterPickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickCell.swift; sourceTree = "<group>"; };
 		20766EE7256055F300AEDE8D /* CharacterPickCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPickCell.xib; sourceTree = "<group>"; };
 		20766EEB2560734400AEDE8D /* CharInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharInfo.swift; sourceTree = "<group>"; };
+		207CB17F259DD82A00435821 /* ItemCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategories.swift; sourceTree = "<group>"; };
 		2088CEBB25631B7700DC4D36 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		2088CEC025631C6800DC4D36 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		209213D3257EC448003A4F05 /* LogsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsMap.swift; sourceTree = "<group>"; };
@@ -228,10 +224,6 @@
 		20A3FE29257BC6E70005921B /* ActiveCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCharacter.swift; sourceTree = "<group>"; };
 		20AC57AB2565096300392C87 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		20AC57B125650B6300392C87 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		20AC57B6256519DA00392C87 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		20AC57B9256519FB00392C87 /* ErrorHandler+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorHandler+Key.swift"; sourceTree = "<group>"; };
-		20AC57BC25651A0C00392C87 /* ErrorHandler+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorHandler+Mappable.swift"; sourceTree = "<group>"; };
-		20AC57BF25651A1E00392C87 /* ErrorHandler+Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorHandler+Message.swift"; sourceTree = "<group>"; };
 		20AD37E4256281F800F9C1B5 /* CATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransition.swift; sourceTree = "<group>"; };
 		20AD37E8256292DA00F9C1B5 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		20AD37EB2562931D00F9C1B5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +261,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207CB1DE259F60F000435821 /* RealmSwift in Frameworks */,
+				207CB1DC259F60F000435821 /* Realm in Frameworks */,
 				D5CF21911C14376B450CF4E2 /* Pods_LoggerWorld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,16 +321,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		2006D70525646D3E00259338 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				2006D70625646D4A00259338 /* Constant.swift */,
-				2006D70925646D9100259338 /* Constant+Block.swift */,
-				2006D71325646E8400259338 /* Constant+StatusCode.swift */,
-			);
-			path = Constant;
-			sourceTree = "<group>";
-		};
 		2006D71E2564726900259338 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,7 +376,6 @@
 				20AD37E3256281E400F9C1B5 /* Extensions */,
 				2088CEBF25631C5700DC4D36 /* Services */,
 				2006D72D256473BE00259338 /* Utils */,
-				2006D70525646D3E00259338 /* Constant */,
 				200A6657254E1A3E00B74B48 /* AppDelegate.swift */,
 				2065779F25670FC500E57E82 /* R.generated.swift */,
 				200A6659254E1A3E00B74B48 /* SceneDelegate.swift */,
@@ -429,6 +412,14 @@
 				201319272598B76900ECE566 /* LogsService.swift */,
 			);
 			path = LogsService;
+			sourceTree = "<group>";
+		};
+		202B6A4E259B7AB3002BE302 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				202B6A4F259B7ACC002BE302 /* MapsService.swift */,
+			);
+			path = Maps;
 			sourceTree = "<group>";
 		};
 		203045E8254F66F700F9CA88 /* Model */ = {
@@ -609,9 +600,8 @@
 		2088CEBF25631C5700DC4D36 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				202B6A4E259B7AB3002BE302 /* Maps */,
 				2049405F25892C6500244847 /* ConnectionService */,
-				2096687B25793AD7004009F5 /* LocationService */,
-				20AC57B5256519CE00392C87 /* ErrorHandler */,
 				20CD1DDF255FE551009F991D /* Websockets */,
 				2006D70325646C9800259338 /* Network */,
 				2006D6F925646BC800259338 /* API */,
@@ -692,30 +682,13 @@
 			isa = PBXGroup;
 			children = (
 				20407A892575492B007759B3 /* WorldMap.swift */,
-				2049B5BD259B687C00979797 /* ItemCategoriesMap.swift */,
+				2049B5BD259B687C00979797 /* ItemCategoriesData.swift */,
 				2049B5C1259B6C8400979797 /* EquipmentSlotsMap.swift */,
 				2049B5C4259B6F9900979797 /* ItemQualitiesMap.swift */,
 				2049B5C7259B714800979797 /* ItemStatsMap.swift */,
+				207CB17F259DD82A00435821 /* ItemCategories.swift */,
 			);
 			path = MappingData;
-			sourceTree = "<group>";
-		};
-		2096687B25793AD7004009F5 /* LocationService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocationService;
-			sourceTree = "<group>";
-		};
-		20AC57B5256519CE00392C87 /* ErrorHandler */ = {
-			isa = PBXGroup;
-			children = (
-				20AC57B6256519DA00392C87 /* ErrorHandler.swift */,
-				20AC57B9256519FB00392C87 /* ErrorHandler+Key.swift */,
-				20AC57BC25651A0C00392C87 /* ErrorHandler+Mappable.swift */,
-				20AC57BF25651A1E00392C87 /* ErrorHandler+Message.swift */,
-			);
-			path = ErrorHandler;
 			sourceTree = "<group>";
 		};
 		20AD37E3256281E400F9C1B5 /* Extensions */ = {
@@ -862,6 +835,10 @@
 			dependencies = (
 			);
 			name = LoggerWorld;
+			packageProductDependencies = (
+				207CB1DB259F60F000435821 /* Realm */,
+				207CB1DD259F60F000435821 /* RealmSwift */,
+			);
 			productName = LoggerWorld;
 			productReference = 200A6654254E1A3E00B74B48 /* LoggerWorld.app */;
 			productType = "com.apple.product-type.application";
@@ -890,6 +867,9 @@
 				ru,
 			);
 			mainGroup = 200A664B254E1A3E00B74B48;
+			packageReferences = (
+				207CB1DA259F60F000435821 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 200A6655254E1A3E00B74B48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1012,7 +992,6 @@
 			files = (
 				20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */,
 				201319282598B76900ECE566 /* LogsService.swift in Sources */,
-				2006D71425646E8400259338 /* Constant+StatusCode.swift in Sources */,
 				2006D7332564753900259338 /* User.swift in Sources */,
 				2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */,
 				209668612578F623004009F5 /* ButtonWImage.swift in Sources */,
@@ -1026,6 +1005,7 @@
 				20633AD1257D338F0081A2EB /* Image.swift in Sources */,
 				20633AC4257D020E0081A2EB /* Array.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
+				202B6A50259B7ACC002BE302 /* MapsService.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
 				2049B5C8259B714800979797 /* ItemStatsMap.swift in Sources */,
 				205962282585701400E5D8D4 /* MobAvatar.swift in Sources */,
@@ -1043,13 +1023,13 @@
 				20A3FE2A257BC6E70005921B /* ActiveCharacter.swift in Sources */,
 				200CAB8B257A982F00ECBFD5 /* Characters.swift in Sources */,
 				20014EBA256DA26600E30E33 /* CharactersMap.swift in Sources */,
+				207CB180259DD82A00435821 /* ItemCategories.swift in Sources */,
 				20766EEC2560734400AEDE8D /* CharInfo.swift in Sources */,
 				200CABA6257AEFCB00ECBFD5 /* CharStats.swift in Sources */,
 				2096686D2578F63F004009F5 /* CharStatusBar.swift in Sources */,
 				209668762578FBF2004009F5 /* LocationsMap.swift in Sources */,
 				20CD1DF7255FF670009F991D /* NibLoadable.swift in Sources */,
 				203045ED2550AA9A00F9CA88 /* SocketManager.swift in Sources */,
-				20AC57BA256519FB00392C87 /* ErrorHandler+Key.swift in Sources */,
 				20CB85D72566A61600237DAF /* LoggerTabBarController.swift in Sources */,
 				20AD37E5256281F800F9C1B5 /* CATransition.swift in Sources */,
 				2045962325601FCA004793C5 /* SelectCharToPlayController.swift in Sources */,
@@ -1061,7 +1041,6 @@
 				209213FE258172CE003A4F05 /* NestCell.swift in Sources */,
 				204C26222578025A00B2B0FF /* ResponseStatus.swift in Sources */,
 				2006D737256476E500259338 /* String.swift in Sources */,
-				20AC57C025651A1E00392C87 /* ErrorHandler+Message.swift in Sources */,
 				209668552578F608004009F5 /* AlertView.swift in Sources */,
 				204852E5257C211D00760217 /* CharacterStatsController.swift in Sources */,
 				2049B5C5259B6F9900979797 /* ItemQualitiesMap.swift in Sources */,
@@ -1074,13 +1053,11 @@
 				20BAC14425798FA700120F4F /* MapCell.swift in Sources */,
 				200A665A254E1A3E00B74B48 /* SceneDelegate.swift in Sources */,
 				2049B5A3259A09EC00979797 /* InventoryMap.swift in Sources */,
-				20AC57B7256519DA00392C87 /* ErrorHandler.swift in Sources */,
 				20CB85E62566A74C00237DAF /* InventoryController.swift in Sources */,
 				20407A8D25755090007759B3 /* LocationService.swift in Sources */,
-				2049B5BE259B687C00979797 /* ItemCategoriesMap.swift in Sources */,
+				2049B5BE259B687C00979797 /* ItemCategoriesData.swift in Sources */,
 				20407A8A2575492B007759B3 /* WorldMap.swift in Sources */,
 				2049B5AE259A2E7000979797 /* ItemDetailController.swift in Sources */,
-				20AC57BD25651A0C00392C87 /* ErrorHandler+Mappable.swift in Sources */,
 				20CB85DB2566A65200237DAF /* MainLoggerController.swift in Sources */,
 				209213DA257EC96F003A4F05 /* LogCell.swift in Sources */,
 				201319252597F5B800ECE566 /* Logger.swift in Sources */,
@@ -1089,10 +1066,8 @@
 				204852ED257C26DC00760217 /* StatCell.swift in Sources */,
 				2037F4B2256DAE2000F5F838 /* Data.swift in Sources */,
 				20598630256090C40028ACD3 /* AddCharCell.swift in Sources */,
-				2006D70725646D4A00259338 /* Constant.swift in Sources */,
 				2088CEC125631C6800DC4D36 /* Validator.swift in Sources */,
 				2006D6F3256469F800259338 /* UserSettings.swift in Sources */,
-				2006D70A25646D9100259338 /* Constant+Block.swift in Sources */,
 				209213E725814308003A4F05 /* MobsInLocationMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1341,6 +1316,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		207CB1DA259F60F000435821 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		207CB1DB259F60F000435821 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 207CB1DA259F60F000435821 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		207CB1DD259F60F000435821 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 207CB1DA259F60F000435821 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		200A6660254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld */ = {

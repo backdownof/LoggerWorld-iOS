@@ -7,6 +7,7 @@
 
 import UIKit
 import StompClientLib
+import RealmSwift
 
 class SelectCharToPlayController: ViewController {
     
@@ -33,30 +34,29 @@ class SelectCharToPlayController: ViewController {
         
         setupView()
         Characters.shared.loadData()
+//        try? FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+
         
-        Network.getItemCategoriesMap(completion: { itemCategories in
+        let realm = try! Realm()
+        try? realm.write {
+            realm.deleteAll()
+            let allNotifications = realm.objects(ItemCategory.self)
+            realm.delete(allNotifications)
+        }
+        
+        MapsService.loadAllMaps(complition: {
+            let mSavedItems = realm.objects(ItemCategory.self)
             
+            let category = realm.objects(ItemCategory.self).filter("id == \(9)").first
+            print(category?.name)
         }, failure: {
-            
+
         })
         
-        Network.getEquipmentSlotsMap(completion: { response in
-            
-        }, failure: {
-            
-        })
         
-        Network.getItemQualitiesMap(completion: { response in
-            
-        }, failure: {
-            
-        })
         
-        Network.getItemStatsMap(completion: { response in
-            
-        }, failure: {
-            
-        })
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         charactersTableView.register(UINib(nibName: R.nib.characterPickCell.name, bundle: nil), forCellReuseIdentifier: "charCell")
         charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: "addCell")

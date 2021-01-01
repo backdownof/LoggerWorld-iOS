@@ -386,6 +386,118 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(watchOS)
+    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func accentColor(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.accentColor.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Blue", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func blue(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.blue.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Brown", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func brown(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.brown.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Creame", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func creame(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.creame.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "DarkBrown", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func darkBrown(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.darkBrown.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "GrayText", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func grayText(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.grayText.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Green", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func green(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.green.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Red", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func red(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.red.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Yellow", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func yellow(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.yellow.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "charBG", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func charBG(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.charBG.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "charHero1BG", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func charHero1BG(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.charHero1BG.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "charHero2BG", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func charHero2BG(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.charHero2BG.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "charPKBG", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func charPKBG(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.charPKBG.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "charPVPBG", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func charPVPBG(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.charPVPBG.name)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
@@ -2079,8 +2191,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "barMP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barMP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "barHP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barHP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "barMP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barMP' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'CharStatusBar', but couldn't be loaded.") }
         }
@@ -2152,10 +2264,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in nib 'ItemDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "buttonLightBrown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'buttonLightBrown' is used in nib 'ItemDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "closeButtonRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeButtonRed' is used in nib 'ItemDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "inventoryCellPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'inventoryCellPlaceholder' is used in nib 'ItemDetailController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in nib 'ItemDetailController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'ItemDetailController', but couldn't be loaded.") }
         }
@@ -2173,13 +2285,13 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "closeButtonRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeButtonRed' is used in nib 'LocationsMap', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "buttonLightBrown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'buttonLightBrown' is used in nib 'LocationsMap', but couldn't be loaded.") }
         if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in nib 'LocationsMap', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "buttonLightBrown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'buttonLightBrown' is used in nib 'LocationsMap', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "closeButtonRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeButtonRed' is used in nib 'LocationsMap', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icMap", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icMap' is used in nib 'LocationsMap', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'LocationsMap', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in nib 'LocationsMap', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'LocationsMap', but couldn't be loaded.") }
         }
       }
 
@@ -2235,9 +2347,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "closeButtonRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeButtonRed' is used in nib 'NestsSelect', but couldn't be loaded.") }
         if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in nib 'NestsSelect', but couldn't be loaded.") }
         if UIKit.UIImage(named: "buttonLightBrown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'buttonLightBrown' is used in nib 'NestsSelect', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "closeButtonRed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'closeButtonRed' is used in nib 'NestsSelect', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in nib 'NestsSelect', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'NestsSelect', but couldn't be loaded.") }
@@ -2301,15 +2413,15 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "warriorImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'warriorImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "archerImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'archerImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "assassinImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'assassinImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.left") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.left' is used in storyboard 'CreateChar', but couldn't be loaded.") } }
         if UIKit.UIImage(named: "icArcherBow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icArcherBow' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "assassinImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'assassinImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icWarSword", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icWarSword' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "mageImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mageImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "archerImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'archerImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icAssasignShuriken", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icAssasignShuriken' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icMageStuff", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icMageStuff' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icWarSword", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icWarSword' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mageImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mageImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "warriorImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'warriorImage' is used in storyboard 'CreateChar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'CreateChar', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'CreateChar', but couldn't be loaded.") }
@@ -2334,24 +2446,24 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "cloackInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cloackInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "gloveInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gloveInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icInventoryTabBarItem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icInventoryTabBarItem' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "bootsInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bootsInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "shieldInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'shieldInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "beltInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'beltInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
         if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "swordInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'swordInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "mpInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mpInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ringInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ringInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "topInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'topInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "hpInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hpInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "hatInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hatInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "neckleInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'neckleInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "beltInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'beltInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "bootsInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bootsInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "cloackInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cloackInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
         if UIKit.UIImage(named: "earingInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'earingInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "gloveInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gloveInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "hatInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hatInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "hpInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hpInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icInventoryTabBarItem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icInventoryTabBarItem' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mpInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mpInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "neckleInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'neckleInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ringInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ringInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "shieldInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'shieldInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "swordInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'swordInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "topInventoryPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'topInventoryPlaceholder' is used in storyboard 'Inventory', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'Inventory', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'Inventory', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'Inventory', but couldn't be loaded.") }
         }
         if _R.storyboard.inventory().assistiveNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'assistiveNav' could not be loaded from storyboard 'Inventory' as 'UIKit.UINavigationController'.") }
       }
@@ -2412,12 +2524,12 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "icGoogle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icGoogle' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AppImage", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppImage' is used in storyboard 'Login', but couldn't be loaded.") }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.backward' is used in storyboard 'Login', but couldn't be loaded.") } }
-        if UIKit.UIImage(named: "icVK", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icVK' is used in storyboard 'Login', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icFacebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icFacebook' is used in storyboard 'Login', but couldn't be loaded.") }
         if UIKit.UIImage(named: "AppName", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'AppName' is used in storyboard 'Login', but couldn't be loaded.") }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.backward' is used in storyboard 'Login', but couldn't be loaded.") } }
+        if UIKit.UIImage(named: "icFacebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icFacebook' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icGoogle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icGoogle' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icVK", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icVK' is used in storyboard 'Login', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'Login', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'Login', but couldn't be loaded.") }
@@ -2440,8 +2552,8 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icLogsTabBarItem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icLogsTabBarItem' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'MainLogger', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         }
       }
 
