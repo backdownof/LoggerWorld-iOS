@@ -11,7 +11,7 @@ class MapCell: UICollectionViewCell {
     @IBOutlet weak var mapCellImageView: UIImageView!
     @IBOutlet weak var mapCellBorderView: UIView!
     @IBOutlet weak var tintView: UIView!
-    var locInfo: LocationNameAndCoords?
+    var locInfo: LocationMapData?
     
     override func awakeFromNib() {
         super.awakeFromNib()

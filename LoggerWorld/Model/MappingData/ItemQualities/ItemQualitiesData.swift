@@ -7,18 +7,25 @@
 
 import Foundation
 
-struct ItemQualitiesMap: Codable {
+struct ItemQualitiesData: Codable {
     var itemQualities: [ItemQuality]
 }
 
 struct ItemQuality: Codable {
     var id: Int
-    var code: Quality.RawValue
+    var code: ItemQualityValue.RawValue
     var name: String
-    var description: String
+    var descr: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "id",
+             code = "code",
+             name = "name",
+             descr = "description"
+    }
 }
 
-enum Quality: String {
+enum ItemQualityValue: String {
     case NONE = "NONE"
     case COMMON = "COMMON"
     case GOOD = "GOOD"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemStatsMap: Codable {
+struct ItemStatsData: Codable {
     var itemStats: [ItemStat]
 }
 
@@ -15,7 +15,14 @@ struct ItemStat: Codable {
     var id: Int
     var code: ItemStatsValues.RawValue
     var name: String
-    var description: String
+    var descr: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "id",
+             code = "code",
+             name = "name",
+             descr = "description"
+    }
 }
 
 enum ItemStatsValues: String {

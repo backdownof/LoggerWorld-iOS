@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class ItemCategory: Object {
+class ItemCategoryModel: Object {
     @objc dynamic var id: Int = 0
     let parentId = RealmOptional<Int>()
     @objc dynamic var isItem: Bool = false
@@ -32,5 +32,9 @@ class ItemCategory: Object {
         for category in itemCategoryData.equipmentSlots {
             equipmentSlots.append(category)
         }
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

@@ -27,7 +27,7 @@ class Network: NSObject {
     static func requestLogin(userName: String,
                              password: String,
                              completion: @escaping () -> Void,
-                             failure: @escaping () -> ()) {
+                             failure: @escaping (String) -> ()) {
         let parameters: [String: Any] = [
             "userName" : userName,
             "password": password
@@ -44,32 +44,29 @@ class Network: NSObject {
         AF.request((API.baseURL + "api/user/login").url!,
                    method: .post, parameters: parameters,
                    encoding: JSONEncoding.default,
-                   headers: headers).responseJSON { response in
-                    guard let status = response.response?.statusCode else { return }
-                    if Array(200...201).contains(status)  {
+                   headers: headers).validate(statusCode: 200..<300).response(completionHandler: { response in
+                    switch response.result {
+                    case .success:
                         if let headers = response.response?.allHeaderFields as? [String: String] {
                             let header = headers["Authorization"]
                             guard let authHeader = header else { return }
-                            if authHeader.contains("Bearer "){
-                                Logger.apiRequest.info("Token received")
-                                let regex = try! NSRegularExpression(pattern: #"^(.*?)\s*Bearer\s*(.*)$"#, options: .caseInsensitive)
-                                if let match = regex.firstMatch(in: authHeader, range: NSRange(authHeader.startIndex..., in: authHeader)) {
-                                    let token = authHeader[Range(match.range(at: 2), in: authHeader)!]
-                                    User.token = String(token)
-                                    Logger.apiRequest.info("Token saved")
-                                    completion()
-                                } else {
-                                    failure()
-                                }
+                            do {
+                                let token = try authHeader.groups(for: #"^Bearer\s(.*)$"#)[0][1]
+                                User.token = String(token)
+                                Logger.apiRequest.info("Token saved")
+                                completion()
+                            } catch {
+                                Logger.apiRequest.error("Error parsing Token")
+                                failure("Ошибка обработки токена. Обратитесь в поддержку!")
                             }
-                            
                         } else {
-                            failure()
+                            failure("Ошибка получения токена. Обратитесь в поддержку!")
                         }
-                    } else {
-                        Logger.apiRequest.error("Error in getting token")
+                    case .failure:
+                        Logger.apiRequest.error("Bad response from server while loging")
+                        failure("Неправильный логин или пароль. Повторите")
                     }
-                   }
+                   })
     }
     
     /**
@@ -183,7 +180,7 @@ class Network: NSObject {
      - parameter completion: возвращает при успешном выполнении
      - parameter failure: возвращает сообщение об ошибке
      */
-    static func getLocationDict(completion: @escaping([LocationNameAndCoords]) -> Void,
+    static func getLocationDict(completion: @escaping([LocationMapData]) -> Void,
                                 failure: @escaping() -> Void) {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -203,7 +200,7 @@ class Network: NSObject {
                                     completion(locations)
                                 } else {
                                     Logger.apiRequest.fault("World map is empty")
-                                    let locations: [LocationNameAndCoords] = []
+                                    let locations: [LocationMapData] = []
                                     completion(locations)
                                 }
                             } catch {
@@ -334,7 +331,8 @@ class Network: NSObject {
                 case .success:
                     if let data = response.data {
                         do {
-                            let json = try JSONDecoder().decode(ResponseStatus<EquipmentSlotsMap>.self, from: data)
+                            let json = try JSONDecoder().decode(ResponseStatus<EquipmentSlotsData>.self, from: data)
+                            
                             if let equipmentSlots = json.data?.equipmentSlots {
                                 Logger.apiRequest.info("Succeed mapping Equipment slots map")
                                 completion(equipmentSlots)
@@ -358,7 +356,7 @@ class Network: NSObject {
         guard let token = User.token else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
-        AF.request((API.baseURL + "api/items/equipment-slots").url!,
+        AF.request((API.baseURL + "api/items/qualities").url!,
                method: .get,
                encoding: JSONEncoding.default,
                headers: headers).responseJSON(completionHandler: { response in
@@ -366,7 +364,7 @@ class Network: NSObject {
                 case .success:
                     if let data = response.data {
                         do {
-                            let json = try JSONDecoder().decode(ResponseStatus<ItemQualitiesMap>.self, from: data)
+                            let json = try JSONDecoder().decode(ResponseStatus<ItemQualitiesData>.self, from: data)
                             if let itemQualities = json.data?.itemQualities {
                                 Logger.apiRequest.info("Succeed mapping Item Qualities Map")
                                 completion(itemQualities)
@@ -398,7 +396,7 @@ class Network: NSObject {
                 case .success:
                     if let data = response.data {
                         do {
-                            let json = try JSONDecoder().decode(ResponseStatus<ItemStatsMap>.self, from: data)
+                            let json = try JSONDecoder().decode(ResponseStatus<ItemStatsData>.self, from: data)
                             if let itemStats = json.data?.itemStats {
                                 Logger.apiRequest.info("Succeed mapping Item Stats Map")
                                 completion(itemStats)

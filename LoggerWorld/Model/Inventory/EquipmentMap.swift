@@ -18,6 +18,7 @@ struct EquipmentMap: Codable {
 }
 
 enum Slots: String {
+    case NOTHING = "NOTHING"
     case HEAD = "HEAD"
     case AMULET = "AMULET"
     case LEFT_EARRING = "LEFT_EARRING"

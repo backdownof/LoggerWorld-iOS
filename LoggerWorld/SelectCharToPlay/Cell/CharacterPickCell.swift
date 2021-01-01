@@ -32,12 +32,14 @@ class CharacterPickCell: UITableViewCell {
                 charLvlLabel.text = "\(Int(lvl)) лвл"
             }
             if let location = charInfo?.locationId {
-                guard let allLocations = LocationService.shared.locations else { return }
-                for loc in allLocations {
-                    if loc.id == location {
-                        charLocationLabel.text = loc.name!
-                    }
-                }
+                charLocationLabel.text = LocationManager.shared.getNameById(id: charInfo!.locationId)
+                
+//                guard let allLocations = LocationManager.shared.locations else { return }
+//                for loc in allLocations {
+//                    if loc.id == location {
+//                        charLocationLabel.text = loc.name
+//                    }
+//                }
             }
         }
     }

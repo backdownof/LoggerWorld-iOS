@@ -24,7 +24,7 @@ class LocationsMap: UIView {
     @IBOutlet weak var goButton: UIButton!
     
 //    var locsXcoord: [[LocationNameAndCoords]] = []
-    var locsYcoord: [LocationNameAndCoords] = []
+    var locsYcoord: [LocationMapData] = []
     var maxXcoord = 0
     var maxYcoord = 0
     let collectionReusableIdentifier = "mapCollection"
@@ -45,10 +45,10 @@ class LocationsMap: UIView {
     }
     
     func setupMapView() {
-        guard let locations = LocationService.shared.locations else { return }
+        guard let locations = LocationManager.shared.locations else { return }
         for location in locations {
-            maxXcoord = (location.xcoord! > maxXcoord) ? location.xcoord! : maxXcoord
-            maxYcoord = (location.ycoord! > maxYcoord) ? location.ycoord! : maxYcoord
+            maxXcoord = (location.xcoord > maxXcoord) ? location.xcoord : maxXcoord
+            maxYcoord = (location.ycoord > maxYcoord) ? location.ycoord : maxYcoord
         }
         maxYcoord += 1
         maxXcoord += 1
@@ -93,7 +93,7 @@ extension LocationsMap: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! MapCell
         guard let locId = cell.locInfo?.id else { return }
-        selectedLocationLabel.text = "\(LocationService.shared.getNameById(id: locId))"
+        selectedLocationLabel.text = "\(LocationManager.shared.getNameById(id: locId))"
         selectedLocationCellId = (cell.locInfo?.id)!
     }
 }
@@ -111,11 +111,11 @@ extension LocationsMap: UICollectionViewDataSource {
         cell.locInfo = locsYcoord[indexPath.row]
         
         
-        if cell.locInfo?.id == LocationService.shared.locationInfo?.locationId {
+        if cell.locInfo?.id == LocationManager.shared.locationInfo?.locationId {
             currentLocationCell = cell
-            youAtLocationLabel.text = "Вы в \(LocationService.shared.getNameById(id: cell.locInfo!.id!))"
+            youAtLocationLabel.text = "Вы в \(LocationManager.shared.getNameById(id: cell.locInfo!.id))"
             
-            if LocationService.shared.characterInMove == false {
+            if LocationManager.shared.characterInMove == false {
                 cell.mapCellImageView.image = UIImage.getCharImage(classId: ActiveCharacter.shared.info.classId)
             }
         }

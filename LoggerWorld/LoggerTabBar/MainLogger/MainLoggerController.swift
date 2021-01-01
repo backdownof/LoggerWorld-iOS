@@ -37,7 +37,7 @@ class MainLoggerController: UIViewController {
     let currentLocationSubview = UIView()
     let currentLocationTitle = UILabel()
     
-    var playersInLocation: [PlayersInLocation]? = LocationService.shared.locationInfo?.players {
+    var playersInLocation: [PlayersInLocation]? = LocationManager.shared.locationInfo?.players {
         didSet {
             playersNearTableView.reloadData()
         }
@@ -58,7 +58,7 @@ class MainLoggerController: UIViewController {
         playersNearTableView.delegate = self
         playersNearTableView.dataSource = self
         
-        LocationService.shared.delegate = self
+        LocationManager.shared.delegate = self
         rightButton.delegate = self
         middleButton.delegate = self
         
@@ -140,7 +140,7 @@ class MainLoggerController: UIViewController {
         currentLocationTitle.heightAnchor.constraint(equalToConstant: 25).isActive = true
         currentLocationTitle.centerXAnchor.constraint(equalTo: currentLocationSubview.centerXAnchor).isActive = true
         currentLocationTitle.centerYAnchor.constraint(equalTo: currentLocationSubview.centerYAnchor).isActive = true
-        currentLocationTitle.text = LocationService.shared.currentLocationName
+        currentLocationTitle.text = LocationManager.shared.currentLocationName
         
         logsTableView.separatorColor = R.color.brown()
         logsTableView.separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -277,7 +277,7 @@ extension MainLoggerController: UITableViewDataSource {
 
 extension MainLoggerController: LocationServiceDelegate {
     func locationHasChanged() {
-        guard let charInMove = LocationService.shared.characterInMove else { return }
+        guard let charInMove = LocationManager.shared.characterInMove else { return }
         
         if charInMove {
             mapView.goButton.isUserInteractionEnabled = false
@@ -286,8 +286,8 @@ extension MainLoggerController: LocationServiceDelegate {
             mapView.goButton.isUserInteractionEnabled = true
 //            mapView.goButton.alpha = 1
         }
-        currentLocationTitle.text = LocationService.shared.currentLocationName
-        playersInLocation = LocationService.shared.playersInLocation
+        currentLocationTitle.text = LocationManager.shared.currentLocationName
+        playersInLocation = LocationManager.shared.playersInLocation
     }
 }
 // TODO: FIX HERE
@@ -305,14 +305,14 @@ extension MainLoggerController: ButtonWImageDelegate {
         }
         
         if button == middleButton {
-            guard let nests = LocationService.shared.locationInfo?.mobNests else { return }
+            guard let nests = LocationManager.shared.locationInfo?.mobNests else { return }
             nestsView.mobsNests = nests
             setNestsView()
             animateNestsIn()
         }
         
         if button == leftButton {
-            print(LocationService.shared.locationInfo?.locationId)
+            print(LocationManager.shared.locationInfo?.locationId)
         }
     }
 }

@@ -24,7 +24,7 @@ class SelectCharToPlayController: ViewController {
         
         ConnectionService.shared.socketConnect()
         
-        LocationService.shared.delegate = self
+        LocationManager.shared.delegate = self
         CharStats.shared.delegate = self
         Characters.shared.delegate = self
         charactersTableView.dataSource = self
@@ -34,27 +34,6 @@ class SelectCharToPlayController: ViewController {
         
         setupView()
         Characters.shared.loadData()
-//        try? FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
-
-        
-        let realm = try! Realm()
-        try? realm.write {
-            realm.deleteAll()
-            let allNotifications = realm.objects(ItemCategory.self)
-            realm.delete(allNotifications)
-        }
-        
-        MapsService.loadAllMaps(complition: {
-            let mSavedItems = realm.objects(ItemCategory.self)
-            
-            let category = realm.objects(ItemCategory.self).filter("id == \(9)").first
-            print(category?.name)
-        }, failure: {
-
-        })
-        
-        
-        
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
@@ -67,17 +46,6 @@ class SelectCharToPlayController: ViewController {
         enterButton.label = "Играть"
         charactersTableView.separatorColor = R.color.brown()
     }
-    
-//    private func loadPlayerChars() {
-//        let seconds = 0.3
-//        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-//            Network.requestCharacters(completion: { chars in
-//                self.charsListData = chars
-//            }, failure: { message in
-//                print(message)
-//            })
-//        }
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -115,9 +83,9 @@ extension SelectCharToPlayController: UITableViewDataSource {
         if indexPath.row < characters.count {
             let cell = charactersTableView.dequeueReusableCell(withIdentifier: "charCell", for: indexPath) as! CharacterPickCell
             cell.charInfo = characters[indexPath.row]
+            
             return cell
         } else {
-//            charactersTableView.register(UINib(nibName: R.nib.addCharCell.name, bundle: nil), forCellReuseIdentifier: R.reuseIdentifier.cellCharacterPick.identifier)
             let cell = charactersTableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath) as! AddCharCell
             
             return cell
@@ -147,9 +115,7 @@ extension SelectCharToPlayController: LocationServiceDelegate {
 extension SelectCharToPlayController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == characters.count {
-//            UI.setRootController(R.storyboard.createChar.instantiateInitialViewController())
             performSegue(withIdentifier: "createChar", sender: self)
-//            performSegue(withIdentifier: "goToLoggerTB", sender: self)
         } else {
             selectedCharId = characters[indexPath.row].id
         }
@@ -164,23 +130,12 @@ extension SelectCharToPlayController: ButtonWOImageDelegate {
                 SocketManager.shared.loginCharacter(playerId: id)
             }
         }
-//        } else {
-//            print("if false")
-//            ConnectionService.shared.socketConnect()
-//        }
-//        SocketManager.shared.createCharacter()
     }
 }
 
 extension SelectCharToPlayController: SocketManagerDelegate {
     
-//    func listOfCharactersToSelect(chars: [CharListToLogin]) {
-//        characters = chars
-//    }
-    
     func charLoggedIn() {
-//        UI.setRootController(R.storyboard.loggerTabBar.instantiateInitialViewController())
         performSegue(withIdentifier: "goToLoggerTB", sender: self)
     }
 }
-
