@@ -74,7 +74,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="head"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="HEAD"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="zRc-eB-Aqp" secondAttribute="trailing" id="Af4-lL-TqR"/>
                                                                                     <constraint firstItem="zRc-eB-Aqp" firstAttribute="leading" secondItem="5eT-pt-ZAg" secondAttribute="leading" id="Mwc-bf-BXu"/>
@@ -102,7 +102,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="amulet"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="AMULET"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="03q-qR-cb0" firstAttribute="top" secondItem="qht-IP-mhD" secondAttribute="top" id="2WC-zS-Ne8"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="03q-qR-cb0" secondAttribute="bottom" id="4H9-sG-RcK"/>
@@ -139,7 +139,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="gloves"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="GLOVES"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="xsT-mC-M1k" firstAttribute="leading" secondItem="5hO-Qt-lGx" secondAttribute="leading" id="JfA-KN-hQi"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="xsT-mC-M1k" secondAttribute="trailing" id="K3Q-GB-DQu"/>
@@ -168,7 +168,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="body"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="BODY"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="sac-N6-w2v" firstAttribute="top" secondItem="XX4-wd-zKI" secondAttribute="top" id="CEN-mp-3SL"/>
                                                                                     <constraint firstItem="sac-N6-w2v" firstAttribute="leading" secondItem="XX4-wd-zKI" secondAttribute="leading" id="I5V-xB-J6Z"/>
@@ -196,7 +196,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="boots"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="BOOTS"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="H7m-LE-5e1" secondAttribute="trailing" id="EBC-vr-maN"/>
                                                                                     <constraint firstItem="H7m-LE-5e1" firstAttribute="top" secondItem="ILd-me-xD6" secondAttribute="top" id="PYe-Us-HmC"/>
@@ -233,7 +233,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="leftArm"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="LEFT_ARM"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="bottom" secondItem="qY0-wR-UnR" secondAttribute="bottom" id="FCY-fg-W8M"/>
                                                                                     <constraint firstItem="qY0-wR-UnR" firstAttribute="leading" secondItem="zXj-g8-Ren" secondAttribute="leading" id="X0W-Cv-AvM"/>
@@ -262,7 +262,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="belt"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="BELT"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="0ys-Ae-3hG" firstAttribute="top" secondItem="fBY-yi-eou" secondAttribute="top" id="9W1-p1-ZHJ"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="0ys-Ae-3hG" secondAttribute="bottom" id="ISR-cw-f11"/>
@@ -290,7 +290,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="rightArm"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="RIGHT_ARM"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="bottom" secondItem="8uQ-PS-mlh" secondAttribute="bottom" id="0on-Ai-nOf"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="8uQ-PS-mlh" secondAttribute="trailing" id="2tI-9w-YY1"/>
@@ -345,7 +345,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="leftRing"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="LEFT_RING"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="6G9-mg-hgi" secondAttribute="trailing" id="DZs-ab-rC7"/>
                                                                                     <constraint firstItem="6G9-mg-hgi" firstAttribute="top" secondItem="x93-bc-Yns" secondAttribute="top" id="WsQ-He-kxM"/>
@@ -373,7 +373,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="rightRing"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="RIGHT_RING"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="OSp-z6-nvL" firstAttribute="top" secondItem="ibs-nw-3ra" secondAttribute="top" id="eab-1a-APw"/>
                                                                                     <constraint firstItem="OSp-z6-nvL" firstAttribute="leading" secondItem="ibs-nw-3ra" secondAttribute="leading" id="fL9-1M-r50"/>
@@ -406,7 +406,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="leftEarring"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="LEFT_EARRING"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="qdx-FI-50Z" firstAttribute="top" secondItem="R64-xn-bmd" secondAttribute="top" id="RKN-8L-2Vc"/>
                                                                                     <constraint firstItem="qdx-FI-50Z" firstAttribute="leading" secondItem="R64-xn-bmd" secondAttribute="leading" id="vjr-gi-jja"/>
@@ -434,7 +434,7 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <accessibility key="accessibilityConfiguration" identifier="rightEarring"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="RIGHT_EARRING"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="bottom" secondItem="s7G-C9-1cd" secondAttribute="bottom" id="6C8-vB-p5w"/>
                                                                                     <constraint firstItem="s7G-C9-1cd" firstAttribute="leading" secondItem="aOc-Wc-Q2D" secondAttribute="leading" id="GZi-rh-TI5"/>

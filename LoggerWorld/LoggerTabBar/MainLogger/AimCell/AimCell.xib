@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AlegreyaSC-Regular.ttf">
+            <string>AlegreyaSC-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AimCell" customModule="LoggerWorld" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="146" height="52"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="146" height="52"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yb-7a-88v">
+                        <rect key="frame" x="0.0" y="0.0" width="146" height="52"/>
+                        <color key="backgroundColor" name="Creame"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 lvl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdL-sU-tqv">
+                        <rect key="frame" x="5.5" y="5" width="23.5" height="13"/>
+                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="10"/>
+                        <color key="textColor" name="Brown"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barHP" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-bW-hvz">
+                        <rect key="frame" x="39" y="20.5" width="97" height="11.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6a-0X-mlo">
+                        <rect key="frame" x="75.5" y="5.5" width="24.5" height="12"/>
+                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="10"/>
+                        <color key="textColor" name="Brown"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5o-by-5N7">
+                        <rect key="frame" x="75.5" y="35" width="24.5" height="12"/>
+                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="10"/>
+                        <color key="textColor" name="Brown"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wc-7q-h8E" customClass="MobAvatar" customModule="LoggerWorld" customModuleProvider="target">
+                        <rect key="frame" x="5" y="23" width="24" height="24"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="0wc-7q-h8E" secondAttribute="height" multiplier="1:1" id="CyF-dU-lhw"/>
+                            <constraint firstAttribute="width" constant="24" id="Igk-gp-ZW7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="y6a-0X-mlo" firstAttribute="centerX" secondItem="dMl-bW-hvz" secondAttribute="centerX" id="0v5-NB-nXc"/>
+                <constraint firstItem="fdL-sU-tqv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="6Z1-MI-yii"/>
+                <constraint firstItem="4Yb-7a-88v" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BEw-6M-JZF"/>
+                <constraint firstItem="fdL-sU-tqv" firstAttribute="centerX" secondItem="0wc-7q-h8E" secondAttribute="centerX" id="Hsm-yd-WKg"/>
+                <constraint firstItem="dMl-bW-hvz" firstAttribute="top" secondItem="y6a-0X-mlo" secondAttribute="bottom" constant="3" id="MKO-ad-UeX"/>
+                <constraint firstAttribute="bottom" secondItem="4Yb-7a-88v" secondAttribute="bottom" id="Mx1-L4-WSn"/>
+                <constraint firstItem="dMl-bW-hvz" firstAttribute="leading" secondItem="0wc-7q-h8E" secondAttribute="trailing" constant="10" id="NxQ-ii-QfG"/>
+                <constraint firstItem="y6a-0X-mlo" firstAttribute="centerY" secondItem="fdL-sU-tqv" secondAttribute="centerY" id="T2S-Qg-zpT"/>
+                <constraint firstItem="0wc-7q-h8E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="U0A-RE-2n8"/>
+                <constraint firstItem="4Yb-7a-88v" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UMK-Li-58K"/>
+                <constraint firstItem="0wc-7q-h8E" firstAttribute="top" secondItem="fdL-sU-tqv" secondAttribute="bottom" constant="5" id="XoD-4A-LUz"/>
+                <constraint firstItem="g5o-by-5N7" firstAttribute="top" secondItem="dMl-bW-hvz" secondAttribute="bottom" constant="3" id="e8j-r3-iJA"/>
+                <constraint firstAttribute="trailing" secondItem="4Yb-7a-88v" secondAttribute="trailing" id="hMO-GP-DeV"/>
+                <constraint firstItem="g5o-by-5N7" firstAttribute="centerX" secondItem="dMl-bW-hvz" secondAttribute="centerX" id="tg1-tT-zXQ"/>
+                <constraint firstAttribute="trailing" secondItem="dMl-bW-hvz" secondAttribute="trailing" constant="10" id="vBJ-op-tA8"/>
+                <constraint firstAttribute="bottom" secondItem="0wc-7q-h8E" secondAttribute="bottom" constant="5" id="zDE-WA-NKZ"/>
+            </constraints>
+            <size key="customSize" width="146" height="52"/>
+            <connections>
+                <outlet property="avatarView" destination="0wc-7q-h8E" id="4tR-ja-IaT"/>
+                <outlet property="hpLabel" destination="g5o-by-5N7" id="84Q-RN-Zbv"/>
+                <outlet property="lvlLabel" destination="fdL-sU-tqv" id="Y5G-B8-OBW"/>
+                <outlet property="nameLabel" destination="y6a-0X-mlo" id="Udj-3n-9ZK"/>
+            </connections>
+            <point key="canvasLocation" x="97.101449275362327" y="77.008928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="barHP" width="98.5" height="11.5"/>
+        <namedColor name="Brown">
+            <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Creame">
+            <color red="0.94499999284744263" green="0.82700002193450928" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

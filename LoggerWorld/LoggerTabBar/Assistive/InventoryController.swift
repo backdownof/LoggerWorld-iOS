@@ -92,7 +92,6 @@ extension InventoryController: EquipmentDelegate {
     func equipmentReceived(items: EquipmentMap) {
         for cell in equipedInventoryCell {
             guard let cellId = cell.accessibilityIdentifier else { continue }
-//            print(items.slots)
             switch cellId {
             case Slots.RIGHT_ARM.rawValue:
                 guard items.slots.rightArm != nil else { continue }

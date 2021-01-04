@@ -68,8 +68,8 @@ class SocketManager: StompClientLibDelegate {
     var equipmentDelegate: EquipmentDelegate?
     
     func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-//        print("SOME DATA???")
-//        print("DESTIONATION : \(destination)")
+        print("SOME DATA???")
+        print("DESTIONATION : \(destination)")
 //        print("JSON BODY : \(String(describing: jsonBody))")
 //        print("STRING BODY : \(stringBody ?? "nil")")
         
@@ -85,9 +85,11 @@ class SocketManager: StompClientLibDelegate {
             Logger.stompRecieved.info("Received log message: \(String(describing: data))")
             messageDelegate?.messageReceived(log: data)
         } else if let data = try? JSONDecoder().decode(InventoryMap.self, from: Data(stringData.utf8)) {
+//            dump(data)
             Logger.stompRecieved.info("Inventory recieved")
             inventoryDelegate?.inventoryReceived(items: data)
         } else if let data = try? JSONDecoder().decode(EquipmentMap.self, from: Data(stringData.utf8)) {
+//            dump(data)
             Logger.stompRecieved.info("Equipment recieved")
             equipmentDelegate?.equipmentReceived(items: data)
         } else {

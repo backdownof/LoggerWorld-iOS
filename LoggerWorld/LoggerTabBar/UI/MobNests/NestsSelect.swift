@@ -15,8 +15,6 @@ class NestsSelect: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    var tableViewReuseIdentifier = "tableViewCell"
     var mobsNests: [MobNests]! {
         didSet {
             tableView.reloadData()
@@ -28,12 +26,10 @@ class NestsSelect: UIView {
     override func awakeFromNib() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: R.nib.nestCell.name, bundle: nil), forCellReuseIdentifier: tableViewReuseIdentifier)
+        tableView.register(UINib(nibName: R.nib.nestCell.name, bundle: nil), forCellReuseIdentifier: R.nib.nestCell.name)
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        print("Close nests pressed")
-        print("Nest delegate is \(delegate)")
         delegate?.nestsViewClosed()
     }
     
@@ -55,7 +51,6 @@ class NestsSelect: UIView {
         
         guard selectedNestsIds.count != 0 else { return }
         for id in selectedNestsIds {
-            print(id)
             SocketManager.shared.kickNest(nestId: id)
         }
         delegate?.nestsViewClosed()
@@ -73,7 +68,7 @@ extension NestsSelect: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewReuseIdentifier, for: indexPath) as! NestCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.nestCell.name, for: indexPath) as! NestCell
         cell.avatarView.avatarImage = R.image.mobGrayRat()
         cell.nest = mobsNests[indexPath.row]
         return cell

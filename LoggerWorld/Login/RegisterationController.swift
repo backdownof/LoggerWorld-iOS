@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterController: ViewController {
+class RegisterationController: ViewController {
     
     // MARK: - IBOutlets
     
@@ -118,7 +118,7 @@ class RegisterController: ViewController {
     }
 }
 
-extension RegisterController: ButtonWOImageDelegate {
+extension RegisterationController: ButtonWOImageDelegate {
     func buttonTapped(_ button: ButtonWOImage) {
         alertView.isUserInteractionEnabled = false
         guard let email = emailTextField.text, let password = passwordTextField.text, let nickname = nicknameTextField.text else { return }
@@ -145,7 +145,7 @@ extension RegisterController: ButtonWOImageDelegate {
     }
 }
 
-extension RegisterController: AlertDelegate {
+extension RegisterationController: AlertDelegate {
     func okButtonTyped() {
         animateAlertOut()
         if alertView.statusIsSuccess == true {

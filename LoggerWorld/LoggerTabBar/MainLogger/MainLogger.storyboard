@@ -64,10 +64,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL3-mF-RaJ">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="348.5"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-py-PlY">
-                                                <rect key="frame" x="0.0" y="0.0" width="255" height="348.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-cq-dcB">
                                                 <rect key="frame" x="265" y="0.0" width="35" height="348.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,15 +71,115 @@
                                                     <constraint firstAttribute="width" constant="35" id="0Es-oO-f7Q"/>
                                                 </constraints>
                                             </tableView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QaR-8V-tdr">
+                                                <rect key="frame" x="0.0" y="0.0" width="255" height="348.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wlj-cf-BwN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="170.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Av4-OR-R9n">
+                                                                <rect key="frame" x="0.0" y="0.0" width="255" height="18"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mne-A1-miY">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                                        <state key="normal" title="Все логи" backgroundImage="buttonFrame">
+                                                                            <color key="titleColor" name="Brown"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didSelectLogsType:" destination="lOZ-ga-Qvi" eventType="touchUpInside" id="XtF-lC-BpZ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESb-Xk-a5r">
+                                                                        <rect key="frame" x="86.5" y="0.0" width="82" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                                        <state key="normal" title="Бой" backgroundImage="buttonFrame">
+                                                                            <color key="titleColor" name="Brown"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didSelectLogsType:" destination="lOZ-ga-Qvi" eventType="touchUpInside" id="n78-fj-bSy"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCl-PD-8Fb">
+                                                                        <rect key="frame" x="173.5" y="0.0" width="81.5" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                                        <state key="normal" title="Предметы" backgroundImage="buttonFrame">
+                                                                            <color key="titleColor" name="Brown"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didSelectLogsType:" destination="lOZ-ga-Qvi" eventType="touchUpInside" id="O32-TJ-oaX"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-py-PlY">
+                                                                <rect key="frame" x="0.0" y="23" width="255" height="147.5"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </tableView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xhC-EP-evQ">
+                                                        <rect key="frame" x="0.0" y="178.5" width="255" height="170"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-b6-aqR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="255" height="18"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmW-24-Gf6">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                                        <state key="normal" title="Цели" backgroundImage="buttonFrame">
+                                                                            <color key="titleColor" name="Brown"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didSelectLogsType:" destination="lOZ-ga-Qvi" eventType="touchUpInside" id="Kuy-TH-TEv"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUj-Dz-iRW">
+                                                                        <rect key="frame" x="86.5" y="0.0" width="82" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                                        <state key="normal" title="Игроки" backgroundImage="buttonFrame">
+                                                                            <color key="titleColor" name="Brown"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didSelectLogsType:" destination="lOZ-ga-Qvi" eventType="touchUpInside" id="46h-fh-izA"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEY-6r-qXZ">
+                                                                        <rect key="frame" x="173.5" y="0.0" width="81.5" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="AlegreyaSC-Regular" family="Alegreya SC" pointSize="14"/>
+                                                                        <state key="normal" title="Мобы" backgroundImage="buttonFrame">
+                                                                            <color key="titleColor" name="Brown"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didSelectLogsType:" destination="lOZ-ga-Qvi" eventType="touchUpInside" id="N55-Nm-1CV"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kjJ-8p-BcV">
+                                                                <rect key="frame" x="0.0" y="26" width="255" height="144"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U5N-cF-5K8">
+                                                                    <size key="itemSize" width="128" height="128"/>
+                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                </collectionViewFlowLayout>
+                                                                <cells/>
+                                                            </collectionView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="PnS-py-PlY" firstAttribute="leading" secondItem="RL3-mF-RaJ" secondAttribute="leading" id="4am-WR-fkQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="PnS-py-PlY" secondAttribute="bottom" id="6Gs-2C-y0q"/>
                                             <constraint firstItem="EAZ-cq-dcB" firstAttribute="top" secondItem="RL3-mF-RaJ" secondAttribute="top" id="7hE-A2-EpW"/>
-                                            <constraint firstItem="EAZ-cq-dcB" firstAttribute="leading" secondItem="PnS-py-PlY" secondAttribute="trailing" constant="10" id="Asq-IO-htS"/>
-                                            <constraint firstItem="PnS-py-PlY" firstAttribute="top" secondItem="RL3-mF-RaJ" secondAttribute="top" id="GGM-yV-7ET"/>
+                                            <constraint firstItem="EAZ-cq-dcB" firstAttribute="leading" secondItem="QaR-8V-tdr" secondAttribute="trailing" constant="10" id="Uwd-H5-w0j"/>
+                                            <constraint firstAttribute="bottom" secondItem="QaR-8V-tdr" secondAttribute="bottom" id="hS9-I5-4CI"/>
+                                            <constraint firstItem="QaR-8V-tdr" firstAttribute="leading" secondItem="RL3-mF-RaJ" secondAttribute="leading" id="iiq-7f-mVp"/>
                                             <constraint firstAttribute="trailing" secondItem="EAZ-cq-dcB" secondAttribute="trailing" id="vKi-zj-G8w"/>
+                                            <constraint firstItem="QaR-8V-tdr" firstAttribute="top" secondItem="RL3-mF-RaJ" secondAttribute="top" id="yej-cd-9bC"/>
                                             <constraint firstAttribute="bottom" secondItem="EAZ-cq-dcB" secondAttribute="bottom" id="z9X-J7-TLJ"/>
                                         </constraints>
                                     </view>
@@ -137,12 +233,16 @@
                     <navigationItem key="navigationItem" id="30x-Yv-533"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="aimsCollectionView" destination="kjJ-8p-BcV" id="ZAm-WQ-tUw"/>
                         <outlet property="charStatusBar" destination="HaQ-qS-ZKF" id="SOP-Nl-Hq8"/>
                         <outlet property="leftButton" destination="lZ5-LB-1QC" id="OX0-fD-FYJ"/>
                         <outlet property="logsTableView" destination="PnS-py-PlY" id="IuJ-4f-v4m"/>
                         <outlet property="middleButton" destination="3r6-Dd-VtH" id="dLG-Nv-FfX"/>
                         <outlet property="playersNearTableView" destination="EAZ-cq-dcB" id="wzg-sN-nI0"/>
                         <outlet property="rightButton" destination="KXo-t0-9R5" id="Xf1-wr-h6q"/>
+                        <outletCollection property="logsTypeSelectButton" destination="uCl-PD-8Fb" collectionClass="NSMutableArray" id="9vy-IE-8LI"/>
+                        <outletCollection property="logsTypeSelectButton" destination="Mne-A1-miY" collectionClass="NSMutableArray" id="P23-8u-7BD"/>
+                        <outletCollection property="logsTypeSelectButton" destination="ESb-Xk-a5r" collectionClass="NSMutableArray" id="bng-Of-6Y1"/>
                         <segue destination="VPG-cC-vfO" kind="showDetail" identifier="segue.statusBarStats" id="4Ru-Xa-vG9"/>
                     </connections>
                 </viewController>
@@ -296,6 +396,7 @@
     </scenes>
     <resources>
         <image name="backgroundFrame" width="346" height="590"/>
+        <image name="buttonFrame" width="84" height="18"/>
         <image name="icLogsTabBarItem" width="30" height="30"/>
         <namedColor name="Brown">
             <color red="0.45500001311302185" green="0.32899999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -24,7 +24,6 @@ class LocationManager {
     var locationInfo: LocationInfo?
     var characterInMove: Bool?
     var playersInLocation: [PlayersInLocation]?
-    var currentLocationName: String?
     let realm = try! Realm()
     
     private init() {
@@ -41,6 +40,42 @@ class LocationManager {
     func getCharsInLocation() -> [PlayersInLocation] {
         return locationInfo!.players
     }
+    
+    func getCurrentLocationName() -> String {
+        if let currentLocId = locationInfo?.locationId {
+            return getNameById(id: currentLocId)
+        } else {
+            return "Ошибка..."
+        }
+    }
+    
+    func getWorldMap() -> ([WorldMapModel], Int, Int) {
+        var mapLocations: [WorldMapModel] = []
+        
+        var maxXcoord = 0
+        var maxYcoord = 0
+        
+        let locations = realm.objects(WorldMapModel.self)
+        
+        for location in locations {
+            maxXcoord = (location.xcoord > maxXcoord) ? location.xcoord : maxXcoord
+            maxYcoord = (location.ycoord > maxYcoord) ? location.ycoord : maxYcoord
+        }
+        maxYcoord += 1
+        maxXcoord += 1
+        
+        for x in 0...maxXcoord {
+            for y in 0...maxYcoord {
+                for loc in locations {
+                    if loc.xcoord == x && loc.ycoord == y {
+                        mapLocations.append(loc)
+                    }
+                }
+            }
+        }
+        
+        return (mapLocations, maxXcoord, maxYcoord)
+    }
 }
 
 extension LocationManager: SocketManagerDelegate {
@@ -52,7 +87,6 @@ extension LocationManager: SocketManagerDelegate {
                 if char.id == ActiveCharacter.shared.info.id {
                     charsToDisplay = [char]
                     LocationManager.shared.playersInLocation = charsToDisplay
-                    LocationManager.shared.currentLocationName = "Вы в пути..."
                     delegate?.locationHasChanged()
                     LocationManager.shared.locationInfo = info
                     LocationManager.shared.characterInMove = true
@@ -67,7 +101,6 @@ extension LocationManager: SocketManagerDelegate {
         
         playersInLocation = charsToDisplay
         LocationManager.shared.locationInfo = info
-        LocationManager.shared.currentLocationName = LocationManager.shared.getNameById(id: info.locationId)
         LocationManager.shared.characterInMove = false
         delegate?.locationHasChanged()
     }

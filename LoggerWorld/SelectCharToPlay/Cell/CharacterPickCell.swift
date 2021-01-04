@@ -31,22 +31,14 @@ class CharacterPickCell: UITableViewCell {
             if let lvl = charInfo?.baseStats.lvl {
                 charLvlLabel.text = "\(Int(lvl)) лвл"
             }
-            if let location = charInfo?.locationId {
-                charLocationLabel.text = LocationManager.shared.getNameById(id: charInfo!.locationId)
-                
-//                guard let allLocations = LocationManager.shared.locations else { return }
-//                for loc in allLocations {
-//                    if loc.id == location {
-//                        charLocationLabel.text = loc.name
-//                    }
-//                }
+            if let locationId = charInfo?.locationId {
+                charLocationLabel.text = LocationManager.shared.getNameById(id: locationId)
             }
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         imageBackgroundView.layer.borderWidth = 1
         imageBackgroundView.layer.cornerRadius = 5
         guard let color = R.color.brown() else { return }

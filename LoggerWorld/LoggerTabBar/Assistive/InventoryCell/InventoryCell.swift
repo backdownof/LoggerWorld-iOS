@@ -14,16 +14,16 @@ class InventoryCell: UICollectionViewCell {
     
     var item: SlotMap? {
         didSet {
-            guard let itemP = item else { return }
+//            guard let itemP = item else { return }
             
-//            switch item?.category {
-//            case 9:
-//                itemImageView.image = R.image.icWarSword()
-//            case 5:
-//                itemImageView.image = R.image.gold()
-//            default:
-//                break
-//            }
+            switch item?.category {
+            case 9:
+                itemImageView.image = R.image.icWarSword()
+            case 5:
+                itemImageView.image = R.image.gold()
+            default:
+                break
+            }
         }
     }
     

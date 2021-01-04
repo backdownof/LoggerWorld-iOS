@@ -692,32 +692,32 @@ struct R: Rswift.Validatable {
     }
 
     struct inventory {
-      /// Accessibility identifier `amulet`.
-      static let amulet: String = "amulet"
-      /// Accessibility identifier `belt`.
-      static let belt: String = "belt"
-      /// Accessibility identifier `body`.
-      static let body: String = "body"
-      /// Accessibility identifier `boots`.
-      static let boots: String = "boots"
+      /// Accessibility identifier `AMULET`.
+      static let amuleT: String = "AMULET"
+      /// Accessibility identifier `BELT`.
+      static let belT: String = "BELT"
+      /// Accessibility identifier `BODY`.
+      static let bodY: String = "BODY"
+      /// Accessibility identifier `BOOTS`.
+      static let bootS: String = "BOOTS"
+      /// Accessibility identifier `GLOVES`.
+      static let gloveS: String = "GLOVES"
+      /// Accessibility identifier `HEAD`.
+      static let heaD: String = "HEAD"
+      /// Accessibility identifier `LEFT_ARM`.
+      static let left_ARM: String = "LEFT_ARM"
+      /// Accessibility identifier `LEFT_EARRING`.
+      static let left_EARRING: String = "LEFT_EARRING"
+      /// Accessibility identifier `LEFT_RING`.
+      static let left_RING: String = "LEFT_RING"
+      /// Accessibility identifier `RIGHT_ARM`.
+      static let right_ARM: String = "RIGHT_ARM"
+      /// Accessibility identifier `RIGHT_EARRING`.
+      static let right_EARRING: String = "RIGHT_EARRING"
+      /// Accessibility identifier `RIGHT_RING`.
+      static let right_RING: String = "RIGHT_RING"
       /// Accessibility identifier `cloack`.
       static let cloack: String = "cloack"
-      /// Accessibility identifier `gloves`.
-      static let gloves: String = "gloves"
-      /// Accessibility identifier `head`.
-      static let head: String = "head"
-      /// Accessibility identifier `leftArm`.
-      static let leftArm: String = "leftArm"
-      /// Accessibility identifier `leftEarring`.
-      static let leftEarring: String = "leftEarring"
-      /// Accessibility identifier `leftRing`.
-      static let leftRing: String = "leftRing"
-      /// Accessibility identifier `rightArm`.
-      static let rightArm: String = "rightArm"
-      /// Accessibility identifier `rightEarring`.
-      static let rightEarring: String = "rightEarring"
-      /// Accessibility identifier `rightRing`.
-      static let rightRing: String = "rightRing"
 
       fileprivate init() {}
     }
@@ -725,7 +725,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 43 images.
+  /// This `R.image` struct is generated, and contains static references to 44 images.
   struct image {
     /// Image `AppImage`.
     static let appImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "AppImage")
@@ -747,6 +747,8 @@ struct R: Rswift.Validatable {
     static let beltInventoryPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "beltInventoryPlaceholder")
     /// Image `bootsInventoryPlaceholder`.
     static let bootsInventoryPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "bootsInventoryPlaceholder")
+    /// Image `buttonFrame`.
+    static let buttonFrame = Rswift.ImageResource(bundle: R.hostingBundle, name: "buttonFrame")
     /// Image `buttonLightBrown`.
     static let buttonLightBrown = Rswift.ImageResource(bundle: R.hostingBundle, name: "buttonLightBrown")
     /// Image `checkboxOff`.
@@ -881,6 +883,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "bootsInventoryPlaceholder", bundle: ..., traitCollection: ...)`
     static func bootsInventoryPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.bootsInventoryPlaceholder, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "buttonFrame", bundle: ..., traitCollection: ...)`
+    static func buttonFrame(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.buttonFrame, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1149,10 +1158,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 15 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 16 nibs.
   struct nib {
     /// Nib `AddCharCell`.
     static let addCharCell = _R.nib._AddCharCell()
+    /// Nib `AimCell`.
+    static let aimCell = _R.nib._AimCell()
     /// Nib `AlertView`.
     static let alertView = _R.nib._AlertView()
     /// Nib `ButtonWImage`.
@@ -1187,6 +1198,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addCharCell) instead")
     static func addCharCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addCharCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AimCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.aimCell) instead")
+    static func aimCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.aimCell)
     }
     #endif
 
@@ -1304,6 +1323,10 @@ struct R: Rswift.Validatable {
 
     static func addCharCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddCharCell? {
       return R.nib.addCharCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddCharCell
+    }
+
+    static func aimCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AimCell? {
+      return R.nib.aimCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AimCell
     }
 
     static func alertView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AlertView? {
@@ -2096,6 +2119,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _AddCharCell.validate()
+      try _AimCell.validate()
       try _AlertView.validate()
       try _ButtonWImage.validate()
       try _ButtonWOImage.validate()
@@ -2121,6 +2145,25 @@ struct _R: Rswift.Validatable {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "plus") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'plus' is used in nib 'AddCharCell', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in nib 'AddCharCell', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AimCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AimCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AimCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AimCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "barHP", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'barHP' is used in nib 'AimCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in nib 'AimCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "Creame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Creame' is used in nib 'AimCell', but couldn't be loaded.") }
         }
       }
 
@@ -2550,6 +2593,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "backgroundFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'backgroundFrame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "buttonFrame", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'buttonFrame' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icLogsTabBarItem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icLogsTabBarItem' is used in storyboard 'MainLogger', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "Brown", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Brown' is used in storyboard 'MainLogger', but couldn't be loaded.") }

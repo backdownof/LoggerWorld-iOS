@@ -24,10 +24,10 @@ class LocationsMap: UIView {
     @IBOutlet weak var goButton: UIButton!
     
 //    var locsXcoord: [[LocationNameAndCoords]] = []
-    var locsYcoord: [LocationMapData] = []
+    var locations: [WorldMapModel] = []
     var maxXcoord = 0
     var maxYcoord = 0
-    let collectionReusableIdentifier = "mapCollection"
+//    let collectionReusableIdentifier = "mapCollection"
     var currentLocationCell: MapCell?
     var selectedLocationCellId: Int = 0
     
@@ -37,7 +37,7 @@ class LocationsMap: UIView {
         setupMapView()
         mapCellsCollectionView.delegate = self
         mapCellsCollectionView.dataSource = self
-        mapCellsCollectionView.register(UINib(nibName: R.nib.mapCell.name, bundle: nil), forCellWithReuseIdentifier: collectionReusableIdentifier)
+        mapCellsCollectionView.register(UINib(nibName: R.nib.mapCell.name, bundle: nil), forCellWithReuseIdentifier: R.nib.mapCell.name)
         selectedLocationLabel.text = "Выберите локацию"
     }
     
@@ -45,24 +45,10 @@ class LocationsMap: UIView {
     }
     
     func setupMapView() {
-        guard let locations = LocationManager.shared.locations else { return }
-        for location in locations {
-            maxXcoord = (location.xcoord > maxXcoord) ? location.xcoord : maxXcoord
-            maxYcoord = (location.ycoord > maxYcoord) ? location.ycoord : maxYcoord
-        }
-        maxYcoord += 1
-        maxXcoord += 1
-        
-        for x in 0...maxXcoord {
-            for y in 0...maxYcoord {
-                for loc in locations {
-                    if loc.xcoord == x && loc.ycoord == y {
-                        locsYcoord.append(loc)
-                    }
-                }
-            }
-        }
-        
+        let worldMapData = LocationManager.shared.getWorldMap()
+        locations = worldMapData.0
+        maxXcoord = worldMapData.1
+        maxYcoord = worldMapData.2
         
         mapView.widthAnchor.constraint(equalToConstant: CGFloat(maxYcoord * 60)).isActive = true
         mapView.heightAnchor.constraint(equalToConstant: CGFloat(maxYcoord * 60)).isActive = true
@@ -107,9 +93,8 @@ extension LocationsMap: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = mapCellsCollectionView.dequeueReusableCell(withReuseIdentifier: collectionReusableIdentifier, for: indexPath) as! MapCell
-        cell.locInfo = locsYcoord[indexPath.row]
-        
+        let cell = mapCellsCollectionView.dequeueReusableCell(withReuseIdentifier: R.nib.mapCell.name, for: indexPath) as! MapCell
+        cell.locInfo = locations[indexPath.row]
         
         if cell.locInfo?.id == LocationManager.shared.locationInfo?.locationId {
             currentLocationCell = cell

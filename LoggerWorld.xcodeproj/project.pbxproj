@@ -67,6 +67,10 @@
 		205962282585701400E5D8D4 /* MobAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205962272585701400E5D8D4 /* MobAvatar.swift */; };
 		20598630256090C40028ACD3 /* AddCharCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059862E256090C40028ACD3 /* AddCharCell.swift */; };
 		20598631256090C40028ACD3 /* AddCharCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2059862F256090C40028ACD3 /* AddCharCell.xib */; };
+		205EFBB425A2406100C5B5C8 /* MobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205EFBB325A2406100C5B5C8 /* MobManager.swift */; };
+		205EFBBA25A2430500C5B5C8 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205EFBB925A2430500C5B5C8 /* ItemManager.swift */; };
+		205EFBBF25A3C04000C5B5C8 /* AimCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205EFBBD25A3C04000C5B5C8 /* AimCell.swift */; };
+		205EFBC025A3C04000C5B5C8 /* AimCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205EFBBE25A3C04000C5B5C8 /* AimCell.xib */; };
 		20633AC4257D020E0081A2EB /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20633AC3257D020E0081A2EB /* Array.swift */; };
 		20633AD1257D338F0081A2EB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20633AD0257D338F0081A2EB /* Image.swift */; };
 		206577A025670FC500E57E82 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065779F25670FC500E57E82 /* R.generated.swift */; };
@@ -81,13 +85,12 @@
 		207CB1E8259F776400435821 /* ItemQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CB1E7259F776400435821 /* ItemQualityModel.swift */; };
 		207CB1EE259F7E5300435821 /* EquipmentSlotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CB1ED259F7E5300435821 /* EquipmentSlotModel.swift */; };
 		207CB1F5259F94CD00435821 /* WorldMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CB1F4259F94CD00435821 /* WorldMapModel.swift */; };
-		2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEBB25631B7700DC4D36 /* RegisterController.swift */; };
+		2088CEBC25631B7700DC4D36 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEBB25631B7700DC4D36 /* RegisterationController.swift */; };
 		2088CEC125631C6800DC4D36 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088CEC025631C6800DC4D36 /* Validator.swift */; };
 		209213D4257EC448003A4F05 /* LogsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D3257EC448003A4F05 /* LogsMap.swift */; };
 		209213DA257EC96F003A4F05 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213D8257EC96F003A4F05 /* LogCell.swift */; };
 		209213DB257EC96F003A4F05 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209213D9257EC96F003A4F05 /* LogCell.xib */; };
 		209213DE25811E16003A4F05 /* MessageMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213DD25811E15003A4F05 /* MessageMap.swift */; };
-		209213E725814308003A4F05 /* MobsInLocationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213E625814308003A4F05 /* MobsInLocationMapper.swift */; };
 		209213F225814735003A4F05 /* NestsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213F125814735003A4F05 /* NestsSelect.swift */; };
 		209213F62581473C003A4F05 /* NestsSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209213F52581473C003A4F05 /* NestsSelect.xib */; };
 		209213FE258172CE003A4F05 /* NestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209213FC258172CE003A4F05 /* NestCell.swift */; };
@@ -193,6 +196,10 @@
 		205962272585701400E5D8D4 /* MobAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobAvatar.swift; sourceTree = "<group>"; };
 		2059862E256090C40028ACD3 /* AddCharCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharCell.swift; sourceTree = "<group>"; };
 		2059862F256090C40028ACD3 /* AddCharCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCharCell.xib; sourceTree = "<group>"; };
+		205EFBB325A2406100C5B5C8 /* MobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobManager.swift; sourceTree = "<group>"; };
+		205EFBB925A2430500C5B5C8 /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		205EFBBD25A3C04000C5B5C8 /* AimCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimCell.swift; sourceTree = "<group>"; };
+		205EFBBE25A3C04000C5B5C8 /* AimCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AimCell.xib; sourceTree = "<group>"; };
 		20633AC3257D020E0081A2EB /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		20633AD0257D338F0081A2EB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		2065779F25670FC500E57E82 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -205,13 +212,12 @@
 		207CB1E7259F776400435821 /* ItemQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemQualityModel.swift; sourceTree = "<group>"; };
 		207CB1ED259F7E5300435821 /* EquipmentSlotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSlotModel.swift; sourceTree = "<group>"; };
 		207CB1F4259F94CD00435821 /* WorldMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapModel.swift; sourceTree = "<group>"; };
-		2088CEBB25631B7700DC4D36 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		2088CEBB25631B7700DC4D36 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		2088CEC025631C6800DC4D36 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		209213D3257EC448003A4F05 /* LogsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsMap.swift; sourceTree = "<group>"; };
 		209213D8257EC96F003A4F05 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		209213D9257EC96F003A4F05 /* LogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
 		209213DD25811E15003A4F05 /* MessageMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageMap.swift; sourceTree = "<group>"; };
-		209213E625814308003A4F05 /* MobsInLocationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobsInLocationMapper.swift; sourceTree = "<group>"; };
 		209213F125814735003A4F05 /* NestsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestsSelect.swift; sourceTree = "<group>"; };
 		209213F52581473C003A4F05 /* NestsSelect.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NestsSelect.xib; sourceTree = "<group>"; };
 		209213FC258172CE003A4F05 /* NestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestCell.swift; sourceTree = "<group>"; };
@@ -427,7 +433,6 @@
 			isa = PBXGroup;
 			children = (
 				2049B5A1259A09D500979797 /* Inventory */,
-				209213E1258142D3003A4F05 /* Mobs */,
 				209213D2257EC438003A4F05 /* Logs */,
 				200CABA4257AEFB300ECBFD5 /* CharStats */,
 				2096687A25793AA8004009F5 /* MappingData */,
@@ -552,6 +557,23 @@
 			path = MobView;
 			sourceTree = "<group>";
 		};
+		205EFBB625A2406400C5B5C8 /* MobManager */ = {
+			isa = PBXGroup;
+			children = (
+				205EFBB325A2406100C5B5C8 /* MobManager.swift */,
+			);
+			path = MobManager;
+			sourceTree = "<group>";
+		};
+		205EFBBC25A3BF7C00C5B5C8 /* AimCell */ = {
+			isa = PBXGroup;
+			children = (
+				205EFBBD25A3C04000C5B5C8 /* AimCell.swift */,
+				205EFBBE25A3C04000C5B5C8 /* AimCell.xib */,
+			);
+			path = AimCell;
+			sourceTree = "<group>";
+		};
 		206577A2256713E500E57E82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,9 +673,11 @@
 				2006D70325646C9800259338 /* Network */,
 				2006D6F925646BC800259338 /* API */,
 				2006D6F1256469DB00259338 /* UserSettings */,
+				2013192A2598B77100ECE566 /* LogsService */,
+				205EFBB625A2406400C5B5C8 /* MobManager */,
 				2088CEC025631C6800DC4D36 /* Validator.swift */,
 				2006D6EE256464B900259338 /* Nib.swift */,
-				2013192A2598B77100ECE566 /* LogsService */,
+				205EFBB925A2430500C5B5C8 /* ItemManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -674,14 +698,6 @@
 				209213D9257EC96F003A4F05 /* LogCell.xib */,
 			);
 			path = LogCell;
-			sourceTree = "<group>";
-		};
-		209213E1258142D3003A4F05 /* Mobs */ = {
-			isa = PBXGroup;
-			children = (
-				209213E625814308003A4F05 /* MobsInLocationMapper.swift */,
-			);
-			path = Mobs;
 			sourceTree = "<group>";
 		};
 		209213E9258145A6003A4F05 /* MobNests */ = {
@@ -774,6 +790,7 @@
 		20CB85D92566A62D00237DAF /* MainLogger */ = {
 			isa = PBXGroup;
 			children = (
+				205EFBBC25A3BF7C00C5B5C8 /* AimCell */,
 				209213D7257EC953003A4F05 /* LogCell */,
 				204852F0257C26F200760217 /* StatCell */,
 				20407A9A25759093007759B3 /* CharsInLocationCell */,
@@ -836,7 +853,7 @@
 			children = (
 				200A665D254E1A3E00B74B48 /* Login.storyboard */,
 				20CD1DF3255FF45F009F991D /* LoginController.swift */,
-				2088CEBB25631B7700DC4D36 /* RegisterController.swift */,
+				2088CEBB25631B7700DC4D36 /* RegisterationController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -947,6 +964,7 @@
 				2096686E2578F63F004009F5 /* CharStatusBar.xib in Resources */,
 				20766EE9256055F300AEDE8D /* CharacterPickCell.xib in Resources */,
 				203A2CE32576D20A003AFC95 /* AlegreyaSC-ExtraBold.ttf in Resources */,
+				205EFBC025A3C04000C5B5C8 /* AimCell.xib in Resources */,
 				20598631256090C40028ACD3 /* AddCharCell.xib in Resources */,
 				200A665F254E1A3E00B74B48 /* Login.storyboard in Resources */,
 				2049B5AA259A1AA300979797 /* InventoryCell.xib in Resources */,
@@ -1037,9 +1055,10 @@
 				20AD37EC2562931D00F9C1B5 /* UIViewController.swift in Sources */,
 				201319282598B76900ECE566 /* LogsService.swift in Sources */,
 				2006D7332564753900259338 /* User.swift in Sources */,
-				2088CEBC25631B7700DC4D36 /* RegisterController.swift in Sources */,
+				2088CEBC25631B7700DC4D36 /* RegisterationController.swift in Sources */,
 				209668612578F623004009F5 /* ButtonWImage.swift in Sources */,
 				207CB1E8259F776400435821 /* ItemQualityModel.swift in Sources */,
+				205EFBBF25A3C04000C5B5C8 /* AimCell.swift in Sources */,
 				2049B5A9259A1AA300979797 /* InventoryCell.swift in Sources */,
 				20407AA325759152007759B3 /* CharsInLocationCell.swift in Sources */,
 				20AD37E9256292DA00F9C1B5 /* UI.swift in Sources */,
@@ -1050,6 +1069,7 @@
 				20633AD1257D338F0081A2EB /* Image.swift in Sources */,
 				20633AC4257D020E0081A2EB /* Array.swift in Sources */,
 				20D388DD25602D4B00F18A07 /* ContentSizedTableView.swift in Sources */,
+				205EFBB425A2406100C5B5C8 /* MobManager.swift in Sources */,
 				202B6A50259B7ACC002BE302 /* MapsService.swift in Sources */,
 				200A6662254E1A3E00B74B48 /* LoggerWorld.xcdatamodeld in Sources */,
 				2049B5C8259B714800979797 /* ItemStatsData.swift in Sources */,
@@ -1091,6 +1111,7 @@
 				204852E5257C211D00760217 /* CharacterStatsController.swift in Sources */,
 				2049B5C5259B6F9900979797 /* ItemQualitiesData.swift in Sources */,
 				20766EE8256055F300AEDE8D /* CharacterPickCell.swift in Sources */,
+				205EFBBA25A2430500C5B5C8 /* ItemManager.swift in Sources */,
 				20AD37EF2562934A00F9C1B5 /* UIWindow.swift in Sources */,
 				209668512578F5F5004009F5 /* ViewController.swift in Sources */,
 				2006D72F256473CF00259338 /* DataOperation.swift in Sources */,
@@ -1116,7 +1137,6 @@
 				207CB1EE259F7E5300435821 /* EquipmentSlotModel.swift in Sources */,
 				2006D6F3256469F800259338 /* UserSettings.swift in Sources */,
 				207CB1E1259F723900435821 /* ItemStatsModel.swift in Sources */,
-				209213E725814308003A4F05 /* MobsInLocationMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

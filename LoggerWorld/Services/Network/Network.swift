@@ -39,8 +39,6 @@ class Network: NSObject {
                                 "Accept-Encoding": "gzip,deflate,br",
                                 "Connection": "keep-alive"
                                ]
-        //                    "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBYWh6QnJ1dCIsImlhdCI6MTYwNzc4NTc3OCwiZXhwIjoxNjEwMzc3Nzc4fQ.hxU0Urm3mdn0e9p_qdY0cwtKf9UMNuwqD1A5Rz44DEkTTT3Bm9UUIrrPNCCDBC8tTEw4GxXrRPKhFKEdv82pxA",
-        //                    "Postman-Token": "<calculated when request is sent>",
         AF.request((API.baseURL + "api/user/login").url!,
                    method: .post, parameters: parameters,
                    encoding: JSONEncoding.default,
@@ -81,7 +79,6 @@ class Network: NSObject {
                                 email: String,
                                 completion: @escaping (String) -> Void,
                                 failure: @escaping(String) -> Void) {
-        print(userName)
         AF.request((API.baseURL + "api/user/sign-up").url!,
                    method: .post,
                    parameters: [
